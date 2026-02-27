@@ -174,7 +174,6 @@ export const StoryPanel: React.FC = () => {
   const [bgTransition, setBgTransition] = useState(false);
   const [screenEffect, setScreenEffect] = useState<string | null>(null);
   const [showHistory, setShowHistory] = useState(false);
-  const [portraitFlash, setPortraitFlash] = useState(false);
   const historyRef = useRef<HTMLDivElement>(null);
   const dialogueScrollRef = useRef<HTMLDivElement>(null);
   const prevSpeakerRef = useRef<string | null>(null);
@@ -213,13 +212,10 @@ export const StoryPanel: React.FC = () => {
   const featuredAccent = featuredCharacter
     ? (characterAccents[featuredCharacter] || 'rgba(251, 191, 36, 0.7)')
     : 'rgba(100, 140, 200, 0.5)';
-  // Portrait flash on speaker change
+  // Track previous speaker for downstream components
   useEffect(() => {
     if (featuredCharacter && featuredCharacter !== prevSpeakerRef.current) {
-      setPortraitFlash(true);
-      const timer = setTimeout(() => setPortraitFlash(false), 600);
       prevSpeakerRef.current = featuredCharacter;
-      return () => clearTimeout(timer);
     }
   }, [featuredCharacter]);
 
