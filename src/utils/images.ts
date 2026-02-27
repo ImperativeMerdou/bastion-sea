@@ -17,14 +17,14 @@ export const sceneBackgrounds: Record<string, string> = {
   'prologue_11': 'scene_transport_battle.webp',
   'prologue_12': 'scene_transport_battle.webp',
   'prologue_final_choice': 'scene_transport_battle.webp',
-  'prologue_escape_final': 'scene_ocean_night_glow.webp',
-  'prologue_end': 'scene_ocean_night_glow.webp',
+  'prologue_escape_final': 'scene_escape_raft.webp',
+  'prologue_end': 'scene_escape_raft.webp',
 
   // First Night (adrift on the raft)
-  'night_01': 'scene_ocean_night_glow.webp',
-  'night_02': 'scene_ocean_night_glow.webp',
-  'night_03': 'scene_ocean_night_glow.webp',
-  'night_04': 'scene_ocean_night_glow.webp',
+  'night_01': 'scene_escape_raft.webp',
+  'night_02': 'scene_escape_raft.webp',
+  'night_03': 'scene_escape_raft.webp',
+  'night_04': 'scene_escape_raft.webp',
   'night_05': 'scene_tavven_shoal.webp',
 
   // Tavven arrival
