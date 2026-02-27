@@ -1950,10 +1950,10 @@ export const CombatPanel: React.FC = () => {
           const hpPercent = enemy.maxHp > 0 ? (enemy.hp / enemy.maxHp) * 100 : 0;
 
           return (
-            <div key={enemy.id} className="flex flex-col items-center gap-1.5" style={{ width: '140px' }}>
+            <div key={enemy.id} className="flex flex-col items-center gap-1.5" style={{ width: 'clamp(100px, 30vw, 140px)' }}>
               {/* Portrait container — simple CSS border, no frame overlay */}
               <div
-                style={{ width: '164px', height: '200px', position: 'relative' }}
+                style={{ width: 'clamp(110px, 35vw, 164px)', height: 'clamp(134px, 42vw, 200px)', position: 'relative' }}
                 className={`cursor-pointer transition-all duration-200
                   ${selectedTarget === enemy.id ? 'scale-110' : ''}
                   ${isHurt ? 'animate-enemy-hurt' : ''}

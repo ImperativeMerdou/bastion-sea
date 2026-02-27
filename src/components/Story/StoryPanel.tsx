@@ -663,7 +663,7 @@ export const StoryPanel: React.FC = () => {
       )}
 
       {/* === DIALOGUE AREA — anchored to bottom, never moves === */}
-      <div className="absolute bottom-0 left-0 right-0 z-10" style={{ height: '31%', minHeight: '220px' }}>
+      <div className="absolute bottom-0 left-0 right-0 z-10" style={{ height: '31%', minHeight: '180px' }}>
 
         {/* Decorative dialogue frame header — ornamental separator */}
         {getUiAsset('dialogue_frame') && (
@@ -689,9 +689,9 @@ export const StoryPanel: React.FC = () => {
         {/* Content: portrait + dialogue side by side */}
         <div className="relative h-full flex items-stretch px-4 pb-1 gap-4 z-[1]" style={{ paddingTop: '2rem' }}>
 
-          {/* Portrait — bottom left, CSS gold border with glow */}
+          {/* Portrait — bottom left, CSS gold border with glow. Hidden on mobile for space. */}
           {featuredCharacter && featuredPortrait && (
-            <div style={{ flexShrink: 0, alignSelf: 'flex-end', marginBottom: '28px', textAlign: 'center' as const }}>
+            <div className="hidden md:block" style={{ flexShrink: 0, alignSelf: 'flex-end', marginBottom: '28px', textAlign: 'center' as const }}>
               <div style={{ width: '255px', height: '319px' }}>
                 <img
                   src={featuredPortrait}
@@ -779,10 +779,10 @@ export const StoryPanel: React.FC = () => {
                         <p
                           className={`leading-[1.8] font-narration story-line story-text-shadow ${
                             isDlg
-                              ? 'text-[22px] font-semibold pl-3'
+                              ? 'text-base md:text-[22px] font-semibold pl-3'
                               : line.startsWith('*') || line.startsWith('[')
-                                ? 'text-[20px] font-medium italic'
-                                : 'text-[22px] font-semibold'
+                                ? 'text-sm md:text-[20px] font-medium italic'
+                                : 'text-base md:text-[22px] font-semibold'
                           }`}
                           style={isDlg ? {
                             color: '#F5EDE1',
@@ -875,7 +875,7 @@ export const StoryPanel: React.FC = () => {
                             {String.fromCharCode(65 + i)}.
                           </span>
                           <div className="min-w-0">
-                            <p className="text-ocean-100 font-narration font-semibold group-hover:text-white transition-colors leading-relaxed" style={{ fontSize: '20px' }}>
+                            <p className="text-ocean-100 font-narration font-semibold group-hover:text-white transition-colors leading-relaxed text-base md:text-xl">
                               {choice.text}
                             </p>
                             {choice.consequence && (
