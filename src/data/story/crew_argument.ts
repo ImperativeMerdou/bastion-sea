@@ -27,7 +27,7 @@ export const crewArgumentScene: StoryScene = {
     {
       id: 'argument_03',
       speaker: 'vorreth',
-      speakerName: 'Vorreth Daaz',
+      speakerName: 'Vorreth Khane',
       paragraphs: [
         '"The Daaz Accord tried that."',
         'Four words. The temperature in the galley drops.',
@@ -40,10 +40,38 @@ export const crewArgumentScene: StoryScene = {
       speakerName: 'Delvessa Ghal',
       paragraphs: [
         '"That was a different crew. Different circumstances. Different--"',
+      ],
+    },
+    {
+      id: 'argument_04b',
+      speaker: 'vorreth',
+      speakerName: 'Vorreth Khane',
+      paragraphs: [
         '"Different captain. Same ocean." Vorreth doesn\'t raise his voice. He doesn\'t need to. "I\'m not arguing against intelligence. I\'m arguing against the assumption that intelligence is a substitute for force. It isn\'t. It\'s a complement. One without the other breaks."',
+      ],
+    },
+    {
+      id: 'argument_04c',
+      speaker: 'delvessa',
+      speakerName: 'Delvessa Ghal',
+      paragraphs: [
         'The ledger closes.',
         '"You\'re describing the Wardensea\'s own doctrine. Force backed by intelligence. That\'s not revolution. That\'s replacement."',
+      ],
+    },
+    {
+      id: 'argument_04d',
+      speaker: 'vorreth',
+      speakerName: 'Vorreth Khane',
+      paragraphs: [
         '"Maybe replacement is enough."',
+      ],
+    },
+    {
+      id: 'argument_04e',
+      speaker: 'delvessa',
+      speakerName: 'Delvessa Ghal',
+      paragraphs: [
         '"It isn\'t."',
       ],
     },
@@ -67,12 +95,28 @@ export const crewArgumentScene: StoryScene = {
       paragraphs: [
         'Kovesse is sitting on the counter. She\'s been recording. She\'s always recording. But her Grimoires are face-down on her lap. Not broadcasting. Just recording.',
         '"For the record," she says, "the audience numbers when we look like we know what we\'re doing are triple the numbers when we look like we\'re improvising." She holds up a hand. "I\'m not saying that should decide anything. I\'m saying it\'s data."',
+      ],
+    },
+    {
+      id: 'argument_06b',
+      speaker: 'vorreth',
+      speakerName: 'Vorreth Khane',
+      paragraphs: [
         '"Everything is data to you people," Vorreth says.',
+      ],
+    },
+    {
+      id: 'argument_06c',
+      speaker: 'delvessa',
+      speakerName: 'Delvessa Ghal',
+      paragraphs: [
         '"Yes," Delvessa says. "That\'s the point."',
       ],
     },
     {
       id: 'argument_07',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
       paragraphs: [
         'They\'re both right. You know it. They know it. Dragghen knows it, which is why he rated the argument a two. Not because it\'s bad. Because it\'s incomplete.',
         'Delvessa\'s approach works in a world where the Wardensea plays by economic rules. Vorreth\'s approach works in a world where they don\'t. The Bastion Sea is both worlds depending on which day it is and which island you\'re standing on.',
@@ -119,6 +163,8 @@ export const crewArgumentScene: StoryScene = {
     },
     {
       id: 'argument_08',
+      speaker: 'dragghen',
+      speakerName: 'Dragghen Kolve',
       paragraphs: [
         'The silence after your decision is different from the silence before it. Before, the silence was a gap. A question waiting for an answer. After, it\'s a weight being redistributed. Five people adjusting their expectations to match the thing their captain just said.',
         'Vorreth nods. Once. Whatever you chose, he nods. Because Vorreth Daaz has served captains before and he knows that the decision matters less than the fact that someone made it.',

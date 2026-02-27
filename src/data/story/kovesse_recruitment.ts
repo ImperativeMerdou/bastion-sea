@@ -91,6 +91,8 @@ export const kovesseRecruitmentScene: StoryScene = {
     {
       id: 'kovesse_04',
       title: 'THE GRIMOIRE',
+      speaker: 'kovesse',
+      speakerName: 'Kovesse Grenn',
       paragraphs: [
         'She shows you the device. Not because you ask. Because she can\'t not show you.',
         'Three tablets, each the size of a dinner plate, each covered in runestones that glow faint amber when she touches them. The casings are scratched and dented. One has a crack across the faceplate that she\'s repaired with solder and what looks like a fish bone.',
@@ -122,7 +124,21 @@ export const kovesseRecruitmentScene: StoryScene = {
       id: 'kovesse_07',
       paragraphs: [
         'Dragghen has followed you from the dry dock. He\'s leaning against a piling with his arms crossed, watching the Rathai with the expression of a man who has encountered a force of nature and is waiting to see what it breaks first.',
+      ],
+    },
+    {
+      id: 'kovesse_07b',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         '"You know her?" you ask.',
+      ],
+    },
+    {
+      id: 'kovesse_07c',
+      speaker: 'dragghen',
+      speakerName: 'Dragghen Kolve',
+      paragraphs: [
         '"Everybody knows her. She broadcast my hull repair ratings last week. Dock traffic went up twelve percent because people wanted to watch me yell at boats." He pauses. "I rated the broadcast a five. Good energy. Needs editing."',
         'Kovesse beams like she\'s been knighted.',
       ],
@@ -182,12 +198,35 @@ export const kovesseRecruitmentScene: StoryScene = {
     },
     {
       id: 'kovesse_10',
+      speaker: 'kovesse',
+      speakerName: 'Kovesse Grenn',
       paragraphs: [
         'Her ears go straight forward. In Rathai, that\'s a yes before the mouth catches up.',
         '"I have CONDITIONS. One: I broadcast what I want, when I want. No censorship. No editing. No \'maybe don\'t mention the part where we almost died.\' Two: I get access. Front row. Every meeting, every plan, every confrontation. I\'m not crew. I\'m embedded press." She considers. "Three: someone tall carries my equipment bag. It\'s heavy and I\'m four feet tall and the strap digs into my shoulder."',
         'She looks at Dragghen.',
+      ],
+    },
+    {
+      id: 'kovesse_10b',
+      speaker: 'dragghen',
+      speakerName: 'Dragghen Kolve',
+      paragraphs: [
         '"Don\'t look at me," Dragghen says.',
+      ],
+    },
+    {
+      id: 'kovesse_10c',
+      speaker: 'kovesse',
+      speakerName: 'Kovesse Grenn',
+      paragraphs: [
         '"You\'re the tallest."',
+      ],
+    },
+    {
+      id: 'kovesse_10d',
+      speaker: 'dragghen',
+      speakerName: 'Dragghen Kolve',
+      paragraphs: [
         '"I rate this conversation a two."',
       ],
     },

@@ -40,11 +40,27 @@ export const nightWatchScene: StoryScene = {
     },
     {
       id: 'watch_04',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
       paragraphs: [
         'Silence. Two people not needing to fill the air with words because the air is fine empty.',
         'A fishing boat enters the harbor. Running lights dim. Late return or early departure. Either way, someone out there is working when the rest of the world is sleeping.',
         '"You ever rate the ocean?" you ask.',
+      ],
+    },
+    {
+      id: 'watch_04b',
+      speaker: 'dragghen',
+      speakerName: 'Dragghen Kolve',
+      paragraphs: [
         '"No."',
+      ],
+    },
+    {
+      id: 'watch_04c',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         '"Why not?"',
       ],
     },
@@ -61,6 +77,8 @@ export const nightWatchScene: StoryScene = {
     },
     {
       id: 'watch_06',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
       paragraphs: [
         'The fishing boat docks. Two figures climb out, move ropes, tie off. Practiced motions. Work that doesn\'t need light because the hands remember the knots.',
         'You look at the stars.',

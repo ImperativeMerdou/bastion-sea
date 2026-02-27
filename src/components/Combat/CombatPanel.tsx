@@ -11,7 +11,7 @@ import {
 } from '../../systems/combat';
 import { COMBAT } from '../../constants/balance';
 import { CrewCombo } from '../../types/combat';
-import { getPortrait, getKaryudonPortrait, getCombatBackground, getImagePath, getUiAsset } from '../../utils/images';
+import { getPortrait, getKaryudonPortrait, getCombatBackground, getImagePath } from '../../utils/images';
 import GameIcon from '../UI/GameIcon';
 import { audioManager } from '../../systems/audio';
 import { TextureOverlay } from '../UI/TextureOverlay';
@@ -1100,8 +1100,8 @@ export const CombatPanel: React.FC = () => {
   const getHpColor = (hp: number, maxHp: number): string => {
     if (maxHp <= 0) return 'bg-red-500';
     const pct = hp / maxHp;
-    if (pct > 0.6) return 'bg-green-500';
-    if (pct > 0.3) return 'bg-yellow-500';
+    if (pct > 0.5) return 'bg-green-500';
+    if (pct > 0.25) return 'bg-yellow-500';
     return 'bg-red-500';
   };
 
@@ -1941,81 +1941,79 @@ export const CombatPanel: React.FC = () => {
         {aliveEnemies.map((enemy) => {
           const isHurt = anim.hurtEnemyId === enemy.id;
           const isKilled = anim.killedEnemyId === enemy.id;
+          const hpPercent = enemy.maxHp > 0 ? (enemy.hp / enemy.maxHp) * 100 : 0;
 
           return (
-            <div key={enemy.id} className="flex flex-col items-center gap-2 w-36">
-              {/* Portrait — bigger, dramatic, with hex frame outside */}
-              <div className="relative">
-                <div
-                  className={`w-20 h-20 rounded-lg border-2 overflow-hidden bg-ocean-800 shadow-lg
-                    ${selectedTarget === enemy.id
-                      ? 'border-crimson-400 shadow-crimson-500/40 ring-2 ring-crimson-400/30 scale-110'
-                      : 'border-ocean-500/50 hover:border-ocean-400'}
-                    ${isHurt ? 'animate-enemy-hurt' : ''}
-                    ${isKilled ? 'animate-enemy-shatter' : ''}
-                    transition-all duration-200 cursor-pointer`}
-                  onClick={() => {
-                    if (state.phase === 'player_turn' && !state.animating) {
-                      updateCombatState({ ...state, selectedTarget: enemy.id });
-                    }
-                  }}
-                >
-                  {enemy.portrait && !failedPortraits.has(enemy.id) ? (
-                    <img src={enemy.portrait} alt={enemy.name} className="w-full h-full object-cover" onError={() => setFailedPortraits(prev => new Set(prev).add(enemy.id))} />
-                  ) : !failedPortraits.has(enemy.id) && getImagePath('generic_pirate.webp') ? (
-                    <img src={getImagePath('generic_pirate.webp')!} alt={enemy.name} className="w-full h-full object-cover" onError={() => setFailedPortraits(prev => new Set(prev).add(enemy.id))} />
-                  ) : (
-                    <div className="w-full h-full bg-gradient-to-b from-ocean-600 to-ocean-800 flex items-center justify-center">
-                      <span className="text-2xl">&#9876;</span>
-                    </div>
-                  )}
-                </div>
-                {/* Combat hex frame — extends outside portrait as a border frame */}
-                {getUiAsset('combat_hex_frame') && (
+            <div key={enemy.id} className="flex flex-col items-center gap-1.5" style={{ width: '140px' }}>
+              {/* Portrait container — simple CSS border, no frame overlay */}
+              <div
+                style={{ width: '90px', height: '110px', position: 'relative' }}
+                className={`cursor-pointer transition-all duration-200
+                  ${selectedTarget === enemy.id ? 'scale-110' : ''}
+                  ${isHurt ? 'animate-enemy-hurt' : ''}
+                  ${isKilled ? 'animate-enemy-shatter' : ''}`}
+                onClick={() => {
+                  if (state.phase === 'player_turn' && !state.animating) {
+                    updateCombatState({ ...state, selectedTarget: enemy.id });
+                  }
+                }}
+              >
+                {enemy.portrait && !failedPortraits.has(enemy.id) ? (
                   <img
-                    src={getUiAsset('combat_hex_frame')!}
-                    alt=""
-                    className="absolute pointer-events-none z-[2]"
-                    style={{
-                      top: '-6px',
-                      left: '-6px',
-                      width: 'calc(100% + 12px)',
-                      height: 'calc(100% + 12px)',
-                      objectFit: 'fill',
-                      opacity: 0.6,
-                    }}
-                    draggable={false}
+                    src={enemy.portrait}
+                    alt={enemy.name}
+                    style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', borderRadius: '4px', border: '3px solid #8B0000', boxShadow: '0 0 10px rgba(139,0,0,0.3), inset 0 0 20px rgba(0,0,0,0.3)' }}
+                    onError={() => setFailedPortraits(prev => new Set(prev).add(enemy.id))}
                   />
+                ) : !failedPortraits.has(enemy.id) && getImagePath('generic_pirate.webp') ? (
+                  <img
+                    src={getImagePath('generic_pirate.webp')!}
+                    alt={enemy.name}
+                    style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', borderRadius: '4px', border: '3px solid #8B0000', boxShadow: '0 0 10px rgba(139,0,0,0.3), inset 0 0 20px rgba(0,0,0,0.3)' }}
+                    onError={() => setFailedPortraits(prev => new Set(prev).add(enemy.id))}
+                  />
+                ) : (
+                  <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '4px', border: '3px solid #8B0000', boxShadow: '0 0 10px rgba(139,0,0,0.3)' }} className="bg-gradient-to-b from-ocean-600 to-ocean-800">
+                    <span className="text-3xl">&#9876;</span>
+                  </div>
+                )}
+                {/* Selected target indicator */}
+                {selectedTarget === enemy.id && (
+                  <div style={{ position: 'absolute', top: '-8px', left: '50%', transform: 'translateX(-50%)', zIndex: 3 }}>
+                    <span className="text-crimson-400 text-xs font-display font-bold tracking-wider animate-pulse drop-shadow-lg">&#9660; TARGET</span>
+                  </div>
                 )}
               </div>
 
               {/* Name */}
               <span className="text-ocean-100 text-sm font-display font-bold text-center leading-tight">{enemy.name}</span>
               {enemy.title && (
-                <span className="text-ocean-400 text-xs italic font-narration text-center -mt-1.5">{enemy.title}</span>
+                <span className="text-ocean-400 text-xs italic font-narration text-center -mt-1">{enemy.title}</span>
               )}
 
-              {/* HP Bar — wider, under the portrait */}
-              <div className="w-full">
-                <div className="w-full h-2.5 bg-ocean-800 rounded-full overflow-hidden border border-ocean-600/50">
+              {/* HP Bar — outside portrait, wider, color-coded, 10px height */}
+              <div className="w-full px-1">
+                <div className="w-full h-[10px] bg-ocean-800 rounded overflow-hidden border border-ocean-600/50 shadow-inner">
                   <div
-                    className={`h-full rounded-full hp-bar-damage ${getHpColor(enemy.hp, enemy.maxHp)}`}
-                    style={{ width: `${(enemy.hp / enemy.maxHp) * 100}%` }}
+                    className={`h-full rounded hp-bar-damage transition-all duration-500 ${getHpColor(enemy.hp, enemy.maxHp)}`}
+                    style={{ width: `${hpPercent}%` }}
                   />
                 </div>
-                <span className="text-ocean-400 text-xs text-center block mt-0.5 font-mono">
+                <span className="text-ocean-400 text-xs text-center block mt-0.5 font-mono font-medium">
                   {Math.floor(enemy.hp)}/{Math.floor(enemy.maxHp)}
                 </span>
               </div>
 
               {/* Status effects row */}
-              <div className="flex gap-1 justify-center flex-wrap">
-                {enemy.statusEffects.map((e) => (
-                  <span key={e.id} className="text-xs" title={e.name}>
-                    <GameIcon iconKey={e.type} fallback={e.icon} className="w-4 h-4" />
-                  </span>
-                ))}
-              </div>
+              {enemy.statusEffects.length > 0 && (
+                <div className="flex gap-1 justify-center flex-wrap">
+                  {enemy.statusEffects.map((e) => (
+                    <span key={e.id} className="text-xs bg-ocean-800/60 px-1 py-0.5 rounded border border-ocean-700/40" title={e.name}>
+                      <GameIcon iconKey={e.type} fallback={e.icon} className="w-4 h-4" />
+                    </span>
+                  ))}
+                </div>
+              )}
 
               {/* Intent badge */}
               {state.phase === 'player_turn' && (() => {
@@ -2031,7 +2029,7 @@ export const CombatPanel: React.FC = () => {
                 };
                 const colors = intentColorMap[intent.category] || intentColorMap.attack;
                 return (
-                  <div className={`inline-flex items-center gap-1 px-2 py-1 rounded border text-xs font-bold ${colors}`}>
+                  <div className={`inline-flex items-center gap-1 px-2 py-1 rounded border text-xs font-semibold ${colors}`}>
                     <span className="text-xs">{intent.icon}</span>
                     <span className="tracking-wider text-xs uppercase">{intent.label}</span>
                   </div>
@@ -2055,28 +2053,31 @@ export const CombatPanel: React.FC = () => {
             {state.combatLog.length === 0 ? (
               <div className="text-xs text-ocean-500 italic font-narration py-0.5">The fight begins...</div>
             ) : (
-              state.combatLog.slice(-3).map((entry, i) => (
-                <div key={`ticker-${entry.round}-${i}`} className={`text-xs py-0.5 flex items-start gap-1.5
-                  ${entry.actor === 'Karyudon' ? 'text-ocean-200' : 'text-red-300/80'}`}>
-                  {entry.isCritical && <span className="text-amber-400 font-bold shrink-0">&#9733;</span>}
-                  <span className={`font-bold shrink-0
-                    ${entry.actor === 'Karyudon' ? 'text-amber-400' : 'text-red-400'}`}>
-                    {entry.actor}
-                  </span>
-                  <span className="italic truncate">{entry.text}</span>
-                  {entry.damage && entry.damage > 0 && (
-                    <span className={`shrink-0 font-bold px-1 rounded text-xs
-                      ${entry.actor === 'Karyudon' ? 'text-amber-400' : 'text-red-400'}`}>
-                      {entry.damage} DMG
+              state.combatLog.slice(-3).map((entry, i) => {
+                const isPlayer = entry.actor === 'Karyudon';
+                return (
+                  <div key={`ticker-${entry.round}-${i}`} className={`text-xs py-0.5 flex items-start gap-1.5
+                    ${isPlayer ? 'text-ocean-200' : 'text-red-300/80'}`}>
+                    {entry.isCritical && <span className="text-amber-400 font-bold shrink-0">&#9733;</span>}
+                    <span className={`font-semibold shrink-0
+                      ${isPlayer ? 'text-[#4ECDC4]' : 'text-[#E8845C]'}`}>
+                      {entry.actor}
                     </span>
-                  )}
-                  {entry.effects && entry.effects.length > 0 && (
-                    <span className="text-purple-400 text-xs font-bold shrink-0">
-                      [{entry.effects.join(', ')}]
-                    </span>
-                  )}
-                </div>
-              ))
+                    <span className="italic truncate font-medium">{entry.text}</span>
+                    {entry.damage && entry.damage > 0 && (
+                      <span className={`shrink-0 font-bold px-1 rounded text-xs
+                        ${isPlayer ? 'text-[#4ECDC4]' : 'text-[#E8845C]'}`}>
+                        {entry.damage} DMG
+                      </span>
+                    )}
+                    {entry.effects && entry.effects.length > 0 && (
+                      <span className="text-purple-400 text-xs font-semibold shrink-0">
+                        [{entry.effects.join(', ')}]
+                      </span>
+                    )}
+                  </div>
+                );
+              })
             )}
           </div>
           {/* Expand button */}
@@ -2098,38 +2099,44 @@ export const CombatPanel: React.FC = () => {
             <button onClick={() => setShowFullLog(false)}
               className="text-ocean-400 hover:text-ocean-200 text-sm transition-colors">CLOSE</button>
           </div>
-          <div ref={logRef} className="flex-1 overflow-y-auto px-4 py-2 space-y-1">
-            {state.combatLog.map((entry, i) => (
-              <div key={`log-${entry.round}-${i}`} className={`text-sm py-1 combat-log-entry border-l-2 pl-2 ${
-                entry.actor === 'Karyudon'
-                  ? 'text-ocean-200 border-amber-500/40'
-                  : 'text-red-300/80 border-red-500/40'
-              }`}>
-                <span className="text-ocean-600 text-xs mr-1.5 font-mono">R{entry.round}</span>
-                {entry.isCritical && <span className="text-amber-400 font-bold text-base">&#9733; </span>}
-                <span className={`font-bold ${
-                  entry.actor === 'Karyudon' ? 'text-amber-400' : 'text-red-400'
+          <div ref={logRef} className="flex-1 overflow-y-auto px-4 py-2 space-y-0.5 godtide-scrollbar">
+            {state.combatLog.map((entry, i) => {
+              const isPlayer = entry.actor === 'Karyudon';
+              const isSystem = !isPlayer && !entry.actor;
+              return (
+                <div key={`log-${entry.round}-${i}`} className={`text-sm py-1.5 combat-log-entry border-l-2 pl-3 ${
+                  isPlayer
+                    ? 'text-ocean-200 border-l-[#4ECDC4]/60'
+                    : isSystem
+                      ? 'text-[#A89B8C] border-l-[#A89B8C]/40'
+                      : 'text-red-300/80 border-l-[#E8845C]/50'
                 }`}>
-                  {entry.actor}
-                </span>
-                {' - '}
-                <span className="italic">{entry.text}</span>
-                {entry.damage && entry.damage > 0 && (
-                  <span className={`ml-2 font-bold px-1.5 py-0.5 rounded text-xs ${
-                    entry.actor === 'Karyudon'
-                      ? 'bg-amber-900/30 text-amber-400 border border-amber-500/20'
-                      : 'bg-red-900/30 text-red-400 border border-red-500/20'
+                  <span className="text-ocean-600 text-xs mr-1.5 font-mono font-medium">R{entry.round}</span>
+                  {entry.isCritical && <span className="text-amber-400 font-bold text-base">&#9733; </span>}
+                  <span className={`font-semibold ${
+                    isPlayer ? 'text-[#4ECDC4]' : isSystem ? 'text-[#A89B8C]' : 'text-[#E8845C]'
                   }`}>
-                    {entry.damage} DMG
+                    {entry.actor}
                   </span>
-                )}
-                {entry.effects && entry.effects.length > 0 && (
-                  <span className="text-purple-400 text-xs ml-1 font-bold">
-                    [{entry.effects.join(', ')}]
-                  </span>
-                )}
-              </div>
-            ))}
+                  {' - '}
+                  <span className="italic font-medium">{entry.text}</span>
+                  {entry.damage && entry.damage > 0 && (
+                    <span className={`ml-2 font-bold px-1.5 py-0.5 rounded text-xs ${
+                      isPlayer
+                        ? 'bg-[#4ECDC4]/10 text-[#4ECDC4] border border-[#4ECDC4]/20'
+                        : 'bg-[#E8845C]/10 text-[#E8845C] border border-[#E8845C]/20'
+                    }`}>
+                      {entry.damage} DMG
+                    </span>
+                  )}
+                  {entry.effects && entry.effects.length > 0 && (
+                    <span className="text-purple-400 text-xs ml-1 font-semibold">
+                      [{entry.effects.join(', ')}]
+                    </span>
+                  )}
+                </div>
+              );
+            })}
           </div>
         </div>
       )}
@@ -2140,48 +2147,30 @@ export const CombatPanel: React.FC = () => {
       } transition-colors duration-300 relative z-20`}>
         {/* Player HUD Bar — compact */}
         <div className="px-4 py-2.5 bg-ocean-800/95 border-y border-ocean-600/60 flex items-center gap-4 shrink-0">
-          {/* Player portrait with combat frame */}
-          <div className="relative shrink-0" style={{ width: '48px', height: '48px' }}>
-            <div className={`relative w-12 h-12 rounded border-2 flex items-center justify-center overflow-hidden transition-all duration-300 ${
-              anim.playerHurt
-                ? 'border-red-400 shadow-lg shadow-red-500/30'
-                : anim.showDominionAura
-                  ? 'border-amber-400 animate-dominion-aura'
-                  : 'border-amber-500/50'
-            }`} style={anim.showDominionAura ? { '--aura-color': 'rgba(251,191,36,0.5)' } as React.CSSProperties : undefined}>
-              {anim.showChargeGlow && (
-                <div className="absolute inset-0 animate-charge-glow rounded z-10"
-                  style={{ boxShadow: 'inset 0 0 20px rgba(251,191,36,0.6), 0 0 30px rgba(251,191,36,0.4)' }}
-                />
-              )}
-              {(() => {
-                const portraitSrc = getKaryudonPortrait(gamePhase, mc.dragonFruitEaten) || getPortrait('karyudon');
-                return portraitSrc && !failedPortraits.has('karyudon') ? (
-                  <img src={portraitSrc} alt="Karyudon" className="w-full h-full object-cover" onError={() => setFailedPortraits(prev => new Set(prev).add('karyudon'))} />
-                ) : (
-                  <div className="w-full h-full bg-gradient-to-b from-crimson-700 to-crimson-900 flex items-center justify-center">
-                    <span className="text-2xl">&#128123;</span>
-                  </div>
-                );
-              })()}
-            </div>
-            {/* Combat card frame — extends outside portrait */}
-            {getUiAsset('card_frame_combat') && (
-              <img
-                src={getUiAsset('card_frame_combat')!}
-                alt=""
-                className="absolute pointer-events-none z-[3]"
-                style={{
-                  top: '-5px',
-                  left: '-5px',
-                  width: 'calc(100% + 10px)',
-                  height: 'calc(100% + 10px)',
-                  objectFit: 'fill',
-                  opacity: 0.6,
-                }}
-                draggable={false}
+          {/* Player portrait — simple CSS border, no frame overlay */}
+          <div style={{ width: '80px', height: '100px', flexShrink: 0, position: 'relative' }}>
+            {/* Charge glow effect */}
+            {anim.showChargeGlow && (
+              <div
+                className="animate-charge-glow"
+                style={{ position: 'absolute', inset: 0, zIndex: 10, borderRadius: '0.5rem', boxShadow: 'inset 0 0 20px rgba(251,191,36,0.6), 0 0 30px rgba(251,191,36,0.4)', pointerEvents: 'none' }}
               />
             )}
+            {(() => {
+              const portraitSrc = getKaryudonPortrait(gamePhase, mc.dragonFruitEaten) || getPortrait('karyudon');
+              return portraitSrc && !failedPortraits.has('karyudon') ? (
+                <img
+                  src={portraitSrc}
+                  alt="Karyudon"
+                  style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', borderRadius: '4px', border: '3px solid #D4A574', boxShadow: '0 0 10px rgba(212,165,116,0.3), inset 0 0 20px rgba(0,0,0,0.3)' }}
+                  onError={() => setFailedPortraits(prev => new Set(prev).add('karyudon'))}
+                />
+              ) : (
+                <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '4px', border: '3px solid #D4A574', boxShadow: '0 0 10px rgba(212,165,116,0.3)' }} className="bg-gradient-to-b from-crimson-700 to-crimson-900">
+                  <span className="text-2xl">&#128123;</span>
+                </div>
+              );
+            })()}
           </div>
 
           {/* Name + Bars */}
@@ -2227,26 +2216,26 @@ export const CombatPanel: React.FC = () => {
             {/* HP + SP side by side */}
             <div className="flex items-center gap-3">
               <div className="flex items-center gap-1.5 flex-1">
-                <span className={`text-xs font-bold w-5 ${state.player.hp / state.player.maxHp < 0.25 ? 'text-red-400 animate-pulse' : 'text-red-400'}`}>HP</span>
-                <div className="flex-1 h-3 bg-ocean-700 rounded-full overflow-hidden">
+                <span className={`text-xs font-semibold w-5 ${state.player.hp / state.player.maxHp < 0.25 ? 'text-red-400 animate-pulse' : 'text-red-400'}`}>HP</span>
+                <div className="flex-1 h-[10px] bg-ocean-700 rounded overflow-hidden border border-ocean-600/40 shadow-inner">
                   <div
-                    className={`h-full rounded-full hp-bar-damage ${getHpColor(state.player.hp, state.player.maxHp)}`}
+                    className={`h-full rounded hp-bar-damage transition-all duration-500 ${getHpColor(state.player.hp, state.player.maxHp)}`}
                     style={{ width: `${(state.player.hp / state.player.maxHp) * 100}%` }}
                   />
                 </div>
-                <span className={`text-xs font-mono w-16 text-right ${state.player.hp / state.player.maxHp < 0.25 ? 'text-red-400' : 'text-ocean-300'}`}>
+                <span className={`text-xs font-mono font-medium w-16 text-right ${state.player.hp / state.player.maxHp < 0.25 ? 'text-red-400' : 'text-ocean-300'}`}>
                   {Math.floor(state.player.hp)}/{Math.floor(state.player.maxHp)}
                 </span>
               </div>
               <div className="flex items-center gap-1.5 flex-1">
-                <span className={`text-xs font-bold w-5 ${state.player.stamina < 10 ? 'text-blue-300 animate-pulse' : 'text-blue-400'}`}>SP</span>
-                <div className="flex-1 h-2.5 bg-ocean-700 rounded-full overflow-hidden">
+                <span className={`text-xs font-semibold w-5 ${state.player.stamina < 10 ? 'text-blue-300 animate-pulse' : 'text-blue-400'}`}>SP</span>
+                <div className="flex-1 h-[10px] bg-ocean-700 rounded overflow-hidden border border-ocean-600/40 shadow-inner">
                   <div
-                    className="h-full rounded-full bg-blue-400 stamina-bar-fill"
+                    className="h-full rounded bg-blue-400 stamina-bar-fill transition-all duration-500"
                     style={{ width: `${(state.player.stamina / state.player.maxStamina) * 100}%` }}
                   />
                 </div>
-                <span className={`text-xs font-mono w-16 text-right ${state.player.stamina < 10 ? 'text-blue-300' : 'text-ocean-300'}`}>
+                <span className={`text-xs font-mono font-medium w-16 text-right ${state.player.stamina < 10 ? 'text-blue-300' : 'text-ocean-300'}`}>
                   {Math.floor(state.player.stamina)}/{Math.floor(state.player.maxStamina)}
                 </span>
               </div>
@@ -2369,7 +2358,7 @@ export const CombatPanel: React.FC = () => {
                           }}
                           disabled={disabled}
                           title={isLocked ? (unlockDesc || 'Locked') : `${action.description}${action.effects?.length ? '\nEffects: ' + action.effects.map(e => e.type).join(', ') : ''}${action.cooldown > 0 ? `\nCooldown: ${action.cooldown} rounds` : ''}`}
-                          className={`w-full combat-action-btn text-left px-3 py-2.5 border rounded transition-all duration-150 bg-ocean-800/60 ${
+                          className={`w-full combat-action-btn text-left px-3 py-3 border rounded transition-all duration-150 bg-ocean-800/60 ${
                             isLocked
                               ? 'border-ocean-700/50 bg-ocean-900/70 opacity-50 cursor-not-allowed'
                               : disabled
@@ -2393,11 +2382,11 @@ export const CombatPanel: React.FC = () => {
                               ? <span className="text-base">&#128274;</span>
                               : <span className="text-base">{renderCategoryIcon(action.category)}</span>
                             }
-                            <span className={`text-sm font-bold tracking-wide ${
-                              isLocked ? 'text-ocean-500' :
-                              isSpecial ? 'text-amber-300' :
-                              isKingAbility ? 'text-purple-300' :
-                              'text-ocean-100'
+                            <span className={`font-semibold tracking-wide ${
+                              isLocked ? 'text-ocean-500 text-sm' :
+                              isSpecial ? 'text-amber-300 text-[17px]' :
+                              isKingAbility ? 'text-purple-300 text-[17px]' :
+                              'text-ocean-100 text-[17px]'
                             }`}>
                               {action.name}
                             </span>

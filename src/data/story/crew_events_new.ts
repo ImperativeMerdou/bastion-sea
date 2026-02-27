@@ -462,7 +462,21 @@ export const kovesseEvent03: StoryScene = {
       paragraphs: [
         'She\'s quiet. Kovesse Grenn, quiet. That might be the rarest thing in the Bastion Sea.',
         '"Captain. Can I tell you something stupid?"',
+      ],
+    },
+    {
+      id: 'kov_03_5b',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         '"Everything you say is at least a little stupid. Go ahead."',
+      ],
+    },
+    {
+      id: 'kov_03_5c',
+      speaker: 'kovesse',
+      speakerName: 'Kovesse Grenn',
+      paragraphs: [
         '"The Academy expelled me because I broke their rules. You hired me because I break rules." She touches the Pulse Mapper. The hum changes pitch slightly under her fingers. "I keep waiting for you to tell me to stop breaking things." She swallows. "I really need you to not do that."',
       ],
     },
@@ -629,12 +643,33 @@ export const suulenEvent03: StoryScene = {
     },
     {
       id: 'suu_03_3',
-      speaker: 'suulen',
-      speakerName: 'Suulen',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
       paragraphs: [
         '"It\'s the middle of the night, Suulen."',
+      ],
+    },
+    {
+      id: 'suu_03_3b',
+      speaker: 'suulen',
+      speakerName: 'Suulen Vassere',
+      paragraphs: [
         '"Yes."',
+      ],
+    },
+    {
+      id: 'suu_03_3c',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         '"Normal people make plans during daylight."',
+      ],
+    },
+    {
+      id: 'suu_03_3d',
+      speaker: 'suulen',
+      speakerName: 'Suulen Vassere',
+      paragraphs: [
         '"I\'m eighty-seven. I\'ve spent half my life underground. \'Normal\' left a long time ago." A pause. "Please."',
         'Suulen doesn\'t say please. You get up.',
       ],
@@ -890,10 +925,24 @@ export const tessekEvent03: StoryScene = {
     },
     {
       id: 'tes_03_5',
+      speaker: 'tessek',
+      speakerName: 'Tessek Vayne',
       paragraphs: [
         'Tessek is calm. Almost serene. That\'s the most dangerous version of Tessek.',
         '"I\'ll fight. One match. Whatever name I give the finishing strike is the one that goes into the Windrow record." He looks at Dorum like he\'s already won. "That\'s my price. One official entry in the Windrow combat registry. Technique name of my choosing."',
+      ],
+    },
+    {
+      id: 'tes_03_5b',
+      paragraphs: [
         'Dorum squints. "That\'s it? Just a name?"',
+      ],
+    },
+    {
+      id: 'tes_03_5c',
+      speaker: 'tessek',
+      speakerName: 'Tessek Vayne',
+      paragraphs: [
         '"Just a name."',
       ],
     },
@@ -957,7 +1006,19 @@ export const tessekEvent03: StoryScene = {
       paragraphs: [
         'One cut. The claymore splits in two. The chain armor separates at the shoulder. The opponent is on the ground, untouched, his weapon in pieces around him. He never saw it.',
         'Tessek sheathes Redtide. Turns to Dorum. "The name."',
+      ],
+    },
+    {
+      id: 'tes_03_8b',
+      paragraphs: [
         '"What... what was that?"',
+      ],
+    },
+    {
+      id: 'tes_03_8c',
+      speaker: 'tessek',
+      speakerName: 'Tessek Vayne',
+      paragraphs: [
         '"Red Line: Genesis." He says it like it\'s always existed. Like the world just needed to catch up.',
       ],
     },
@@ -1009,7 +1070,7 @@ export const orrenEvent01: StoryScene = {
     {
       id: 'orr_01_3',
       speaker: 'orren',
-      speakerName: 'Orren Mahk',
+      speakerName: 'Orren Dael',
       expression: 'fear',
       paragraphs: [
         '"Yes. Sir. Captain. Sorry." He tries to let go of the railing. His left hand sticks. Magnetized. He yanks it free with a pop and a shower of sparks, shakes his fingers out like they\'re burning. "I\'m Orren. Orren Mahk. Pettha said you needed a helmsman. I can steer. I\'m good at steering. The lightning thing isn\'t usually this--" He looks at his hands. A bolt jumps between his thumb and forefinger. "...New ship. New people. It gets worse when I\'m nervous."',
@@ -1027,7 +1088,7 @@ export const orrenEvent01: StoryScene = {
     {
       id: 'orr_01_5',
       speaker: 'orren',
-      speakerName: 'Orren Mahk',
+      speakerName: 'Orren Dael',
       expression: 'grim',
       paragraphs: [
         '"Nn." He swallows. "Storm Eel." Says it the way you\'d say "live grenade" or "terminal diagnosis." "Element class. I was working cargo for Pettha, sorting a seized smuggler\'s shipment. Found it in a crate between two bags of rice. I thought it was food." He looks at you, bracing for the laugh. "I was hungry, Captain. I ate a God Fruit because I was hungry."',
@@ -1045,7 +1106,7 @@ export const orrenEvent01: StoryScene = {
     {
       id: 'orr_01_7',
       speaker: 'orren',
-      speakerName: 'Orren Mahk',
+      speakerName: 'Orren Dael',
       paragraphs: [
         '"Tch." He peels the fork off his boot and sets it on the railing. It slides back immediately, clinking against his buckle. "...That happens. A lot."',
       ],
@@ -1060,7 +1121,7 @@ export const orrenEvent01: StoryScene = {
     {
       id: 'orr_01_9',
       speaker: 'orren',
-      speakerName: 'Orren Mahk',
+      speakerName: 'Orren Dael',
       expression: 'fear',
       paragraphs: [
         '"Ghhk-- I\'M SORRY. I didn\'t mean to-- was that me? That was me. I\'m so sorry, I can pay for-- do you need me to-- I\'m sorry."',
@@ -1120,7 +1181,7 @@ export const orrenEvent01: StoryScene = {
     {
       id: 'orr_01_after_choice',
       speaker: 'orren',
-      speakerName: 'Orren Mahk',
+      speakerName: 'Orren Dael',
       paragraphs: [
         'His ears settle. Not flat, not perked. Hovering at half-mast. For Orren, that is the closest thing to calm.',
         '"I\'ll try to keep the magnetism under control. The compass should be fine as long as I stay at least ten feet from it." He pauses. "Fifteen, maybe. Suulen might have to navigate by stars for a while."',
@@ -1128,9 +1189,15 @@ export const orrenEvent01: StoryScene = {
     },
     {
       id: 'orr_01_end',
-
       paragraphs: [
         'He walks toward the helm. The fork follows him across the deck, sliding along the planks like a tiny metal puppy. He doesn\'t notice. Kovesse does. She\'s already cataloguing ear positions.',
+      ],
+    },
+    {
+      id: 'orr_01_endb',
+      speaker: 'dragghen',
+      speakerName: 'Dragghen Kolve',
+      paragraphs: [
         'From the upper deck, Dragghen watches the compass spin as Orren passes. He pulls out his notebook. Considers.',
         '"Compass reliability: two." A pause. "Crew member: four."',
       ],
@@ -1177,7 +1244,7 @@ export const vorrethEvent01: StoryScene = {
     {
       id: 'vor_01_3',
       speaker: 'vorreth',
-      speakerName: 'Vorreth Daaz',
+      speakerName: 'Vorreth Khane',
       paragraphs: [
         '"Correct." Low voice. Not quiet -- low. Chest-deep. He reaches into his coat and pulls out a piece of paper. Unfolds it. Lays it flat beside the map with two fingers, precise as a surgeon.',
         'A list. Eighteen names in steady block letters. Three crossed out with single horizontal lines. Clean strokes. No scratch marks, no hesitation. Done.',
@@ -1194,7 +1261,7 @@ export const vorrethEvent01: StoryScene = {
     {
       id: 'vor_01_5',
       speaker: 'vorreth',
-      speakerName: 'Vorreth Daaz',
+      speakerName: 'Vorreth Khane',
       paragraphs: [
         '"My crew." He taps three of the crossed-out names. Index finger. Deliberate. "Found these three. Broke them out myself over the past year." He folds the list once, then unfolds it, as if checking the names are still there. "Fifteen remain. Four prisons. Four different islands across the Bastion Sea."',
         'His finger moves to the map. Traces a line from Tavven Shoal through the chain, stopping at four points. Four prisons. Four walls between him and the names on that paper.',
@@ -1222,7 +1289,7 @@ export const vorrethEvent01: StoryScene = {
     {
       id: 'vor_01_8',
       speaker: 'vorreth',
-      speakerName: 'Vorreth Daaz',
+      speakerName: 'Vorreth Khane',
       paragraphs: [
         '"...to the prisons."',
         'He looks at you. No embarrassment. No apology. Not even a blink. His face says: yes, that happened. It will happen again. Move on.',
@@ -1270,7 +1337,7 @@ export const vorrethEvent01: StoryScene = {
     {
       id: 'vor_01_sleep_response',
       speaker: 'vorreth',
-      speakerName: 'Vorreth Daaz',
+      speakerName: 'Vorreth Khane',
       paragraphs: [
         '"Nn." He blinks once. Slowly. "Was resting my eyes." Complete conviction. The unshakable conviction of a man who has deployed this excuse for decades and will continue deploying it until the sun burns out. "Tactical micro-rest. Conserves energy."',
       ],
@@ -1285,7 +1352,7 @@ export const vorrethEvent01: StoryScene = {
     {
       id: 'vor_01_end2',
       speaker: 'vorreth',
-      speakerName: 'Vorreth Daaz',
+      speakerName: 'Vorreth Khane',
       paragraphs: [
         '"Hrm. One more thing." He looks at Danzai. Your weapon. Studies it the way a smith studies another smith\'s work -- slow, critical, thorough. His eyes track the blade geometry, the grip wrap, the balance point. Takes his time. Then:',
         '"Decent."',
@@ -1302,18 +1369,24 @@ export const vorrethEvent01: StoryScene = {
     {
       id: 'vor_01_end4',
       speaker: 'vorreth',
-      speakerName: 'Vorreth Daaz',
+      speakerName: 'Vorreth Khane',
       paragraphs: [
         '"Which way is the deck?"',
       ],
     },
     {
       id: 'vor_01_end5',
-
       paragraphs: [
         'He has been on the ship for four hours.',
         'You point. He nods. He walks in the wrong direction. You let him.',
         'Suulen appears from the shadows of the corridor, silently redirects him with a hand on his elbow, and disappears. Vorreth doesn\'t notice. Or pretends not to.',
+      ],
+    },
+    {
+      id: 'vor_01_end5b',
+      speaker: 'dragghen',
+      speakerName: 'Dragghen Kolve',
+      paragraphs: [
         'From the deck above, you hear Dragghen\'s voice.',
         '"New crew member: three."',
         'Then, after a long pause:',
@@ -1357,7 +1430,7 @@ export const orrenEvent02: StoryScene = {
     {
       id: 'orr_02_3',
       speaker: 'orren',
-      speakerName: 'Orren Mahk',
+      speakerName: 'Orren Dael',
       expression: 'fear',
       paragraphs: [
         '"Memory." Barely a voice. More like air shaped into a word. His amber-gold eyes glow faint in the dark, two dull coins. The only light on the lower deck. "Six months ago. Before Pettha sent me here. Market on Tavven Shoal. Buying fish." He swallows. "Normal day."',
@@ -1376,7 +1449,7 @@ export const orrenEvent02: StoryScene = {
     {
       id: 'orr_02_5',
       speaker: 'orren',
-      speakerName: 'Orren Mahk',
+      speakerName: 'Orren Dael',
       expression: 'fear',
       paragraphs: [
         '"Twenty feet." His throat bobs. "Everyone in that radius dropped. Just-- collapsed. Strings cut." His voice cracks on the next word. "Three hospitalized. One was a kid. Eight years old. She was buying candied nuts with her mother."',
@@ -1424,9 +1497,23 @@ export const orrenEvent02: StoryScene = {
     },
     {
       id: 'orr_02_6',
+      speaker: 'orren',
+      speakerName: 'Orren Dael',
       paragraphs: [
         'He looks up. Amber-gold eyes wet, catching light that shouldn\'t be there. "You... really think so?"',
+      ],
+    },
+    {
+      id: 'orr_02_6b',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         '"Nn. A Storm Eel at full output should have done a lot worse than headaches, Orren. Something in you was already pulling back. Even when you couldn\'t think straight, the fruit held."',
+      ],
+    },
+    {
+      id: 'orr_02_6c',
+      paragraphs: [
         'He\'s quiet. Processing. Orren processes things the way he handles everything -- careful, slow, like the world might shatter if he moves too fast.',
       ],
     },
@@ -1533,7 +1620,7 @@ export const orrenEvent03: StoryScene = {
     {
       id: 'orr_03_5b',
       speaker: 'orren',
-      speakerName: 'Orren Mahk',
+      speakerName: 'Orren Dael',
       expression: 'angry',
       paragraphs: [
         'Orren steps forward. Ears still flat. But his chin lifts. His hands open at his sides and the sparks between his fingers surge bright enough to turn the dock planks blue.',
@@ -1567,19 +1654,34 @@ export const orrenEvent03: StoryScene = {
     {
       id: 'orr_03_8',
       speaker: 'orren',
-      speakerName: 'Orren Mahk',
+      speakerName: 'Orren Dael',
       paragraphs: [
         '"Tch. I hate the ear thing." His left ear perks up anyway. Traitorous, traitorous ear.',
       ],
     },
     {
       id: 'orr_03_end',
-
+      speaker: 'orren',
+      speakerName: 'Orren Dael',
       paragraphs: [
         'Dragghen watches from the railing. Arms crossed. Face unreadable. Orren catches his eye.',
         '"Rate that performance?"',
+      ],
+    },
+    {
+      id: 'orr_03_endb',
+      speaker: 'dragghen',
+      speakerName: 'Dragghen Kolve',
+      paragraphs: [
         'Dragghen considers it. The way he considers everything. Load-bearing capacity, structural integrity, whether something will hold under pressure.',
         '"Five."',
+      ],
+    },
+    {
+      id: 'orr_03_endc',
+      speaker: 'orren',
+      speakerName: 'Orren Dael',
+      paragraphs: [
         'Orren\'s tail wags once. Just once. "I\'ll take it."',
       ],
     },
@@ -1620,7 +1722,7 @@ export const vorrethEvent02: StoryScene = {
     {
       id: 'vor_02_3',
       speaker: 'vorreth',
-      speakerName: 'Vorreth Daaz',
+      speakerName: 'Vorreth Khane',
       paragraphs: [
         '"Anniversary." He says it to the water. Doesn\'t look at you. "Four years tonight."',
         'He doesn\'t wait for the question. Vorreth tells stories the way he fights: forward, no feints, no pacing.',
@@ -1638,7 +1740,7 @@ export const vorrethEvent02: StoryScene = {
     {
       id: 'vor_02_5',
       speaker: 'vorreth',
-      speakerName: 'Vorreth Daaz',
+      speakerName: 'Vorreth Khane',
       paragraphs: [
         '"Wardensea. One night. Three Forged-tier officers and a battle fleet." His voice doesn\'t waver. No anger. No bitterness. Facts, laid out like bones on a table. "Hit all three islands at once. I fought for six hours. Thirty-two soldiers. Hand to hand. King Dominion against steel." His jaw sets. "When three Forged-tier officers finally pinned me, I was the last one standing on my ship."',
         '"Barren Gate prison. Two years." He looks up. Stars. His throat works. "Stone walls. Iron bars. No sky."',
@@ -1685,7 +1787,7 @@ export const vorrethEvent02: StoryScene = {
     {
       id: 'vor_02_6',
       speaker: 'vorreth',
-      speakerName: 'Vorreth Daaz',
+      speakerName: 'Vorreth Khane',
       paragraphs: [
         'Oni quiet. The deck creaks under his weight and even that sound seems to hush itself.',
         '"They were stronger. Wasn\'t enough." No self-pity. Pure assessment. A fighter measuring the gap between where he was and where he needs to be. His fists clench on the railing. "Next time I won\'t be weaker."',
@@ -1694,11 +1796,22 @@ export const vorrethEvent02: StoryScene = {
     },
     {
       id: 'vor_02_end',
-
       paragraphs: [
         'He falls asleep. Standing. At the prow. One hand on the railing, chin dropping, and the snoring kicks in within seconds. Deep. Rumbling. The deck planks vibrate under your boots.',
+      ],
+    },
+    {
+      id: 'vor_02_endb',
+      speaker: 'suulen',
+      speakerName: 'Suulen Vassere',
+      paragraphs: [
         'Suulen materializes from nowhere. Drapes a blanket over his shoulders without breaking stride. Doesn\'t slow down.',
         '"He does this."',
+      ],
+    },
+    {
+      id: 'vor_02_endc',
+      paragraphs: [
         'Gone. He snores louder. The blanket doesn\'t move. Neither does the hand on the railing. Two hundred and eighty million sovereigns of sleeping Oni, wrapped in a wool blanket by a woman who weighs a third of what he does.',
       ],
     },
@@ -1741,7 +1854,7 @@ export const vorrethEvent03: StoryScene = {
     {
       id: 'vor_03_3',
       speaker: 'vorreth',
-      speakerName: 'Vorreth Daaz',
+      speakerName: 'Vorreth Khane',
       paragraphs: [
         'Vorreth turns. Slow. The whole port holds its breath.',
         '"Hm." His voice is calm. Conversational. A man discussing rain. "Thirty-two soldiers. Six hours. Counted every one." He looks at the young officer. The officer\'s hand is on his weapon. Hand trembling on the grip. "Did they teach you that at the academy?" His head tilts. Half an inch. "Or did they leave it out?"',
@@ -1767,7 +1880,7 @@ export const vorrethEvent03: StoryScene = {
     {
       id: 'vor_03_6',
       speaker: 'vorreth',
-      speakerName: 'Vorreth Daaz',
+      speakerName: 'Vorreth Khane',
       paragraphs: [
         '"...anyway, the eggs were overcooked. Two out of ten. Where were we?"',
       ],
@@ -1810,7 +1923,7 @@ export const vorrethEvent03: StoryScene = {
     {
       id: 'vor_03_7',
       speaker: 'vorreth',
-      speakerName: 'Vorreth Daaz',
+      speakerName: 'Vorreth Khane',
       paragraphs: [
         '"Heh." Full grin. Both tusks out. The kind of expression that makes small children either laugh or dive behind their parents. "Monster and monster. Wardensea won\'t know what hit them." He claps your shoulder. Your knees buckle. King Dominion doesn\'t do gentle.',
       ],
@@ -1825,7 +1938,7 @@ export const vorrethEvent03: StoryScene = {
     {
       id: 'vor_03_end',
       speaker: 'vorreth',
-      speakerName: 'Vorreth Daaz',
+      speakerName: 'Vorreth Khane',
       paragraphs: [
         '"...which way is the ship?"',
       ],
@@ -1874,9 +1987,25 @@ export const delvessaEvent03: StoryScene = {
     },
     {
       id: 'del_03_3',
+      speaker: 'delvessa',
+      speakerName: 'Delvessa Ghal',
       paragraphs: [
         '"Tch. Everything in this ledger is personal. It\'s my handwriting." Automatic. Practiced. The deflection of a woman who has had this conversation with herself a hundred times. But she doesn\'t tell you to leave. Doesn\'t close the book all the way. "It\'s a letter. Four years old. Never sent."',
+      ],
+    },
+    {
+      id: 'del_03_3b',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         '"To whom?"',
+      ],
+    },
+    {
+      id: 'del_03_3c',
+      speaker: 'delvessa',
+      speakerName: 'Delvessa Ghal',
+      paragraphs: [
         'She adjusts her glasses, though they don\'t need adjusting. "My mother. Vessen Province. Kolmari territory." She presses her palm flat on the ledger. Holding it shut. Pressing down like it might bleed. "She thinks I\'m still filing trade audits in a government office. She thinks I have a pension."',
       ],
     },

@@ -21,6 +21,7 @@ import { useWorldReactions } from './hooks/useWorldReactions';
 import { useAudioManager } from './hooks/useAudio';
 import { Howler } from 'howler';
 import { ambienceManager } from './systems/ambience';
+import { musicManager } from './systems/music';
 
 const panelVariants = {
   initial: { opacity: 0, y: 8 },
@@ -85,6 +86,8 @@ const App: React.FC = () => {
       // Resume ambience AudioContext and re-trigger current ambience
       ambienceManager.forceResume();
       ambienceManager.retrigger();
+      // Re-trigger music: it was called on mount but Howler was suspended
+      musicManager.retrigger();
       // Remove listeners after first interaction
       window.removeEventListener('click', unlockAudio);
       window.removeEventListener('keydown', unlockAudio);

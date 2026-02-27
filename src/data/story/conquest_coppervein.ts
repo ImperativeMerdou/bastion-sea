@@ -13,24 +13,82 @@ export const copperveinConquestScene: StoryScene = {
       paragraphs: [
         'You return to Coppervein with a plan. A business plan.',
         '"They\'re Gorundai," Dragghen says, standing at the prow as the copper cliffs rise from the sea. "You can\'t buy them. You can\'t scare them. You have to convince them that what you\'re offering is better than what they have."',
+      ],
+    },
+    {
+      id: 'coppervein_conquest_01b',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         '"And if I can\'t?"',
+      ],
+    },
+    {
+      id: 'coppervein_conquest_01c',
+      speaker: 'dragghen',
+      speakerName: 'Dragghen Kolve',
+      paragraphs: [
         '"Then you leave. Because taking Coppervein by force means killing miners. And if you do that--" His jaw sets. "--you do it without me."',
+      ],
+    },
+    {
+      id: 'coppervein_conquest_01d',
+      speaker: 'delvessa',
+      speakerName: 'Delvessa Ghal',
+      paragraphs: [
         'Delvessa clears her throat. "He\'s right about the approach. But he\'s also right that we need this island. Coppervein controls forty percent of the region\'s copper production. Whoever holds Coppervein holds the raw materials for every ship, every weapon, every Grimoire relay in the Bastion Sea."',
+      ],
+    },
+    {
+      id: 'coppervein_conquest_01e',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         '"Then we convince them."',
+      ],
+    },
+    {
+      id: 'coppervein_conquest_01f',
+      speaker: 'kovesse',
+      speakerName: 'Kovesse Grenn',
+      paragraphs: [
         '"Or you could just walk in there and be you," Kovesse suggests. "Seven-foot Oni with world conquest ambitions and a spiked war club. That\'s a persuasive argument all by itself."',
+      ],
+    },
+    {
+      id: 'coppervein_conquest_01g',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         '"That\'s not persuasion, Kovesse."',
+      ],
+    },
+    {
+      id: 'coppervein_conquest_01h',
+      speaker: 'kovesse',
+      speakerName: 'Kovesse Grenn',
+      paragraphs: [
         '"It\'s aspirational marketing."',
       ],
     },
     {
       id: 'coppervein_conquest_02',
       title: 'THE VOTING HALL',
+      speaker: 'hella_foreman',
+      speakerName: 'Foreman Hella',
       paragraphs: [
         'The Coppervein Cooperative meets in a building that has been rebuilt four times. The walls bear the scars of previous disagreements: fist-shaped dents in the copper-reinforced panels, a crack in the floor from someone stamping too hard during a labor dispute in Year Three.',
         'Two hundred miners sit on stone benches. They\'re Gorundai, mostly, thick-limbed, stone-skinned, built for endurance. A few humans. One Morventhi who runs deep-shaft surveys. They look at you the way miners look at everything: measuring the weight, estimating the value, calculating the cost.',
         'Foreman Hella speaks first. She\'s broad-shouldered even by Gorundai standards, with copper dust permanently embedded in the creases of her face.',
         '"The Oni Renegade Karyudon requests an audience with the Cooperative. He has a proposal. The Cooperative will hear it. Then we vote."',
         'She looks at you. "You have ten minutes. Talk fast."',
+      ],
+    },
+    {
+      id: 'coppervein_conquest_02b',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         'You grin. "I don\'t do anything fast."',
         'Three miners laugh. That\'s a start.',
       ],
@@ -90,6 +148,8 @@ export const copperveinConquestScene: StoryScene = {
     {
       id: 'coppervein_conquest_kade',
       title: 'THE SEAM',
+      speaker: 'maren_kade',
+      speakerName: 'Maren Kade',
       paragraphs: [
         'The hall goes quiet when she walks in.',
         'Maren Kade is six-foot-four. Gorundai, thick-shouldered, hands scarred so deep the calluses have calluses. Her forearms are grey with raw Iron, not refined, not elegant, just hard. Thirty years of mine work compressed into a body that could punch through a support beam and has, twice, during contract disputes.',
@@ -105,6 +165,8 @@ export const copperveinConquestScene: StoryScene = {
     {
       id: 'coppervein_conquest_04',
       title: 'THE VOTE',
+      speaker: 'hella_foreman',
+      speakerName: 'Foreman Hella',
       paragraphs: [
         'The Cooperative votes.',
         'It takes three minutes. Gorundai consensus is efficient: state your position, hear the counter, punch a wall if you disagree. Fourteen walls are punched. Two benches break. One miner cries, which in Gorundai culture is considered a valid form of political expression.',
@@ -113,6 +175,13 @@ export const copperveinConquestScene: StoryScene = {
         'The pile grows. You watch. Dragghen watches. Delvessa has her ledger open but she\'s not writing. She\'s holding her breath.',
         'Hella straightens.',
         '"One hundred and thirty-seven white. Sixty-three copper."',
+      ],
+    },
+    {
+      id: 'coppervein_conquest_04b',
+      speaker: 'maren_kade',
+      speakerName: 'Maren Kade',
+      paragraphs: [
         'Kade doesn\'t move. Her face doesn\'t change. But the Iron in her forearms pulses, and two miners near her step back without thinking about it.',
         '"This isn\'t over," she says. Not to you. Not to Hella. To the hall. To the rock. To the island that she built with her hands and just lost with a vote. She walks out. The door frame cracks where her shoulder hits it. She doesn\'t look back.',
         'Dragghen exhales like he\'s been underwater for ten years.',
@@ -120,19 +189,54 @@ export const copperveinConquestScene: StoryScene = {
     },
     {
       id: 'coppervein_conquest_05',
-      speaker: 'delvessa',
-      speakerName: 'Delvessa Ghal',
+      speaker: 'hella_foreman',
+      speakerName: 'Foreman Hella',
       title: 'COPPER AND IRON',
       paragraphs: [
         'You shake Hella\'s hand. It\'s like gripping warm stone.',
         '"The Cooperative has voted to accept your proposal. Coppervein enters into a formal alliance with the Karyudon fleet." She squeezes. Hard. "But understand this, Oni: we voted you in. We can vote you out. This is Coppervein. The rock decides."',
+      ],
+    },
+    {
+      id: 'coppervein_conquest_05b',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         '"Fine."',
         'Dragghen is standing by the voting hall door. As the miners file out and the hall empties, he walks to the wall of Shaft Seven memorials. Names carved in copper. Miners who went down and didn\'t come back.',
         'He touches one name. You don\'t ask whose.',
+      ],
+    },
+    {
+      id: 'coppervein_conquest_05c',
+      speaker: 'delvessa',
+      speakerName: 'Delvessa Ghal',
+      paragraphs: [
         'On the walk back to the dock, Delvessa falls into step beside you. She has her folio open.',
         '"Sixty-three voted no," she says. "That\'s forty percent opposition. We need to address the Kade faction before the first supply shipment or we\'ll have labor disruptions within a week."',
+      ],
+    },
+    {
+      id: 'coppervein_conquest_05d',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         '"Already thinking about it."',
+      ],
+    },
+    {
+      id: 'coppervein_conquest_05e',
+      speaker: 'delvessa',
+      speakerName: 'Delvessa Ghal',
+      paragraphs: [
         '"I have a preliminary proposal. You won\'t like the cost."',
+      ],
+    },
+    {
+      id: 'coppervein_conquest_05f',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         '"When do I ever?"',
       ],
     },

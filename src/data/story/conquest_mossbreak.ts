@@ -7,12 +7,28 @@ export const mossbreakConquestScene: StoryScene = {
     {
       id: 'mossbreak_conquest_01',
       title: 'THE RETURN',
+      speaker: 'bartender',
+      speakerName: 'Bartender',
       paragraphs: [
         'You come back to Mossbreak with a reputation.',
         'Last time, you were a curiosity, an Oni with a spiked club and ambitions that sounded like jokes. Now, Tavven Shoal flies under your flag. Keldriss bends to your will. Durrek Garrison, the Iron Gate, fell to your crew in broad daylight while twenty thousand people watched on Grimoire channels.',
         'When you walk into the tavern this time, nobody pretends not to notice.',
         '"Well," says the bartender, pouring a drink she already knows you\'ll order, "the mountain walks back in."',
+      ],
+    },
+    {
+      id: 'mossbreak_conquest_01b',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         '"Miss me?"',
+      ],
+    },
+    {
+      id: 'mossbreak_conquest_01c',
+      speaker: 'bartender',
+      speakerName: 'Bartender',
+      paragraphs: [
         '"You tipped well. That counts for more than reputation at Mossbreak."',
         'The tavern has changed. Or maybe it hasn\'t. Maybe the people in it have. Fewer unknowns. More familiar faces. Renegade crews who\'ve heard the broadcasts. Merchants who smell opportunity. And at the back table, where she sat before, Iren Saltz watches you with the copper arm resting on the table like a weapon.',
       ],
@@ -27,8 +43,29 @@ export const mossbreakConquestScene: StoryScene = {
         '"They didn\'t even fight me," she says. The copper arm clicks against the table, a nervous habit she\'s turned into a statement. "They just... voted. One morning I was the captain. Next morning I was a guest being asked to leave."',
         'She\'s thirty-one. Sun-dark skin. Cropped hair. The mechanical arm is a masterwork: Rathai engineering, copper-plated, with articulated fingers that move like real ones. She lost the original arm in a fight she won. She won\'t tell you who made the replacement.',
         '"You didn\'t come back here to drink," she says.',
+      ],
+    },
+    {
+      id: 'mossbreak_conquest_02b',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         '"I came back to offer you a job."',
+      ],
+    },
+    {
+      id: 'mossbreak_conquest_02c',
+      speaker: 'iren_saltz',
+      speakerName: 'Iren Saltz',
+      paragraphs: [
         '"I have a crew."',
+      ],
+    },
+    {
+      id: 'mossbreak_conquest_02d',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         '"You have twelve people on a ship that needs thirty. You have no territory, no income, and no plan. What you have is experience: you took an island and you lost one. I need someone who knows both sides of that."',
         'She stares at you. The copper fingers click.',
       ],
@@ -77,22 +114,58 @@ export const mossbreakConquestScene: StoryScene = {
         'Word travels fast at Mossbreak. By midnight, every tavern knows: Karyudon is building a fleet.',
         'A fleet. Multiple ships. Multiple captains. Territory holdings across the Northern Arc and expanding south. An operation that hasn\'t existed in the Bastion Sea since Vassago Moren declared his Conqueror candidacy three years ago.',
         'Suulen appears from somewhere above. She\'s been in the rafters for two hours, listening. "I count seventeen independent crews at Mossbreak right now. Six have expressed interest in hearing your terms. Three are already committed to other operations. The rest are watching."',
+      ],
+    },
+    {
+      id: 'mossbreak_conquest_03b',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         '"And the hooded figure from last time?"',
+      ],
+    },
+    {
+      id: 'mossbreak_conquest_03c',
+      speaker: 'suulen',
+      speakerName: 'Suulen Vassere',
+      paragraphs: [
         '"Gone. Left two days before we arrived." Suulen\'s expression doesn\'t change. "But they left a message at the bar. Addressed to you."',
         'She hands you a slip of paper. The handwriting is precise, elegant, practiced.',
       ],
     },
     {
       id: 'mossbreak_conquest_04',
-      speaker: 'narrator',
+      speaker: 'kovesse',
+      speakerName: 'Kovesse Grenn',
       paragraphs: [
         'The note reads: "The sea remembers who feeds it. - A friend."',
         'Kovesse scans it. Checks for Grimoire signatures. Finds nothing.',
         '"Anonymous. No trace. Whoever wrote this knows how to avoid detection, which means they\'re either very good or very dangerous."',
+      ],
+    },
+    {
+      id: 'mossbreak_conquest_04b',
+      speaker: 'delvessa',
+      speakerName: 'Delvessa Ghal',
+      paragraphs: [
         '"Usually both," Delvessa says.',
         'You fold the note and put it in your coat. A mystery for another day.',
+      ],
+    },
+    {
+      id: 'mossbreak_conquest_04c',
+      speaker: 'bartender',
+      speakerName: 'Bartender',
+      paragraphs: [
         'The tavern is full now. Crews from six different ships have gathered. Iren Saltz sits at your right, the copper arm gleaming in the lamplight. Information brokers line the bar, writing furiously. And the bartender, the closest thing Mossbreak has to a government, stands behind the counter with crossed arms and the expression of a woman watching history happen in her establishment.',
         '"Mossbreak has never belonged to anyone," she says. "Not the Kolmari. Not the Wardensea. Not the Renegades. It belongs to everyone who passes through."',
+      ],
+    },
+    {
+      id: 'mossbreak_conquest_04d',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         '"I\'m not here to take Mossbreak." You stand. Seven feet of Oni, horns catching the lamplight, amber eyes sweeping the room. "I\'m here to turn it into something bigger. A headquarters. A meeting point. The place where the Bastion Sea comes when it wants to be part of what happens next."',
         'Silence.',
         'Then someone at the back raises a glass. Then another. Then the whole tavern.',

@@ -13,9 +13,37 @@ export const conquestSubversionScene: StoryScene = {
       paragraphs: [
         'Kovesse stares at you like you\'ve just told her the sky is a ceiling.',
         '"You want to... NOT take the island?"',
+      ],
+    },
+    {
+      id: 'subversion_01b',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         '"I want the island to take me."',
+      ],
+    },
+    {
+      id: 'subversion_01c',
+      speaker: 'kovesse',
+      speakerName: 'Kovesse Grenn',
+      paragraphs: [
         '"That\'s the same thing with extra steps!"',
+      ],
+    },
+    {
+      id: 'subversion_01d',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         '"That\'s the same thing with better foundations."',
+      ],
+    },
+    {
+      id: 'subversion_01e',
+      speaker: 'vorreth',
+      speakerName: 'Vorreth Khane',
+      paragraphs: [
         'Vorreth leans back in his chair. His shoulders drop half an inch.',
         '"I\'ve seen a hundred renegades take islands by force. I\'ve seen exactly three who made them work afterward. This--" he gestures at you "--this might actually work."',
       ],
@@ -57,7 +85,21 @@ export const conquestSubversionScene: StoryScene = {
         'Pettha finds you at the dock. You\'re repairing a cargo winch. Iron-hardened hands bending a warped gear back into alignment.',
         'She watches you work for a full minute before speaking.',
         '"You\'ve been on my island for a week. In that time, you\'ve repaired the eastern berth, resolved two scheduling conflicts that my own Board missed, fed half the dock crew, and neutralized the Kolmari interference network that I\'ve been trying to identify for three months."',
+      ],
+    },
+    {
+      id: 'subversion_05b',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         '"I like to keep busy."',
+      ],
+    },
+    {
+      id: 'subversion_05c',
+      speaker: 'pettha_koss',
+      speakerName: 'Pettha Koss',
+      paragraphs: [
         '"You\'re not keeping busy. You\'re building a case." She adjusts her spectacles. "I\'ve run this island for twenty years. I know when someone is applying for a position. The question is: what position are you applying for?"',
       ],
       choices: [
@@ -91,9 +133,37 @@ export const conquestSubversionScene: StoryScene = {
       paragraphs: [
         'Pettha studies you. Not the way Delvessa studies people, calculating value. The way an engineer studies a new tool, determining fit.',
         '"The Kolmari will retaliate when they find out their interference network has been neutralized. The Wardensea patrol comes in three days. And you\'re an unknown Oni with no fleet, no established network, and a stolen God Fruit that every crew in the Bastion Sea would kill you for."',
+      ],
+    },
+    {
+      id: 'subversion_06b',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         '"All true."',
+      ],
+    },
+    {
+      id: 'subversion_06c',
+      speaker: 'pettha_koss',
+      speakerName: 'Pettha Koss',
+      paragraphs: [
         '"So give me one reason to formalize this arrangement instead of waiting for the next candidate."',
+      ],
+    },
+    {
+      id: 'subversion_06d',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         '"Because the next candidate won\'t fix your winch."',
+      ],
+    },
+    {
+      id: 'subversion_06e',
+      speaker: 'pettha_koss',
+      speakerName: 'Pettha Koss',
+      paragraphs: [
         'She looks at the repaired gear. At the dock you spent six hours hauling rope on. At the food stall where Dragghen is feeding her workers.',
         '"No," she says. "They won\'t."',
       ],
@@ -109,25 +179,67 @@ export const conquestSubversionScene: StoryScene = {
         'Your crew is listed as harbor security. Your dock fees are waived. Your berth assignment is permanent.',
         'It\'s not conquest. It\'s employment. And somehow, it\'s more solid than any door you could have broken down.',
         'Kovesse is beside herself. "How do I BROADCAST this? \'Local Oni gets a JOB?\' That\'s not a story! That\'s a FILING!"',
+      ],
+    },
+    {
+      id: 'subversion_07b',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         '"Then don\'t broadcast it."',
+      ],
+    },
+    {
+      id: 'subversion_07c',
+      speaker: 'kovesse',
+      speakerName: 'Kovesse Grenn',
+      paragraphs: [
         '"DON\'T--" She takes a breath. "You are going to give me an ulcer, Captain."',
       ],
     },
     {
       id: 'subversion_08',
       speaker: 'vorreth',
-      speakerName: 'Vorreth Daaz',
+      speakerName: 'Vorreth Khane',
       paragraphs: [
         'The Grimoire coverage is minimal. A footnote in a regional trade report. "Tavven Shoal Harbor Board expands security operations." No views. No shares. No trending topic.',
         'Fifteen million on the bounty board. The lowest number any approach would have earned. The Wardensea classifies you as "local security - monitoring." Not even a priority flag.',
         'Vorreth sits across from you at Hella\'s stall that evening. He\'s drinking storm tea. He looks at you with an expression you haven\'t seen before.',
         '"In twelve years with the Wardensea, I never once saw someone take an island this way."',
+      ],
+    },
+    {
+      id: 'subversion_08b',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         '"Is that a compliment?"',
+      ],
+    },
+    {
+      id: 'subversion_08c',
+      speaker: 'vorreth',
+      speakerName: 'Vorreth Khane',
+      paragraphs: [
         '"It\'s an observation. The Wardensea can\'t respond to something that didn\'t happen. The Kolmari can\'t claim aggression when you\'ve been filed as harbor staff. You\'ve taken an island and left no fingerprints."',
         'He takes a sip of his tea.',
         '"It won\'t last. Eventually they\'ll notice. But by then, you\'ll have had time to build something real."',
+      ],
+    },
+    {
+      id: 'subversion_08d',
+      speaker: 'dragghen',
+      speakerName: 'Dragghen Kolve',
+      paragraphs: [
         'Dragghen puts a plate in front of you. Stew. His mother\'s recipe.',
         '"One down," he says.',
+      ],
+    },
+    {
+      id: 'subversion_08e',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         '"One down."',
       ],
     },

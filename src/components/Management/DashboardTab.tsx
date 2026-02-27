@@ -4,6 +4,7 @@ import { calculateTerritoryUpkeep, ISLAND_ROLE_DATA, islandBonuses, territoryUpg
 import { calculateDailyUpkeep } from '../../systems/economy';
 import { ECONOMY } from '../../constants/balance';
 import GameIcon from '../UI/GameIcon';
+import { Divider } from '../UI/Divider';
 import { formatNumber, getMoraleBarColor, getMoraleTextColor } from '../../utils/formatting';
 
 // =============================================
@@ -240,7 +241,7 @@ export const DashboardTab: React.FC = () => {
           </div>
 
           {/* Divider */}
-          <div className="border-t border-ocean-700/50" />
+          <Divider className="my-1" />
 
           {/* Costs breakdown */}
           <div className="flex items-start justify-between">
@@ -274,7 +275,7 @@ export const DashboardTab: React.FC = () => {
           </div>
 
           {/* Divider */}
-          <div className="border-t border-ocean-700/50" />
+          <Divider className="my-1" />
 
           {/* Net */}
           <div className="flex items-center justify-between">

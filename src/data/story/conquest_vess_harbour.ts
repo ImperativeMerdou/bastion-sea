@@ -13,22 +13,127 @@ export const vessConquestScene: StoryScene = {
         'It is the most thorough operational brief ever assembled against a Wardensea installation by a crew of six people on a single ship.',
         'You read the whole thing. Every page. Every note. You read standing up because the cabin ceiling is too low for your horns if you straighten. Your crew watches you.',
         'You finish. Put the last page down. Look up.',
+      ],
+    },
+    {
+      id: 'vess_conquest_01b',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         '"When I said I was going through the front door, I meant it."',
         'Nobody speaks. Because nobody thought you didn\'t mean it.',
         '"But I\'m not stupid." You tap the western battery diagram. "Vorreth. The seventeen-degree blind spot. Still there?"',
+      ],
+    },
+    {
+      id: 'vess_conquest_01c',
+      speaker: 'vorreth',
+      speakerName: 'Vorreth Khane',
+      paragraphs: [
         '"Doctrine doesn\'t update itself," Vorreth says. The same words from the same man, but the voice is different now. Harder. Closer to the officer he used to be. "The gap is structural. Built into the rock. Ninety seconds at shift change, twice a day. Dawn and dusk."',
+      ],
+    },
+    {
+      id: 'vess_conquest_01d',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         '"Kovesse. Their comms?"',
+      ],
+    },
+    {
+      id: 'vess_conquest_01e',
+      speaker: 'kovesse',
+      speakerName: 'Kovesse Grenn',
+      paragraphs: [
         'Kovesse\'s whiskers flatten with satisfaction. Her tail curls around the leg of her chair. "Cracked. Primary cipher rotation and the secondary internal channel. I can read their fleet coordination, their supply orders, their officer dispatches. Captain--" She leans forward. The Rathai\'s eyes catch the Grimoire light and throw it back green. "I know what they\'re having for dinner."',
+      ],
+    },
+    {
+      id: 'vess_conquest_01f',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         '"Suulen. The approach?"',
+      ],
+    },
+    {
+      id: 'vess_conquest_01g',
+      speaker: 'suulen',
+      speakerName: 'Suulen Vassere',
+      paragraphs: [
         'The Morventhi sits cross-legged against the bulkhead, white hair loose, her dark eyes half-closed. She speaks without opening them. "Fourteen-minute window between patrol arcs at the western approach. I threaded it on the way in. I can thread it again. But a fleet is not a single hull. We will need three staggered insertions at four-minute intervals. One miscalculation and the entire western battery opens fire."',
+      ],
+    },
+    {
+      id: 'vess_conquest_01h',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         '"Dragghen."',
+      ],
+    },
+    {
+      id: 'vess_conquest_01i',
+      speaker: 'dragghen',
+      speakerName: 'Dragghen Kolve',
+      paragraphs: [
         '"I\'m here."',
+      ],
+    },
+    {
+      id: 'vess_conquest_01j',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         '"I know you\'re here. What do you think?"',
+      ],
+    },
+    {
+      id: 'vess_conquest_01k',
+      speaker: 'dragghen',
+      speakerName: 'Dragghen Kolve',
+      paragraphs: [
         'The Gorundai is sharpening Danzai\'s spikes. Slow, methodical strokes. The rasp of iron on whetstone fills the pauses between words. "I think six thousand is six thousand regardless of how clever the plan is. I think twelve capital warships is twelve capital warships. And I think you\'re going to do it anyway, so I\'d rather have a full belly when we start." He tests a spike with his thumb. Blood beads. "The spikes are ready. Are you feeding us first?"',
+      ],
+    },
+    {
+      id: 'vess_conquest_01l',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         '"Dragghen."',
+      ],
+    },
+    {
+      id: 'vess_conquest_01m',
+      speaker: 'dragghen',
+      speakerName: 'Dragghen Kolve',
+      paragraphs: [
         '"What."',
+      ],
+    },
+    {
+      id: 'vess_conquest_01n',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         '"I love you."',
+      ],
+    },
+    {
+      id: 'vess_conquest_01o',
+      speaker: 'dragghen',
+      speakerName: 'Dragghen Kolve',
+      paragraphs: [
         '"Cook your own food."',
+      ],
+    },
+    {
+      id: 'vess_conquest_01p',
+      speaker: 'delvessa',
+      speakerName: 'Delvessa Ghal',
+      paragraphs: [
         'Delvessa stands. When she speaks, the room goes still.',
         '"Three approaches. Each one viable. Each one costs something different." She lays three fingers on the chart. "I need to know which door you\'re walking through, Captain. Because the plan changes with the answer."',
       ],
@@ -36,6 +141,7 @@ export const vessConquestScene: StoryScene = {
     {
       id: 'vess_conquest_02',
       speaker: 'delvessa',
+      speakerName: 'Delvessa Ghal',
       title: 'THE APPROACH',
       paragraphs: [
         'The fortress burns amber in the distance. Last light of the day. The signal towers throw coded flashes across the water and the warships in the harbor catch the sun on their hulls and for a moment, just a moment, the whole installation looks like something from a painting. A monument to order. To discipline. To the belief that enough iron and enough men and enough doctrine can hold the sea in place.',
@@ -113,8 +219,6 @@ export const vessConquestScene: StoryScene = {
     },
     {
       id: 'vess_conquest_05',
-      speaker: 'vasshen',
-      speakerName: 'Commodore Vasshen',
       title: 'THE COMMAND COMPLEX',
       paragraphs: [
         'The inner ring. The heart of the fortress. Where the Second Division\'s senior command operates behind blast doors and signal-screened walls and the institutional certainty that no force in the southern Bastion Sea would be foolish enough to reach this room.',
@@ -122,10 +226,38 @@ export const vessConquestScene: StoryScene = {
         'The blast doors are open. Whether they were opened by loyalist officers, by a garrison too hungry to resist, or by the impact of a spiked war club driven by Forged Iron Dominion at full extension, the result is the same. The doors are open. The room beyond is a command theater: signal boards, tactical displays, the operational nerve center of every Wardensea deployment south of the Central Belt. Maps of the Southern Reach cover the walls. Patrol routes. Interdiction corridors. The expansion plan. All of it, laid bare.',
         'Commodore Vasshen stands behind the command table. The Second Division\'s senior officer is a tall woman with cropped grey hair and the bearing of someone who has commanded warships for longer than some of your crew has been alive. Her dress uniform is pressed. Her medals are straight. Her sword is sheathed at her hip and her hand rests on the pommel with the comfortable weight of long practice.',
         'She looks at you the way she\'d look at a weather system.',
+      ],
+    },
+    {
+      id: 'vess_conquest_05b',
+      speaker: 'vasshen',
+      speakerName: 'Commodore Vasshen',
+      paragraphs: [
         '"Karyudon." She says the name like she\'s reading it from a dossier. Which she has. Multiple times. "The Renegade Oni. Bounty: two hundred and thirty million Sovereigns. Crimes: piracy, insurrection, destruction of Wardensea property, assault on Wardensea personnel, illegal consumption of a God Fruit, and--" She pauses. "--and the unauthorized conquest of four sovereign territories."',
+      ],
+    },
+    {
+      id: 'vess_conquest_05c',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         '"Five," you say. "You\'re standing in number five."',
+      ],
+    },
+    {
+      id: 'vess_conquest_05d',
+      speaker: 'vasshen',
+      speakerName: 'Commodore Vasshen',
+      paragraphs: [
         'Vasshen\'s hand tightens on her sword. The officers behind her shift. No one moves.',
         '"The Second Division does not surrender."',
+      ],
+    },
+    {
+      id: 'vess_conquest_05e',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         '"Your expansion orders were self-issued. Your ammunition stockpiles exceed garrison allocation by three hundred percent." You step into the room. One of the junior officers steps back. "Delvessa pulled the supply manifests. I have them. The admiralty will too, by morning."',
         'You set Danzai down. Spike-first into the stone floor. It stays upright.',
         '"So. What happens next is up to you."',
@@ -181,24 +313,109 @@ export const vessConquestScene: StoryScene = {
         'She waits. Her folio is in her hand but she doesn\'t open it.',
         'Below, on the parade ground, you address the garrison.',
         'You stand on the command platform with Danzai planted beside you. The sunset paints the fortress in copper and amber. Against the empty flagpole, the fortress wall behind you, the scale of you fills the parade ground.',
+      ],
+    },
+    {
+      id: 'vess_conquest_06b',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         '"Your officers lied to you," you say. "I\'m not going to tell you what I am. You\'ll figure that out. Stay or go. Weapons are yours either way. Ships leave at dawn for anyone heading north."',
         'You wait. The wind moves the empty halyard and it rings against the flagpole.',
         '"Garrison kitchens open in an hour. My cook is better than yours. That\'s the only promise I\'m making tonight."',
+      ],
+    },
+    {
+      id: 'vess_conquest_06c',
+      paragraphs: [
         'You pull Danzai from the stone.',
         'The rest takes hours. Garrison personnel to process. Command staff to secure. Kovesse patches into the fortress communication array and starts broadcasting. Suulen disappears into the lower levels to map the tunnel network. Vorreth takes over the command theater and starts cataloguing the tactical displays, separating useful intelligence from Second Division propaganda with the practiced eye of a man who used to produce both.',
         'Dragghen finds the garrison kitchen. He doesn\'t ask permission. He starts cooking. Enough for two hundred.',
         'By evening, you\'re sitting on the harbor wall with your feet over the water. The harbor is full of ships. Most of them were Wardensea vessels this morning.',
+      ],
+    },
+    {
+      id: 'vess_conquest_06d',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         '"Twelve capital ships," you say.',
+      ],
+    },
+    {
+      id: 'vess_conquest_06e',
+      speaker: 'dragghen',
+      speakerName: 'Dragghen Kolve',
+      paragraphs: [
         'Dragghen appears. Puts a bowl of stew in your hands. Sits beside you. The dock groans under their combined weight.',
         '"Twelve capital ships," Dragghen agrees.',
+      ],
+    },
+    {
+      id: 'vess_conquest_06f',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         '"What\'s in this?"',
+      ],
+    },
+    {
+      id: 'vess_conquest_06g',
+      speaker: 'dragghen',
+      speakerName: 'Dragghen Kolve',
+      paragraphs: [
         '"Garrison stores. They had cumin." Dragghen takes the bottle back and drinks. "They had a lot of things. Whoever was running their kitchen had no idea what to do with half of it. Criminal waste."',
+      ],
+    },
+    {
+      id: 'vess_conquest_06h',
+      paragraphs: [
         'You eat in silence. Below, the harbor water slaps against ship hulls. Somewhere in the fortress, Kovesse is still broadcasting. Somewhere else, Vorreth and Delvessa are arguing about something. Their voices carry but not the words.',
+      ],
+    },
+    {
+      id: 'vess_conquest_06i',
+      speaker: 'dragghen',
+      speakerName: 'Dragghen Kolve',
+      paragraphs: [
         '"Supply chains need reorganizing tomorrow," Dragghen says. "Six thousand mouths. Current stores last maybe three weeks if I ration hard."',
+      ],
+    },
+    {
+      id: 'vess_conquest_06j',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         '"I know."',
+      ],
+    },
+    {
+      id: 'vess_conquest_06k',
+      speaker: 'dragghen',
+      speakerName: 'Dragghen Kolve',
+      paragraphs: [
         '"And somebody needs to design a flag."',
+      ],
+    },
+    {
+      id: 'vess_conquest_06l',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         '"I know that too."',
+      ],
+    },
+    {
+      id: 'vess_conquest_06m',
+      speaker: 'dragghen',
+      speakerName: 'Dragghen Kolve',
+      paragraphs: [
         'Dragghen takes the empty bowl. Stands up. "Kitchen\'s still hot. I\'m making bread for the morning shift." He pauses. "Their bread was terrible, Captain. Genuinely terrible. That\'s the first thing that changes."',
+      ],
+    },
+    {
+      id: 'vess_conquest_06n',
+      paragraphs: [
         'He goes. You stay on the wall. The harbor is dark. The ships creak. Tomorrow is going to be a long day.',
       ],
     },

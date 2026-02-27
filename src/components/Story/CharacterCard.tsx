@@ -63,6 +63,7 @@ export const CharacterCard: React.FC<CharacterCardProps> = ({
 
   // UI asset images
   const nameplateImage = getUiAsset('nameplate');
+  const frameImage = isActive ? getUiAsset('card_frame_active') : getUiAsset('card_frame');
 
   // Accent color helpers
   const glowDim = accentColor.replace(/[\d.]+\)$/, '0.15)');
@@ -164,12 +165,23 @@ export const CharacterCard: React.FC<CharacterCardProps> = ({
           )}
         </div>
 
+        {/* Frame overlay — sits ON TOP of the portrait, absolute positioned */}
+        {frameImage && (
+          <img
+            src={frameImage}
+            alt=""
+            className="absolute inset-0 w-full h-full pointer-events-none z-[10] rounded-lg"
+            style={{ objectFit: 'fill', opacity: isActive ? 0.7 : 0.5 }}
+            draggable={false}
+          />
+        )}
+
         {/* Nameplate — positioned at the bottom of the card */}
         <div className="absolute left-0 right-0 text-center z-[11]" style={{ bottom: '-2px' }}>
           <span
             className="font-display font-bold tracking-[0.2em] uppercase px-3 py-1 rounded-sm relative inline-block"
             style={{
-              fontSize: size === 'large' ? '14px' : '9px',
+              fontSize: size === 'large' ? '17px' : '11px',
               color: solidColor,
               background: nameplateImage ? 'transparent' : 'rgba(4, 8, 16, 0.85)',
               border: nameplateImage ? 'none' : `1px solid ${accentBorderDim}`,

@@ -7,20 +7,54 @@ export const vessArrivalScene: StoryScene = {
     {
       id: 'vess_arrive_01',
       title: 'THE APPROACH',
-      speaker: 'vorreth',
       paragraphs: [
         'You see Vess Harbour from six miles out. That\'s the point.',
         'Grey battlements. Signal towers with mirrors that catch the sun and throw coded light across the water. Defensive batteries stacked three tiers high along a harbor wall that could stop a tsunami and look bored doing it. The fortifications don\'t suggest strength. They state it. Loudly. In a language that translates to every tongue in the Bastion Sea: come closer and find out.',
         'Warships. Everywhere. Wardensea cutters in formation patterns so clean they look painted onto the water: four-ship diamond rotations sweeping the approaches, signal flags snapping in coordinated sequences, hull markings fresh and uniform. These aren\'t the rusty patrol boats you dodged around Durrek. This is the Second Division\'s southern anchor. The real thing. Funded, maintained, and crewed by people who iron their uniforms before a watch rotation.',
+      ],
+    },
+    {
+      id: 'vess_arrive_01b',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         'You stand at the bow. Danzai across your shoulders. Your amber eyes track the harbor wall, the gun emplacements, the choreographed sweep of warships that move like a single organism with sixty hulls.',
         '"Beautiful," you say.',
         'Delvessa appears at your elbow. Her pen is already moving in her folio.',
         'Suulen keeps the ship well outside the patrol perimeter. The Morventhi navigator has mapped the cutter rotations from observation alone: her spatial Sight reads the patterns of movement like text on a page. She knows the gaps. She\'s threading between them, staying in the blind spots where two patrol arcs overlap and neither looks twice. Masterful work. Also terrifying, because if she misses by a quarter mile, the entire southern Wardensea fleet knows you\'re here.',
+      ],
+    },
+    {
+      id: 'vess_arrive_01c',
+      speaker: 'vorreth',
+      speakerName: 'Vorreth Daaz',
+      paragraphs: [
         '"Six thousand souls in there," Vorreth says from behind you. His voice is flat. Controlled. The voice of a man who has swallowed something sharp and is determined not to let it cut on the way down. "Twelve capital ships. Thirty support vessels. Four shore batteries with overlapping fields of fire. Signal network that can reach Durrek in forty minutes and the Kingsrun approach in twenty."',
         'You turn. Look at him. The ex-Commandant is rigid, not his usual military posture, but something tighter. Something held together by force of will. His eyes are fixed on the fortress and there\'s a recognition in them that goes deeper than tactical assessment.',
+      ],
+    },
+    {
+      id: 'vess_arrive_01d',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         '"You served here."',
+      ],
+    },
+    {
+      id: 'vess_arrive_01e',
+      speaker: 'vorreth',
+      speakerName: 'Vorreth Daaz',
+      paragraphs: [
         '"No. Sister division. Same doctrine, same training, same chain of command." His jaw works. "Half the officers in that fortress graduated the same academy class I did. Some of them were friends." He pauses. "Before."',
         'He doesn\'t finish the sentence.',
+      ],
+    },
+    {
+      id: 'vess_arrive_01f',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         '"Then you know it better than anyone alive on this ship." You face the fortress again. "Good. I need you sharp. This isn\'t a fight. Not today. Today we learn."',
       ],
     },
@@ -34,13 +68,62 @@ export const vessArrivalScene: StoryScene = {
         'Vorreth takes the lead. The rigid tension doesn\'t vanish, but it channels. Becomes something useful. A man dismantling his own world because an Oni asked him to.',
         '"Harbor layout." He draws with his finger on the chart. Three rings. Traces them in silence. Then taps the western wall.',
         '"Blind spot. Seventeen degrees below the waterline. Rock foundation, they couldn\'t place a lower battery. Supposed to be covered by cutter patrol, but the rotation has a ninety-second gap at shift change." His jaw works. "That hasn\'t changed since I served. Doctrine doesn\'t update itself."',
+      ],
+    },
+    {
+      id: 'vess_arrive_02b',
+      speaker: 'delvessa',
+      speakerName: 'Delvessa Ghal',
+      paragraphs: [
         '"Weak points," Delvessa says.',
+      ],
+    },
+    {
+      id: 'vess_arrive_02c',
+      speaker: 'vorreth',
+      speakerName: 'Vorreth Daaz',
+      paragraphs: [
         '"That is the weak point." He pulls his hand back. "Everything else works. The batteries overlap. The patrols interlock. The signal towers reach Durrek in forty minutes."',
+      ],
+    },
+    {
+      id: 'vess_arrive_02d',
+      speaker: 'dragghen',
+      speakerName: 'Dragghen Kolve',
+      paragraphs: [
         'Dragghen leans forward. "Six thousand people eat a lot. Where\'s it come from?"',
+      ],
+    },
+    {
+      id: 'vess_arrive_02e',
+      speaker: 'vorreth',
+      speakerName: 'Vorreth Daaz',
+      paragraphs: [
         '"Kingsrun convoys. Twice monthly. Twelve miles of open water on the approach." Vorreth stops. Looks at Dragghen. "Four escort cutters. Minimum."',
+      ],
+    },
+    {
+      id: 'vess_arrive_02f',
+      speaker: 'kovesse',
+      speakerName: 'Kovesse Grenn',
+      paragraphs: [
         'Kovesse hasn\'t spoken. Her ears are forward, her eyes on Vorreth\'s chart, tracking something nobody else is thinking about.',
         '"The signal towers. Secondary channel?"',
+      ],
+    },
+    {
+      id: 'vess_arrive_02g',
+      speaker: 'vorreth',
+      speakerName: 'Vorreth Daaz',
+      paragraphs: [
         'Vorreth looks at her. "Shorter range. Tighter cipher. Internal coordination only. If you can crack it..."',
+      ],
+    },
+    {
+      id: 'vess_arrive_02h',
+      speaker: 'kovesse',
+      speakerName: 'Kovesse Grenn',
+      paragraphs: [
         '"Give me until morning." She\'s already pulling components out of her pockets.',
         'Delvessa is writing. Her pen hasn\'t stopped.',
       ],
@@ -102,11 +185,39 @@ export const vessArrivalScene: StoryScene = {
         'Ships being armed. Not maintained. Armed. Fresh gun emplacements on vessels that were patrol craft a month ago. Hull reinforcements. Ammunition stockpiles that exceed standard garrison allocation by three hundred percent. The supply convoys from Kingsrun have doubled in frequency and the cargo manifests list items that don\'t belong on a defensive posting: siege equipment, boarding pikes, the heavy chain nets used for capturing vessels rather than sinking them.',
         'Delvessa spreads the intelligence across the chart table. Her face is pale. Not with fear. With recognition. She\'s seen this pattern before. In Kolmari strategic archives. In the planning documents that precede not defensive operations but offensive campaigns.',
         '"They\'re not defending," she says. "They\'re planning an offensive."',
+      ],
+    },
+    {
+      id: 'vess_arrive_04b',
+      speaker: 'vorreth',
+      speakerName: 'Vorreth Daaz',
+      paragraphs: [
         'Dragghen pushes back from the table and goes to check the hatch. He doesn\'t say why. He comes back and sits down again.',
         'Vorreth doesn\'t react. He already knew. Maybe not the specifics, but the shape of it, the institutional momentum that turns a garrison into a staging ground. "Second Division has been requesting force expansion for two years," he says quietly. "The admiralty denied it. If they\'re building up without authorization, it means either the orders changed or the local command has decided to act independently."',
+      ],
+    },
+    {
+      id: 'vess_arrive_04c',
+      speaker: 'dragghen',
+      speakerName: 'Dragghen Kolve',
+      paragraphs: [
         '"Against who?" Dragghen asks the question everyone is thinking.',
+      ],
+    },
+    {
+      id: 'vess_arrive_04d',
+      speaker: 'delvessa',
+      speakerName: 'Delvessa Ghal',
+      paragraphs: [
         'Delvessa looks at the chart. The Southern Reach. The islands that aren\'t under Wardensea control. Ghostlight Reef. Windrow. The shipping lanes that connect the southern sea to the Central Belt.',
         '"Everyone," she says. "Anyone who isn\'t them."',
+      ],
+    },
+    {
+      id: 'vess_arrive_04e',
+      speaker: 'kovesse',
+      speakerName: 'Kovesse Grenn',
+      paragraphs: [
         'Kovesse pulls up Grimoire data: ship movement patterns over the last three months. Wardensea patrol arcs expanding. Cutter formations tightening. The defensive perimeter around Vess Harbour growing, pushing further into neutral territory with each passing week.',
         '"It\'s a net," Kovesse says. Flat. Certain. "They\'re closing the southern sea. One patrol route at a time."',
       ],
@@ -114,17 +225,68 @@ export const vessArrivalScene: StoryScene = {
     {
       id: 'vess_arrive_05',
       title: 'THE ASSESSMENT',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
       paragraphs: [
         'You stand at the stern rail. The ship drifts at the edge of Vess Harbour\'s outer patrol range, close enough to see the fortress, far enough to run. The sun is dropping toward the western horizon and the fortress catches the light in a way that turns iron to gold and stone to amber.',
         '"That\'s not a harbor. That\'s a weapon pointed at the sea." Low, certain. You recognize what you\'re looking at. "And it\'s pointed at everyone."',
+      ],
+    },
+    {
+      id: 'vess_arrive_05b',
+      speaker: 'delvessa',
+      speakerName: 'Delvessa Ghal',
+      paragraphs: [
         'Delvessa stands beside you. Watching the fortress. Cold and precise.',
         '"Including us," she says.',
+      ],
+    },
+    {
+      id: 'vess_arrive_05c',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         '"Good."',
+      ],
+    },
+    {
+      id: 'vess_arrive_05d',
+      speaker: 'delvessa',
+      speakerName: 'Delvessa Ghal',
+      paragraphs: [
         '"Especially us."',
+      ],
+    },
+    {
+      id: 'vess_arrive_05e',
+      speaker: 'vorreth',
+      speakerName: 'Vorreth Daaz',
+      paragraphs: [
         'Vorreth appears behind you. He\'s been at the mainmast for a while.',
         '"You\'ll need a fleet," he says. No preamble. "Allies. Supply lines. A plan that doesn\'t rely on Danzai solving everything." He pauses. "Twelve capital warships."',
+      ],
+    },
+    {
+      id: 'vess_arrive_05f',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         '"I know."',
+      ],
+    },
+    {
+      id: 'vess_arrive_05g',
+      speaker: 'vorreth',
+      speakerName: 'Vorreth Daaz',
+      paragraphs: [
         '"You\'re grinning."',
+      ],
+    },
+    {
+      id: 'vess_arrive_05h',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         '"Twelve is a big number. I like big numbers."',
         'Vorreth exhales through his nose. He doesn\'t say anything else. He doesn\'t walk away, either.',
       ],

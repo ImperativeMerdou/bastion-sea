@@ -177,6 +177,8 @@ export const delvessaRecruitmentScene: StoryScene = {
     },
     {
       id: 'del_06',
+      speaker: 'delvessa',
+      speakerName: 'Delvessa Ghal',
       paragraphs: [
         'She opens the ledger. Turns it toward you. The page is covered in numbers, annotations, small diagrams. You can read some of it: shipping routes, harbor fees, Kolmari debt structures for Tavven Shoal specifically. The rest is in a notation system you don\'t recognize.',
         '"This is Tavven Shoal\'s financial architecture. Debt obligations, trade dependencies, revenue sources, and the three points where the entire structure is vulnerable to disruption. The Kolmari built it. I know where the load-bearing walls are."',

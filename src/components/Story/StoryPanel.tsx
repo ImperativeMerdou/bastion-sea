@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import { useGameStore } from '../../store/gameStore';
-import { getSceneBackground, speakerToCharacter, getPortrait, getExpressionPortrait } from '../../utils/images';
+import { getSceneBackground, speakerToCharacter, getPortrait, getExpressionPortrait, getUiAsset } from '../../utils/images';
 import { audioManager } from '../../systems/audio';
 import { stingerManager } from '../../systems/stingers';
 import { detectSpeakerFromText, characterNames, characterAccents } from './DialogueCards';
-import { CharacterCard } from './CharacterCard';
+
 
 /** Detect if a paragraph is primarily dialogue (starts with a quote mark) */
 function isDialogueLine(text: string): boolean {
@@ -635,32 +635,60 @@ export const StoryPanel: React.FC = () => {
       )}
 
       {/* === DIALOGUE AREA — anchored to bottom, never moves === */}
-      <div className="absolute bottom-0 left-0 right-0 z-10" style={{ height: '34%', minHeight: '220px' }}>
+      <div className="absolute bottom-0 left-0 right-0 z-10" style={{ height: '31%', minHeight: '220px' }}>
 
-        {/* Gradient fade from transparent to dark */}
-        <div className="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-transparent to-ocean-950/95 pointer-events-none z-0" />
+        {/* Decorative dialogue frame header — ornamental separator */}
+        {getUiAsset('dialogue_frame') && (
+          <div className="absolute inset-x-0 top-0 flex justify-center pointer-events-none z-[3]" style={{ transform: 'translateY(-50%)' }}>
+            <img
+              src={getUiAsset('dialogue_frame')!}
+              alt=""
+              className="h-8 w-auto max-w-[300px]"
+              style={{ opacity: 0.15 }}
+              draggable={false}
+            />
+          </div>
+        )}
+
+        {/* Gradient fade from transparent to dark — stronger darkening for readability */}
+        <div className="absolute inset-x-0 top-0 h-20 pointer-events-none z-0"
+          style={{ background: 'linear-gradient(to bottom, transparent, rgba(10, 10, 15, 0.95))' }}
+        />
 
         {/* Solid dark background for text readability */}
-        <div className="absolute inset-x-0 top-16 bottom-0 bg-ocean-950/95 z-0" />
+        <div className="absolute inset-x-0 top-20 bottom-0 z-0" style={{ background: 'rgba(10, 10, 15, 0.95)' }} />
 
         {/* Content: portrait + dialogue side by side */}
         <div className="relative h-full flex items-stretch px-4 pb-1 gap-4 z-[1]" style={{ paddingTop: '2rem' }}>
 
-          {/* Portrait card — bottom left */}
+          {/* Portrait — bottom left, CSS gold border with glow */}
           {featuredCharacter && featuredPortrait && (
-            <div
-              className={`flex-shrink-0 self-end ${portraitFlash ? 'animate-portrait-enter' : ''}`}
-              style={{ width: '220px', marginBottom: '28px' }}
-            >
-              <CharacterCard
-                characterId={featuredCharacter}
-                expression={featuredExpression}
-                isActive={true}
-                isEntering={portraitFlash}
-                accentColor={featuredAccent}
-                name={featuredName || ''}
-                size="large"
-              />
+            <div style={{ flexShrink: 0, alignSelf: 'flex-end', marginBottom: '28px', textAlign: 'center' as const }}>
+              <div style={{ width: '140px', height: '175px' }}>
+                <img
+                  src={featuredPortrait}
+                  alt=""
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                    display: 'block',
+                    borderRadius: '4px',
+                    border: '3px solid #D4A574',
+                    boxShadow: '0 0 10px rgba(212,165,116,0.3), inset 0 0 20px rgba(0,0,0,0.3)',
+                  }}
+                />
+              </div>
+              <div style={{
+                marginTop: '4px',
+                fontSize: '13px',
+                fontWeight: 700,
+                textTransform: 'uppercase' as const,
+                letterSpacing: '0.08em',
+                color: '#D4A574',
+              }}>
+                {featuredName}
+              </div>
             </div>
           )}
 
@@ -670,20 +698,25 @@ export const StoryPanel: React.FC = () => {
             <div
               className="dialogue-box relative rounded-md overflow-hidden dialogue-box-glow-active flex-1 flex flex-col"
               style={{
-                background: 'linear-gradient(180deg, rgba(6, 10, 22, 0.92) 0%, rgba(4, 7, 16, 0.96) 100%)',
+                background: 'rgba(10, 10, 15, 0.95)',
                 '--accent-glow': featuredAccent.replace(/[\d.]+\)$/, '0.15)'),
                 '--accent-glow-dim': featuredAccent.replace(/[\d.]+\)$/, '0.06)'),
-                border: `1px solid ${featuredAccent.replace(/[\d.]+\)$/, '0.3)')}`,
+                border: `1px solid ${featuredAccent.replace(/[\d.]+\)$/, '0.2)')}`,
+                borderTop: `2px solid rgba(196, 148, 58, 0.6)`,
                 backdropFilter: 'blur(12px)',
+                maxHeight: '30vh',
               } as React.CSSProperties}
             >
-              {/* Accent top line */}
-              <div
-                className="absolute top-0 left-0 right-0 h-[2px] z-[3]"
-                style={{
-                  background: `linear-gradient(90deg, transparent, ${featuredAccent.replace(/[\d.]+\)$/, '0.8)')}, ${featuredAccent.replace(/[\d.]+\)$/, '0.2)')}, transparent)`,
-                }}
-              />
+              {/* Dialogue box frame overlay — decorative, very subtle */}
+              {getUiAsset('dialogue_box_frame') && (
+                <img
+                  src={getUiAsset('dialogue_box_frame')!}
+                  alt=""
+                  className="absolute inset-0 w-full h-full pointer-events-none z-[1]"
+                  style={{ objectFit: 'fill', opacity: 0.06, mixBlendMode: 'multiply' }}
+                  draggable={false}
+                />
+              )}
 
               <div
                 ref={dialogueScrollRef}
@@ -716,15 +749,22 @@ export const StoryPanel: React.FC = () => {
                           </div>
                         )}
                         <p
-                          className={`leading-[1.8] font-narration story-line ${
+                          className={`leading-[1.8] font-narration story-line story-text-shadow ${
                             isDlg
-                              ? 'text-xl text-ocean-100 font-medium pl-3'
-                              : 'text-lg text-ocean-200 italic'
+                              ? 'text-[22px] font-semibold pl-3'
+                              : line.startsWith('*') || line.startsWith('[')
+                                ? 'text-[20px] font-medium italic'
+                                : 'text-[22px] font-semibold'
                           }`}
                           style={isDlg ? {
-                            borderLeft: `3px solid ${lineAccent.replace(/[\d.]+\)$/, '0.5)')}`,
+                            color: '#F5EDE1',
+                            borderLeft: `3px solid ${lineAccent.replace(/[\d.]+\)$/, '0.6)')}`,
+                            animationDelay: `${i * 30}ms`,
+                          } : line.startsWith('*') || line.startsWith('[') ? {
+                            color: '#C4A882',
                             animationDelay: `${i * 30}ms`,
                           } : {
+                            color: '#F0E8DC',
                             animationDelay: `${i * 30}ms`,
                           }}
                         >
@@ -755,14 +795,17 @@ export const StoryPanel: React.FC = () => {
                             </span>
                           </div>
                         )}
-                        <p className={`leading-[1.8] font-narration ${
+                        <p className={`leading-[1.8] font-narration story-text-shadow ${
                           isDlg
-                            ? 'text-xl text-ocean-100 font-medium pl-3'
-                            : 'text-lg text-ocean-200 italic'
+                            ? 'text-[22px] font-semibold pl-3'
+                            : 'text-[22px] font-semibold'
                         }`}
                           style={isDlg ? {
-                            borderLeft: `3px solid ${lineAccent.replace(/[\d.]+\)$/, '0.5)')}`,
-                          } : undefined}
+                            color: '#F5EDE1',
+                            borderLeft: `3px solid ${lineAccent.replace(/[\d.]+\)$/, '0.6)')}`,
+                          } : {
+                            color: '#F0E8DC',
+                          }}
                         >
                           {currentlyTypingLine}
                           <span className="typewriter-cursor" />
@@ -786,24 +829,29 @@ export const StoryPanel: React.FC = () => {
 
                 {/* === CHOICES — inside the dialogue box === */}
                 {showChoices && beat.choices && (
-                  <div className="mt-3 space-y-1 animate-fade-in" onClick={(e) => e.stopPropagation()}>
+                  <div className="mt-4 space-y-2 animate-fade-in" onClick={(e) => e.stopPropagation()}>
                     {beat.choices.filter(c => c.available).map((choice, i) => (
                       <button
                         key={choice.id}
                         onClick={() => handleChoice(choice.id)}
-                        className="godtide-btn-choice w-full text-left animate-fade-in group"
-                        style={{ animationDelay: `${i * 100}ms` }}
+                        className="w-full text-left animate-fade-in group rounded border transition-all duration-200 hover:border-gold-400/60 hover:shadow-lg hover:shadow-gold-500/10"
+                        style={{
+                          animationDelay: `${i * 100}ms`,
+                          background: 'rgba(212, 165, 116, 0.08)',
+                          borderColor: 'rgba(196, 148, 58, 0.25)',
+                          padding: '12px 16px',
+                        }}
                       >
                         <div className="flex items-start gap-3">
                           <span className="text-gold-400 font-display font-bold text-xl mt-0.5 group-hover:text-gold-300 flex-shrink-0">
                             {String.fromCharCode(65 + i)}.
                           </span>
                           <div className="min-w-0">
-                            <p className="text-ocean-100 text-lg font-narration group-hover:text-white transition-colors leading-relaxed">
+                            <p className="text-ocean-100 font-narration font-semibold group-hover:text-white transition-colors leading-relaxed" style={{ fontSize: '20px' }}>
                               {choice.text}
                             </p>
                             {choice.consequence && (
-                              <p className="text-ocean-400 text-xs mt-0.5 italic font-body opacity-50 group-hover:opacity-100 transition-opacity duration-300">
+                              <p className="text-ocean-400 text-xs mt-1 italic font-body opacity-50 group-hover:opacity-100 transition-opacity duration-300">
                                 {choice.consequence}
                               </p>
                             )}
@@ -836,7 +884,7 @@ export const StoryPanel: React.FC = () => {
                 {showHistory ? '\u25BC LOG' : '\u25B2 LOG'}
               </button>
             )}
-            <span className="text-ocean-500 text-xs tracking-wider font-mono">
+            <span className="text-[#A89B8C] tracking-wider font-mono" style={{ fontSize: '15px' }}>
               {currentScene.currentBeat + 1} / {currentScene.beats.length}
             </span>
           </div>
@@ -875,7 +923,7 @@ export const StoryPanel: React.FC = () => {
                     className={`text-base leading-relaxed font-narration ${
                       isDialogueLine(p)
                         ? 'text-ocean-200 pl-3 border-l-2 border-ocean-600/50'
-                        : 'text-ocean-400 italic'
+                        : 'text-ocean-400'
                     }`}
                   >
                     {p}
@@ -894,7 +942,7 @@ export const StoryPanel: React.FC = () => {
                     className={`text-base leading-relaxed font-narration ${
                       isDialogueLine(p)
                         ? 'text-ocean-100 pl-3 border-l-2 border-gold-500/30'
-                        : 'text-ocean-300 italic'
+                        : 'text-ocean-300'
                     }`}
                   >
                     {p}

@@ -150,6 +150,8 @@ export const prologueScene: StoryScene = {
     },
     {
       id: 'prologue_10',
+      speaker: 'raider_officer',
+      speakerName: 'Raider Officer',
       paragraphs: [
         'You hit the raider officer from the side.',
         'He wasn\'t expecting the prisoners. Nobody was. Seven feet of Oni at full Iron, moving at a speed that a chained man shouldn\'t be capable of, and the impact sends him across the deck. He hits the railing. It cracks. Holds.',

@@ -74,8 +74,8 @@ export const GrimoireTab: React.FC = () => {
                     {new Date(notif.timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
                   </span>
                 </div>
-                <h4 className="text-ocean-100 text-sm font-bold">{notif.title}</h4>
-                <p className="text-ocean-300 text-sm mt-1 leading-relaxed font-narration">{notif.message}</p>
+                <h4 className="text-ocean-100 font-semibold" style={{ fontSize: '17px' }}>{notif.title}</h4>
+                <p className="text-ocean-300 mt-1 leading-relaxed font-narration font-medium" style={{ fontSize: '17px' }}>{notif.message}</p>
               </div>
             );
           })}

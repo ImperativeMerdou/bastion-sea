@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useGameStore } from '../../store/gameStore';
 import { useAudioControls } from '../../hooks/useAudio';
+import { musicManager } from '../../systems/music';
 import { useFocusTrap } from '../../hooks/useFocusTrap';
 import { CODEX_ENTRIES, CODEX_CATEGORIES, type CodexCategory } from '../../data/codex';
 import { getImagePath } from '../../utils/images';
@@ -25,7 +26,7 @@ export const PauseMenu: React.FC<PauseMenuProps> = ({ isOpen, onClose }) => {
   const setTypingSpeed = useGameStore(s => s.setTypingSpeed);
   const flags = useGameStore(s => s.flags);
   const inCombat = !!combatState;
-  const { isMuted, masterVol, sfxVol, ambientVol, musicVol, toggleMute, setMasterVolume, setSfxVolume, setAmbientVolume, setMusicVolume } = useAudioControls();
+  const { isMuted, masterVol, sfxVol, musicVol, toggleMute, setMasterVolume, setSfxVolume, setMusicVolume } = useAudioControls();
   const [tab, setTab] = useState<PauseTab>('main');
   const [saveFlash, setSaveFlash] = useState<number | null>(null);
   const [codexCategory, setCodexCategory] = useState<CodexCategory>('world');
@@ -34,9 +35,14 @@ export const PauseMenu: React.FC<PauseMenuProps> = ({ isOpen, onClose }) => {
   const [confirmSlot, setConfirmSlot] = useState<number>(0);
   const trapRef = useFocusTrap(isOpen);
 
-  // Reset to main tab when opened
+  // Reset to main tab when opened, dim music
   useEffect(() => {
-    if (isOpen) setTab('main');
+    if (isOpen) {
+      setTab('main');
+      musicManager.onPauseOpen();
+    } else {
+      musicManager.onPauseClose();
+    }
   }, [isOpen]);
 
   // Refs to avoid stale closures and listener churn
@@ -365,22 +371,7 @@ export const PauseMenu: React.FC<PauseMenuProps> = ({ isOpen, onClose }) => {
                   </div>
                   <div>
                     <div className="flex items-center justify-between mb-1.5">
-                      <span className="text-ocean-300 text-xs font-display font-bold tracking-[0.15em]">AMBIENCE</span>
-                      <span className="text-ocean-400 text-xs">{Math.round(ambientVol * 100)}%</span>
-                    </div>
-                    <input
-                      type="range"
-                      min="0"
-                      max="100"
-                      value={Math.round(ambientVol * 100)}
-                      onChange={(e) => setAmbientVolume(Number(e.target.value) / 100)}
-                      className="w-full h-1.5 bg-ocean-700 rounded-full appearance-none cursor-pointer accent-ocean-400"
-                      aria-label="Ambient sound volume"
-                    />
-                  </div>
-                  <div>
-                    <div className="flex items-center justify-between mb-1.5">
-                      <span className="text-ocean-300 text-xs font-display font-bold tracking-[0.15em]">STINGERS</span>
+                      <span className="text-ocean-300 text-xs font-display font-bold tracking-[0.15em]">MUSIC</span>
                       <span className="text-ocean-400 text-xs">{Math.round(musicVol * 100)}%</span>
                     </div>
                     <input
@@ -390,7 +381,7 @@ export const PauseMenu: React.FC<PauseMenuProps> = ({ isOpen, onClose }) => {
                       value={Math.round(musicVol * 100)}
                       onChange={(e) => setMusicVolume(Number(e.target.value) / 100)}
                       className="w-full h-1.5 bg-ocean-700 rounded-full appearance-none cursor-pointer accent-crimson-400"
-                      aria-label="Stinger volume"
+                      aria-label="Music volume"
                     />
                   </div>
                 </div>

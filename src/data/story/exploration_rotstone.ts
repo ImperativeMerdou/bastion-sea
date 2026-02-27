@@ -96,6 +96,13 @@ export const rotstoneArrivalScene: StoryScene = {
         'Not the hum. The island. The fissure Suulen identified begins to glow. Faint at first, warm amber light bleeding from the rock. The light pulses. Once. Twice. In time with your heartbeat.',
         'Your heartbeat. Not Suulen\'s. Not Vorreth\'s. Yours.',
         'Kovesse\'s dead Grimoires crackle. Static. Then a sound that isn\'t static. A sound like a voice speaking a language that doesn\'t have words, just shapes. Just pressure. It lasts three seconds and then the Grimoires die again.',
+      ],
+    },
+    {
+      id: 'rotstone_arrive_06b',
+      speaker: 'kovesse',
+      speakerName: 'Kovesse Grenn',
+      paragraphs: [
         '"Captain." Kovesse\'s hands are shaking. "That signal. The one I said was a broadcast? It just changed frequency." She looks at you. "It changed when you got close."',
       ],
     },

@@ -12,6 +12,8 @@ import { GrimoireTab } from './GrimoireTab';
 import { CrewTab } from './CrewTab';
 import { TerritoryTab } from './TerritoryTab';
 import { TextureOverlay } from '../UI/TextureOverlay';
+import { PanelFrame } from '../UI/PanelFrame';
+import { getUiAsset } from '../../utils/images';
 
 
 type ManagementTab = 'crew' | 'captain' | 'dashboard' | 'territory' | 'grimoire' | 'shop' | 'ship';
@@ -85,27 +87,40 @@ export const ManagementPanel: React.FC = () => {
     <div className="h-full flex flex-col bg-ocean-900 relative overflow-hidden">
       {/* Texture overlay + panel frame */}
       <TextureOverlay variant="management" />
+      <PanelFrame variant="management" />
 
       {/* Crew Identity Header */}
       {crewIdentity.named && (
-        <div className="flex items-center justify-between px-4 py-2 bg-ocean-950/80 border-b border-ocean-700/50">
-          <div className="flex items-center gap-2">
-            {getFlagImage(crewIdentity.flagDesign) && (
-              <img
-                src={getFlagImage(crewIdentity.flagDesign)!}
-                alt="crew flag"
-                className="w-5 h-5 rounded-sm object-cover border border-ocean-700/50"
-              />
-            )}
-            <span className="text-gold-400 text-xs font-display font-bold tracking-[0.3em] uppercase">{crewIdentity.name}</span>
-            <span className="text-ocean-500 text-xs">|</span>
-            <span className="text-ocean-400 text-xs tracking-wider">DAY {dayCount}</span>
+        <div className="relative">
+          <div className="flex items-center justify-between px-4 py-2 bg-ocean-950/80 border-b border-ocean-700/50">
+            <div className="flex items-center gap-2">
+              {getFlagImage(crewIdentity.flagDesign) && (
+                <img
+                  src={getFlagImage(crewIdentity.flagDesign)!}
+                  alt="crew flag"
+                  className="w-5 h-5 rounded-sm object-cover border border-ocean-700/50"
+                />
+              )}
+              <span className="text-gold-400 text-xs font-display font-bold tracking-[0.3em] uppercase">{crewIdentity.name}</span>
+              <span className="text-ocean-500 text-xs">|</span>
+              <span className="text-ocean-400 text-xs tracking-wider">DAY {dayCount}</span>
+            </div>
+            <div className="flex items-center gap-3 text-xs text-ocean-500">
+              <span>{recruitedCrew.length} CREW</span>
+              <span>{territoryCount} ISLANDS</span>
+              <span>{tradeRoutes.length} ROUTES</span>
+            </div>
           </div>
-          <div className="flex items-center gap-3 text-xs text-ocean-500">
-            <span>{recruitedCrew.length} CREW</span>
-            <span>{territoryCount} ISLANDS</span>
-            <span>{tradeRoutes.length} ROUTES</span>
-          </div>
+          {/* Decorative border strip below header */}
+          {getUiAsset('border_strips') && (
+            <img
+              src={getUiAsset('border_strips')!}
+              alt=""
+              className="absolute bottom-0 left-0 right-0 h-[3px] pointer-events-none z-[2]"
+              style={{ objectFit: 'fill', opacity: 0.4 }}
+              draggable={false}
+            />
+          )}
         </div>
       )}
       {/* Tab Bar */}
@@ -116,12 +131,12 @@ export const ManagementPanel: React.FC = () => {
             onClick={() => !tab.locked && setActiveTab(tab.id)}
             disabled={tab.locked}
             title={tab.locked ? tab.lockText : undefined}
-            className={`flex-1 px-4 py-3 text-sm font-display font-bold tracking-wider transition-all duration-200 relative ${
+            className={`flex-1 px-4 py-3 font-display tracking-wider transition-all duration-200 relative ${
               tab.locked
-                ? 'text-ocean-600 cursor-not-allowed bg-ocean-900/50'
+                ? 'text-ocean-600 cursor-not-allowed bg-ocean-900/50 text-xs font-bold'
                 : effectiveTab === tab.id
-                  ? 'text-gold-400 border-b-2 border-gold-400 bg-ocean-800'
-                  : 'text-ocean-400 hover:text-ocean-200 hover:bg-ocean-800'
+                  ? 'text-gold-400 border-b-2 border-gold-400 bg-ocean-800 font-bold text-sm'
+                  : 'text-ocean-400 hover:text-ocean-200 hover:bg-ocean-800/60 font-semibold text-sm'
             }`}
           >
             {tab.locked && <span className="mr-1 text-ocean-600">&#128274;</span>}

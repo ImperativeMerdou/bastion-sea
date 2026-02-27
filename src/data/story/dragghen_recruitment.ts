@@ -21,14 +21,44 @@ export const dragghenRecruitmentScene: StoryScene = {
     },
     {
       id: 'dragghen_02',
+      speaker: 'dragghen',
+      speakerName: 'Dragghen Kolve',
       paragraphs: [
         'He slides out from under the hull. Six-eight, three-forty, grey-green skin with natural plating across his forearms and shoulders. Short-cropped dark hair. Battered leather work apron over chainmail. "Large" stopped being the relevant adjective several meals ago.',
         'He sees you and stops.',
         'His eyes go to the Iron on your forearms. Not your face, not your horns, not the prison clothes. The Iron. He studies it the way he was studying the hull joint: assessing the craftsmanship.',
         '"Forged," he says. Not a question.',
+      ],
+    },
+    {
+      id: 'dragghen_02b',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         '"Forged."',
+      ],
+    },
+    {
+      id: 'dragghen_02c',
+      speaker: 'dragghen',
+      speakerName: 'Dragghen Kolve',
+      paragraphs: [
         '"Your Iron tracks clean. No wobble at the edges. Either somebody trained you right or you figured it out yourself, and I\'m guessing nobody trained you because nobody trains Oni to that level without keeping them on a leash." He wipes his hands on the apron. "You\'re the one who waded in this morning. The dock\'s been talking."',
+      ],
+    },
+    {
+      id: 'dragghen_02d',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         '"Good things?"',
+      ],
+    },
+    {
+      id: 'dragghen_02e',
+      speaker: 'dragghen',
+      speakerName: 'Dragghen Kolve',
+      paragraphs: [
         '"Depends on who you ask. I rate the entrance a four. Would\'ve been a six if you\'d come in on a boat."',
       ],
     },
@@ -39,12 +69,28 @@ export const dragghenRecruitmentScene: StoryScene = {
       paragraphs: [
         'His name is Dragghen Kolve. Former drydock foreman for the Kolmari shipping fleet. Quit, or was quit, depending on which version of the story he\'s telling. He\'s been at Tavven Shoal for six weeks, taking repair work, sleeping on whatever hull he\'s fixing, and quietly going out of his mind because there isn\'t a ship in this harbor that deserves his full attention.',
         'He doesn\'t say any of this directly. You piece it together from the way he talks about the skiff he\'s repairing ("garbage fasteners, garbage keel, garbage everything, I give it a two"), the dock ("adequate facilities, poor maintenance, three"), and Tavven Shoal in general ("interesting harbor, terrible infrastructure, best food I\'ve had in years").',
+      ],
+    },
+    {
+      id: 'dragghen_03b',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         '"You rate everything?"',
+      ],
+    },
+    {
+      id: 'dragghen_03c',
+      speaker: 'dragghen',
+      speakerName: 'Dragghen Kolve',
+      paragraphs: [
         '"Everything has a rating. People just don\'t like hearing it."',
       ],
     },
     {
       id: 'dragghen_04',
+      speaker: 'dragghen',
+      speakerName: 'Dragghen Kolve',
       paragraphs: [
         'He gives you the tour because he can\'t help it. The dry dock is his territory the way the fish market is Hella\'s: he\'s been here six weeks and already reorganized the tool storage, fixed the crane winch, and repaired three vessels that the previous repairman had declared unfixable.',
         '"He said unfixable," Dragghen says, pointing at a fishing sloop in the far berth. "I said incompetent. There\'s a difference. The hull had a stress fracture along the third plank line. Fourteen-inch spread. He wanted to patch it with tar and copper sheet." He pauses for the weight of the offense to land. "Copper sheet."',
@@ -54,6 +100,8 @@ export const dragghenRecruitmentScene: StoryScene = {
     },
     {
       id: 'dragghen_05',
+      speaker: 'dragghen',
+      speakerName: 'Dragghen Kolve',
       paragraphs: [
         'You learn three things about Gorundai in the first hour.',
         'First: they build for the thing after the thing. A Gorundai shipwright doesn\'t ask what the ship does. He asks what the ship will need to survive. Load capacity is secondary to structural integrity. Speed is secondary to hull life. A Gorundai-built vessel is not the fastest in any harbor. It is the last one still floating when the storm clears.',
@@ -70,17 +118,47 @@ export const dragghenRecruitmentScene: StoryScene = {
         '"There\'s a ship."',
         'He says it the way someone mentions a sunset they saw once. Casual. But his hands stop moving, which means it matters.',
         '"End of the east pier. Berth fourteen. She\'s called the Fallow Tide. Thirty-two-foot sloop, shallow draft, rigged for coastal running. Previous captain had a debt problem and an exit strategy that involved leaving the Bastion Sea permanently." He picks up a wrench. Puts it down. Picks it up again. "I\'ve been looking at her for two weeks."',
+      ],
+    },
+    {
+      id: 'dragghen_06b',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         '"Looking?"',
+      ],
+    },
+    {
+      id: 'dragghen_06c',
+      speaker: 'dragghen',
+      speakerName: 'Dragghen Kolve',
+      paragraphs: [
         '"Not buying. Looking. There\'s a difference." He leads you to the east pier. "She\'s a five. Which is the highest I\'ve rated anything in this harbor that I didn\'t build myself."',
       ],
     },
     {
       id: 'dragghen_07',
+      speaker: 'dragghen',
+      speakerName: 'Dragghen Kolve',
       paragraphs: [
         'The Fallow Tide sits in berth fourteen like a fighter between rounds. Hull scarred, rigging frayed, deck boards salt-bleached to the color of old bone. But the lines are good. The proportions are right. Whatever this ship was built for, somebody who knew what they were doing built it.',
         'Dragghen walks the hull length with his hands behind his back, which is how Gorundai shipwrights inspect a vessel they\'re pretending not to be interested in.',
         '"Keel is sound. Mast step needs reinforcing. The rigging is salvageable if you replace the standing lines and half the running gear. Hull planking is tight below the waterline, loose above. The rudder post has play. The previous captain didn\'t maintain her and she\'s angry about it."',
+      ],
+    },
+    {
+      id: 'dragghen_07b',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         '"You talk about ships like they\'re people."',
+      ],
+    },
+    {
+      id: 'dragghen_07c',
+      speaker: 'dragghen',
+      speakerName: 'Dragghen Kolve',
+      paragraphs: [
         '"Ships are better than people. Ships don\'t lie about what\'s wrong with them. You just have to know where to look."',
       ],
     },
@@ -100,10 +178,26 @@ export const dragghenRecruitmentScene: StoryScene = {
     },
     {
       id: 'dragghen_09',
+      speaker: 'dragghen',
+      speakerName: 'Dragghen Kolve',
       paragraphs: [
         'He looks at you. At the torn prison scraps. At the chain marks. At the Iron that tracked clean enough to impress a Gorundai master craftsman.',
         '"You need a ship. I need a ship that needs me." He shrugs. One shoulder. Gorundai shrug. It means more than a human shrug. It means: I have evaluated this situation and arrived at a conclusion I\'m willing to act on. "The Fallow Tide is a five. I can make her a seven. Maybe an eight, given time and materials."',
+      ],
+    },
+    {
+      id: 'dragghen_09b',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         '"I can\'t pay you."',
+      ],
+    },
+    {
+      id: 'dragghen_09c',
+      speaker: 'dragghen',
+      speakerName: 'Dragghen Kolve',
+      paragraphs: [
         '"I didn\'t ask for pay."',
       ],
       choices: [
@@ -148,7 +242,21 @@ export const dragghenRecruitmentScene: StoryScene = {
         'He doesn\'t answer right away. He sits with it the way you\'d sit with a heavy thing you\'re not sure you want to pick up.',
         'Then he stands. Walks to the Fallow Tide. Puts one hand on her hull. The plating on his forearms darkens. Iron, responding to contact with something that needs fixing.',
         '"I\'m going to start on the keel reinforcement tonight. Mast step tomorrow. I\'ll need timber, pitch, and six hundred feet of standing rigging." He looks at you over his shoulder. "You\'re paying for materials. Eventually. When you have money. Which you don\'t."',
+      ],
+    },
+    {
+      id: 'dragghen_10b',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         '"I\'ll figure it out."',
+      ],
+    },
+    {
+      id: 'dragghen_10c',
+      speaker: 'dragghen',
+      speakerName: 'Dragghen Kolve',
+      paragraphs: [
         '"I know." He pulls a tool roll from his bag and unties it on the dock boards. Twenty-two instruments, each one in its place. "That\'s a three. The figuring-it-out part. You\'ll get better."',
       ],
     },

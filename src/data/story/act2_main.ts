@@ -43,7 +43,7 @@ export const act2BeginScene: StoryScene = {
     {
       id: 'act2_begin_04',
       speaker: 'vorreth',
-      speakerName: 'Vorreth Daaz',
+      speakerName: 'Vorreth Khane',
       paragraphs: [
         'Vorreth has been standing by the window with his arms crossed. He doesn\'t sit. Hasn\'t sat the entire briefing.',
         '"Vasshen doesn\'t hunt. She exterminates." He says it flat. No drama. The way you say things you know from experience. "Three years I served under her. Probe, provoke, overwhelm. Every time. She\'ll test us inside two weeks. If we look weak, the full fleet comes inside a month."',
@@ -137,7 +137,7 @@ export const act2UltimatumScene: StoryScene = {
     {
       id: 'ultimatum_01',
       speaker: 'vorreth',
-      speakerName: 'Vorreth Daaz',
+      speakerName: 'Vorreth Khane',
       paragraphs: [
         'The courier ship enters Tavven Shoal\'s harbor at dawn. A single Wardensea cutter, white flag on the mast. No escort. No weapons visible. One officer on deck, standing at attention in regulation blues.',
         'Vorreth watches from the watchtower. He hasn\'t blinked.',
@@ -146,6 +146,8 @@ export const act2UltimatumScene: StoryScene = {
     },
     {
       id: 'ultimatum_02',
+      speaker: 'courier',
+      speakerName: 'Wardensea Courier',
       paragraphs: [
         'The officer is young. Too young for what he\'s carrying. He climbs the dock ladder, salutes nobody in particular, and produces a sealed scroll from a leather case.',
         'The seal is black wax pressed with a ship\'s anchor over crossed cannons. Southern Fleet Command.',
@@ -178,7 +180,7 @@ export const act2UltimatumScene: StoryScene = {
     {
       id: 'ultimatum_05',
       speaker: 'vorreth',
-      speakerName: 'Vorreth Daaz',
+      speakerName: 'Vorreth Khane',
       paragraphs: [
         'Vorreth takes the scroll from Delvessa. Reads it twice. On the second pass, his lips move. Counting ships. Counting days.',
         '"I know this woman." He folds the scroll carefully, like he\'s handling something that used to be his. "She doesn\'t write ultimatums. She writes death sentences and calls them courtesy. But fourteen days..." He shakes his head. "Fourteen days is wrong. She likes thirty. Fourteen means someone\'s leaning on her."',
@@ -602,7 +604,7 @@ export const act2CouncilScene: StoryScene = {
     {
       id: 'council_06',
       speaker: 'vorreth',
-      speakerName: 'Vorreth Daaz',
+      speakerName: 'Vorreth Khane',
       paragraphs: [
         'Vorreth pushes back from the table and stands. It\'s not a choice. It\'s a reflex. Twelve years of briefings burned into his muscles.',
         '"One warship. Six cutters. Four of them combat-ready." He draws a line on the map from Durrek to Vess Harbour. The chalk snaps and he keeps going with the broken half. "The Wardensea has twelve capital ships at Vess Harbour and eight more on patrol. Straight fight, we lose. Every time. Don\'t let anyone in this room tell you otherwise."',
@@ -741,7 +743,7 @@ export const act2FirstStrikeScene: StoryScene = {
     {
       id: 'strike_02',
       speaker: 'vorreth',
-      speakerName: 'Vorreth Daaz',
+      speakerName: 'Vorreth Khane',
       paragraphs: [
         'Vorreth reads the formation from the watchtower. His spyglass does not waver.',
         '"Second Division Reconnaissance. Three corvettes, modified for fast engagement. They are mapping our response: how quickly we mobilize, what we deploy, and where our defensive gaps are."',
@@ -988,7 +990,7 @@ export const act2SouthernGambitScene: StoryScene = {
     {
       id: 'gambit_02',
       speaker: 'vorreth',
-      speakerName: 'Vorreth Daaz',
+      speakerName: 'Vorreth Khane',
       paragraphs: [
         'Vorreth draws the harbor from memory. His hand doesn\'t hesitate. He lived there for three years and the layout is carved into him.',
         '"Twelve warships at anchor. Six thousand souls behind the walls. Two shore batteries, one drydock, and the harbor mouth is three hundred meters wide at the choke." He sets the chalk down. Stares at his own drawing.',
@@ -1071,7 +1073,7 @@ export const act2SouthernGambitScene: StoryScene = {
     {
       id: 'gambit_07d',
       speaker: 'vorreth',
-      speakerName: 'Vorreth Daaz',
+      speakerName: 'Vorreth Khane',
       paragraphs: [
         '"Or it\'s bait," Vorreth says. "A provocation designed to make us cautious when we need to be bold."',
       ],
@@ -1087,6 +1089,7 @@ export const act2SouthernGambitScene: StoryScene = {
     {
       id: 'gambit_07f',
       speaker: 'karyudon',
+      speakerName: 'Karyudon',
       paragraphs: [
         'You pocket the letter.',
         '"Move south. Take Windrow. Take Ghostlight. When we\'re standing in Vess Harbour, this friend can come say hello in person."',

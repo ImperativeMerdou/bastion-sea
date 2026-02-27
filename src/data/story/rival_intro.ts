@@ -8,15 +8,34 @@ export const rivalIntroScene: StoryScene = {
     {
       id: 'rival_01',
       title: 'THE SHIP',
-      speaker: 'kovesse',
-      speakerName: 'Kovesse Grenn',
       paragraphs: [
         'The ship arrives at dawn. Sleek. White hull, gold trim, a vessel that announces money before it announces anything else. It slides into Tavven Shoal\'s harbor like a blade into a silk sheath: smooth, deliberate, and designed to make you notice.',
         'The name painted on the bow in gilt script: THE FINAL OFFER.',
+      ],
+    },
+    {
+      id: 'rival_01b',
+      speaker: 'kovesse',
+      speakerName: 'Kovesse Grenn',
+      paragraphs: [
         'Kovesse sees it first. She\'s on the roof of Hella\'s stall, broadcasting the morning market report, when the ship rounds the breakwater. Her ears go flat.',
         '"Captain. We have a visitor."',
+      ],
+    },
+    {
+      id: 'rival_01c',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         'You look up from Dragghen\'s breakfast. Your amber eyes track the ship. You take another bite. Chew. Swallow. Then you stand.',
         '"Nice ship."',
+      ],
+    },
+    {
+      id: 'rival_01d',
+      speaker: 'delvessa',
+      speakerName: 'Delvessa Ghal',
+      paragraphs: [
         '"That\'s a Kolmari-built racing sloop with customs clearance from four different island chains," Delvessa says from behind her ledger. She hasn\'t looked up. She recognized the hull profile from the sound of the water displacement. "Whoever owns that vessel has more money than most islands."',
       ],
     },
@@ -110,13 +129,42 @@ export const rivalIntroScene: StoryScene = {
     {
       id: 'rival_06',
       speaker: 'delvessa',
+      speakerName: 'Delvessa Ghal',
       paragraphs: [
         'The Final Offer catches the wind and slides out of Tavven Shoal\'s harbor as smoothly as she entered. Gold trim catches the morning light. The giant stands at the stern rail, watching the island shrink.',
         'Delvessa closes her ledger. She\'s been writing since Venn sat down.',
         '"I recognized the hull. Kolmari-registered racing sloop. That narrows it to about forty people in the Bastion Sea." She taps her pen against the ledger. "Sable Venn. Ex-Kolmari. Left three years ago with capital. He\'s been buying islands since. Quietly. No bounties. No Grimoire attention."',
+      ],
+    },
+    {
+      id: 'rival_06b',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         '"How much do you actually know about him?"',
+      ],
+    },
+    {
+      id: 'rival_06c',
+      speaker: 'delvessa',
+      speakerName: 'Delvessa Ghal',
+      paragraphs: [
         'She hesitates. For Delvessa, hesitation is an answer. "Not enough. He operates in spaces the Kolmari don\'t publish. I know the hull, I know the name, I know the pattern. The details..." She closes the ledger. "I\'ll need time."',
+      ],
+    },
+    {
+      id: 'rival_06d',
+      speaker: 'kovesse',
+      speakerName: 'Kovesse Grenn',
+      paragraphs: [
         'Kovesse appears, practically vibrating. "Captain. CAPTAIN. We have a RIVAL. A named, photogenic RIVAL with a cool ship and matching henchmen. The metrics on this are going to be INSANE."',
+      ],
+    },
+    {
+      id: 'rival_06e',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         'You crack a knuckle. Don\'t answer Kovesse.',
         '"Good."',
       ],

@@ -19,6 +19,7 @@ export const kirinArrivalScene: StoryScene = {
     {
       id: 'kirin_02',
       speaker: 'vorreth',
+      speakerName: 'Vorreth Khane',
       paragraphs: [
         '"I see it." Vorreth is already at the rail, one hand on his blade. Not drawing. Reading. "Single mast. Fast hull. No escort. That\'s not a raiding party."',
         'He looks at you.',
@@ -107,6 +108,7 @@ export const kirinArrivalScene: StoryScene = {
     {
       id: 'kirin_08',
       speaker: 'delvessa',
+      speakerName: 'Delvessa Ghal',
       paragraphs: [
         '"Captain." Delvessa is at your shoulder. Her voice is low enough that only you hear it. "He sailed here alone. No crew. No backup. Either he\'s desperate, or he\'s bait."',
         'She pauses.',

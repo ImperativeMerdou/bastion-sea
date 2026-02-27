@@ -36,15 +36,29 @@ export const firstCrewDinnerScene: StoryScene = {
       paragraphs: [
         'Kovesse has three Grimoires on the counter. She\'s broadcasting. Of course she\'s broadcasting.',
         '"The crew sits down for their first meal. Five members. The captain, the shipwright, the broadcaster, the analyst, and the first mate. One Oni. One Gorundai. One Rathai. One Human. One more Oni. The species breakdown alone would crash a Wardensea diversity memo."',
+      ],
+    },
+    {
+      id: 'dinner_03b',
+      speaker: 'delvessa',
+      speakerName: 'Delvessa Ghal',
+      paragraphs: [
         'Delvessa looks at her.',
         '"You\'re narrating our dinner."',
+      ],
+    },
+    {
+      id: 'dinner_03c',
+      speaker: 'kovesse',
+      speakerName: 'Kovesse Grenn',
+      paragraphs: [
         '"I\'m DOCUMENTING our dinner. There\'s a difference. Documentation is for history. Narration is for entertainment." She flips a Grimoire. "This is both."',
       ],
     },
     {
       id: 'dinner_04',
       speaker: 'vorreth',
-      speakerName: 'Vorreth Daaz',
+      speakerName: 'Vorreth Khane',
       paragraphs: [
         'Vorreth hasn\'t moved from the wall. He watches the food with the patience of someone who knows that meals come when they come and waiting is not a hardship.',
         '"The Daaz Accord ate together every night," he says. It\'s not a correction. It\'s not a suggestion. It\'s a fact about a crew that doesn\'t exist anymore, offered to a crew that barely exists yet. "Douren insisted. Even during blockades. Even when the food was hardtack and rainwater. He said a crew that doesn\'t eat together is a crew that doesn\'t know each other. A crew that doesn\'t know each other breaks."',
@@ -59,6 +73,13 @@ export const firstCrewDinnerScene: StoryScene = {
       paragraphs: [
         'Delvessa moves her chair. Two inches closer to the table. Not at it. Closer.',
         '"I don\'t eat with colleagues. It creates social debt. You share food, you share obligation. The obligation creates expectation. Expectation distorts judgment." She opens her ledger. Closes it. Opens it again. "This is, technically, a professional arrangement."',
+      ],
+    },
+    {
+      id: 'dinner_05b',
+      speaker: 'dragghen',
+      speakerName: 'Dragghen Kolve',
+      paragraphs: [
         '"Technically," Dragghen says from the grill, "shut up and eat."',
         'He puts a plate in front of her. Three filets, rice shaped into a clean mound, pepper sauce in a stripe across the top. Precise. Deliberate. The plate of a man who treats cooking the way he treats hull repair: every element in its place.',
         'She looks at the plate. Looks at Dragghen. Looks at the plate.',
@@ -77,12 +98,34 @@ export const firstCrewDinnerScene: StoryScene = {
     },
     {
       id: 'dinner_07',
+      speaker: 'hella',
+      speakerName: 'Hella',
       paragraphs: [
         'Hella brings storm tea. Doesn\'t charge for it. Sits at the edge of the counter and watches the five of you with the expression of a woman who has fed a lot of people and knows the difference between customers and something else.',
         '"You know what you\'re doing?" she asks. Not to anyone specific. To the table.',
+      ],
+    },
+    {
+      id: 'dinner_07b',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         '"No," you say.',
+      ],
+    },
+    {
+      id: 'dinner_07c',
+      speaker: 'hella',
+      speakerName: 'Hella',
+      paragraphs: [
         '"Good." She pours herself a cup. "The ones who know what they\'re doing are the ones who get it wrong."',
       ],
+    },
+    {
+      id: 'dinner_07d',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [],
       choices: [
         {
           id: 'dinner_toast_crew',

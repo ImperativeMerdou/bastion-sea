@@ -146,11 +146,12 @@ export const TopBar: React.FC = () => {
           <button
             key={tab.id}
             onClick={() => { playSfx('click'); setActivePanel(tab.id); }}
-            className={`px-5 py-2.5 text-base font-display font-bold tracking-[0.15em] transition-all duration-200 rounded-sm ${
+            className={`px-5 py-2.5 font-display font-bold tracking-[0.15em] transition-all duration-200 rounded-sm ${
               activePanel === tab.id
-                ? 'bg-ocean-600 text-gold-400 border border-gold-500/30'
-                : 'text-ocean-300 hover:text-ocean-100 hover:bg-ocean-700'
+                ? 'bg-ocean-600 text-gold-400 border border-gold-500/30 shadow-sm shadow-gold-500/10'
+                : 'text-ocean-300 hover:text-ocean-100 hover:bg-ocean-700/70 border border-transparent hover:border-ocean-500/30'
             }`}
+            style={{ fontSize: '17px' }}
             title={`${tab.label} (${tab.key})`}
             aria-label={`${tab.label} panel, keyboard shortcut ${tab.key}`}
             aria-selected={activePanel === tab.id}
@@ -168,20 +169,20 @@ export const TopBar: React.FC = () => {
       <div className="flex items-center gap-4">
         <ObjectiveIndicator />
         <div className="border-l border-ocean-600 pl-4 flex items-center gap-4">
-          <div className="text-base text-ocean-300">
-            <span className="text-ocean-400 font-display">DAY</span>{' '}
-            <span className="text-ocean-100 font-bold text-lg">{dayCount}</span>
+          <div>
+            <span className="font-display font-semibold tracking-wider" style={{ fontSize: '17px', color: '#C4B8A8' }}>DAY</span>{' '}
+            <span className="font-bold" style={{ fontSize: '17px', color: '#F0E8DC' }}>{dayCount}</span>
           </div>
-          <div className="text-base">
-            <span className="text-ocean-400 font-display">BOUNTY</span>{' '}
-            <span className={`font-bold text-lg ${mc.bounty > 0 ? 'text-crimson-400' : 'text-ocean-300'}`}>
+          <div>
+            <span className="font-display font-semibold tracking-wider" style={{ fontSize: '17px', color: '#C4B8A8' }}>BOUNTY</span>{' '}
+            <span className={`font-bold ${mc.bounty > 0 ? 'text-crimson-400' : ''}`} style={{ fontSize: '17px', color: mc.bounty > 0 ? undefined : '#F0E8DC' }}>
               {mc.bounty > 0 ? `${(mc.bounty / 1000000).toFixed(0)}M` : 'UNKNOWN'}
             </span>
           </div>
           {threatLevel > 0 && (
-            <div className="text-base">
-              <span className="text-ocean-400 font-display">WARDENSEA</span>{' '}
-              <span className={`font-bold text-sm ${threatInfo.color}`}>
+            <div>
+              <span className="font-display font-semibold tracking-wider" style={{ fontSize: '17px', color: '#C4B8A8' }}>WARDENSEA</span>{' '}
+              <span className={`font-bold ${threatInfo.color}`} style={{ fontSize: '17px' }}>
                 {threatInfo.label}
               </span>
             </div>
@@ -191,13 +192,13 @@ export const TopBar: React.FC = () => {
             const recruited = (crew || []).filter((m) => m.recruited && m.alive);
             const unhappy = recruited.filter((m) => m.mood === 'disgruntled' || m.mood === 'mutinous');
             return (
-              <div className="text-base" title={`${recruited.length} crew members active${unhappy.length > 0 ? `, ${unhappy.length} unhappy` : ''}`}>
-                <span className="text-ocean-400 font-display">CREW</span>{' '}
-                <span className={`font-bold text-lg ${unhappy.length > 0 ? 'text-amber-400' : 'text-ocean-200'}`}>
+              <div title={`${recruited.length} crew members active${unhappy.length > 0 ? `, ${unhappy.length} unhappy` : ''}`}>
+                <span className="font-display font-semibold tracking-wider" style={{ fontSize: '17px', color: '#C4B8A8' }}>CREW</span>{' '}
+                <span className={`font-bold ${unhappy.length > 0 ? 'text-amber-400' : ''}`} style={{ fontSize: '17px', color: unhappy.length > 0 ? undefined : '#F0E8DC' }}>
                   {recruited.length}
                 </span>
                 {unhappy.length > 0 && (
-                  <span className="text-crimson-400 text-xs ml-1 animate-pulse">⚠</span>
+                  <span className="text-crimson-400 text-xs ml-1 animate-pulse">&#9888;</span>
                 )}
               </div>
             );
@@ -209,7 +210,7 @@ export const TopBar: React.FC = () => {
       <div className="flex items-center gap-4 text-base">
         <div className="flex items-center gap-1.5 cursor-help group relative" title="Sovereigns - Currency for purchases, upgrades, and bribes">
           <GameIcon iconKey="sovereignty" fallback="⬡" className="w-6 h-6" />
-          <span className={`text-ocean-200 font-bold text-lg group-hover:text-gold-400 transition-colors ${sovFlash}`}>{resources.sovereigns.toLocaleString()}</span>
+          <span className={`font-bold group-hover:text-gold-400 transition-colors ${sovFlash}`} style={{ fontSize: '17px', color: '#F0E8DC' }}>{resources.sovereigns.toLocaleString()}</span>
           <div className="absolute top-full mt-2 left-1/2 -translate-x-1/2 bg-ocean-800 border border-ocean-600 px-3 py-2 rounded shadow-xl text-xs text-ocean-300 w-44 opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity z-50">
             <span className="text-gold-400 font-bold">SOVEREIGNS</span>
             <p className="mt-1">Currency. Buy gear, bribe officials, fund upgrades.</p>
@@ -217,7 +218,7 @@ export const TopBar: React.FC = () => {
         </div>
         <div className="flex items-center gap-1.5 cursor-help group relative" title="Supplies - Daily upkeep for crew and territories">
           <GameIcon iconKey="supplies" fallback="◈" className="w-6 h-6" />
-          <span className={`text-ocean-200 font-bold text-lg group-hover:text-green-400 transition-colors ${supFlash}`}>{resources.supplies}</span>
+          <span className={`font-bold group-hover:text-green-400 transition-colors ${supFlash}`} style={{ fontSize: '17px', color: '#F0E8DC' }}>{resources.supplies}</span>
           <div className="absolute top-full mt-2 left-1/2 -translate-x-1/2 bg-ocean-800 border border-ocean-600 px-3 py-2 rounded shadow-xl text-xs text-ocean-300 w-44 opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity z-50">
             <span className="text-green-400 font-bold">SUPPLIES</span>
             <p className="mt-1">Food and provisions. Consumed daily. Running out loses crew morale.</p>
@@ -225,7 +226,7 @@ export const TopBar: React.FC = () => {
         </div>
         <div className="flex items-center gap-1.5 cursor-help group relative" title="Materials - Used for territory upgrades and ship repairs">
           <GameIcon iconKey="materials" fallback="⬢" className="w-6 h-6" />
-          <span className={`text-ocean-200 font-bold text-lg group-hover:text-iron-300 transition-colors ${matFlash}`}>{resources.materials}</span>
+          <span className={`font-bold group-hover:text-iron-300 transition-colors ${matFlash}`} style={{ fontSize: '17px', color: '#F0E8DC' }}>{resources.materials}</span>
           <div className="absolute top-full mt-2 left-1/2 -translate-x-1/2 bg-ocean-800 border border-ocean-600 px-3 py-2 rounded shadow-xl text-xs text-ocean-300 w-44 opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity z-50">
             <span className="text-iron-300 font-bold">MATERIALS</span>
             <p className="mt-1">Building materials. Build territory upgrades and repair infrastructure.</p>
@@ -233,7 +234,7 @@ export const TopBar: React.FC = () => {
         </div>
         <div className="flex items-center gap-1.5 cursor-help group relative" title="Intelligence - Information for conquests and strategy">
           <GameIcon iconKey="intelligence" fallback="◉" className="w-6 h-6" />
-          <span className={`text-ocean-200 font-bold text-lg group-hover:text-purple-400 transition-colors ${intFlash}`}>{resources.intelligence}</span>
+          <span className={`font-bold group-hover:text-purple-400 transition-colors ${intFlash}`} style={{ fontSize: '17px', color: '#F0E8DC' }}>{resources.intelligence}</span>
           <div className="absolute top-full mt-2 left-1/2 -translate-x-1/2 bg-ocean-800 border border-ocean-600 px-3 py-2 rounded shadow-xl text-xs text-ocean-300 w-44 opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity z-50">
             <span className="text-purple-400 font-bold">INTELLIGENCE</span>
             <p className="mt-1">Intel and contacts. Required for subversion conquests and strategic advantages.</p>

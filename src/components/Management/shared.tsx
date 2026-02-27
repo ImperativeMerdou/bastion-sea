@@ -1,6 +1,6 @@
 import React from 'react';
 import { DominionTier } from '../../types/game';
-import { getPortrait } from '../../utils/images';
+import { getPortrait, getUiAsset } from '../../utils/images';
 import GameIcon from '../UI/GameIcon';
 
 export const tierColors: Record<DominionTier, string> = {
@@ -67,15 +67,30 @@ export const PortraitImage: React.FC<{ characterId: string; fallback: string; si
   characterId, fallback, size = 'w-24 h-32',
 }) => {
   const portrait = getPortrait(characterId);
-  return portrait ? (
-    <img
-      src={portrait}
-      alt={characterId}
-      className={`${size} object-cover border-2 border-ocean-500 rounded-sm`}
-    />
-  ) : (
-    <div className={`${size} bg-ocean-800 border-2 border-ocean-500 rounded-sm flex items-center justify-center`}>
-      <span className="text-4xl">{fallback}</span>
+  const frameImage = getUiAsset('card_frame');
+  return (
+    <div className={`${size} relative`}>
+      {portrait ? (
+        <img
+          src={portrait}
+          alt={characterId}
+          className="w-full h-full object-cover border-2 border-ocean-500 rounded-sm"
+        />
+      ) : (
+        <div className="w-full h-full bg-ocean-800 border-2 border-ocean-500 rounded-sm flex items-center justify-center">
+          <span className="text-4xl">{fallback}</span>
+        </div>
+      )}
+      {/* Frame overlay — sits ON TOP of the portrait */}
+      {frameImage && portrait && (
+        <img
+          src={frameImage}
+          alt=""
+          className="absolute inset-0 w-full h-full pointer-events-none z-[2] rounded-sm"
+          style={{ objectFit: 'fill', opacity: 0.45 }}
+          draggable={false}
+        />
+      )}
     </div>
   );
 };

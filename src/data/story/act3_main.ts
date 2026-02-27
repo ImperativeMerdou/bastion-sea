@@ -32,7 +32,7 @@ export const act3BeginScene: StoryScene = {
     {
       id: 'a3_begin_03',
       speaker: 'vorreth',
-      speakerName: 'Vorreth Daaz',
+      speakerName: 'Vorreth Khane',
       paragraphs: [
         'Vorreth hasn\'t moved from the window since you took the room. Below: captured warships at anchor, your crews swarming the docks, smoke still rising from the eastern battery where Kovesse\'s charges blew through the wall.',
         '"Forty-eight ships." He says it the way you\'d say a death sentence. "That\'s everything she has. This isn\'t a response. This is an erasure. She\'s coming to turn Vess Harbour back into a Wardensea installation and pretend we never happened."',
@@ -167,7 +167,7 @@ export const act3VasshenScene: StoryScene = {
     {
       id: 'a3_vasshen_03',
       speaker: 'vorreth',
-      speakerName: 'Vorreth Daaz',
+      speakerName: 'Vorreth Khane',
       paragraphs: [
         'Vorreth is beside you. Greysalt drawn, blade trembling slightly because his hand won\'t stop shaking. He clenches tighter. Forces it still.',
         '"The First Division." His voice is hoarse. "Full deployment. I haven\'t seen this since..."',
@@ -284,6 +284,8 @@ export const act3ConquerorGambitScene: StoryScene = {
     {
       id: 'a3_conqueror_01',
       title: 'THE PRICE OF ALLIES',
+      speaker: 'suulen',
+      speakerName: 'Suulen Vassere',
       paragraphs: [
         'The sails appear from the south three days after Vasshen\'s fleet withdraws. Not Wardensea sails. Conqueror canvas, unmarked and dark, cutting through the water in a formation that says: we are not sneaking in. We are arriving.',
         'Seven ships. More than Tessavarra had before. Somebody has been recruiting.',
@@ -461,6 +463,8 @@ export const act3IroncladScene: StoryScene = {
       id: 'a3_ironclad_01',
       title: 'THE MACHINE ARRIVES',
       stinger: 'story_revelation',
+      speaker: 'kovesse',
+      speakerName: 'Kovesse Grenn',
       paragraphs: [
         'Kovesse screams.',
         'A fascinated scream. The scream of a four-foot-one Rathai engineer whose instruments just showed her something that should not exist.',
@@ -495,7 +499,7 @@ export const act3IroncladScene: StoryScene = {
     {
       id: 'a3_ironclad_04',
       speaker: 'vorreth',
-      speakerName: 'Vorreth Daaz',
+      speakerName: 'Vorreth Khane',
       paragraphs: [
         'Vorreth stares at the Ironclad the way a man stares at a funeral.',
         '"Our cannons won\'t scratch it." Flat. No room for argument. "Shore batteries are designed for wood. That is not wood."',
@@ -640,7 +644,23 @@ export const act3FinalCouncilScene: StoryScene = {
       speakerName: 'Kovesse Grenn',
       paragraphs: [
         '"It\'s a drawing, Suulen. From a child."',
+      ],
+      characters: ['karyudon', 'kovesse', 'suulen'],
+    },
+    {
+      id: 'a3_council_03d',
+      speaker: 'suulen',
+      speakerName: 'Suulen Vassere',
+      paragraphs: [
         '"An accurately addressed drawing."',
+      ],
+      characters: ['karyudon', 'kovesse', 'suulen'],
+    },
+    {
+      id: 'a3_council_03e',
+      speaker: 'kovesse',
+      speakerName: 'Kovesse Grenn',
+      paragraphs: [
         'Kovesse looks at the picture again. Her voice drops. The Kovesse who broadcasts to thirty thousand feeds is gone. "Sixty-three percent favorable. That\'s the number. I know the number. Data I understand." She smooths a crease in the drawing with her thumb. "I don\'t understand this. And I don\'t know what happens to it if we lose."',
       ],
       characters: ['karyudon', 'kovesse', 'suulen'],
@@ -656,7 +676,7 @@ export const act3FinalCouncilScene: StoryScene = {
     {
       id: 'a3_council_04b',
       speaker: 'vorreth',
-      speakerName: 'Vorreth Daaz',
+      speakerName: 'Vorreth Khane',
       expression: 'grim',
       paragraphs: [
         '"I killed a man I trained with."',
@@ -678,7 +698,7 @@ export const act3FinalCouncilScene: StoryScene = {
     {
       id: 'a3_council_04d',
       speaker: 'vorreth',
-      speakerName: 'Vorreth Daaz',
+      speakerName: 'Vorreth Khane',
       paragraphs: [
         '"I don\'t have a speech about duty." He\'s still talking to the window. "I turned on my own people because their people turned on theirs first, and that\'s the only way I can say it that lets me sleep."',
         'He turns around. Looks at you.',
@@ -705,6 +725,14 @@ export const act3FinalCouncilScene: StoryScene = {
       speakerName: 'Kovesse Grenn',
       paragraphs: [
         '"That\'s... weirdly threatening and also the nicest thing you\'ve ever said."',
+      ],
+      characters: ['karyudon', 'kovesse', 'suulen'],
+    },
+    {
+      id: 'a3_council_05c',
+      speaker: 'suulen',
+      speakerName: 'Suulen Vassere',
+      paragraphs: [
         '"It wasn\'t nice. It was accurate."',
       ],
       characters: ['karyudon', 'kovesse', 'suulen'],

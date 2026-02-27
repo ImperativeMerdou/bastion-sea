@@ -61,9 +61,30 @@ export const delvessaRomance01: StoryScene = {
       paragraphs: [
         'She stopped. Looked at the plate. Looked at him, all seven feet of Oni filling the doorframe, horns nearly scraping the lintel, amber eyes catching the lamplight like forge coals. Then back at the plate.',
         '"Nobody asked you to bring that."',
+      ],
+    },
+    {
+      id: 'dr01_beat1_6b',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         '"Nobody asks me to do most of the things I do. Eat the food, Delvessa."',
+      ],
+    },
+    {
+      id: 'dr01_beat1_6c',
+      speaker: 'delvessa',
+      speakerName: 'Delvessa Ghal',
+      paragraphs: [
         'She ate. Slowly at first, then faster, as if her body had just remembered it existed below the neck. He poured from the bottle, not into a cup, because there weren\'t any clean ones. Straight onto the desk, into a measuring glass she\'d been using for ink ratios. She stared at him.',
         '"That had calibration marks."',
+      ],
+    },
+    {
+      id: 'dr01_beat1_6d',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         '"Now it has whiskey. Better calibration."',
         'The corner of her mouth twitched. She drank.',
       ],
@@ -323,12 +344,31 @@ export const delvessaRomance02: StoryScene = {
     },
     {
       id: 'dr02_beat1_7',
+      paragraphs: [
+        'She looked up at him. Rain on her lashes. The scar under her ear was visible now, the one she kept hidden beneath her hair. In the lightning flash he could see her clearly, not the Arbiter, not the strategist. Just Delvessa, thirty-four years old, standing in a storm next to a man who scared everyone and somehow didn\'t scare her.',
+      ],
+    },
+    {
+      id: 'dr02_beat1_7b',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
+        '"Why are you out here?" he asked.',
+      ],
+    },
+    {
+      id: 'dr02_beat1_7c',
       speaker: 'delvessa',
       speakerName: 'Delvessa Ghal',
       paragraphs: [
-        'She looked up at him. Rain on her lashes. The scar under her ear was visible now, the one she kept hidden beneath her hair. In the lightning flash he could see her clearly, not the Arbiter, not the strategist. Just Delvessa, thirty-four years old, standing in a storm next to a man who scared everyone and somehow didn\'t scare her.',
-        '"Why are you out here?" he asked.',
         '"Couldn\'t sleep."',
+      ],
+    },
+    {
+      id: 'dr02_beat1_7d',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         '"Bullshit. You sleep through everything. I\'ve seen you nap during Kovesse\'s equipment tests."',
         'She didn\'t deny it.',
       ],
@@ -579,6 +619,13 @@ export const delvessaRomance03: StoryScene = {
       paragraphs: [
         'She looked at him, the long, measuring look that used to be clinical and now was something else entirely. The Forged Sight was active. It was always active around him these days, like she couldn\'t stop herself from reading every shift in his expression, every micro-tension in his jaw. He\'d learned not to hide from it. There was no point hiding from a woman whose Dominion was seeing the truth.',
         '"You do this every time," she said. "After every conquest. Everyone celebrates and you sit above them and watch."',
+      ],
+    },
+    {
+      id: 'dr03_beat1_6b',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         '"Someone has to remember what it cost."',
         'She turned her glass in her hands. Then she drank. He drank. Below, Dragghen started a new song and Kovesse harmonized in a key that hadn\'t been invented yet.',
       ],
@@ -993,13 +1040,25 @@ export const delvessaRomance04: StoryScene = {
     },
     {
       id: 'dr04_beat5_2',
-      speaker: 'delvessa',
-      speakerName: 'Delvessa Ghal',
       paragraphs: [
         'She breathed. One long exhale. Whatever calculation she\'d been running, whatever equation she\'d been trying to solve with six hours on a cold floor and a number she couldn\'t stop counting, the answer was written on her face.',
         'She was still Delvessa. Twelve years of training didn\'t dissolve in a corridor. The Arbiter composure reassembled itself, plate by plate, the professional mask settling back into place.',
         'But the eyes underneath were different. The Forged Sight was off. Just her.',
+      ],
+    },
+    {
+      id: 'dr04_beat5_2b',
+      speaker: 'delvessa',
+      speakerName: 'Delvessa Ghal',
+      paragraphs: [
         '"Don\'t get hit again," she said quietly.',
+      ],
+    },
+    {
+      id: 'dr04_beat5_2c',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         '"No promises."',
         'Her hands pressed the bandage on his shoulder. Checking it. Always checking.',
       ],
@@ -1020,11 +1079,53 @@ export const delvessaRomance04: StoryScene = {
       paragraphs: [
         'Delvessa pulled back. Not far. Just enough to look up at him. Her eyes were clear: Forged Sight off, no mask, no calculations, just dark brown and steady, certain in a way that had nothing to do with data.',
         '"This doesn\'t change the strategy," she said.',
+      ],
+    },
+    {
+      id: 'dr04_beat6_2b',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         '"Wouldn\'t dream of it."',
+      ],
+    },
+    {
+      id: 'dr04_beat6_2c',
+      speaker: 'delvessa',
+      speakerName: 'Delvessa Ghal',
+      paragraphs: [
         '"I\'m still going to argue with every plan you make."',
+      ],
+    },
+    {
+      id: 'dr04_beat6_2d',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         '"I\'d be worried if you stopped."',
+      ],
+    },
+    {
+      id: 'dr04_beat6_2e',
+      speaker: 'delvessa',
+      speakerName: 'Delvessa Ghal',
+      paragraphs: [
         '"And if you take another harpoon bolt, I am going to be professionally furious."',
+      ],
+    },
+    {
+      id: 'dr04_beat6_2f',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         '"Professionally."',
+      ],
+    },
+    {
+      id: 'dr04_beat6_2g',
+      speaker: 'delvessa',
+      speakerName: 'Delvessa Ghal',
+      paragraphs: [
         '"Professionally." She straightened his collar. Her fingers lingered on the bandage. "Go eat breakfast. I need to recalculate our force projections."',
         'She picked up the ledger. She picked up the cold tea. She walked toward the command room with the stride of a woman who had renegotiated the terms of her existence and was already running the new numbers.',
         'At the end of the corridor, she stopped.',
@@ -1036,7 +1137,21 @@ export const delvessaRomance04: StoryScene = {
       speakerName: 'Delvessa Ghal',
       paragraphs: [
         '"Karyudon."',
+      ],
+    },
+    {
+      id: 'dr04_beat6_3b',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         '"Yeah?"',
+      ],
+    },
+    {
+      id: 'dr04_beat6_3c',
+      speaker: 'delvessa',
+      speakerName: 'Delvessa Ghal',
+      paragraphs: [
         '"Four inches to the right." She didn\'t turn around. "Don\'t you ever make me count that close again."',
       ],
     },

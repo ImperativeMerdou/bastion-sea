@@ -38,6 +38,13 @@ export const mirrorwaterArrivalScene: StoryScene = {
         '"You\'re big," he says.',
         '"I\'m an Oni."',
         '"That explains it." He goes back to mending a fishing net. The conversation, apparently, is over.',
+      ],
+    },
+    {
+      id: 'mirrorwater_arrive_03b',
+      speaker: 'vorreth',
+      speakerName: 'Vorreth Daaz',
+      paragraphs: [
         'Vorreth surveys the lagoon with professional eyes. "This is a perfect staging area. Hidden approach. Protected anchorage. Fresh water. You could park a small fleet in here and nobody would know until you sailed out."',
       ],
       choices: [
@@ -108,8 +115,29 @@ export const mirrorwaterArrivalScene: StoryScene = {
         '"Three hidden channels," she reports. "Two accessible at high tide, one at all times. The main channel is navigable by anything up to a war galleon. The secondary channels are single-ship only." She pauses. "There\'s also something interesting on the southern wall. Carved marks. Old. Possibly pre-colonial."',
         '"What kind of marks?"',
         '"Navigation. Someone used this lagoon as a waypoint centuries ago. The carvings match Tunnel-Runner notation from the Fourth Era." She looks at you with quiet intensity. "Captain, this place has history. We should respect that."',
+      ],
+    },
+    {
+      id: 'mirrorwater_arrive_05b',
+      speaker: 'kovesse',
+      speakerName: 'Kovesse Grenn',
+      paragraphs: [
         'Kovesse starts recording. "Mysterious ancient carvings at the hidden lagoon. The Oni Captain Karyudon discovers a forgotten waypoint. Is this a sign? A message from the old world? Stay tuned--"',
+      ],
+    },
+    {
+      id: 'mirrorwater_arrive_05c',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         '"Kovesse."',
+      ],
+    },
+    {
+      id: 'mirrorwater_arrive_05d',
+      speaker: 'kovesse',
+      speakerName: 'Kovesse Grenn',
+      paragraphs: [
         '"Fine. But this is CONTENT, Captain."',
       ],
     },

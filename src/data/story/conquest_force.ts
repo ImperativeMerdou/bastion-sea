@@ -9,22 +9,51 @@ export const conquestForceScene: StoryScene = {
       id: 'force_01',
       title: 'DAY 5 - THE DECISION',
       speaker: 'karyudon',
+      speakerName: 'Karyudon',
       paragraphs: [
         'The crew goes quiet when you say it.',
         '"We take the Harbor Board. Tonight. By force."',
+      ],
+    },
+    {
+      id: 'force_01b',
+      speaker: 'delvessa',
+      speakerName: 'Delvessa Ghal',
+      paragraphs: [
         'Delvessa closes her ledger.',
         '"That\'s the least efficient approach available to us."',
+      ],
+    },
+    {
+      id: 'force_01c',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         '"It\'s the most honest one."',
       ],
     },
     {
       id: 'force_02',
       speaker: 'vorreth',
-      speakerName: 'Vorreth Daaz',
+      speakerName: 'Vorreth Khane',
       paragraphs: [
         'Vorreth stands. His chair scrapes the coral floor. Everyone looks at him.',
         '"I know what happens next. I\'ve planned operations like this from the other side." He fixes you with those grey, exhausted eyes. "Pettha Koss has eight private guards. Not military. Harbor security. They carry clubs and know how to use them on drunks and petty thieves. They are not equipped for what you are."',
+      ],
+    },
+    {
+      id: 'force_02b',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         '"Good."',
+      ],
+    },
+    {
+      id: 'force_02c',
+      speaker: 'vorreth',
+      speakerName: 'Vorreth Khane',
+      paragraphs: [
         '"That wasn\'t a compliment." He pauses. "You could do this cleanly. Minimal damage. Control the exits, isolate the guards, take the Board building without breaking it. Or you could do it your way: loud, fast, and burning."',
       ],
       choices: [
@@ -101,6 +130,7 @@ export const conquestForceScene: StoryScene = {
     {
       id: 'force_06',
       speaker: 'dragghen',
+      speakerName: 'Dragghen Kolve',
       paragraphs: [
         'Dragghen handles the scheduling room. Two guards. He walks in carrying his cooking pot, forty pounds of cast iron, and sets it on the table.',
         '"Evening," he says.',
@@ -121,13 +151,42 @@ export const conquestForceScene: StoryScene = {
     {
       id: 'force_08',
       speaker: 'pettha_koss',
+      speakerName: 'Pettha Koss',
       paragraphs: [
         'She\'s already awake. Sitting at her desk. Spectacles on. Ledger open. The woman who runs Tavven Shoal through paperwork looks up at the seven-foot Oni standing in her doorway, covered in splinters and breathing hard, and adjusts her glasses.',
         '"I assume you\'re not here for a dock reservation."',
+      ],
+    },
+    {
+      id: 'force_08b',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         '"I\'m here for the island."',
+      ],
+    },
+    {
+      id: 'force_08c',
+      speaker: 'pettha_koss',
+      speakerName: 'Pettha Koss',
+      paragraphs: [
         'Pettha Koss looks at you for a long time. Then she closes her ledger.',
         '"The Harbor Board operates under my schedules or it doesn\'t operate. Your crew can break every door in this building and you\'ll still need someone who knows the routing tables. That\'s me. That will always be me."',
+      ],
+    },
+    {
+      id: 'force_08d',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         '"Then we work together."',
+      ],
+    },
+    {
+      id: 'force_08e',
+      speaker: 'pettha_koss',
+      speakerName: 'Pettha Koss',
+      paragraphs: [
         '"That\'s not what this is and we both know it." She pushes her spectacles up. "But I\'ll do my job. Because the alternative is seven thousand people losing their trade routes." A pause. "Don\'t mistake cooperation for loyalty. This is management under occupation."',
       ],
     },

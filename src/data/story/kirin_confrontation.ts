@@ -161,6 +161,7 @@ export const kirinAllianceScene: StoryScene = {
     {
       id: 'kconf_alliance_01b',
       speaker: 'karyudon',
+      speakerName: 'Karyudon',
       paragraphs: [
         '"This doesn\'t fix it," you say. "What you did on that ship. This doesn\'t make that go away."',
       ],
@@ -176,6 +177,7 @@ export const kirinAllianceScene: StoryScene = {
     {
       id: 'kconf_alliance_01d',
       speaker: 'karyudon',
+      speakerName: 'Karyudon',
       paragraphs: [
         '"Good. Because I\'m going to need you to do things that are worse than watching. And when this is done, you and I are going to have the conversation we haven\'t had yet. The real one."',
         'He nods. Once. His hands are still shaking.',
@@ -192,6 +194,7 @@ export const kirinAllianceScene: StoryScene = {
     {
       id: 'kconf_alliance_02b',
       speaker: 'karyudon',
+      speakerName: 'Karyudon',
       paragraphs: [
         '"Tell me the layout."',
         'He does. His voice is flat and precise and nothing like the voice he was using thirty seconds ago. You take notes on the table with a nail. Neither of you mentions the other thing. The thing that\'s still sitting in the room. You\'ll get to it. Eventually. Maybe.',
@@ -264,11 +267,16 @@ export const kirinEmotionalScene: StoryScene = {
     },
     {
       id: 'kconf_emotional_03',
-      speaker: 'kirin',
-      speakerName: 'Kirin',
       paragraphs: [
         'You let him finish. You don\'t look away.',
         'When the shaking stops, Kirin wipes his face with the back of his hand .',
+      ],
+    },
+    {
+      id: 'kconf_emotional_03b',
+      speaker: 'kirin',
+      speakerName: 'Kirin',
+      paragraphs: [
         '"The uncle." His voice is hoarse but steady. "I know everything. His network. His allies. His schedule. The compound layout. The guard rotations. Every Iron user and what tier they\'re at."',
         '"He thinks I\'m loyal because of the bands." He holds up his forearms. The tattoos pulse faintly. "They\'re conditioning. Iron imprints from his shaman training. They make it hard to disobey direct orders. Not impossible. Just hard."',
         '"Hard isn\'t the same as can\'t."',

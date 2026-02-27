@@ -8,6 +8,8 @@ export const conquestAftermathScene: StoryScene = {
     {
       id: 'aftermath_01',
       title: 'TAVVEN SHOAL IS YOURS',
+      speaker: 'hella',
+      speakerName: 'Hella',
       paragraphs: [
         'Hella puts a plate down in front of you before you ask. Storm tea. Eel skewers. Same price as the first day.',
         '"You own the island now," she says, already turning back to the grill. "Congratulations. Try not to ruin it."',
@@ -27,7 +29,7 @@ export const conquestAftermathScene: StoryScene = {
       id: 'aftermath_03',
       title: 'THE CREW RESPONDS',
       speaker: 'vorreth',
-      speakerName: 'Vorreth Daaz',
+      speakerName: 'Vorreth Khane',
       paragraphs: [
         'Vorreth is leaning against the Harbor Board doorframe when you come in. Arms folded. Eyes closed. You think he is asleep until he speaks.',
         '"One." He holds up a single finger without opening his eyes. "That is how many islands you have. One." A pause. "The Daaz Accord held six before they came for us. Six islands and thirty years of blood contracts, and the Wardensea still ground us down in eleven days."',

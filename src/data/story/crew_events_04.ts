@@ -504,7 +504,7 @@ export const suulenEvent04: StoryScene = {
     {
       id: 'suu_04_end',
       speaker: 'suulen',
-      speakerName: 'Suulen',
+      speakerName: 'Suulen Vassere',
       paragraphs: [
         'She takes her hand off the map. Steps back.',
         '"Hm." That\'s all she says. She\'s looking at you the way she looks at a route she hasn\'t taken yet. Measuring.',
@@ -712,7 +712,7 @@ export const orrenEvent04: StoryScene = {
     {
       id: 'orr_04_4',
       speaker: 'orren',
-      speakerName: 'Orren Mahk',
+      speakerName: 'Orren Dael',
       expression: 'grim',
       paragraphs: [
         '"Everyone get behind Dragghen."',
@@ -721,7 +721,7 @@ export const orrenEvent04: StoryScene = {
     {
       id: 'orr_04_5',
       speaker: 'orren',
-      speakerName: 'Orren',
+      speakerName: 'Orren Dael',
       paragraphs: [
         'The crew moves. Something in the way he said it, not volume, not authority, just certainty, makes people listen. They pull back behind Bulkhead. Dragghen braces. Digs in. He doesn\'t ask what\'s coming. He\'s a Gorundai with a shield and a man he trusts just told him to brace. That\'s enough.',
         'Orren plants his feet. His fur lifts off his skin, every strand vertical. The air shifts. Temperature drops five degrees in a heartbeat. Static charge builds until the metal fittings on the dock start whining, high and thin, and the compass mounted on the nearest piling spins once and stops dead.',
@@ -742,7 +742,7 @@ export const orrenEvent04: StoryScene = {
     {
       id: 'orr_04_7',
       speaker: 'orren',
-      speakerName: 'Orren Mahk',
+      speakerName: 'Orren Dael',
       expression: 'happy',
       paragraphs: [
         '"I didn\'t lose it."',
@@ -805,7 +805,7 @@ export const orrenEvent04: StoryScene = {
     {
       id: 'orr_04_end3',
       speaker: 'orren',
-      speakerName: 'Orren Mahk',
+      speakerName: 'Orren Dael',
       expression: 'angry',
       paragraphs: [
         '"STOP CATALOGUING MY EARS."',
@@ -876,7 +876,7 @@ export const vorrethEvent04: StoryScene = {
     {
       id: 'vor_04_3',
       speaker: 'vorreth',
-      speakerName: 'Vorreth Daaz',
+      speakerName: 'Vorreth Khane',
       paragraphs: [
         '"Sit down."',
         'Two words. No preamble. No buffer. Vorreth spends his energy the way other people spend gold, and right now he\'s spending every coin on being present.',
@@ -893,7 +893,7 @@ export const vorrethEvent04: StoryScene = {
     {
       id: 'vor_04_5',
       speaker: 'vorreth',
-      speakerName: 'Vorreth Daaz',
+      speakerName: 'Vorreth Khane',
       paragraphs: [
         '"Daaz Accord. Former crew. Captured two years ago during the southern collapse. The Wardensea transferred her to this facility six months later." His voice is a low rumble, unhurried, but there\'s no pause between sentences. No drift. No lull. He is, for once, completely here. "I\'ve been tracking the transfers since."',
         'He looks at you. Both eyes. Open. Clear.',
@@ -910,7 +910,7 @@ export const vorrethEvent04: StoryScene = {
     {
       id: 'vor_04_7',
       speaker: 'vorreth',
-      speakerName: 'Vorreth Daaz',
+      speakerName: 'Vorreth Khane',
       paragraphs: [
         '"Add it to the route. Next time we sail south, we take that facility." No anger. Past anger. This is the calm on the other side of it, where fury has been compressed into something dense and immovable. "Garrison of twelve. Three-week rotation. Nine prisoners total. One approach by sea, one by a ridge trail on the eastern face. I have both mapped."',
         'He pauses. Straightens the map with both hands, aligning it to the table edge with unnecessary precision.',

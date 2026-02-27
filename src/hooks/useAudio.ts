@@ -2,13 +2,15 @@ import { useEffect, useCallback, useState, useRef } from 'react';
 import { useGameStore } from '../store/gameStore';
 import { audioManager } from '../systems/audio';
 import { ambienceManager, getAmbienceForContext } from '../systems/ambience';
+import { musicManager, getMusicTrackForContext } from '../systems/music';
 import { stingerManager } from '../systems/stingers';
 import { loadAudioSettings, saveAudioSettings } from '../systems/audioSettings';
 import type { SfxId } from '../systems/audio';
 
 /**
- * Hook that manages background ambience based on game state.
- * Replaces the old music system with procedural ambient sounds.
+ * Hook that manages background music and ambience based on game state.
+ * Music: looping tracks via Howler.js (musicManager).
+ * Ambience: procedural Web Audio API soundscapes (ambienceManager).
  * Priority: Combat > Travel > Scene > Panel > Title
  */
 export function useAudioManager() {
@@ -20,15 +22,21 @@ export function useAudioManager() {
   const currentIsland = useGameStore((s) => s.currentIsland);
 
   useEffect(() => {
-    // Music disabled -- SFX only
-    audioManager.stopTrack();
+    // --- Music: select and play the right track ---
+    const musicTrack = getMusicTrackForContext({
+      activePanel,
+      sceneId: currentScene?.id || null,
+      gameStarted,
+      inCombat: !!combatState,
+      inTravel: !!travelState,
+    });
+    musicManager.play(musicTrack);
 
-    // Determine if this is a boss fight (check encounter templates for bossPhases)
+    // --- Ambience: procedural soundscapes (reduced when music is active) ---
     const isBossFight = combatState && combatState.encounter
-      ? combatState.encounter.enemies.some((t) => t.bossPhases && t.bossPhases.length > 0)
+      ? combatState.encounter.enemies.some((t: { bossPhases?: unknown[] }) => t.bossPhases && t.bossPhases.length > 0)
       : false;
 
-    // Update procedural ambience based on game context
     const ambienceType = getAmbienceForContext({
       activePanel,
       combatState,
@@ -46,6 +54,7 @@ export function useAudioManager() {
   useEffect(() => {
     return () => {
       audioManager.cleanup();
+      musicManager.cleanup();
       ambienceManager.cleanup();
       stingerManager.cleanup();
     };
@@ -73,7 +82,7 @@ export function useAudioControls() {
   const [masterVol, setMasterVol] = useState(audioManager.masterVolume);
   const [sfxVol, setSfxVol] = useState(audioManager.sfxVolume);
   const [ambientVol, setAmbientVol] = useState(ambienceManager.volume);
-  const [musicVol, setMusicVol] = useState(stingerManager.volume);
+  const [musicVol, setMusicVol] = useState(musicManager.volume);
 
   // Load saved settings once on first mount
   useEffect(() => {
@@ -85,11 +94,14 @@ export function useAudioControls() {
     audioManager.sfxVolume = saved.sfxVolume;
     ambienceManager.masterVolume = saved.masterVolume;
     ambienceManager.volume = saved.ambienceVolume;
+    musicManager.masterVolume = saved.masterVolume;
+    musicManager.volume = saved.stingerVolume; // MUSIC slider controls music + stingers
     stingerManager.masterVolume = saved.masterVolume;
     stingerManager.volume = saved.stingerVolume;
     if (saved.muted) {
       audioManager.setMuted(true);
       ambienceManager.muted = true;
+      musicManager.muted = true;
       stingerManager.muted = true;
     }
     // Sync React state
@@ -106,7 +118,7 @@ export function useAudioControls() {
       masterVolume: audioManager.masterVolume,
       sfxVolume: audioManager.sfxVolume,
       ambienceVolume: ambienceManager.volume,
-      stingerVolume: stingerManager.volume,
+      stingerVolume: musicManager.volume,
       muted: audioManager.muted,
     });
   }, []);
@@ -114,6 +126,7 @@ export function useAudioControls() {
   const toggleMute = useCallback(() => {
     const newMuted = audioManager.toggleMute();
     ambienceManager.muted = newMuted;
+    musicManager.muted = newMuted;
     stingerManager.muted = newMuted;
     setIsMuted(newMuted);
     // Defer persist so values settle
@@ -124,6 +137,7 @@ export function useAudioControls() {
   const setMasterVolume = useCallback((vol: number) => {
     audioManager.masterVolume = vol;
     ambienceManager.masterVolume = vol;
+    musicManager.masterVolume = vol;
     stingerManager.masterVolume = vol;
     setMasterVol(vol);
     persist();
@@ -142,7 +156,8 @@ export function useAudioControls() {
   }, [persist]);
 
   const setMusicVolume = useCallback((vol: number) => {
-    stingerManager.volume = vol;
+    musicManager.volume = vol;
+    stingerManager.volume = vol; // Stingers share music volume
     setMusicVol(vol);
     persist();
   }, [persist]);

@@ -11,10 +11,31 @@ export const windrowArrivalScene: StoryScene = {
         'You hear Windrow before you see it.',
         'The wind hits the ship a full mile out. A wall of moving air that slams into the hull broadside and doesn\'t stop. The sails crack taut like snapping bones. Ropes hum. The deck tilts hard enough that Kovesse grabs the mast with both hands and her ears pin flat against her skull.',
         'Suulen adjusts course without being told. She leans into the wheel, her white hair whipping sideways in a horizontal sheet, and threads the ship through a gap in the windline that nobody else can see. Morventhi spatial sense. She reads the air the way other people read water.',
+      ],
+    },
+    {
+      id: 'windrow_arrive_01b',
+      speaker: 'dragghen',
+      speakerName: 'Dragghen Kolve',
+      paragraphs: [
         '"This is CONSTANT?" Dragghen shouts. He\'s braced against the galley door. The Gorundai is built low and heavy, but even he\'s leaning twenty degrees into the gale. "Who LIVES here?"',
+      ],
+    },
+    {
+      id: 'windrow_arrive_01c',
+      speaker: 'vorreth',
+      speakerName: 'Vorreth Daaz',
+      paragraphs: [
         '"Twenty-eight hundred people," Vorreth says. He hasn\'t moved. The wind batters his coat sideways and he stands like a post driven into the deck. "Windrow. Southern Reach. Democratic council government. Population: stubborn."',
         'The island resolves through the spray. Cliff faces. That\'s all it is, sheer grey rock rising three hundred feet out of the sea, battered white with salt and scored with horizontal grooves where centuries of wind have carved the stone like a woodworker\'s lathe. No beach. No harbor in the traditional sense. Just rock, wind, and the insane geometry of a settlement built into the cliff face itself.',
         'Buildings jut from the stone like barnacles on a hull. Timber-framed structures bolted directly into the rock, connected by covered walkways and rope bridges that swing in the gale. Windbreaks everywhere: stone walls, timber baffles, angled roofs designed not to keep rain out but to deflect a wind that never stops. Smoke from chimneys doesn\'t rise here. It shoots sideways and vanishes.',
+      ],
+    },
+    {
+      id: 'windrow_arrive_01d',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         'You stand at the bow. Danzai across your shoulders. The wind tries to push you back. You lean into it. Seven feet of Oni against a wind that has been trying to flatten this island since before anyone built on it.',
         '"I like it already."',
       ],
@@ -48,8 +69,29 @@ export const windrowArrivalScene: StoryScene = {
         'The settlement unfolds as you climb. Windrow isn\'t a village. It\'s an engineering project. Every structure serves a purpose. Timber-frame houses with angled walls that split the wind around them. Rope-and-pulley systems for moving cargo between levels because carrying anything up these stairs in this gale is a death wish. Rain cisterns built into the rock, sealed against evaporation. A smithy carved into a deep alcove where the forge fire can actually stay lit.',
         'No ornament. No paint. No wasted material. These people build to survive, not to impress.',
         'Dragghen notices it all. His eyes move from the timber joints, pegged, not nailed, because nails work loose in vibrating rock, to the windbreak walls, to the drainage channels carved with geometric precision. "This is Coppervein engineering," he murmurs. "Not the same tradition, but the same thinking. Build for the environment, not against it. Work with the stone."',
+      ],
+    },
+    {
+      id: 'windrow_arrive_03b',
+      speaker: 'delvessa',
+      speakerName: 'Delvessa Ghal',
+      paragraphs: [
         '"You sound like you\'re falling in love," Delvessa says. She\'s holding her coat shut with one hand and her hair has escaped every pin she owns.',
+      ],
+    },
+    {
+      id: 'windrow_arrive_03c',
+      speaker: 'dragghen',
+      speakerName: 'Dragghen Kolve',
+      paragraphs: [
         '"Maybe I am." Dragghen runs a hand along a timber beam. His palm goes flat against the wood and stays there. "My family built tunnels. These people build shelves on a cliff face. Different problem, same solution: don\'t fight the rock. Ask it where it wants to be cut."',
+      ],
+    },
+    {
+      id: 'windrow_arrive_03d',
+      speaker: 'kovesse',
+      speakerName: 'Kovesse Grenn',
+      paragraphs: [
         'Kovesse is trying to record and failing spectacularly. The wind keeps snatching her Grimoire tablet out of her hands. She\'s shouting into the microphone and the audio is pure static. "LISTENERS-- I AM-- WINDROW IS-- THE WIND-- OKAY I GIVE UP, I\'LL DO A VOICEOVER LATER."',
         'Vorreth walks in silence. Counting. Steps, structures, people, defensive positions. The military mind that never turns off.',
       ],
@@ -65,12 +107,54 @@ export const windrowArrivalScene: StoryScene = {
         'A younger woman is pointing at structural diagrams, trying to get a word in. The oldest of them, a thin woman in her seventies, watches in silence. She hasn\'t spoken. The other four keep glancing at her like they\'re waiting for a verdict she hasn\'t delivered.',
         'The argument cuts off the moment your shadow fills the doorway.',
         'Seven feet. Two horns. A war club with iron spikes. In a room full of people who average five-foot-eight and solve problems with hammers and honest labor.',
+      ],
+    },
+    {
+      id: 'windrow_arrive_04b',
+      speaker: 'brenn',
+      speakerName: 'Brenn',
+      paragraphs: [
         'A weathered man at the end of the table, fisherman by the look of him, speaks first. "That," he says, "is an Oni."',
+      ],
+    },
+    {
+      id: 'windrow_arrive_04c',
+      speaker: 'maeven',
+      speakerName: 'Maeven',
+      paragraphs: [
         '"I can see that, Brenn," the barrel-built woman says.',
+      ],
+    },
+    {
+      id: 'windrow_arrive_04d',
+      speaker: 'brenn',
+      speakerName: 'Brenn',
+      paragraphs: [
         '"Just making sure. In case the horns weren\'t clear enough."',
+      ],
+    },
+    {
+      id: 'windrow_arrive_04e',
+      speaker: 'maeven',
+      speakerName: 'Maeven',
+      paragraphs: [
         'The barrel-built woman, Maeven, stands. She doesn\'t flinch. She doesn\'t step back. She looks at you the way Windrow looks at everything: practically, without pretense, measuring usefulness against cost.',
         '"You\'re the one from the Grimoire feeds. Karyudon. The Renegade captain who thinks he\'s conquering the Bastion Sea."',
+      ],
+    },
+    {
+      id: 'windrow_arrive_04f',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         '"Doesn\'t think. Is."',
+      ],
+    },
+    {
+      id: 'windrow_arrive_04g',
+      speaker: 'maeven',
+      speakerName: 'Maeven',
+      paragraphs: [
         'Her eyes narrow. Not anger. Assessment. "This is Windrow. We don\'t have gold to steal, trade routes to hijack, or a military worth absorbing. We have timber, wind, and twenty-eight hundred people who\'d rather throw you off the cliff than bow to an outsider. So." She crosses her arms. "What do you want?"',
       ],
       choices: [
@@ -112,22 +196,83 @@ export const windrowArrivalScene: StoryScene = {
     },
     {
       id: 'windrow_arrive_05',
-      speaker: 'dragghen',
-      speakerName: 'Dragghen Kolve',
       paragraphs: [
         'The council doesn\'t trust you. That\'s fine. Windrow doesn\'t trust anyone. Trust is a luxury for islands with walls and harbors. Windrow has wind and rock, the kind of stubbornness that only grows in places where the environment is trying to kill you every day.',
         'What they have is curiosity. Maeven assigns an escort: the quarry master, Drest, the one with stone dust in every crease of his hands. Drest doesn\'t talk much. He walks you through the settlement in a silence that isn\'t hostile. Evaluating.',
         'Dragghen walks beside Drest. The two men are built from the same blueprint, short, wide, hands like stone tools. Within ten minutes they\'re talking about rock. Not politics. Not conquest. Rock.',
+      ],
+    },
+    {
+      id: 'windrow_arrive_05b',
+      speaker: 'drest',
+      speakerName: 'Drest',
+      paragraphs: [
         '"The limestone layer shifts around level three," Drest says, pointing at a seam in the cliff face. "You can see where it transitions to sandstone. That\'s where the cracking happens."',
+      ],
+    },
+    {
+      id: 'windrow_arrive_05c',
+      speaker: 'dragghen',
+      speakerName: 'Dragghen Kolve',
+      paragraphs: [
         '"At Coppervein we used iron pins to bridge the seam," Dragghen says. "Drill in, let the rock settle around the metal. Takes a week but it holds for decades."',
+      ],
+    },
+    {
+      id: 'windrow_arrive_05d',
+      speaker: 'drest',
+      speakerName: 'Drest',
+      paragraphs: [
         'Drest stops walking. Stares at Dragghen. "You\'re a miner."',
+      ],
+    },
+    {
+      id: 'windrow_arrive_05e',
+      speaker: 'dragghen',
+      speakerName: 'Dragghen Kolve',
+      paragraphs: [
         '"Was. Coppervein. Seven years underground before I shipped out."',
+      ],
+    },
+    {
+      id: 'windrow_arrive_05f',
+      speaker: 'drest',
+      speakerName: 'Drest',
+      paragraphs: [
         '"Seven years." Drest\'s voice changes. The evaluation is over. A door has opened. "We lost a timber team last season. Section four. The supports gave way where the limestone meets the shale. Three workers trapped for two days before we dug them out. We\'ve been arguing about reinforcement methods for six months and nobody on the council knows rock the way a miner does."',
         'Dragghen goes still. His hand comes off the railing and goes flat against the cliff face. Reading the rock.',
+      ],
+    },
+    {
+      id: 'windrow_arrive_05g',
+      speaker: 'dragghen',
+      speakerName: 'Dragghen Kolve',
+      paragraphs: [
         '"Show me the section," Dragghen says.',
         'Drest nods. Once. The nod of a man who has found what he was looking for.',
+      ],
+    },
+    {
+      id: 'windrow_arrive_05h',
+      speaker: 'delvessa',
+      speakerName: 'Delvessa Ghal',
+      paragraphs: [
         'Delvessa appears at your elbow. "Dragghen is going to make more progress in two hours than we could in two weeks of negotiation."',
+      ],
+    },
+    {
+      id: 'windrow_arrive_05i',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         '"He\'s not negotiating. He\'s being himself."',
+      ],
+    },
+    {
+      id: 'windrow_arrive_05j',
+      speaker: 'delvessa',
+      speakerName: 'Delvessa Ghal',
+      paragraphs: [
         '"Exactly." She watches the Gorundai disappear around the cliff face with the quarry master, two men already deep in the language of stone and stress fractures and structural integrity. "That\'s why it\'ll work."',
       ],
     },

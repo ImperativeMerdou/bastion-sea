@@ -845,9 +845,11 @@ export type CharacterExpression =
   | 'default' | 'angry' | 'grim' | 'happy' | 'satisfaction'
   | 'shock' | 'fear' | 'awe' | 'asleep';
 
-/** Characters that have expression portrait assets */
+/** Characters that have expression portrait assets.
+ * NOTE: 'dragghen' removed — expression files contain wrong character (Vorreth's face).
+ * Re-add dragghen once correct Gorundai shipwright expression images are generated. */
 const EXPRESSION_CHARACTERS = new Set([
-  'dragghen', 'orren', 'tessek', 'suulen', 'delvessa', 'kovesse',
+  'orren', 'tessek', 'suulen', 'delvessa', 'kovesse',
 ]);
 
 // Cache for expression image paths (avoid repeated require() failures)

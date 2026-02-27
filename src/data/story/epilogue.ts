@@ -65,17 +65,31 @@ export const epilogueScene: StoryScene = {
       id: 'ep_delvessa_02',
       speaker: 'delvessa',
       speakerName: 'Delvessa Ghal',
+      expression: 'grim',
       paragraphs: [
         'She listened. She did not dismiss it.',
         '"King expression at Forged tier has ambient effects," she said. "At Conqueror tier, it is closer to weather. The projection radius expands. The threshold for involuntary response in nearby targets drops. Karyudon has been operating at full output for months. There will be overflow."',
         'She set down her pen.',
         '"He maintained order during a volatile transition, Kirin. A harbour full of armed prisoners and new occupying forces. If his presence kept the processing from escalating, that is governance, not abuse."',
+      ],
+    },
+    {
+      id: 'ep_delvessa_02b',
+      speaker: 'kirin',
+      speakerName: 'Kirin',
+      paragraphs: [
         '"The officer wasn\'t a threat."',
+      ],
+    },
+    {
+      id: 'ep_delvessa_02c',
+      speaker: 'delvessa',
+      speakerName: 'Delvessa Ghal',
+      paragraphs: [
         '"No," Delvessa agreed. "But King doesn\'t read threat. It reads will. The man was projecting refusal. At the volume your brother operates, that refusal registered as friction. The response was automatic."',
         'She picked her pen back up.',
         '"The officer was not harmed. I will note it in the daily assessment. Karyudon should be made aware of his ambient radius. I will raise it with him when the timing is appropriate."',
       ],
-      expression: 'grim',
     },
     {
       id: 'ep_delvessa_03',

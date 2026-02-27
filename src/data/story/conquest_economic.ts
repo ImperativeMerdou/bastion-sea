@@ -13,7 +13,21 @@ export const conquestEconomicScene: StoryScene = {
       paragraphs: [
         'Delvessa lays eleven stolen Kolmari documents on Hella\'s table. She arranges them like a surgeon arranges instruments, each one in the precise position it needs to be, in the order it will be used.',
         '"The Kolmari don\'t conquer territory. They acquire debt. Then they convert debt into leverage, leverage into dependency, dependency into control." She taps the first document. "This is Tessurren\'s contract. Here\'s the buried clause. Forty percent rent increase, year two. Every vendor who signed a Kolmari credit line, Rukessa, the spice merchants, half the rope-bridge district, is twelve months away from economic strangulation."',
+      ],
+    },
+    {
+      id: 'economic_01b',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         '"So we show them."',
+      ],
+    },
+    {
+      id: 'economic_01c',
+      speaker: 'delvessa',
+      speakerName: 'Delvessa Ghal',
+      paragraphs: [
         '"No. We show the right people. At the right time. In the right order."',
       ],
     },
@@ -39,17 +53,38 @@ export const conquestEconomicScene: StoryScene = {
     },
     {
       id: 'economic_04',
-      speaker: 'delvessa',
-      speakerName: 'Delvessa Ghal',
+      speaker: 'rukessa',
+      speakerName: 'Rukessa',
       paragraphs: [
         'Day three: Delvessa walks into the market with Dragghen.',
         'They don\'t talk to Pettha. They talk to Rukessa. The spice vendor. The small, elderly Rathai woman with turmeric-stained hands who has been paying Kolmari credit rates for eight months and watching her margins shrink.',
         'Delvessa shows her the contract. The real one. The one with the rent clause.',
         'Rukessa reads it. Her hands shake. Not from age. From fury.',
         '"They told me three percent. Three percent for five years." Her voice cracks. "This says forty."',
+      ],
+    },
+    {
+      id: 'economic_04b',
+      speaker: 'delvessa',
+      speakerName: 'Delvessa Ghal',
+      paragraphs: [
         '"It says forty," Delvessa confirms. "After twelve months. Every credit line holder on Tavven Shoal is looking at the same number."',
+      ],
+    },
+    {
+      id: 'economic_04c',
+      speaker: 'rukessa',
+      speakerName: 'Rukessa',
+      paragraphs: [
         'Rukessa looks up. Her hands have stopped shaking.',
         '"What do you need from me?"',
+      ],
+    },
+    {
+      id: 'economic_04d',
+      speaker: 'delvessa',
+      speakerName: 'Delvessa Ghal',
+      paragraphs: [
         '"We need you to tell the other vendors. Not us. You. They trust you. They won\'t trust us."',
         'She nods once. Tight. Decisive.',
       ],
@@ -81,8 +116,29 @@ export const conquestEconomicScene: StoryScene = {
       paragraphs: [
         'Pettha Koss finds you after the meeting. She\'s not stupid. She knows someone orchestrated this. The timing was too clean. The document appeared too conveniently. The Grimoire broadcast about Sorren\'s Flat, a story nobody was telling until three days ago, seeded the context perfectly.',
         '"I don\'t know how you got that contract," she says. "I don\'t want to know. But the island needs a security arrangement now that the Kolmari are pulling their credit lines." She studies you over her spectacles. "You happen to have one available?"',
+      ],
+    },
+    {
+      id: 'economic_07b',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         '"I might."',
+      ],
+    },
+    {
+      id: 'economic_07c',
+      speaker: 'pettha_koss',
+      speakerName: 'Pettha Koss',
+      paragraphs: [
         '"Standard protection terms. You handle security. I handle scheduling. Revenue split based on trade volume. We\'ll negotiate the specifics when I\'m not managing a financial crisis." She pauses. "You played this well, Captain. Don\'t think that means I trust you."',
+      ],
+    },
+    {
+      id: 'economic_07d',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         '"I wouldn\'t want you to. Trust makes people sloppy."',
         'Something that might be approval crosses her face. Or indigestion. With Pettha, it\'s hard to tell.',
       ],
@@ -95,7 +151,21 @@ export const conquestEconomicScene: StoryScene = {
       paragraphs: [
         'The Grimoire coverage is modest. "Trade dispute at Tavven Shoal." "Kolmari deal rejected." No storming of buildings. No blood. No dramatic footage of an Oni walking through a door.',
         'Kovesse is slightly disappointed. "The views are FINE. They\'re ADEQUATE. But there\'s no HOOK. Nobody shared a clip of you reading a spreadsheet."',
+      ],
+    },
+    {
+      id: 'economic_08b',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         '"The spreadsheet won the island, Kovesse."',
+      ],
+    },
+    {
+      id: 'economic_08c',
+      speaker: 'kovesse',
+      speakerName: 'Kovesse Grenn',
+      paragraphs: [
         '"I KNOW. I just wish it had better lighting."',
         'Twenty million Sovereigns on the bounty board. Not for violence. For making the Kolmari look stupid. In some ways, that\'s worse. The Confederation doesn\'t forget public embarrassment.',
         'Delvessa says nothing. She smiles.',

@@ -97,11 +97,19 @@ export const docksideScene: StoryScene = {
     },
     {
       id: 'dock_10',
+      speaker: 'tessurren',
+      speakerName: 'Tessurren',
       paragraphs: [
         'You plant yourself between Rukessa and the Kolmari agent.',
         'The agent looks up. His expression performs a rapid calculation: height, build, horns, the torn Wardensea scraps, the complete absence of concern on your face. He arrives at a conclusion he doesn\'t like.',
         '"This is an authorized Kolmari trade operation. Step aside."',
       ],
+    },
+    {
+      id: 'dock_10b',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [],
       choices: [
         {
           id: 'dock_intimidate',
@@ -140,6 +148,8 @@ export const docksideScene: StoryScene = {
     },
     {
       id: 'dock_11',
+      speaker: 'tessurren',
+      speakerName: 'Tessurren',
       paragraphs: [
         'The agent\'s eyes narrow. He\'s recalculating. Behind him, the two escorts move. Not to fighting stances. Not yet. But to readiness.',
         'The Gorundai\'s Iron shimmers faintly at his knuckles. Tempered. You could break him in three seconds and he probably knows it.',
@@ -150,6 +160,8 @@ export const docksideScene: StoryScene = {
     },
     {
       id: 'dock_12',
+      speaker: 'tessurren',
+      speakerName: 'Tessurren',
       paragraphs: [
         '"We\'ll return," the agent says. Not a threat. A schedule update. He folds the contract, slides it into his coat, and walks away with the precise stride of a man who has lost a battle and is already drafting the report that will win the war.',
         'The escorts follow. The Gorundai doesn\'t look back. The human does. One glance, measuring, filing your face for the incident report.',
@@ -233,7 +245,21 @@ export const docksideScene: StoryScene = {
         '"I rate the confrontation a seven," he says.',
         'You wait.',
         '"Out of ten. The Iron deployment was instinctive, which is good, but you didn\'t control the perimeter, which means the escorts could have flanked. The verbal engagement was efficient. The physical intimidation was..." He pauses. Considers. "Adequate."',
+      ],
+    },
+    {
+      id: 'dock_21b',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         '"Adequate."',
+      ],
+    },
+    {
+      id: 'dock_21c',
+      speaker: 'dragghen',
+      speakerName: 'Dragghen Kolve',
+      paragraphs: [
         '"For a first public appearance, seven is high. I don\'t give sevens lightly."',
       ],
     },

@@ -12,16 +12,65 @@ export const anvilCayArrivalScene: StoryScene = {
         'Anvil Cay sits on the horizon like a bruise. Dark stone wreathed in volcanic smoke. The sky above it burns orange where it should be blue, and the water around the approach is warm. Not comfortable-warm. Wrong-warm.',
         'This is not a trading post. This is not a fishing village with delusions of importance. This is a military installation built on a volcano, and it looks exactly as welcoming as that sounds.',
         'The harbor is a carved crescent of reinforced basalt. Three warships sit at anchor, real warships, iron-reinforced hulls and cannon decks, not the converted merchant vessels that pass for naval power in the outer islands. A fourth ship is in dry dock, half its hull stripped for repair. Signal flags snap from every mast in a language you don\'t read.',
+      ],
+    },
+    {
+      id: 'anvil_arrive_01b',
+      speaker: 'vorreth',
+      speakerName: 'Vorreth Daaz',
+      paragraphs: [
         'Vorreth reads it for you. He hasn\'t blinked in two minutes.',
         '"Conqueror standard deployment," he says. The military voice. The one that strips everything human out of the words and leaves only information. "Three patrol vessels on rotating picket. Eight-hour shifts. Overlapping coverage arcs. The signal flags are fleet coordination: bearing reports, watch schedules, threat assessment."',
         'Something working behind his eyes.',
         '"That\'s Vassago\'s formation doctrine. I studied it for six years. Never thought I\'d see it from this angle."',
+      ],
+    },
+    {
+      id: 'anvil_arrive_01c',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         'You lean on the rail. Danzai rests across your shoulders.',
         '"Three warships," you say. "A garrison. Cannon emplacements. Volcanic terrain." You lean forward. "Vorreth, this is the most interesting island we\'ve found."',
+      ],
+    },
+    {
+      id: 'anvil_arrive_01d',
+      speaker: 'vorreth',
+      speakerName: 'Vorreth Daaz',
+      paragraphs: [
         '"That\'s one word for it."',
+      ],
+    },
+    {
+      id: 'anvil_arrive_01e',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         '"What\'s your word?"',
+      ],
+    },
+    {
+      id: 'anvil_arrive_01f',
+      speaker: 'vorreth',
+      speakerName: 'Vorreth Daaz',
+      paragraphs: [
         '"Suicide."',
+      ],
+    },
+    {
+      id: 'anvil_arrive_01g',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         '"See, you say that. But I\'m looking at those forges and all I\'m thinking is... those are going to be my forges."',
+      ],
+    },
+    {
+      id: 'anvil_arrive_01h',
+      speaker: 'vorreth',
+      speakerName: 'Vorreth Daaz',
+      paragraphs: [
         'Vorreth exhales. "Then we need to do this smart. Because Anvil Cay doesn\'t forgive mistakes."',
       ],
     },
@@ -32,21 +81,72 @@ export const anvilCayArrivalScene: StoryScene = {
       paragraphs: [
         'The crew gathers below deck. Vorreth pins a rough sketch to the wall. Drew it from memory. Five minutes. The detail is unsettling.',
         '"Not a garrison." He taps the sketch. "A forge. Vassago builds his fleet here. The volcanic geology runs natural smelting heat through lava tube channels. Weapons, fittings, ammunition. All of it."',
+      ],
+    },
+    {
+      id: 'anvil_arrive_02b',
+      speaker: 'delvessa',
+      speakerName: 'Delvessa Ghal',
+      paragraphs: [
         '"Who runs it?" Delvessa, pen ready.',
+      ],
+    },
+    {
+      id: 'anvil_arrive_02c',
+      speaker: 'vorreth',
+      speakerName: 'Vorreth Daaz',
+      paragraphs: [
         '"Fleet Lieutenant Gharen. True believer. Not a mercenary. He executes orders with zero deviation."',
+      ],
+    },
+    {
+      id: 'anvil_arrive_02d',
+      speaker: 'kovesse',
+      speakerName: 'Kovesse Grenn',
+      paragraphs: [
         '"Sounds like your kind of man," Kovesse says.',
+      ],
+    },
+    {
+      id: 'anvil_arrive_02e',
+      speaker: 'vorreth',
+      speakerName: 'Vorreth Daaz',
+      paragraphs: [
         '"He\'s nothing like me." The sharpness surprises everyone. "Gharen chose his doctrine. I was born into mine."',
         'He turns back to the sketch. Points to the volcanic ridge. "The terrain is the real defense. Lava tubes, thermal vents, basalt too hard to tunnel. And these aren\'t Wardensea garrison troops." He pauses. "Conqueror marines are trained to take ground, not hold it. If we hit them, they counterattack. Hard. Fast."',
         'Silence.',
+      ],
+    },
+    {
+      id: 'anvil_arrive_02f',
+      speaker: 'dragghen',
+      speakerName: 'Dragghen Kolve',
+      paragraphs: [
         '"So," Dragghen says carefully. "Volcano full of people who like fighting. With an Oni who also likes fighting." He looks at you. "I\'m going to cook something. I cook when I\'m nervous."',
       ],
     },
     {
       id: 'anvil_arrive_03',
+      speaker: 'suulen',
+      speakerName: 'Suulen Vassere',
       paragraphs: [
         'Suulen spreads her charts on the navigation table. She\'s been in the water, swimming the perimeter in the dark while the rest of you talked. Her hair is still dripping. She doesn\'t notice.',
         '"The patrol rotation has a gap," she says. "South-southeast. The thermal vents create a current disruption that the patrol vessels avoid, too risky for keeled warships. But our hull is shallow enough to navigate it. Fourteen-minute window every six hours when the southern approach is unwatched."',
+      ],
+    },
+    {
+      id: 'anvil_arrive_03b',
+      speaker: 'delvessa',
+      speakerName: 'Delvessa Ghal',
+      paragraphs: [
         '"That\'s our way in," Delvessa says.',
+      ],
+    },
+    {
+      id: 'anvil_arrive_03c',
+      speaker: 'vorreth',
+      speakerName: 'Vorreth Daaz',
+      paragraphs: [
         '"That\'s our way to look," Vorreth corrects. "Getting in isn\'t the problem. Getting out with useful intelligence is the problem. We need to know what\'s in that shipyard before we commit to an assault."',
         'You look at your crew. Five faces, five different versions of ready.',
       ],
@@ -91,13 +191,36 @@ export const anvilCayArrivalScene: StoryScene = {
     },
     {
       id: 'anvil_arrive_04',
+      speaker: 'delvessa',
+      speakerName: 'Delvessa Ghal',
       paragraphs: [
         'The intelligence comes back.',
         'Three dry docks. Full-scale construction bays carved into the volcanic rock, fed by lava-heated forges that run day and night. The Conquerors aren\'t maintaining a fleet at Anvil Cay. They\'re building one. Warship hulls in various stages of completion. Stockpiles of iron, timber, pitch, and sailcloth in the underground stores. Two hundred smiths, carpenters, and riggers operating in shifts that never stop.',
         'Delvessa runs the numbers. She does it twice. Her expression gets worse both times.',
         '"If they complete those ships, all three hulls currently in construction, Vassago can project force across the entire Central Belt. Every island we hold becomes a target. Tavven, Keldriss, Coppervein, Mossbreak. None of them can withstand a concentrated naval assault from purpose-built warships."',
+      ],
+    },
+    {
+      id: 'anvil_arrive_04b',
+      speaker: 'kovesse',
+      speakerName: 'Kovesse Grenn',
+      paragraphs: [
         '"So we burn it?" Kovesse asks. Already thinking about demolition charges.',
+      ],
+    },
+    {
+      id: 'anvil_arrive_04c',
+      speaker: 'dragghen',
+      speakerName: 'Dragghen Kolve',
+      paragraphs: [
         '"We take it." Dragghen\'s voice surprises everyone. The cook doesn\'t usually weigh in on military strategy. But his eyes are hard. "A shipyard like that could build our ships. We burn it, we destroy a tool. We take it, we own the forge."',
+      ],
+    },
+    {
+      id: 'anvil_arrive_04d',
+      speaker: 'vorreth',
+      speakerName: 'Vorreth Daaz',
+      paragraphs: [
         '"Dragghen\'s right," Vorreth says, and the fact that those two agree on anything tells you the situation is serious. "A functional shipyard changes the balance of power in the Bastion Sea. Whoever controls Anvil Cay controls the future of naval warfare in these waters."',
         'You look at the sketch. The volcanic ridgeline. The dry docks. The forges.',
         'The question isn\'t whether. It\'s when.',
@@ -133,6 +256,8 @@ export const anvilCayArrivalScene: StoryScene = {
     },
     {
       id: 'anvil_arrive_06',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
       paragraphs: [
         'Night. The observation point. Anvil Cay\'s forges paint the horizon in shades of ember and rust.',
         '"That forge is mine," you say.',

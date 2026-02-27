@@ -77,12 +77,28 @@ export const mossbreakArrivalScene: StoryScene = {
     {
       id: 'mossbreak_arrive_04',
       title: 'THE GHOST',
+      speaker: 'tessek',
+      speakerName: 'Tessek Vayne',
       paragraphs: [
         'The hooded figure is gone.',
         'Not left. Gone. You were watching the corner and then you weren\'t, and in the gap between looking away and looking back, the chair is empty. No scrape. No rustle. No footsteps.',
         'Tessek was watching too. Redtide is half-drawn before he registers the empty chair.',
         '"CRIMSON TIDE: PHANTOM DEPARTURE READING." He resheathes. "Forged Sight at minimum. Possibly higher. Nobody reads a room\'s attention field that cleanly."',
+      ],
+    },
+    {
+      id: 'mossbreak_arrive_04b',
+      speaker: 'dragghen',
+      speakerName: 'Dragghen Kolve',
+      paragraphs: [
         '"I didn\'t see them leave," Dragghen says.',
+      ],
+    },
+    {
+      id: 'mossbreak_arrive_04c',
+      speaker: 'tessek',
+      speakerName: 'Tessek Vayne',
+      paragraphs: [
         '"That\'s the point," Tessek says.',
       ],
     },

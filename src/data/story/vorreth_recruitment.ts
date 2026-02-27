@@ -38,7 +38,21 @@ export const vorrethRecruitmentScene: StoryScene = {
         '"Karyudon."',
         'He knows your name. Of course he does. Kovesse has been broadcasting it for three days.',
         '"You\'re the one who faced down the Kolmari agent." His voice is low and steady, carries without raising. The voice of someone who has commanded crews and knows that volume is a waste of energy. "The broadcasts don\'t do you justice. You\'re bigger in person."',
+      ],
+    },
+    {
+      id: 'vor_03b',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         '"So are you."',
+      ],
+    },
+    {
+      id: 'vor_03c',
+      speaker: 'vorreth',
+      speakerName: 'Vorreth Daaz',
+      paragraphs: [
         '"I\'m Vorreth Daaz. Formerly of the Daaz Accord."',
       ],
     },
@@ -74,24 +88,77 @@ export const vorrethRecruitmentScene: StoryScene = {
     },
     {
       id: 'vor_07',
+      speaker: 'dragghen',
+      speakerName: 'Dragghen Kolve',
       paragraphs: [
         'Dragghen has emerged from under the hull. He\'s holding a wrench and watching Vorreth the way he watches everything: with professional evaluation.',
         '"Vorreth Daaz. Former Daaz Accord. 280 million bounty, personal count probably half of that." He wipes grease from the wrench. "I rate his entrance a seven. Dramatically appropriate. Could have been an eight if he\'d arrived by sea."',
+      ],
+    },
+    {
+      id: 'vor_07b',
+      speaker: 'vorreth',
+      speakerName: 'Vorreth Daaz',
+      paragraphs: [
         'Vorreth looks at Dragghen.',
         '"You rate things."',
+      ],
+    },
+    {
+      id: 'vor_07c',
+      speaker: 'dragghen',
+      speakerName: 'Dragghen Kolve',
+      paragraphs: [
         '"Everything has a rating."',
+      ],
+    },
+    {
+      id: 'vor_07d',
+      speaker: 'vorreth',
+      speakerName: 'Vorreth Daaz',
+      paragraphs: [
         '"I see." Vorreth\'s expression doesn\'t change. "What do you rate me?"',
+      ],
+    },
+    {
+      id: 'vor_07e',
+      speaker: 'dragghen',
+      speakerName: 'Dragghen Kolve',
+      paragraphs: [
         '"Too early to tell. I\'ll need more data."',
         'The corner of Vorreth\'s mouth moves. One millimeter. For an Oni, that\'s a belly laugh.',
       ],
     },
     {
       id: 'vor_08',
+      speaker: 'kovesse',
+      speakerName: 'Kovesse Grenn',
       paragraphs: [
         'Kovesse is broadcasting. One of her Grimoires is already pulling data.',
         '"280 million bounty," Kovesse says, reading off the screen. "Just him."',
+      ],
+    },
+    {
+      id: 'vor_08b',
+      speaker: 'vorreth',
+      speakerName: 'Vorreth Daaz',
+      paragraphs: [
         '"Just me."',
+      ],
+    },
+    {
+      id: 'vor_08c',
+      speaker: 'kovesse',
+      speakerName: 'Kovesse Grenn',
+      paragraphs: [
         '"The Wardensea considers you Priority B. One tier below active Conquerors. They have a standing capture order. Twelve ports. You just walked into one of them."',
+      ],
+    },
+    {
+      id: 'vor_08d',
+      speaker: 'vorreth',
+      speakerName: 'Vorreth Daaz',
+      paragraphs: [
         '"I know." He doesn\'t blink. "I walked in anyway."',
         'Across the dock, a dark-haired woman in Kolmari-cut clothing closes a ledger and watches the exchange. She\'s been at the harbor three days running.',
       ],
@@ -156,7 +223,21 @@ export const vorrethRecruitmentScene: StoryScene = {
       paragraphs: [
         'You clasp his forearm. Iron to Iron. The resonance hums between you, two Oni acknowledging each other the way two mountains acknowledge each other: by existing in the same range.',
         '"Welcome to whatever this is."',
+      ],
+    },
+    {
+      id: 'vor_11b',
+      speaker: 'vorreth',
+      speakerName: 'Vorreth Daaz',
+      paragraphs: [
         '"That\'s the worst crew pitch I\'ve ever heard."',
+      ],
+    },
+    {
+      id: 'vor_11c',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         '"Give it time. We\'re still writing the speech."',
       ],
     },
@@ -167,11 +248,46 @@ export const vorrethRecruitmentScene: StoryScene = {
       paragraphs: [
         'Kovesse is broadcasting so hard that one of her Grimoires is overheating. She\'s holding it at arm\'s length while continuing to talk into the other two.',
         '"Two Oni. TWO ONI in the same crew. Do you know the last time that happened? The Bloodtide Compact, fourteen years ago. They held the Western Reach for NINE MONTHS. I need a crew name. I need a flag design. Captain. CAPTAIN. We need branding."',
+      ],
+    },
+    {
+      id: 'vor_12b',
+      speaker: 'vorreth',
+      speakerName: 'Vorreth Daaz',
+      paragraphs: [
         'Vorreth watches her with the flat, calm expression of a man who has encountered something he does not understand and is content to observe it from a safe distance.',
         '"Is she always like this?"',
+      ],
+    },
+    {
+      id: 'vor_12c',
+      speaker: 'dragghen',
+      speakerName: 'Dragghen Kolve',
+      paragraphs: [
         '"Since about four hours after we met," Dragghen says.',
+      ],
+    },
+    {
+      id: 'vor_12d',
+      speaker: 'vorreth',
+      speakerName: 'Vorreth Daaz',
+      paragraphs: [
         '"I rate her a six," Vorreth says.',
+      ],
+    },
+    {
+      id: 'vor_12e',
+      speaker: 'dragghen',
+      speakerName: 'Dragghen Kolve',
+      paragraphs: [
         'Dragghen\'s head turns sharply. "You rate things?"',
+      ],
+    },
+    {
+      id: 'vor_12f',
+      speaker: 'vorreth',
+      speakerName: 'Vorreth Daaz',
+      paragraphs: [
         '"I can learn."',
       ],
     },

@@ -21,11 +21,34 @@ export const tavvenArrivalScene: StoryScene = {
     },
     {
       id: 'arrival_02',
+      speaker: 'varrek_dockhand',
+      speakerName: 'Varrek Dockhand',
       paragraphs: [
         'The dockworkers pretend not to stare. They fail.',
         'A Varrek dockhand, canine-featured, grey-furred, one ear permanently folded from an old break, holds up a hand. "Cargo or crew?"',
+      ],
+    },
+    {
+      id: 'arrival_02b',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         '"Neither."',
+      ],
+    },
+    {
+      id: 'arrival_02c',
+      speaker: 'varrek_dockhand',
+      speakerName: 'Varrek Dockhand',
+      paragraphs: [
         '"Then you\'re a problem or a customer. Which?"',
+      ],
+    },
+    {
+      id: 'arrival_02d',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         '"Haven\'t decided yet."',
         'The Varrek looks at your horns. At the chain marks on your wrists. At your bare feet. He arrives at a conclusion, files it away, and goes back to his ropes. That\'s Tavven Shoal. People see everything and decide what matters later.',
       ],
@@ -98,7 +121,21 @@ export const tavvenArrivalScene: StoryScene = {
         'You eat. The eel is good. The rice is better. The storm tea hits your throat like liquid fire and then unfolds into something warm and sharp that makes the world snap into focus for the first time in weeks.',
         '"Hella," she says. "Everyone eats here. Even the ones who can\'t pay. Especially the ones who look like they need it."',
         'She looks at the chain marks on your wrists. "Wardensea?"',
+      ],
+    },
+    {
+      id: 'arrival_06b',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         '"Former."',
+      ],
+    },
+    {
+      id: 'arrival_06c',
+      speaker: 'hella',
+      speakerName: 'Hella',
+      paragraphs: [
         '"Welcome to Tavven Shoal. Don\'t cause trouble in my market."',
       ],
     },

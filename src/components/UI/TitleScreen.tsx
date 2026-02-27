@@ -197,7 +197,7 @@ export const TitleScreen: React.FC = () => {
               src={logoImage}
               alt="Godtide: Bastion Sea"
               className="mx-auto drop-shadow-[0_0_50px_rgba(14,165,233,0.35)]"
-              style={{ width: 'min(1120px, 95vw)', height: 'auto' }}
+              style={{ maxWidth: '500px', width: '90vw', height: 'auto', marginBottom: '1rem' }}
               draggable={false}
               onError={() => setLogoFailed(true)}
             />
@@ -367,6 +367,19 @@ export const TitleScreen: React.FC = () => {
           <p className="text-ocean-500/40 text-xs mt-1 tracking-[0.4em] uppercase">
             v1.0.0
           </p>
+          {/* IP brand mark */}
+          {(() => {
+            const ipLogo = getImagePath('icon_godtide.webp');
+            return ipLogo ? (
+              <img
+                src={ipLogo}
+                alt="GODTIDE"
+                className="mx-auto mt-4 opacity-40 hover:opacity-60 transition-opacity"
+                style={{ width: '120px', height: 'auto' }}
+                draggable={false}
+              />
+            ) : null;
+          })()}
         </div>
       </div>
 

@@ -29,7 +29,7 @@ export const primeKhossScene: StoryScene = {
     {
       id: 'pkhoss_03',
       speaker: 'vorreth',
-      speakerName: 'Vorreth Daaz',
+      speakerName: 'Vorreth Khane',
       paragraphs: [
         '"Third Division." Vorreth\'s voice is wrong. Flat. Careful. "That\'s not a response fleet. That\'s a blockade group. Twelve ships, four heavy frigates, supply train in the rear."',
         'He turns to you.',
@@ -93,7 +93,7 @@ export const primeKhossScene: StoryScene = {
     {
       id: 'pkhoss_09',
       speaker: 'vorreth',
-      speakerName: 'Vorreth Daaz',
+      speakerName: 'Vorreth Khane',
       paragraphs: [
         '"She means it. Every word. I served under officers like Khoss. She won\'t add conditions. She won\'t reduce the offer. And when the twenty-four hours expire, she will do exactly what the fleet is designed to do."',
         'He meets your eyes.',
@@ -185,7 +185,7 @@ export const primeKhossNegotiateScene: StoryScene = {
     {
       id: 'pkhoss_negotiate_02',
       speaker: 'prime_khoss',
-      speakerName: 'Prime Edara Khoss',
+      speakerName: 'Prime Khoss',
       paragraphs: [
         'Prime Khoss steps onto your deck. Her boots land flat, centered, the weight distributed like she\'s already measured the planks.',
         'She\'s shorter than you expected. 5\'8", maybe. The grey-streaked hair pulled back tight. The scar across her left cheekbone, thin, old, from a blade that got closer than it should have.',
@@ -198,7 +198,7 @@ export const primeKhossNegotiateScene: StoryScene = {
     {
       id: 'pkhoss_negotiate_03',
       speaker: 'prime_khoss',
-      speakerName: 'Prime Edara Khoss',
+      speakerName: 'Prime Khoss',
       paragraphs: [
         'The negotiation takes three hours. Delvessa sits at your side. Vorreth stands behind you. Khoss sits alone across the table and drinks the tea you provided without commenting on the quality.',
         'The result: five days. A reassessment. Khoss wants to see if your territories can survive the pressure. If morale holds, trade resumes, and the islands don\'t collapse, she will know you built something real. If they crumble, she won\'t need to fire a cannon.',

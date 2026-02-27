@@ -7,23 +7,88 @@ export const durrekConquestScene: StoryScene = {
     {
       id: 'durrek_assault_01',
       title: 'DAWN',
+      speaker: 'vorreth',
+      speakerName: 'Vorreth Khane',
       paragraphs: [
         'You attack at dawn. Vorreth wanted to go at night.',
         '"If we attack at dawn," Vorreth argues, "they\'ll see us approach. They\'ll have time to form up. They\'ll--"',
+      ],
+    },
+    {
+      id: 'durrek_assault_01b',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         '"Good."',
+      ],
+    },
+    {
+      id: 'durrek_assault_01c',
+      speaker: 'vorreth',
+      speakerName: 'Vorreth Khane',
+      paragraphs: [
         '"Good?"',
+      ],
+    },
+    {
+      id: 'durrek_assault_01d',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         '"Drezh knows we\'re in the area. He knows we\'re coming. Darkness buys us thirty minutes of confusion. Dawn buys us six hundred marines who have to watch us walk up the dock. Half of them will be making decisions about their careers before we hit the shield wall."',
+      ],
+    },
+    {
+      id: 'durrek_assault_01e',
+      speaker: 'delvessa',
+      speakerName: 'Delvessa Ghal',
+      paragraphs: [
         'Delvessa looks at Vorreth. "He\'s not going to change his mind."',
+      ],
+    },
+    {
+      id: 'durrek_assault_01f',
+      speaker: 'vorreth',
+      speakerName: 'Vorreth Khane',
+      paragraphs: [
         '"I know." Vorreth draws his sword. "Then we do it his way. And we make it count."',
       ],
     },
     {
       id: 'durrek_assault_02',
+      speaker: 'suulen',
+      speakerName: 'Suulen Vassere',
       paragraphs: [
         'Suulen maps the approach. There\'s a shallow reef passage that bypasses the chain boom, too narrow for warships, but your vessel is small enough. "Two minutes of exposure to the cannon emplacements," she says. "After that, the angle protects us."',
+      ],
+    },
+    {
+      id: 'durrek_assault_02b',
+      speaker: 'kovesse',
+      speakerName: 'Kovesse Grenn',
+      paragraphs: [
         'Kovesse rigs a signal jammer. "I can disrupt their Grimoire communications for about ten minutes. After that, their backup frequencies will compensate. But ten minutes without coordination is ten minutes of chaos."',
+      ],
+    },
+    {
+      id: 'durrek_assault_02c',
+      paragraphs: [
         'Dragghen sharpens the Danzai spikes. He doesn\'t speak while he works.',
+      ],
+    },
+    {
+      id: 'durrek_assault_02d',
+      speaker: 'delvessa',
+      speakerName: 'Delvessa Ghal',
+      paragraphs: [
         'Delvessa has the logistics. "The garrison\'s supply ship is due tomorrow. If we attack before it arrives, they\'re fighting on yesterday\'s rations. It\'s not decisive, but it\'s an edge."',
+      ],
+    },
+    {
+      id: 'durrek_assault_02e',
+      speaker: 'vorreth',
+      speakerName: 'Vorreth Khane',
+      paragraphs: [
         'Vorreth looks at the map one final time. "I know this garrison. I know what Drezh will do. The marines will form a shield wall on the dock. That\'s standard. Drezh will direct from the second-level balcony. We need to break the wall, reach the balcony, and force Drezh to surrender or fight personally."',
       ],
       choices: [
@@ -84,12 +149,61 @@ export const durrekConquestScene: StoryScene = {
         'Captain Drezh meets you on the command balcony.',
         'He\'s not hiding. He\'s not running. He stands in full dress uniform with a blade at his side and the Wardensea cross on his chest, and he waits for you to climb the stairs.',
         '"Karyudon."',
+      ],
+    },
+    {
+      id: 'durrek_assault_04b',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         '"Drezh."',
+      ],
+    },
+    {
+      id: 'durrek_assault_04c',
+      speaker: 'captain_drezh',
+      speakerName: 'Captain Drezh',
+      paragraphs: [
         '"Your deserter told you about me."',
+      ],
+    },
+    {
+      id: 'durrek_assault_04d',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         '"Vorreth told me you\'re competent and disciplined."',
+      ],
+    },
+    {
+      id: 'durrek_assault_04e',
+      speaker: 'captain_drezh',
+      speakerName: 'Captain Drezh',
+      paragraphs: [
         '"He was competent too. Before he lost his nerve." Drezh draws his sword. Clean steel, well-maintained, regulation-length. Everything about this man is regulation. "You\'ve broken my shield wall. You\'ve disrupted my communications. Your Morventhi is on my walls and your engineer is broadcasting my garrison\'s defeat to the world."',
+      ],
+    },
+    {
+      id: 'durrek_assault_04f',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         '"Sounds about right."',
+      ],
+    },
+    {
+      id: 'durrek_assault_04g',
+      speaker: 'captain_drezh',
+      speakerName: 'Captain Drezh',
+      paragraphs: [
         '"But you haven\'t taken Durrek. You\'ve damaged it." He raises his blade. "Durrek falls when I say it falls. Not before."',
+      ],
+    },
+    {
+      id: 'durrek_assault_04h',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         'You raise the Danzai.',
         '"Then let\'s find out when you say it."',
       ],
@@ -114,10 +228,31 @@ export const durrekConquestScene: StoryScene = {
         'The garrison flag comes down at noon.',
         'Not because you tore it down. Because Drezh lowered it himself. He limps to the flagpole with three broken ribs and a split lip, and he folds it with military precision. Every crease perfect. Every fold regulation.',
         '"Garrison Durrek stands down." His voice carries across the broken dock, over the scattered marines, through the damaged walls. "Effective immediately. By authority of--" He pauses. Looks at you. "By necessity."',
+      ],
+    },
+    {
+      id: 'durrek_assault_05b',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         'Vorreth watches from the armory doorway.',
         'You plant the Danzai in the command balcony floor. The stone cracks. A new flag won\'t fly here, not yet. For now, the empty flagpole is enough. Everyone in the Northern Arc will know what it means.',
         '"Captain Drezh." You extend a hand. He stares at it. "Your garrison fought well."',
+      ],
+    },
+    {
+      id: 'durrek_assault_05c',
+      speaker: 'captain_drezh',
+      speakerName: 'Captain Drezh',
+      paragraphs: [
         '"Don\'t patronize me, pirate."',
+      ],
+    },
+    {
+      id: 'durrek_assault_05d',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         '"I\'m not patronizing. I\'m recruiting." You keep the hand extended. "You\'re competent and disciplined. I could use that."',
       ],
       choices: [
@@ -166,16 +301,72 @@ export const durrekConquestScene: StoryScene = {
       paragraphs: [
         'By evening, the word is out. Every Grimoire channel. Every trade vessel. Every Wardensea command post.',
         'Durrek Garrison, the Iron Gate of the Northern Arc, belongs to Karyudon.',
+      ],
+    },
+    {
+      id: 'durrek_assault_06b',
+      speaker: 'delvessa',
+      speakerName: 'Delvessa Ghal',
+      paragraphs: [
         'Delvessa runs the numbers. "The garrison\'s supply chains include trade routes to seven merchant vessels on regular rotation. We now control the primary chokepoint for all Northern Arc shipping. This isn\'t just a fortress. It\'s the key to the entire region."',
+      ],
+    },
+    {
+      id: 'durrek_assault_06c',
+      speaker: 'dragghen',
+      speakerName: 'Dragghen Kolve',
+      paragraphs: [
         'Dragghen cooks dinner in the garrison kitchen. Three times the size of the ship\'s galley. He opens every cabinet, runs his hand along the iron stove top, and says nothing for a full minute.',
         '"I could feed an army in here."',
+      ],
+    },
+    {
+      id: 'durrek_assault_06d',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         '"Good. Because that\'s what we\'re building."',
+      ],
+    },
+    {
+      id: 'durrek_assault_06e',
+      speaker: 'suulen',
+      speakerName: 'Suulen Vassere',
+      paragraphs: [
         'Suulen has already mapped the garrison\'s observation network. "From the tower, we can see incoming vessels from forty miles. Combined with Keldriss intelligence, we have complete coverage of the Northern Arc."',
+      ],
+    },
+    {
+      id: 'durrek_assault_06f',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         'Kovesse\'s stream hit twenty-three thousand concurrent viewers during the assault. The number is still climbing.',
         'You stand on the command balcony as the sun sets over the Bastion Sea. The empty flagpole catches the last light.',
         '"Vorreth."',
+      ],
+    },
+    {
+      id: 'durrek_assault_06g',
+      speaker: 'vorreth',
+      speakerName: 'Vorreth Khane',
+      paragraphs: [
         '"Karyudon."',
+      ],
+    },
+    {
+      id: 'durrek_assault_06h',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         '"You said this was just a stone from a mountain."',
+      ],
+    },
+    {
+      id: 'durrek_assault_06i',
+      speaker: 'vorreth',
+      speakerName: 'Vorreth Khane',
+      paragraphs: [
         'He stands beside you. Doesn\'t answer for a long time. He\'s looking at the garrison he deserted.',
         '"The Wardensea will mobilize the First Division," he says. "Within the week. They\'ll blockade the Northern Arc and cut our supply lines." He turns from the view. "We need to talk about Sorrens."',
       ],

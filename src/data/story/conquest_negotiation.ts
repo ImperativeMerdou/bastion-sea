@@ -13,7 +13,21 @@ export const conquestNegotiationScene: StoryScene = {
       paragraphs: [
         'Delvessa\'s eyes widen. Just slightly. A tilt of the head.',
         '"Negotiation. Good."',
+      ],
+    },
+    {
+      id: 'negotiate_01b',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         '"Don\'t get too excited. I\'m not doing it because it\'s smart. I\'m doing it because Pettha Koss is more useful as an ally than a subject."',
+      ],
+    },
+    {
+      id: 'negotiate_01c',
+      speaker: 'delvessa',
+      speakerName: 'Delvessa Ghal',
+      paragraphs: [
         '"Those can be the same thing," Delvessa says. She opens her ledger. "Here\'s what I need."',
       ],
     },
@@ -24,9 +38,37 @@ export const conquestNegotiationScene: StoryScene = {
       paragraphs: [
         'The plan is elegant. Tessurren Dolch\'s Kolmari contract contains a buried clause: a forty percent rent increase on warehousing that kicks in after the first year. Delvessa has a copy. She stole it when she left the Confederation, along with ten other instruments that the Kolmari thought were locked behind seven layers of bureaucratic encryption.',
         '"Pettha doesn\'t know about the rent clause. Nobody does, except the Confederation and the people who drafted it. Once she sees it, the Kolmari deal is dead."',
+      ],
+    },
+    {
+      id: 'negotiate_02b',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         '"And then we offer her something better."',
+      ],
+    },
+    {
+      id: 'negotiate_02c',
+      speaker: 'delvessa',
+      speakerName: 'Delvessa Ghal',
+      paragraphs: [
         '"Exactly. Protection from the Kolmari reprisal. Security for the harbor. Trade access to whatever routes we open as we expand."',
+      ],
+    },
+    {
+      id: 'negotiate_02d',
+      speaker: 'vorreth',
+      speakerName: 'Vorreth Khane',
+      paragraphs: [
         'Vorreth shakes his head. "You\'re offering her a partnership with a man who has no ships, no reputation, and a stolen God Fruit. Why would she take that over the Kolmari?"',
+      ],
+    },
+    {
+      id: 'negotiate_02e',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         '"Because we\'re not lying to her," you say. "That\'s the whole pitch."',
       ],
     },
@@ -50,8 +92,29 @@ export const conquestNegotiationScene: StoryScene = {
         'She stops at page four. The rent clause. The one buried under three layers of subsidiary language and two referential appendices.',
         'Her muzzle tightens. Her ears flatten. Just slightly. Just enough.',
         '"Where did you get this?"',
+      ],
+    },
+    {
+      id: 'negotiate_04b',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         '"Does it matter?"',
+      ],
+    },
+    {
+      id: 'negotiate_04c',
+      speaker: 'pettha_koss',
+      speakerName: 'Pettha Koss',
+      paragraphs: [
         '"It matters a great deal, actually. If this document is authentic, it means the Kolmari Confederation has been negotiating in bad faith for six months. If it\'s forged, it means you\'re trying to manipulate me into an alliance I don\'t want."',
+      ],
+    },
+    {
+      id: 'negotiate_04d',
+      speaker: 'delvessa',
+      speakerName: 'Delvessa Ghal',
+      paragraphs: [
         'Delvessa steps forward. "It\'s authentic. I drafted the template myself when I was with the Arbitration Division. Standard Kolmari extraction model. They use it on every frontier market."',
         'Pettha studies Delvessa. Then she studies you.',
       ],
@@ -87,10 +150,38 @@ export const conquestNegotiationScene: StoryScene = {
         'Pettha looks at the contract. Then at you. Then at Delvessa, who stands with the calm of a woman who knows every number on every page.',
         'The Harbor Master takes off her spectacles. Cleans them. Puts them back on.',
         '"Seventy-thirty. I\'ve been running this island for twenty years. That\'s my price for not throwing you into the harbor."',
+      ],
+    },
+    {
+      id: 'negotiate_05b',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         '"Sixty-forty."',
+      ],
+    },
+    {
+      id: 'negotiate_05c',
+      speaker: 'pettha_koss',
+      speakerName: 'Pettha Koss',
+      paragraphs: [
         '"Sixty-five, thirty-five. And I maintain full scheduling authority."',
+      ],
+    },
+    {
+      id: 'negotiate_05d',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         'You look at Delvessa. She nods.',
         '"Deal."',
+      ],
+    },
+    {
+      id: 'negotiate_05e',
+      speaker: 'pettha_koss',
+      speakerName: 'Pettha Koss',
+      paragraphs: [
         'Pettha extends a paw. Her grip is firm.',
         '"I\'m not your ally, Captain. I\'m your business partner. There\'s a difference. Learn it."',
       ],

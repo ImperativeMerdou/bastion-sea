@@ -17,10 +17,10 @@ export interface AudioSettings {
 }
 
 const DEFAULTS: AudioSettings = {
-  masterVolume: 0.7,
-  sfxVolume: 0.30,
-  ambienceVolume: 0.12,
-  stingerVolume: 0.20,
+  masterVolume: 0.60,
+  sfxVolume: 0.20,
+  ambienceVolume: 0.04,  // Low: music carries atmosphere, ambience is subtle texture only
+  stingerVolume: 0.15,   // Music + stingers volume
   muted: false,
 };
 

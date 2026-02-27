@@ -12,7 +12,19 @@ export const dragonFruitActivationScene: StoryScene = {
         'It pulses. Dark crimson and black, scaled like reptile skin, too bright, too present, like the color is bleeding into the air around it. Your palms are sweating. The fruit is warm. Not warm like sunlight. Warm like a living thing. Warm like it has a heartbeat.',
         'The crew watches. Nobody speaks. Even Kovesse turned her Grimoires off.',
         'Delvessa stands closest. Her arms are crossed but her fingers are digging into her own sleeves. She ran the numbers. She always runs the numbers. But there are no numbers for this.',
+      ],
+    },
+    {
+      id: 'dragon_fruit_01b',
+      speaker: 'vorreth',
+      speakerName: 'Vorreth Khane',
+      paragraphs: [
         '"Karyudon." Vorreth\'s voice is low. Steady. The voice he uses when giving field reports that include casualty counts. "The texts say the change is permanent. Structural."',
+      ],
+    },
+    {
+      id: 'dragon_fruit_01c',
+      paragraphs: [
         'You know.',
         'You look at the fruit. The fruit looks back. That\'s not a metaphor. Something inside it is aware of you. Something old and patient, coiled in the flesh of a fruit that shouldn\'t exist, waiting for someone desperate or hungry enough to let it in.',
         'You\'re both.',
@@ -63,30 +75,54 @@ export const dragonFruitActivationScene: StoryScene = {
     },
     {
       id: 'dragon_fruit_06',
-      speaker: 'delvessa',
-      speakerName: 'Delvessa Ghal',
       paragraphs: [
         'Nobody moves.',
         'Dragghen\'s hand is on his cleaver but he\'s not drawing it. He\'s holding it for comfort, not combat. Something familiar while the world stops making sense. His other hand is gripping the rail. His knuckles are the color of bone.',
         'Suulen\'s Spatial Sight is blazing. Silver-blue light pouring from her eyes like she can\'t turn it off. She\'s reading you. Mapping the new geometry of your body the way she maps islands and cave systems. Her mouth is open.',
         'Kovesse has both hands over her mouth. She\'s shaking. Something she doesn\'t have a broadcast name for yet.',
         'Vorreth hasn\'t moved. Not a muscle. He\'s watching you the way a soldier watches an unexploded shell. His hand is on his saber but his grip is loose. He\'s not afraid of you. He\'s recalculating everything he thought he knew about what you are.',
+      ],
+    },
+    {
+      id: 'dragon_fruit_06b',
+      speaker: 'delvessa',
+      speakerName: 'Delvessa Ghal',
+      paragraphs: [
         'Delvessa speaks first.',
         '"Are you still in there?"',
+      ],
+    },
+    {
+      id: 'dragon_fruit_06c',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         'Your voice, when it comes, has a second frequency underneath it. A resonance. A bass note that lives in the deck planks and the rigging and the bones of everyone standing near you.',
         '"Yeah. I\'m here."',
+      ],
+    },
+    {
+      id: 'dragon_fruit_06d',
+      speaker: 'delvessa',
+      speakerName: 'Delvessa Ghal',
+      paragraphs: [
         'She exhales. Long and shaking. Her hands drop from her sleeves.',
         '"Good. Because your shirt is on fire and I\'m not putting it out."',
       ],
     },
     {
       id: 'dragon_fruit_07a',
+      paragraphs: [
+        'You look down. She\'s right. The back of your shirt is in tatters around the wing joints and the hem is smoldering. You pat it out. Your palm is scaled. The fire doesn\'t hurt.',
+        'Dragghen lets go of the rail. Walks to you. Doesn\'t flinch, doesn\'t slow, just walks right up to you and looks at your face. Studies it. The new horns. The scale patterns at your jawline. The eyes that are the same color they\'ve always been.',
+      ],
+    },
+    {
+      id: 'dragon_fruit_07a2',
       speaker: 'dragghen',
       speakerName: 'Dragghen Kolve',
       expression: 'awe',
       paragraphs: [
-        'You look down. She\'s right. The back of your shirt is in tatters around the wing joints and the hem is smoldering. You pat it out. Your palm is scaled. The fire doesn\'t hurt.',
-        'Dragghen lets go of the rail. Walks to you. Doesn\'t flinch, doesn\'t slow, just walks right up to you and looks at your face. Studies it. The new horns. The scale patterns at your jawline. The eyes that are the same color they\'ve always been.',
         '"You\'re still ugly," he says.',
       ],
     },
@@ -101,6 +137,7 @@ export const dragonFruitActivationScene: StoryScene = {
     {
       id: 'dragon_fruit_07c',
       speaker: 'karyudon',
+      speakerName: 'Karyudon',
       paragraphs: [
         '"Not yet." Your voice. The new resonance. It takes a second to get used to. "Not yet. Let them wonder."',
       ],
@@ -108,7 +145,7 @@ export const dragonFruitActivationScene: StoryScene = {
     {
       id: 'dragon_fruit_07d',
       speaker: 'vorreth',
-      speakerName: 'Vorreth Daaz',
+      speakerName: 'Vorreth Khane',
       paragraphs: [
         'Vorreth nods. First time he\'s moved since the transformation started. "Smart. Let the rumors outrun the truth. By the time they see what you\'ve become, they\'ll have already been afraid of it for weeks."',
       ],
@@ -123,7 +160,19 @@ export const dragonFruitActivationScene: StoryScene = {
         'Suulen finally blinks. The Sight dims. She looks at you, and for the first time since you\'ve known her, her hands are shaking.',
         '"You\'re different all the way through." She says it like she\'s describing a building that just rebuilt itself from the foundations up. "The bones. The muscles around the wings. There are channels in you now, like the veins in the fruit. Carrying something. I can see it moving."',
         'She reaches toward your forearm. Stops. Pulls her hand back.',
+      ],
+    },
+    {
+      id: 'dragon_fruit_08b',
+      speaker: 'kovesse',
+      speakerName: 'Kovesse Grenn',
+      paragraphs: [
         '"Resonance," Kovesse says quietly. "That\'s the word the old texts use."',
+      ],
+    },
+    {
+      id: 'dragon_fruit_08c',
+      paragraphs: [
         'Resonance. You can feel it. A hum in your chest. In your horns. In the tips of the wings folded against your back. A pilot light that will never go out.',
         'You flex your hands. The claws retract. The scales remain. Claw. Flame. Wing. Scale. And something else, something heavy, coiled at the base of your spine like a word you\'ve always known but never had reason to say.',
         'Kalameet Descent.',

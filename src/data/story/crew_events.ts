@@ -108,21 +108,66 @@ export const delvessaEvent01: StoryScene = {
       speakerName: 'Delvessa Ghal',
       paragraphs: [
         'She looks up. The lamplight catches dark brown eyes, and for half a second you see the calculation running behind them: threat assessment, conversational vectors, three possible responses ranked by strategic value. Her fingers tighten around the quill. Then loosen. "Captain. Are you... attempting conversation with me?"',
+      ],
+    },
+    {
+      id: 'del_01_flirtb',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         '"Hah. Every time you say \'Captain\' like that, it sounds like you\'re picking between following an order and filing a formal complaint."',
+      ],
+    },
+    {
+      id: 'del_01_flirtc',
+      speaker: 'delvessa',
+      speakerName: 'Delvessa Ghal',
+      paragraphs: [
         'Her lips press together. The left corner pulls. She kills it before it becomes a smile, but her grip on that quill could snap it in half. "I\'ll let you know which one I decide."',
       ],
     },
     {
       id: 'del_01_end',
+      paragraphs: [
+        'She goes back to her numbers. You leave her to it.',
+      ],
+    },
+    {
+      id: 'del_01_endb',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
+        'At the door, you pause. "Delvessa. Why\'d you leave the Kolmari? Really."',
+      ],
+    },
+    {
+      id: 'del_01_endc',
       speaker: 'delvessa',
       speakerName: 'Delvessa Ghal',
       paragraphs: [
-        'She goes back to her numbers. You leave her to it.',
-        'At the door, you pause. "Delvessa. Why\'d you leave the Kolmari? Really."',
         '"I told you. The math stopped making sense."',
+      ],
+    },
+    {
+      id: 'del_01_endd',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         '"That\'s the reason you give to the math. What\'s the real one?"',
+      ],
+    },
+    {
+      id: 'del_01_ende',
+      speaker: 'delvessa',
+      speakerName: 'Delvessa Ghal',
+      paragraphs: [
         'Silence. The quill stops. She doesn\'t look up.',
         '"The math stopped making sense."',
+      ],
+    },
+    {
+      id: 'del_01_endf',
+      paragraphs: [
         'Same answer. Exact same tone. She believes it. You can tell she believes it. You can also tell, from the way she\'s gripping that quill hard enough to bend the shaft, that the answer has nothing to do with math.',
         'You leave. At the door you glance back. The prop drink is gone. Empty glass, wet ring on the table, a single drop of rum still clinging to the rim. She drank it. The woman who ordered a drink she had no intention of touching, who left the Kolmari for reasons she can\'t explain to herself, who does arithmetic at midnight in a bar because she can\'t sleep, drank the prop.',
       ],
@@ -216,7 +261,8 @@ export const delvessaEvent02: StoryScene = {
     },
     {
       id: 'del_02_close',
-
+      speaker: 'delvessa',
+      speakerName: 'Delvessa Ghal',
       paragraphs: [
         'Whatever you chose, she nods. Closes the folio. Tucks it under her arm.',
         '"Goodnight, Captain."',
@@ -537,12 +583,26 @@ export const suulenEvent01: StoryScene = {
     {
       id: 'suu_01_end',
       speaker: 'suulen',
-      speakerName: 'Suulen',
+      speakerName: 'Suulen Vassere',
       paragraphs: [
         'Silence. The wind screams past the roof edge. She pulls her knees to her chest.',
         '"You climb well for someone your size." She says it like that\'s the end of the conversation. Her eyes go back to the horizon. Back to counting invisible ships.',
         'You wait. She doesn\'t add anything.',
+      ],
+    },
+    {
+      id: 'suu_01_endb',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         '"So that\'s it? I climbed a four-story drainpipe and I get a compliment about climbing?"',
+      ],
+    },
+    {
+      id: 'suu_01_endc',
+      speaker: 'suulen',
+      speakerName: 'Suulen Vassere',
+      paragraphs: [
         '"You asked why I\'m up here. I asked why you are. Neither of us answered." The corner of her mouth moves. On anyone else you\'d call it a smile. "I like high places. That\'s all you need for now."',
         'She turns back to the water. Conversation over. You sit on the roof next to her because the drainpipe going down looks worse than the drainpipe coming up, and after a while the silence stops being awkward and starts being something else. She points at a ship on the horizon.',
         '"That one\'s running dark. No lights. Hull painted to match the water." She doesn\'t look at you when she says it. "Come back tomorrow and I\'ll tell you what it was carrying."',
@@ -568,9 +628,15 @@ export const tessekEvent01: StoryScene = {
   beats: [
     {
       id: 'tes_01_1',
-
       paragraphs: [
         'Dawn on the foredeck. The sky is barely lit, grey bleeding into gold at the waterline. Tessek Vayne stands alone, barefoot on wet wood, Redtide in a two-handed grip. The blade catches the first sliver of sun and throws it back in a hard line across the deck. He inhales through his nose. Rolls his shoulders. Plants his back foot.',
+      ],
+    },
+    {
+      id: 'tes_01_1b',
+      speaker: 'tessek',
+      speakerName: 'Tessek Vayne',
+      paragraphs: [
         '"Crimson Revelation: First Light."',
         'He swings. It is, in every measurable way, a practice swing. He treats it like a declaration of war.',
       ],
@@ -662,11 +728,17 @@ export const tessekEvent01: StoryScene = {
     },
     {
       id: 'tes_01_demonstrate',
-
       paragraphs: [
         'He draws Redtide. Points the tip at a mooring rope twenty paces away, thick as your wrist, crusted with salt. His eyes narrow, irises catching a shimmer like light bending through water. Sight Dominion reading the fibers. Counting the strands. Finding the weak one.',
         'He throws. Redtide leaves his hand in a flat spin, crosses the full length of the deck in a red blur, and catches the rope at a precise point where sun and salt have eaten the core threads thin. It shears clean through with a sound like a snapped whip. The blade buries itself two inches deep in the far railing.',
         'The rope drops in two halves. He walks the twenty paces, unhurried, pulls Redtide free, and runs his thumb along the railing where the point struck. Inspects the nick. Frowns at it.',
+      ],
+    },
+    {
+      id: 'tes_01_demonstrateb',
+      speaker: 'tessek',
+      speakerName: 'Tessek Vayne',
+      paragraphs: [
         '"Clean cut. I\'ll fix the wood."',
       ],
     },

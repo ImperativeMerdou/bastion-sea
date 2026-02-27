@@ -8,6 +8,7 @@ export const durrekArrivalScene: StoryScene = {
       id: 'durrek_arrive_01',
       title: 'THE FORTRESS',
       speaker: 'vorreth',
+      speakerName: 'Vorreth Daaz',
       paragraphs: [
         'Durrek doesn\'t welcome you. Durrek doesn\'t welcome anyone.',
         'The island is a volcanic outcrop reinforced by thirty years of Wardensea engineering. Natural stone carved, shaped, and armored until the island itself is a weapon. Three stories of reinforced basalt. Cannon emplacements on every face. A carved harbor with chain booms that can seal the entrance in under a minute. The Wardensea flag, grey on steel-blue, flies from the highest tower. It has never been lowered.',
@@ -19,16 +20,51 @@ export const durrekArrivalScene: StoryScene = {
     },
     {
       id: 'durrek_arrive_02',
-      speaker: 'vorreth',
-      speakerName: 'Vorreth Daaz',
+      speaker: 'delvessa',
+      speakerName: 'Delvessa Ghal',
       paragraphs: [
         'Delvessa joins you at the rail. She\'s been watching the fortress through a spyglass for twenty minutes. She puts it down.',
         '"That\'s a lot of marines."',
+      ],
+    },
+    {
+      id: 'durrek_arrive_02b',
+      speaker: 'vorreth',
+      speakerName: 'Vorreth Daaz',
+      paragraphs: [
         '"A hundred and twenty," Vorreth says. He doesn\'t need the spyglass. "They rotate every six months. The commander is Drezh." His voice flattens on the name. "We served together. Methodical. Disciplined. The kind of officer who won\'t make mistakes because he doesn\'t believe in improvisation."',
+      ],
+    },
+    {
+      id: 'durrek_arrive_02c',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         '"Everyone improvises when an Oni breaks through their front door," you say.',
+      ],
+    },
+    {
+      id: 'durrek_arrive_02d',
+      speaker: 'vorreth',
+      speakerName: 'Vorreth Daaz',
+      paragraphs: [
         '"That\'s... not wrong." Vorreth\'s mouth twitches. Not quite a smile. "Drezh has one weakness: he follows procedure. Every situation has a procedure. Every threat has a response. What he can\'t handle is something that doesn\'t have a procedure."',
         'You look at your crew. A deserter Commandant. A Morventhi tunnel-runner. A Gorundai with fists like anvils. A Rathai engineer broadcasting everything to the world. An ex-Kolmari strategist running your finances.',
+      ],
+    },
+    {
+      id: 'durrek_arrive_02e',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         '"I don\'t think there\'s a procedure for us."',
+      ],
+    },
+    {
+      id: 'durrek_arrive_02f',
+      speaker: 'vorreth',
+      speakerName: 'Vorreth Daaz',
+      paragraphs: [
         '"No. There definitely is not."',
       ],
     },
@@ -39,8 +75,29 @@ export const durrekArrivalScene: StoryScene = {
       paragraphs: [
         'You don\'t dock at Durrek. The harbor is sealed to non-military vessels. Instead, you anchor at a rocky outcropping a mile south that Suulen identified from the charts.',
         '"Observation post," she reports, reappearing from a two-hour reconnaissance. "Patrol routes run like clockwork. Shift changes every four hours. Gate inspections every two. The only gap is during the commander\'s evening briefing: twenty minutes when the south wall has minimal coverage."',
+      ],
+    },
+    {
+      id: 'durrek_arrive_03b',
+      speaker: 'kovesse',
+      speakerName: 'Kovesse Grenn',
+      paragraphs: [
         'Kovesse is setting up equipment. Directional microphones. Signal intercepts. "I can\'t crack their Grimoire encryption, but I can listen to the unencrypted chatter. Duty complaints, mostly. Supply requests. One marine who keeps writing terrible poetry to someone named Elisse."',
+      ],
+    },
+    {
+      id: 'durrek_arrive_03c',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         '"Useful?"',
+      ],
+    },
+    {
+      id: 'durrek_arrive_03d',
+      speaker: 'kovesse',
+      speakerName: 'Kovesse Grenn',
+      paragraphs: [
         '"The poetry? No. The supply requests? Very. They\'re low on medical supplies and behind on their quarterly ammunition shipment. Logistics tells you everything about a garrison\'s readiness."',
       ],
       choices: [

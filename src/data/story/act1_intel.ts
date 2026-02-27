@@ -8,7 +8,6 @@ export const act1IntelScene: StoryScene = {
     {
       id: 'intel_01',
       title: 'THE SITUATION',
-      speaker: 'delvessa',
       paragraphs: [
         'Delvessa calls the meeting. Nobody is surprised.',
         'Hella\'s stall. After closing. The crew fills the space the way they\'ve learned to fill spaces together: Dragghen at the grill, Kovesse on the counter with all three Grimoires active, Vorreth against the wall with his arms folded, Tessek leaning against a post with Redtide across his knees, Suulen in the corner that nobody noticed was occupied until she spoke, Orren perched on a crate at the edge of the group with his hands in his jacket pockets so the sparks don\'t jump.',
@@ -19,6 +18,7 @@ export const act1IntelScene: StoryScene = {
     {
       id: 'intel_02',
       speaker: 'delvessa',
+      speakerName: 'Delvessa Ghal',
       paragraphs: [
         '"Pettha Koss." She drops the name on the table like a blade. "Varrek. Middle-aged. Runs the Harbor Board. Every ship, every cargo, every schedule passes through her office. Without her, this island\'s trade network collapses in forty-eight hours."',
         'She taps the table twice. A habit the crew has learned means she finds what comes next interesting.',
@@ -28,6 +28,7 @@ export const act1IntelScene: StoryScene = {
     {
       id: 'intel_03',
       speaker: 'delvessa',
+      speakerName: 'Delvessa Ghal',
       paragraphs: [
         '"The Kolmari agent you stared down at the dockside? Tessurren Dolch." She says the name the way a former smoker says the brand they quit. "Monthly visits. Warehousing agreement. If Pettha signs, Kolmari take forty percent of the island\'s storage. Every merchant pays their rates. Tavven becomes a satellite."',
         'She pauses.',
@@ -37,11 +38,25 @@ export const act1IntelScene: StoryScene = {
     {
       id: 'intel_04',
       speaker: 'vorreth',
-      speakerName: 'Vorreth Daaz',
+      speakerName: 'Vorreth Khane',
       paragraphs: [
         'Vorreth unfolds his arms. This means he has something worth saying.',
         '"Standard economic destabilization protocol. The Wardensea wrote it. The Kolmari licensed it. You squeeze local credit until the population turns on whoever is protecting them." His voice is flat. Professional. The voice of a man reading from a manual he helped write. "Pressure spike. Then buyout. Then occupation by contract. Nobody fires a shot. Nobody needs to."',
+      ],
+    },
+    {
+      id: 'intel_04b',
+      speaker: 'dragghen',
+      speakerName: 'Dragghen Kolve',
+      paragraphs: [
         '"You\'ve seen this before," Dragghen says.',
+      ],
+    },
+    {
+      id: 'intel_04c',
+      speaker: 'vorreth',
+      speakerName: 'Vorreth Khane',
+      paragraphs: [
         '"I\'ve done this before."',
         'The table goes quiet.',
         '"I\'m telling you what they\'ll do next because I know what they\'ll do next. Tessurren will double interest at the end of the week. Every vendor, every boat license, every warehouse lease. The population breaks or bends. Either way, Pettha signs."',
@@ -86,7 +101,21 @@ export const act1IntelScene: StoryScene = {
       paragraphs: [
         'Tessek has been quiet. For Tessek, this is suspicious.',
         '"How many fighters?" He asks it the way he asks everything about combat: like it\'s the only question that matters and the rest is weather. "Tessurren\'s escorts. The harbor garrison. Anyone who picks up a weapon when things go loud."',
+      ],
+    },
+    {
+      id: 'intel_08b',
+      speaker: 'delvessa',
+      speakerName: 'Delvessa Ghal',
+      paragraphs: [
         '"Two permanent escorts," Delvessa says. "Both Tempered Iron. Plus six to eight seasonal dock security. Pettha\'s Harbor Board has no military arm. The island doesn\'t have a militia."',
+      ],
+    },
+    {
+      id: 'intel_08c',
+      speaker: 'tessek',
+      speakerName: 'Tessek Vayne',
+      paragraphs: [
         'Tessek nods. The corners of his mouth do something that on a normal person would be a smile.',
         '"CRIMSON TIDE: SEVEN-DAY COUNTDOWN." He touches Redtide\'s hilt. "I\'ve been warming up."',
       ],
@@ -94,7 +123,7 @@ export const act1IntelScene: StoryScene = {
     {
       id: 'intel_09',
       speaker: 'orren',
-      speakerName: 'Orren Mahk',
+      speakerName: 'Orren Dael',
       paragraphs: [
         'Orren hasn\'t spoken. His hands are in his pockets. A blue-white spark jumps from his right knuckle to the crate he\'s sitting on. He flinches.',
         '"What happens to the people?"',
@@ -106,6 +135,7 @@ export const act1IntelScene: StoryScene = {
     {
       id: 'intel_10',
       speaker: 'karyudon',
+      speakerName: 'Karyudon',
       paragraphs: [
         'Seven days. A harbor master. A Kolmari agent. A Wardensea patrol that comes like clockwork. And seven people who showed up at a food stall because one of them started cooking and the rest of them sat down.',
         'You eat a spoonful of Dragghen\'s fish. Deliberately.',
@@ -149,6 +179,7 @@ export const act1ConquestChoiceScene: StoryScene = {
     {
       id: 'intel_conquest_bridge',
       speaker: 'delvessa',
+      speakerName: 'Delvessa Ghal',
       paragraphs: [
         'Delvessa is already talking when you sit down. Ledger open, ink still drying on the latest page.',
         '"Four ways to take this island."',
@@ -157,8 +188,6 @@ export const act1ConquestChoiceScene: StoryScene = {
     {
       id: 'intel_conquest_choice',
       title: 'CHOOSE YOUR APPROACH',
-      speaker: 'delvessa',
-      expression: 'grim',
       paragraphs: [
         'Delvessa lays it out. Four approaches. Each one shapes how the Bastion Sea sees you, and how Tavven Shoal remembers you.',
       ],

@@ -13,19 +13,47 @@ export const crewIdentityScene: StoryScene = {
         'It happens on the fifth night.',
         'The crew gathers in Hella\'s stall after the market closes. Dragghen cooks. The smell of Coppervein spices fills the air. Kovesse is broadcasting something, she\'s always broadcasting something, but tonight she pauses. Sets her Grimoire tablet down. Looks at the group.',
         '"We need a name."',
+      ],
+    },
+    {
+      id: 'identity_01b',
+      speaker: 'dragghen',
+      speakerName: 'Dragghen Kolve',
+      paragraphs: [
         'Dragghen doesn\'t look up from the pot. "We have names."',
+      ],
+    },
+    {
+      id: 'identity_01c',
+      speaker: 'kovesse',
+      speakerName: 'Kovesse Grenn',
+      paragraphs: [
         '"Not OUR names. A NAME. A crew name. The thing they put on the bounty posters under the big scary number. The thing people whisper when they see our flag. Every crew in the Bastion Sea has one. The Wardensea calls themselves the Grey Fleet. The Kolmari have the Arbitration Corps. Every Conqueror has a crew name that means something." She turns to Karyudon. "We\'re about to take an island, Captain. When people talk about what happened here, what do they call us?"',
       ],
     },
     {
       id: 'identity_02',
       speaker: 'vorreth',
-      speakerName: 'Vorreth Daaz',
+      speakerName: 'Vorreth Khane',
       paragraphs: [
         'Vorreth leans against the wall, arms crossed. "She\'s right. The Wardensea put names on everything. Divisions. Operations. Even the punishments had names. Makes it real. Makes people act like they belong to something instead of standing next to it."',
         'At the next table, a short-haired woman with a ledger under her arm glances up. She\'s been at Hella\'s every night this week.',
         'Suulen says nothing. Her silver eyes move from face to face.',
+      ],
+    },
+    {
+      id: 'identity_02b',
+      speaker: 'dragghen',
+      speakerName: 'Dragghen Kolve',
+      paragraphs: [
         'Dragghen tastes the stew. Adds salt. "A name should mean something. Not just sound good."',
+      ],
+    },
+    {
+      id: 'identity_02c',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         'You grin. You\'ve been listening. You\'re always listening, even when you look like you\'re just waiting for someone to stop talking so you can hit something.',
         '"Alright. What are we called?"',
       ],
@@ -33,6 +61,8 @@ export const crewIdentityScene: StoryScene = {
     {
       id: 'identity_name_choice',
       title: 'NAME YOUR CREW',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
       paragraphs: [
         'Four people look at you. The fire crackles. Hella wipes down the counter and pretends not to listen. The Bastion Sea stretches dark and infinite beyond the harbor.',
         'What is this crew called?',

@@ -331,14 +331,15 @@ export const MapPanel: React.FC = () => {
               </div>
 
               {/* Label */}
-              <div className={`absolute top-full mt-1.5 left-1/2 -translate-x-1/2 whitespace-nowrap text-xs font-display font-bold tracking-wider transition-all duration-200 ${
+              <div className={`absolute top-full mt-1.5 left-1/2 -translate-x-1/2 whitespace-nowrap font-display tracking-wider transition-all duration-200 ${
                 hoveredIsland === island.id || selectedIsland === island.id || focusedIsland === island.id
                   ? 'text-amber-400'
                   : isHere
                     ? 'text-green-300'
                     : 'text-ocean-300'
-              }`} style={{ textShadow: '0 1px 3px rgba(0,0,0,0.8)' }}>
+              }`} style={{ fontSize: '17px', fontWeight: 600, textShadow: '0 1px 4px rgba(0,0,0,0.9), 0 0 8px rgba(0,0,0,0.5)' }}>
                 {island.name}
+                {isHere && <span className="text-green-400 ml-1 text-xs font-semibold align-middle">&#9679;</span>}
               </div>
 
               {/* Controlled indicator */}

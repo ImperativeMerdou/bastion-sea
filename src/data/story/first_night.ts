@@ -25,6 +25,8 @@ export const firstNightScene: StoryScene = {
     },
     {
       id: 'night_03',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
       paragraphs: [
         'Inventory. You have a God Fruit, Forged Iron, and prison scraps that barely qualify as clothes. No ship. No crew. No money. No contacts. No reputation in any part of the Bastion Sea that anyone\'s bothered to map.',
         'You need all of those things. You need to find the twins. You need to deal with Kirin. You need, incidentally, to conquer the world.',

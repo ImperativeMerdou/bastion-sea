@@ -102,10 +102,46 @@ export const keldrisArrivalScene: StoryScene = {
       paragraphs: [
         'The three men give up. Not because they can\'t continue. Because the naming is getting to them. Hard to fight a man who announces every move like it\'s a chapter title in a novel about himself.',
         'The swordsman tosses the stick. His eyes find you in the crowd the way a compass finds north.',
+      ],
+    },
+    {
+      id: 'keldriss_arrive_06b',
+      speaker: 'tessek',
+      speakerName: 'Tessek Vayne',
+      paragraphs: [
         '"You\'re the Oni."',
+      ],
+    },
+    {
+      id: 'keldriss_arrive_06c',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         '"I\'m an Oni. Whether I\'m the one you mean depends on what you\'ve heard."',
+      ],
+    },
+    {
+      id: 'keldriss_arrive_06d',
+      speaker: 'tessek',
+      speakerName: 'Tessek Vayne',
+      paragraphs: [
         '"I\'ve heard you broke eight chains. I\'ve heard you took a God Fruit off a burning ship. I\'ve heard you\'re building something at Tavven Shoal." He walks toward you. Every step is measurement. "I\'m Tessek Vayne. I practice the Vayne Style. It\'s a sword art. I developed it myself. It\'s going to be in the history books."',
+      ],
+    },
+    {
+      id: 'keldriss_arrive_06e',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         '"After the ones I write?"',
+      ],
+    },
+    {
+      id: 'keldriss_arrive_06f',
+      speaker: 'tessek',
+      speakerName: 'Tessek Vayne',
+      expression: 'happy',
+      paragraphs: [
         'He grins. Sharp. Genuine.',
         '"We\'ll see which chapter comes first."',
       ],
@@ -114,13 +150,34 @@ export const keldrisArrivalScene: StoryScene = {
       id: 'keldriss_arrive_07',
       speaker: 'tessek',
       speakerName: 'Tessek Vayne',
-      expression: 'grim',
       paragraphs: [
         'Over drinks at a stall that serves something called "pine liquor" which tastes exactly like its name suggests:',
         '"I\'ve been on Keldriss for two months. Training. There\'s a man named Garroden Harsk who\'s one step ahead of me. Always one step. I\'ve been chasing him across the Bastion Sea for three years."',
+      ],
+    },
+    {
+      id: 'keldriss_arrive_07b',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         '"Have you ever actually met him?"',
+      ],
+    },
+    {
+      id: 'keldriss_arrive_07c',
+      speaker: 'tessek',
+      speakerName: 'Tessek Vayne',
+      expression: 'grim',
+      paragraphs: [
         'Tessek\'s face goes blank. Not blank like empty. Blank like a loaded weapon.',
         '"Not yet. But his sword style. It leaves marks. A cut pattern on a dock post in Windrow. A deflection scar on a Wardensea officer\'s shield at Sorren\'s Flat. He\'s out there. He\'s ahead of me. And I will find him."',
+      ],
+    },
+    {
+      id: 'keldriss_arrive_07d',
+      speaker: 'dragghen',
+      speakerName: 'Dragghen Kolve',
+      paragraphs: [
         'Dragghen leans over to you and speaks very quietly.',
         '"Nobody else has ever seen this person. I asked around. Three ports. Zero sightings."',
       ],
@@ -179,13 +236,41 @@ export const keldrisArrivalScene: StoryScene = {
       paragraphs: [
         'He joins immediately. No negotiation. No conditions.',
         '"CRIMSON TIDE: THE CAPTAIN\'S ACCORD."',
+      ],
+      stinger: 'crew_join',
+    },
+    {
+      id: 'keldriss_arrive_09b',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         '"That\'s a handshake."',
+      ],
+    },
+    {
+      id: 'keldriss_arrive_09c',
+      speaker: 'tessek',
+      speakerName: 'Tessek Vayne',
+      expression: 'happy',
+      paragraphs: [
         '"It\'s a named handshake. There\'s a difference."',
+      ],
+    },
+    {
+      id: 'keldriss_arrive_09d',
+      paragraphs: [
         'Dragghen rates the recruitment a five. Kovesse is already designing his broadcast profile. She tags his entry: "combat asset, personality liability."',
+      ],
+    },
+    {
+      id: 'keldriss_arrive_09e',
+      speaker: 'tessek',
+      speakerName: 'Tessek Vayne',
+      expression: 'happy',
+      paragraphs: [
         'Tessek reads it over her shoulder.',
         '"I\'m keeping that. It\'s going on the back of my coat."',
       ],
-      stinger: 'crew_join',
     },
     {
       id: 'keldriss_arrive_10',

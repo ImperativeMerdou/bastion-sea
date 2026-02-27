@@ -35,14 +35,63 @@ export const copperveinArrivalScene: StoryScene = {
       paragraphs: [
         'The market is smaller than Tavven Shoal\'s and serves a single purpose: the mine. Equipment, food, medical supplies, drill bits, blasting charges. The air tastes like copper dust and forge smoke. Everything here has a fine green-brown film on it. You\'ve been on the island ten minutes and your forearms are already oxidizing.',
         'Dragghen walks through the market like a ghost returning to a house he built. People notice. An older Gorundai woman at a food stall freezes mid-motion when she sees him, a skewer of reef fish suspended between the grill and the plate.',
+      ],
+    },
+    {
+      id: 'coppervein_arrive_03b',
+      speaker: 'maavi',
+      speakerName: 'Maavi',
+      paragraphs: [
         '"Dragghen?"',
+      ],
+    },
+    {
+      id: 'coppervein_arrive_03c',
+      speaker: 'dragghen',
+      speakerName: 'Dragghen Kolve',
+      paragraphs: [
         '"Hey, Maavi."',
+      ],
+    },
+    {
+      id: 'coppervein_arrive_03d',
+      speaker: 'maavi',
+      speakerName: 'Maavi',
+      paragraphs: [
         '"Three years." She puts the skewer down. Picks it back up. Puts it down again. "They said you went Renegade."',
+      ],
+    },
+    {
+      id: 'coppervein_arrive_03e',
+      speaker: 'dragghen',
+      speakerName: 'Dragghen Kolve',
+      paragraphs: [
         '"They weren\'t wrong."',
         'She looks past him at you. At the crew. At the horns.',
+      ],
+    },
+    {
+      id: 'coppervein_arrive_03f',
+      speaker: 'maavi',
+      speakerName: 'Maavi',
+      paragraphs: [
         '"Brought company."',
+      ],
+    },
+    {
+      id: 'coppervein_arrive_03g',
+      speaker: 'dragghen',
+      speakerName: 'Dragghen Kolve',
+      paragraphs: [
         '"I did."',
         'Maavi studies you with the expression of a woman who has been evaluating risk since before you were born.',
+      ],
+    },
+    {
+      id: 'coppervein_arrive_03h',
+      speaker: 'maavi',
+      speakerName: 'Maavi',
+      paragraphs: [
         '"He eats double portions," she says to Dragghen. "Tell him the fish here is better than whatever he\'s been eating at sea. He\'ll know I\'m right."',
       ],
     },
@@ -188,8 +237,22 @@ export const copperveinArrivalScene: StoryScene = {
       paragraphs: [
         'Kovesse is vibrating.',
         '"Captain. CAPTAIN. That\'s a Storm Eel Fruit user. Storm Eel. Mythical Beast class. The last confirmed Storm Eel user was Dennek Kraine, seventy years ago. He sank a Wardensea battleship by touching the hull. TOUCHING IT. The electrical output at full awakening is estimated at. Captain, are you listening? He can generate enough current to power a Grimoire relay station with his HANDS."',
+      ],
+    },
+    {
+      id: 'coppervein_arrive_10b',
+      speaker: 'suulen',
+      speakerName: 'Suulen Vassere',
+      paragraphs: [
         '"He can also hear you," Suulen says from somewhere behind you. You didn\'t hear her arrive.',
         'Orren\'s ears are flat again.',
+      ],
+    },
+    {
+      id: 'coppervein_arrive_10c',
+      speaker: 'orren',
+      speakerName: 'Orren Mahk',
+      paragraphs: [
         '"I don\'t want to sink battleships," he says quietly. "I want to stop shocking people when I pick up a fork."',
       ],
     },
@@ -200,10 +263,38 @@ export const copperveinArrivalScene: StoryScene = {
       paragraphs: [
         'Dragghen has been watching. He walks over to Orren and looks at his hands. Not the electricity. The calluses.',
         '"Mine work. How many carts a day?"',
+      ],
+    },
+    {
+      id: 'coppervein_arrive_11b',
+      speaker: 'orren',
+      speakerName: 'Orren Mahk',
+      paragraphs: [
         '"Twelve. Sometimes fourteen."',
+      ],
+    },
+    {
+      id: 'coppervein_arrive_11c',
+      speaker: 'dragghen',
+      speakerName: 'Dragghen Kolve',
+      paragraphs: [
         '"Good output for a non-Gorundai." He looks at the jacket. "Naval issue. Tavven Harbor Authority. You were a dock runner."',
         'Orren\'s left ear drops. The right one stays up.',
+      ],
+    },
+    {
+      id: 'coppervein_arrive_11d',
+      speaker: 'orren',
+      speakerName: 'Orren Mahk',
+      paragraphs: [
         '"For two years. Before the. Before I found the fruit. I ran cargo manifests between the piers and the Harbor Board. Fast work. I was good at it." He touches the jacket. "I kept the jacket because it\'s the only thing I own that still fits right."',
+      ],
+    },
+    {
+      id: 'coppervein_arrive_11e',
+      speaker: 'dragghen',
+      speakerName: 'Dragghen Kolve',
+      paragraphs: [
         'Dragghen looks at you.',
         '"I rate him a five." A pause. "For someone who is twenty-six, scared of his own hands, and still pulling fourteen carts a day in a mine that isn\'t his. That\'s high."',
       ],
@@ -262,7 +353,21 @@ export const copperveinArrivalScene: StoryScene = {
         'However it plays out, the Kolmari officer leaves on his barge and the cooperative votes. The vote takes three minutes. Two walls get punched. Coppervein will hold its current contracts but the margins are thinner and everyone in the hall knows it.',
         'Dragghen stands outside the voting hall afterward. He doesn\'t punch a wall. That\'s worse.',
         'Orren is at the edge of the crowd, watching. His ears are doing the thing. One up. One down.',
+      ],
+    },
+    {
+      id: 'coppervein_arrive_13b',
+      speaker: 'orren',
+      speakerName: 'Orren Mahk',
+      paragraphs: [
         '"Does he always stand like that?" Orren asks, nodding at Dragghen. "Like he\'s holding up the building?"',
+      ],
+    },
+    {
+      id: 'coppervein_arrive_13c',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         '"Yes," you say. "Since the day I met him."',
       ],
     },
@@ -340,8 +445,29 @@ export const copperveinArrivalScene: StoryScene = {
         '"I need to tell the foreman. He\'ll want to vote on whether to release me from my contract." A pause. "The vote will take three minutes."',
         '"And if they vote no?"',
         '"They won\'t. The foreman has been asking me to leave for two months. He says I\'m a liability." The spark jumps again. He doesn\'t flinch this time. "He says it nicely. He brings it up during lunch so it doesn\'t feel official."',
+      ],
+    },
+    {
+      id: 'coppervein_arrive_16b',
+      speaker: 'tessek',
+      speakerName: 'Tessek Vayne',
+      paragraphs: [
         'Tessek appears from somewhere. He\'s been watching. "CRIMSON TIDE: THE LIGHTNING RECRUIT."',
+      ],
+    },
+    {
+      id: 'coppervein_arrive_16c',
+      speaker: 'kovesse',
+      speakerName: 'Kovesse Grenn',
+      paragraphs: [
         '"That\'s not a sword move," Kovesse says.',
+      ],
+    },
+    {
+      id: 'coppervein_arrive_16d',
+      speaker: 'tessek',
+      speakerName: 'Tessek Vayne',
+      paragraphs: [
         '"It\'s a narrative move. They count."',
         'Orren\'s ears go through four positions in two seconds. He settles on one up, one slightly tilted. The crew will learn to read this one. It means: "I have no idea what\'s happening but I think I might be okay with it."',
       ],
