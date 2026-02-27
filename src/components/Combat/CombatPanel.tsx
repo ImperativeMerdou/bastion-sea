@@ -1947,7 +1947,7 @@ export const CombatPanel: React.FC = () => {
             <div key={enemy.id} className="flex flex-col items-center gap-1.5" style={{ width: '140px' }}>
               {/* Portrait container — simple CSS border, no frame overlay */}
               <div
-                style={{ width: '90px', height: '110px', position: 'relative' }}
+                style={{ width: '164px', height: '200px', position: 'relative' }}
                 className={`cursor-pointer transition-all duration-200
                   ${selectedTarget === enemy.id ? 'scale-110' : ''}
                   ${isHurt ? 'animate-enemy-hurt' : ''}
@@ -2148,7 +2148,7 @@ export const CombatPanel: React.FC = () => {
         {/* Player HUD Bar — compact */}
         <div className="px-4 py-2.5 bg-ocean-800/95 border-y border-ocean-600/60 flex items-center gap-4 shrink-0">
           {/* Player portrait — simple CSS border, no frame overlay */}
-          <div style={{ width: '80px', height: '100px', flexShrink: 0, position: 'relative' }}>
+          <div style={{ width: '146px', height: '182px', flexShrink: 0, position: 'relative' }}>
             {/* Charge glow effect */}
             {anim.showChargeGlow && (
               <div

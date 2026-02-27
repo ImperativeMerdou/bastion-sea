@@ -664,7 +664,7 @@ export const StoryPanel: React.FC = () => {
           {/* Portrait — bottom left, CSS gold border with glow */}
           {featuredCharacter && featuredPortrait && (
             <div style={{ flexShrink: 0, alignSelf: 'flex-end', marginBottom: '28px', textAlign: 'center' as const }}>
-              <div style={{ width: '140px', height: '175px' }}>
+              <div style={{ width: '255px', height: '319px' }}>
                 <img
                   src={featuredPortrait}
                   alt=""
