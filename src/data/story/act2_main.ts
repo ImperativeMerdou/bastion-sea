@@ -8,6 +8,7 @@ export const act2BeginScene: StoryScene = {
     {
       id: 'act2_begin_01',
       title: 'THE WORLD NOTICED',
+      effect: 'flash',
       paragraphs: [
         'Delvessa\'s maps have taken over the chart room. Blue ink for trade routes. Red for Wardensea patrols. Black for Kolmari credit lines, most of them crossed out with a single stroke. Six islands\' worth of problems pinned to every wall.',
         'Your crew is already seated when you arrive. Nobody is talking. Dragghen has brought coffee and nobody is drinking it.',
@@ -164,6 +165,7 @@ export const act2UltimatumScene: StoryScene = {
         'Signed: Admiral Vasshen. Commandant, Vess Harbour.',
       ],
       effect: 'shake',
+      sfx: 'combat_cinematic_boom',
     },
     {
       id: 'ultimatum_04',
@@ -554,6 +556,7 @@ export const act2CouncilScene: StoryScene = {
     {
       id: 'council_01',
       title: 'WAR COUNCIL',
+      effect: 'flash',
       paragraphs: [
         'All six of you sit at the same table. Storm tea in clay cups. Dragghen cooked something that fills the room with the smell of pepper and salt. One map in the center. Candles at the corners.',
         'Nobody says anything for a while. Kovesse is the first to open her mouth and Dragghen shakes his head once. She closes it.',
@@ -747,6 +750,7 @@ export const act2FirstStrikeScene: StoryScene = {
         'The alarm runs through the islands in minutes. Kovesse\'s Grimoire relay network proves its worth: Coppervein, Sorrens, and Anvil Cay are on alert before the corvettes clear the outer channel.',
       ],
       effect: 'shake',
+      sfx: 'combat_cinematic_boom',
     },
     {
       id: 'strike_02',
@@ -773,6 +777,8 @@ export const act2FirstStrikeScene: StoryScene = {
     },
     {
       id: 'strike_04',
+      effect: 'flash_crimson',
+      sfx: 'combat_heavy',
       paragraphs: [
         'You take the Danzai off your back. The war club catches the dawn light and turns it red.',
         'The Keldriss channel is narrow. Rocky. The kind of terrain where three corvettes have to come at you single-file.',
@@ -989,6 +995,7 @@ export const act2SouthernGambitScene: StoryScene = {
     {
       id: 'gambit_01',
       title: 'VESS HARBOUR',
+      effect: 'flash',
       paragraphs: [
         'The intelligence arrives in pieces. Suulen\'s network. Vorreth\'s contacts. Delvessa\'s financial analysis. Three separate streams of information that converge on a single conclusion.',
         'Vess Harbour.',

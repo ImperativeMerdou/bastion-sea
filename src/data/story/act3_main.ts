@@ -10,6 +10,7 @@ export const act3BeginScene: StoryScene = {
     {
       id: 'a3_begin_01',
       title: 'THE THRONE ROOM IS EMPTY',
+      effect: 'flash',
       paragraphs: [
         'Vasshen\'s quarters smell like her. Not perfume, cold iron and paper. Navy regulation ledgers stacked by height. A desk bolted to the floor with three locks on the drawers. Charts pinned to the walls with brass tacks, each one annotated in a hand so controlled it could have been printed.',
         'You stand in the center of the room. Your horns scrape the ceiling. The Danzai leans against the Admiral\'s desk, and the desk groans under its weight like it knows what happened here.',
@@ -21,6 +22,8 @@ export const act3BeginScene: StoryScene = {
       id: 'a3_begin_02',
       speaker: 'delvessa',
       speakerName: 'Delvessa Ghal',
+      effect: 'flash',
+      sfx: 'combat_cinematic_boom',
       paragraphs: [
         'Delvessa kicks the door open because her arms are full. Captured ledgers, maps, intelligence reports, a sealed envelope she hasn\'t opened yet. She dumps all of it on Vasshen\'s desk and the desk groans again.',
         '"Shipping lanes are ours. Everything south of the Belt. Drydock works. Armory\'s stocked. Transit fees alone are worth more per week than Tavven Shoal makes in a month." She\'s talking fast. Not excited. Urgent.',
@@ -154,9 +157,12 @@ export const act3VasshenScene: StoryScene = {
         'A wall. Grey steel from horizon to horizon.',
       ],
       effect: 'shake',
+      sfx: 'combat_cinematic_boom',
     },
     {
       id: 'a3_vasshen_02',
+      effect: 'heavy_shake',
+      sfx: 'combat_cinematic_boom',
       paragraphs: [
         'Forty-eight warships. You count them because Vorreth taught you to count them. Twelve heavy cruisers forming the vanguard. Twenty-four corvettes in a crescent screen. Eight destroyers anchoring the flanks. Four supply vessels trailing behind like vultures.',
         'The formation is perfect. Every ship in position, spacing maintained, flags sharp in the wind. A weapon loaded, aimed, and fired.',
@@ -217,6 +223,8 @@ export const act3VasshenScene: StoryScene = {
       id: 'a3_vasshen_06',
       speaker: 'vasshen',
       speakerName: 'Admiral Vasshen',
+      effect: 'flash',
+      sfx: 'combat_cinematic_boom',
       paragraphs: [
         '"This is Admiral Vasshen, Commander of the Wardensea First Division, addressing the criminal known as Karyudon."',
       ],
@@ -243,6 +251,7 @@ export const act3VasshenScene: StoryScene = {
       id: 'a3_vasshen_06d',
       speaker: 'vasshen',
       speakerName: 'Admiral Vasshen',
+      sfx: 'combat_heavy',
       paragraphs: [
         '"You have one hour. Surrender Vess Harbour and submit to custody, and your crew will receive military tribunal, not execution. Refuse, and I will reduce this fortress to rubble with you inside it. This is not an ultimatum. Ultimatums imply negotiation. This is arithmetic."',
       ],
@@ -264,6 +273,8 @@ export const act3VasshenScene: StoryScene = {
       id: 'a3_vasshen_08',
       speaker: 'delvessa',
       speakerName: 'Delvessa Ghal',
+      effect: 'flash_crimson',
+      sfx: 'combat_cinematic_boom',
       paragraphs: [
         'The broadcast cuts. Silence on the battlements. Then Dragghen laughs, a real laugh. Kovesse is already drafting the Grimoire post. Suulen has vanished to coordinate the scout network.',
         'Delvessa looks at you.',
@@ -313,6 +324,7 @@ export const act3ConquerorGambitScene: StoryScene = {
     {
       id: 'a3_conqueror_01',
       title: 'THE PRICE OF ALLIES',
+      effect: 'flash',
       speaker: 'suulen',
       speakerName: 'Suulen Vassere',
       paragraphs: [
@@ -532,6 +544,7 @@ export const act3IroncladScene: StoryScene = {
       id: 'a3_ironclad_01',
       title: 'THE MACHINE ARRIVES',
       stinger: 'story_revelation',
+      sfx: 'combat_cinematic_boom',
       speaker: 'kovesse',
       speakerName: 'Kovesse Grenn',
       paragraphs: [
@@ -544,6 +557,8 @@ export const act3IroncladScene: StoryScene = {
     },
     {
       id: 'a3_ironclad_02',
+      effect: 'heavy_shake',
+      sfx: 'combat_cinematic_boom',
       paragraphs: [
         'You reach the eastern battlement. Look south. At first you see nothing. The horizon is grey, the water is grey, the clouds are grey.',
         'Then the grey moves.',
@@ -598,6 +613,8 @@ export const act3IroncladScene: StoryScene = {
       id: 'a3_ironclad_06',
       speaker: 'dragghen',
       speakerName: 'Dragghen Kolve',
+      effect: 'shake',
+      sfx: 'combat_heavy',
       paragraphs: [
         'The Ironclad is closing. Two hours, maybe less. The harbour mouth will not stop it. The shore batteries will annoy it. The captured warships in your fleet are wooden hulls against an iron fist.',
         'Dragghen stands beside you. He looks at the machine on the horizon and then looks at you.',
@@ -648,6 +665,7 @@ export const act3FinalCouncilScene: StoryScene = {
     {
       id: 'a3_council_01',
       title: 'THE CROWN OR THE CHAIN',
+      effect: 'flash',
       paragraphs: [
         'After the smoke. After the bodies counted and the fires out and the harbour water back to something close to its natural colour.',
         'The crew gathers. Not in Vasshen\'s command room. You burned the furniture and replaced it with a long table from the harbour mess, scarred with knife marks and stained with salt. Six chairs. None of them match. Dragghen cooked. He always cooks when it matters. The room smells like garlic, rendered fat, and something sweet he will not explain.',
@@ -991,6 +1009,7 @@ export const act3EndingScene: StoryScene = {
     {
       id: 'a3_ending_01',
       title: 'GODTIDE',
+      effect: 'flash',
       paragraphs: [
         'Morning.',
         'You climb the signal tower at the top of Vess Harbour. The highest point on the highest island you own. Two hundred feet of stone steps, spiralling up through a tower that the Wardensea built to watch for enemies.',

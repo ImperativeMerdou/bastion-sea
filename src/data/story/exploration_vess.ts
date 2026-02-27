@@ -7,6 +7,7 @@ export const vessArrivalScene: StoryScene = {
     {
       id: 'vess_arrive_01',
       title: 'THE APPROACH',
+      effect: 'flash',
       paragraphs: [
         'You see Vess Harbour from six miles out. That\'s the point.',
         'Grey battlements. Signal towers with mirrors that catch the sun and throw coded light across the water. Defensive batteries stacked three tiers high along a harbor wall that could stop a tsunami and look bored doing it. The fortifications don\'t suggest strength. They state it. Loudly. In a language that translates to every tongue in the Bastion Sea: come closer and find out.',
@@ -186,6 +187,8 @@ export const vessArrivalScene: StoryScene = {
       title: 'THE DISCOVERY',
       speaker: 'delvessa',
       speakerName: 'Delvessa Ghal',
+      effect: 'flash',
+      sfx: 'combat_cinematic_boom',
       paragraphs: [
         'The intelligence comes back in pieces. Each piece worse than the last.',
         'Whatever method you used, the conclusion is the same. Vess Harbour is not sitting still. The fortress is moving, not physically, but operationally. Something has shifted in the southern Wardensea command structure and the evidence is written in every supply manifest, every patrol adjustment, every signal that passes through the encrypted channels.',

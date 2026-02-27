@@ -85,6 +85,7 @@ export const keldrisArrivalScene: StoryScene = {
       speaker: 'tessek',
       speakerName: 'Tessek Vayne',
       expression: 'happy',
+      sfx: 'combat_sword',
       paragraphs: [
         '"CRIMSON TIDE: SEVEN-FOLD LOTUS DEFLECTION."',
         'He says it out loud. While fighting. He names the move while he\'s doing the move. It\'s a diagonal parry. Objectively, it is a diagonal parry. He has given a diagonal parry a name that sounds like a painting in a museum.',

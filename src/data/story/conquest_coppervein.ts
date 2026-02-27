@@ -181,6 +181,7 @@ export const copperveinConquestScene: StoryScene = {
       id: 'coppervein_conquest_04b',
       speaker: 'maren_kade',
       speakerName: 'Maren Kade',
+      effect: 'flash_crimson',
       paragraphs: [
         'Kade doesn\'t move. Her face doesn\'t change. But the Iron in her forearms pulses, and two miners near her step back without thinking about it.',
         '"This isn\'t over," she says. Not to you. Not to Hella. To the hall. To the rock. To the island that she built with her hands and just lost with a vote. She walks out. The door frame cracks where her shoulder hits it. She doesn\'t look back.',

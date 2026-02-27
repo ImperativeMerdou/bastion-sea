@@ -146,6 +146,8 @@ export const copperveinArrivalScene: StoryScene = {
     {
       id: 'coppervein_arrive_05',
       title: 'THE ACCIDENT',
+      effect: 'explosion',
+      sfx: 'combat_explosion',
       paragraphs: [
         'You hear the explosion from the market.',
         'Not an explosion. Something sharper. The crack of displaced air and the hum of something electrical discharging in a space that shouldn\'t have electricity. The sound a lightning strike makes when it hits water, compressed into a room.',
@@ -156,6 +158,7 @@ export const copperveinArrivalScene: StoryScene = {
     },
     {
       id: 'coppervein_arrive_06',
+      effect: 'flash_crimson',
       paragraphs: [
         'Six feet. Grey-furred. Lean build, the body of a runner, built for speed rather than the mining work he\'s been doing. Amber-gold eyes. A white streak through his left ear that looks like a scar but isn\'t. He\'s wearing a dark naval jacket slightly too big for him and mine-issue boots that don\'t fit either.',
         'The electricity is the problem. It\'s crawling up his forearms in blue-white veins, crackling between his fingertips, jumping to the metal rail tracks and the ore cart and the steel support beams. He\'s trying to stop it. His fists are squeezed so hard his claws are cutting into his own palms.',

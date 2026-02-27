@@ -90,6 +90,7 @@ export const rotstoneArrivalScene: StoryScene = {
     },
     {
       id: 'rotstone_arrive_06',
+      effect: 'flash',
       paragraphs: [
         'Whatever you choose, the island hums beneath your feet. The vibration settles into your bones like a second heartbeat.',
         'And then it changes.',
@@ -109,6 +110,8 @@ export const rotstoneArrivalScene: StoryScene = {
     {
       id: 'rotstone_arrive_07',
       title: 'THE DOOR',
+      effect: 'heavy_shake',
+      sfx: 'combat_cinematic_boom',
       paragraphs: [
         'You walk to the fissure. Nobody stops you. Nobody could.',
         'The glow intensifies with every step. The rock is warm under your boots. Then hot. Then exactly the temperature of your own skin, which is wrong, which is impossible, which means the island is reading you the way Suulen reads cave systems.',

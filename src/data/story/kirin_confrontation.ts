@@ -25,6 +25,7 @@ export const kirinConfrontationScene: StoryScene = {
     {
       id: 'kconf_03',
       stinger: 'story_revelation',
+      sfx: 'combat_cinematic_boom',
       speaker: 'kirin',
       speakerName: 'Kirin',
       expression: 'grim',
@@ -38,6 +39,8 @@ export const kirinConfrontationScene: StoryScene = {
     },
     {
       id: 'kconf_04',
+      effect: 'flash_crimson',
+      sfx: 'combat_heavy',
       paragraphs: [
         'The room gets smaller. Your Iron responds before your mind does, crawling up your forearms in dark plates. The table creaks under the pressure of your grip.',
         'The twins. Eighteen years old. You raised them after the parents died. Fed them. Taught Korin how to fight and Senne how to read. Carried them both down the mountain during the mudslide when they were six.',
@@ -224,6 +227,8 @@ export const kirinRivalryScene: StoryScene = {
       speaker: 'kirin',
       speakerName: 'Kirin',
       background: 'scene_kirin_confrontation',
+      effect: 'flash_crimson',
+      sfx: 'combat_cinematic_boom',
       paragraphs: [
         'Kirin\'s face doesn\'t change. Like he expected this. Like he was hoping for it.',
         '"Alright." He stands. The chair falls behind him. "Alright."',
@@ -233,6 +238,8 @@ export const kirinRivalryScene: StoryScene = {
     },
     {
       id: 'kconf_rivalry_02',
+      effect: 'shake',
+      sfx: 'combat_heavy',
       paragraphs: [
         'The back room isn\'t big enough. You both know it. You move through the bar, scattering drinkers and furniture, and the night air hits your face as you step onto the dock.',
         'The harbor is empty at this hour. Your crew is aboard the ship, watching. Kirin\'s ship sits dark in the next berth.',

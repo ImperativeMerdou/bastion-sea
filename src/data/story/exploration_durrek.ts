@@ -9,6 +9,7 @@ export const durrekArrivalScene: StoryScene = {
       title: 'THE FORTRESS',
       speaker: 'vorreth',
       speakerName: 'Vorreth Daaz',
+      effect: 'flash',
       paragraphs: [
         'Durrek doesn\'t welcome you. Durrek doesn\'t welcome anyone.',
         'The island is a volcanic outcrop reinforced by thirty years of Wardensea engineering. Natural stone carved, shaped, and armored until the island itself is a weapon. Three stories of reinforced basalt. Cannon emplacements on every face. A carved harbor with chain booms that can seal the entrance in under a minute. The Wardensea flag, grey on steel-blue, flies from the highest tower. It has never been lowered.',

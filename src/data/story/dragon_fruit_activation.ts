@@ -33,6 +33,8 @@ export const dragonFruitActivationScene: StoryScene = {
     {
       id: 'dragon_fruit_02',
       stinger: 'story_revelation',
+      effect: 'flash_crimson',
+      sfx: 'combat_cinematic_boom',
       paragraphs: [
         'You bite.',
         'The taste is wrong in a way that has nothing to do with flavor. Like tasting a color. Like swallowing thunder. The juice runs down your chin and it\'s hot, hotter than blood, and for one second nothing happens.',
@@ -43,6 +45,8 @@ export const dragonFruitActivationScene: StoryScene = {
     {
       id: 'dragon_fruit_03',
       title: 'TRANSFORMATION',
+      effect: 'heavy_shake',
+      sfx: 'combat_crunch',
       paragraphs: [
         'Your knees crack against the deck. You didn\'t fall. Your legs gave out because your bones are moving, rearranging. Your spine extends two inches in half a second and the sound it makes is the sound of a ship\'s hull splitting.',
         'Someone screams your name. Dragghen, maybe. You can\'t tell. Your ears are full of a sound like the ocean inside a shell except the ocean is roaring and the shell is your skull.',
@@ -52,6 +56,8 @@ export const dragonFruitActivationScene: StoryScene = {
     },
     {
       id: 'dragon_fruit_04',
+      effect: 'explosion',
+      sfx: 'combat_explosion',
       paragraphs: [
         'Wings.',
         'They don\'t grow. They erupt. Two slabs of muscle and membrane punch through the back of your shirt and unfurl like sails catching a gale. Leathery. Veined with gold. Each one wider than you are tall. The force of them opening knocks Kovesse back three steps and sends papers scattering across the deck.',
@@ -64,6 +70,7 @@ export const dragonFruitActivationScene: StoryScene = {
     {
       id: 'dragon_fruit_05',
       title: 'THE SILENCE AFTER',
+      effect: 'flash',
       paragraphs: [
         'And then it stops.',
         'You\'re on your knees. Your hands are on the deck. The deck is scorched in the shape of your palms. Your chest is heaving. Every breath pulls in more air than your lungs held five minutes ago because your lungs are bigger now. Everything is bigger. Denser. The scales cover your forearms, your shoulders, the base of your neck, gunmetal plates that catch the light like polished iron.',
@@ -96,6 +103,7 @@ export const dragonFruitActivationScene: StoryScene = {
       id: 'dragon_fruit_06c',
       speaker: 'karyudon',
       speakerName: 'Karyudon',
+      sfx: 'combat_cinematic_boom',
       paragraphs: [
         'Your voice, when it comes, has a second frequency underneath it. A resonance. A bass note that lives in the deck planks and the rigging and the bones of everyone standing near you.',
         '"Yeah. I\'m here."',
@@ -172,6 +180,7 @@ export const dragonFruitActivationScene: StoryScene = {
     },
     {
       id: 'dragon_fruit_08c',
+      effect: 'flash_crimson',
       paragraphs: [
         'Resonance. You can feel it. A hum in your chest. In your horns. In the tips of the wings folded against your back. A pilot light that will never go out.',
         'You flex your hands. The claws retract. The scales remain. Claw. Flame. Wing. Scale. And something else, something heavy, coiled at the base of your spine like a word you\'ve always known but never had reason to say.',

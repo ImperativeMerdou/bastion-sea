@@ -484,6 +484,7 @@ export const kovesseEvent03: StoryScene = {
       id: 'kov_03_end',
       speaker: 'kovesse',
       speakerName: 'Kovesse Grenn',
+      effect: 'flash',
       paragraphs: [
         'She flips the switch. The Pulse Mapper lights up, a web of blue-white lines projected above the device, points of light scattered across it like stars. Each one a Grimoire signal. Each one a ship, a garrison, a piece of the board you couldn\'t see until now.',
         'Kovesse stands in the middle of it, grinning, thirty-one hours of exhaustion showing in the grease on her fur and nowhere else.',
@@ -739,7 +740,7 @@ export const suulenEvent03: StoryScene = {
     },
     {
       id: 'suu_03_6',
-
+      effect: 'flash',
       paragraphs: [
         'Her fingers are cool against your temples. For a heartbeat, nothing.',
         'Then the world opens.',
@@ -998,7 +999,7 @@ export const tessekEvent03: StoryScene = {
     },
     {
       id: 'tes_03_7',
-
+      sfx: 'combat_sword',
       paragraphs: [
         'The ring is underground. Old stone, salt-stained, torchlight. The crowd is loud, rough, betting on blood and critiquing technique between swigs. Tessek\'s opponent is big. Claymore. Chain armor. The crowd loves him.',
         'Tessek steps in with Redtide. The nodachi is longer than he is tall. He doesn\'t look at the crowd. He looks at the fault lines. Sight Dominion turns the world into a map of weaknesses, every crack, every stress point, every place where the structure wants to break.',
@@ -1010,6 +1011,7 @@ export const tessekEvent03: StoryScene = {
       speaker: 'tessek',
       speakerName: 'Tessek Vayne',
       expression: 'satisfaction',
+      sfx: 'combat_sword',
       paragraphs: [
         'One cut. The claymore splits in two. The chain armor separates at the shoulder. The opponent is on the ground, untouched, his weapon in pieces around him. He never saw it.',
         'Tessek sheathes Redtide. Turns to Dorum. "The name."',
@@ -1636,6 +1638,7 @@ export const orrenEvent03: StoryScene = {
       speaker: 'orren',
       speakerName: 'Orren Dael',
       expression: 'angry',
+      effect: 'flash_crimson',
       paragraphs: [
         'Orren steps forward. Ears still flat. But his chin lifts. His hands open at his sides and the sparks between his fingers surge bright enough to turn the dock planks blue.',
         '"I ate it because I was hungry." His voice shakes. Every word wobbles. But it\'s LOUD. "Invoice that."',

@@ -16,6 +16,7 @@ export const ghostlightArrivalScene: StoryScene = {
       id: 'ghostlight_arrive_01b',
       speaker: 'vorreth',
       speakerName: 'Vorreth Daaz',
+      effect: 'shake',
       paragraphs: [
         'Vorreth is the first to say it. "We can\'t navigate this."',
         'He\'s right. The charts are useless here. Every reef map you\'ve seen marks Ghostlight as a single mass, a dark smear south of the Central Belt with the word HAZARD stamped across it in red ink. No channels marked. No depths noted. Whoever drew these charts either never came here or never came back.',
@@ -160,6 +161,7 @@ export const ghostlightArrivalScene: StoryScene = {
       title: 'THE GHOSTLIGHT',
       speaker: 'delvessa',
       speakerName: 'Delvessa Ghal',
+      effect: 'flash',
       paragraphs: [
         'Night falls. And the reef comes alive.',
         'It starts slowly. A pale flicker beneath the hull, blue-white, like a candle seen through deep water. Then another. Then a dozen. Then the entire reef ignites.',

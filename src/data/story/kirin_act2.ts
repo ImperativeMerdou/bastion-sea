@@ -30,6 +30,7 @@ export const kirinArrivalScene: StoryScene = {
     {
       id: 'kirin_03',
       stinger: 'story_revelation',
+      sfx: 'combat_cinematic_boom',
       paragraphs: [
         'The ship comes in without hailing. No signal flags. No warning. It cuts through the harbor approach like it owns the water, and the harbor pilot\'s skiff swerves hard to avoid getting clipped.',
         'On the deck: one figure. Standing at the prow.',
@@ -100,6 +101,7 @@ export const kirinArrivalScene: StoryScene = {
       id: 'kirin_07',
       speaker: 'kirin',
       speakerName: 'Kirin',
+      effect: 'flash',
       paragraphs: [
         'Kirin finally looks up. The amber eyes are wrong. Not hostile. Not cold. Tired.',
         '"I need to talk to you. Alone." His voice cracks on the last word. He catches it. Straightens. "It\'s about the twins."',

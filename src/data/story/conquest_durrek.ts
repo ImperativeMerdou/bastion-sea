@@ -131,6 +131,8 @@ export const durrekConquestScene: StoryScene = {
     {
       id: 'durrek_assault_03',
       title: 'THE DOCK',
+      effect: 'shake',
+      sfx: 'combat_heavy',
       paragraphs: [
         'The shield wall breaks on the fourth hit.',
         'You don\'t remember the first three. They\'re a blur of Iron and impact, the sound of metal bending. The Danzai goes through the formation like a fist through paper. Wardensea shields are designed for human opponents. They are not designed for what you are.',
@@ -224,6 +226,8 @@ export const durrekConquestScene: StoryScene = {
       title: 'THE FLAG COMES DOWN',
       speaker: 'captain_drezh',
       speakerName: 'Captain Drezh',
+      effect: 'flash',
+      sfx: 'combat_cinematic_boom',
       paragraphs: [
         'The garrison flag comes down at noon.',
         'Not because you tore it down. Because Drezh lowered it himself. He limps to the flagpole with three broken ribs and a split lip, and he folds it with military precision. Every crease perfect. Every fold regulation.',
@@ -298,6 +302,7 @@ export const durrekConquestScene: StoryScene = {
     {
       id: 'durrek_assault_06',
       title: 'THE NORTHERN ARC',
+      effect: 'flash',
       paragraphs: [
         'By evening, the word is out. Every Grimoire channel. Every trade vessel. Every Wardensea command post.',
         'Durrek Garrison, the Iron Gate of the Northern Arc, belongs to Karyudon.',

@@ -49,6 +49,7 @@ export const anvilCayConquestScene: StoryScene = {
     {
       id: 'anvil_conquest_02',
       title: 'THE BREACH',
+      effect: 'flash',
       paragraphs: [
         'The tube opens into a natural cavern, just like Vorreth said. The iron grating above is bolted to volcanic rock, already rusted by the sulfuric air. Beyond it: the southern dock facility. Supply crates. Loading cranes. And two sentries walking a lazy patrol under lamplight, their Conqueror uniforms dark against the glow of the distant forges.',
         'Delvessa counts silently. Holds up two fingers. Points left, a third guard, sitting on a crate, half-asleep. Then she taps her temple. Grimoire relay. A squat metal tower on the dock\'s east edge, its antenna blinking in steady intervals. That\'s the communication line to the main garrison.',
@@ -120,6 +121,8 @@ export const anvilCayConquestScene: StoryScene = {
     {
       id: 'anvil_conquest_03',
       title: 'THE LIEUTENANT',
+      effect: 'shake',
+      sfx: 'combat_heavy',
       paragraphs: [
         'Iron walls. Iron doors. Iron decorations bolted to every surface, the Conqueror insignia repeated in obsessive detail, hammered into metal plates that line the corridor.',
         'You kick the door open. It doesn\'t break. It bends. Good iron. Conqueror iron.',
@@ -277,6 +280,8 @@ export const anvilCayConquestScene: StoryScene = {
     {
       id: 'anvil_conquest_05',
       title: 'THE FORGE BURNS',
+      effect: 'flash',
+      sfx: 'combat_cinematic_boom',
       paragraphs: [
         'The forge still burns.',
         'Orange light on everything. The volcanic heat beneath Anvil Cay feeds the furnaces through natural vents. The Conquerors didn\'t build the forge so much as channel what was already there. A volcano that wants to make things. All they did was give it direction.',

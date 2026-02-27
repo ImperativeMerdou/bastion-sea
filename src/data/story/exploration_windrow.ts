@@ -7,6 +7,8 @@ export const windrowArrivalScene: StoryScene = {
     {
       id: 'windrow_arrive_01',
       title: 'THE WIND',
+      effect: 'shake',
+      sfx: 'combat_heavy',
       paragraphs: [
         'You hear Windrow before you see it.',
         'The wind hits the ship a full mile out. A wall of moving air that slams into the hull broadside and doesn\'t stop. The sails crack taut like snapping bones. Ropes hum. The deck tilts hard enough that Kovesse grabs the mast with both hands and her ears pin flat against her skull.',

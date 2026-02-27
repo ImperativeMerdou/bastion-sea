@@ -85,6 +85,7 @@ export const conquestForceScene: StoryScene = {
     {
       id: 'force_03',
       title: 'MIDNIGHT',
+      effect: 'flash',
       paragraphs: [
         'The Harbor Board building sits on a coral shelf above the main dock. Two stories. Stone foundation, wood upper. Three entrances: front, service door, roof hatch. Pettha Koss lives on the second floor with her schedules and her spectacles and her twenty years of making this island run.',
         'You go through the front door.',
@@ -120,6 +121,8 @@ export const conquestForceScene: StoryScene = {
     },
     {
       id: 'force_05',
+      effect: 'shake',
+      sfx: 'combat_heavy',
       paragraphs: [
         'Vorreth moves through the service entrance with Suulen. She maps the building in seconds, Forged Sight painting the interior in spatial data. Two guards on the stairs, two in the scheduling room, one outside Pettha\'s office. The tactician positions himself at the stairwell and waits.',
         'He doesn\'t need to wait long.',
@@ -131,6 +134,7 @@ export const conquestForceScene: StoryScene = {
       id: 'force_06',
       speaker: 'dragghen',
       speakerName: 'Dragghen Kolve',
+      sfx: 'combat_heavy',
       paragraphs: [
         'Dragghen handles the scheduling room. Two guards. He walks in carrying his cooking pot, forty pounds of cast iron, and sets it on the table.',
         '"Evening," he says.',
@@ -193,6 +197,8 @@ export const conquestForceScene: StoryScene = {
     {
       id: 'force_09',
       title: 'DAWN',
+      effect: 'flash',
+      sfx: 'combat_cinematic_boom',
       paragraphs: [
         'By morning, every Grimoire on Tavven Shoal carries the same story.',
         'Kovesse has been broadcasting since the front door came down. She caught the whole thing: the guards, the stairwell, the conversation with Pettha. Twelve thousand views before sunrise. Thirty thousand by noon.',

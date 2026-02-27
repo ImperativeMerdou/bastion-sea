@@ -7,6 +7,7 @@ export const anvilCayArrivalScene: StoryScene = {
     {
       id: 'anvil_arrive_01',
       title: 'THE FORGE',
+      effect: 'flash',
       paragraphs: [
         'The stink hits first. Sulphur and hot iron, thick enough to coat your tongue, carried on a wind that tastes like the sea is being melted down for scrap. Three miles out and you\'re already breathing through your teeth.',
         'Anvil Cay sits on the horizon like a bruise. Dark stone wreathed in volcanic smoke. The sky above it burns orange where it should be blue, and the water around the approach is warm. Not comfortable-warm. Wrong-warm.',

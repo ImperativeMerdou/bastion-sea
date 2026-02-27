@@ -87,6 +87,7 @@ export const docksideScene: StoryScene = {
     },
     {
       id: 'dock_09',
+      effect: 'shake',
       paragraphs: [
         'Rukessa is running out of words. The Kolmari agent isn\'t. He has a contract, a schedule, and the absolute confidence of a man who knows the law is on his side regardless of whether justice is.',
         'One of the escorts adjusts his stance. The Gorundai. He\'s scanning the crowd. Not for threats. For witnesses. Counting who\'s watching so the report will be accurate.',
@@ -150,6 +151,7 @@ export const docksideScene: StoryScene = {
       id: 'dock_11',
       speaker: 'tessurren',
       speakerName: 'Tessurren',
+      sfx: 'combat_heavy',
       paragraphs: [
         'The agent\'s eyes narrow. He\'s recalculating. Behind him, the two escorts move. Not to fighting stances. Not yet. But to readiness.',
         'The Gorundai\'s Iron shimmers faintly at his knuckles. Tempered. You could break him in three seconds and he probably knows it.',

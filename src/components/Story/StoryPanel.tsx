@@ -265,9 +265,26 @@ export const StoryPanel: React.FC = () => {
       }
 
       if (beat.effect) {
-        setScreenEffect(beat.effect);
-        const duration = beat.effect === 'shake' ? 500 : beat.effect === 'flash' ? 400 : 600;
-        setTimeout(() => setScreenEffect(null), duration);
+        // 'explosion' is a combo effect: red flash + heavy shake
+        if (beat.effect === 'explosion') {
+          setScreenEffect('heavy_shake');
+          setTimeout(() => setScreenEffect(null), 700);
+        } else {
+          setScreenEffect(beat.effect);
+          const duration =
+            beat.effect === 'shake' ? 500 :
+            beat.effect === 'heavy_shake' ? 700 :
+            beat.effect === 'flash' ? 400 :
+            beat.effect === 'flash_red' ? 500 :
+            beat.effect === 'flash_crimson' ? 500 :
+            600;
+          setTimeout(() => setScreenEffect(null), duration);
+        }
+      }
+
+      // Play SFX if tagged on this beat
+      if (beat.sfx) {
+        audioManager.playSfx(beat.sfx as any);
       }
 
       // Play stinger if tagged on this beat
@@ -574,13 +591,21 @@ export const StoryPanel: React.FC = () => {
   return (
     <div
       className={`h-full relative bg-ocean-900 cursor-pointer select-none overflow-hidden ${
-        screenEffect === 'shake' ? 'animate-combat-shake' : ''
+        screenEffect === 'shake' ? 'animate-combat-shake' :
+        screenEffect === 'heavy_shake' ? 'animate-combat-shake-heavy' :
+        ''
       }`}
       onClick={handleClick}
     >
       {/* === SCREEN FLASH === */}
       {screenEffect === 'flash' && (
         <div className="absolute inset-0 z-50 bg-white animate-speaker-flash pointer-events-none" />
+      )}
+      {screenEffect === 'flash_red' && (
+        <div className="absolute inset-0 z-50 bg-red-600 animate-speaker-flash pointer-events-none" />
+      )}
+      {screenEffect === 'flash_crimson' && (
+        <div className="absolute inset-0 z-50 bg-crimson-600 animate-speaker-flash pointer-events-none" />
       )}
 
       {/* === SHONEN: Emotional atmosphere overlays === */}

@@ -158,6 +158,8 @@ export const keldrissConquestScene: StoryScene = {
       id: 'keldriss_conquest_ossian_f',
       speaker: 'ossian',
       speakerName: 'Brother Ossian',
+      effect: 'flash_crimson',
+      sfx: 'combat_cinematic_boom',
       paragraphs: [
         'The next morning you see him.',
         'Brother Ossian stands at the edge of the market like a stain on glass. Tall. Skeletal. Shaved head the color of tarnished copper. He wears a robe that might have been white once, before the jungle and the years and whatever lives inside him got to it. His hands hang at his sides and where his fingers brush the metal stall frame, the iron turns orange and flakes.',
@@ -183,6 +185,8 @@ export const keldrissConquestScene: StoryScene = {
       title: 'THE SHADOW FALLS',
       speaker: 'ossa',
       speakerName: 'Ossa Veile',
+      effect: 'shake',
+      sfx: 'combat_heavy',
       paragraphs: [
         'It takes three days. Three days of meetings, threats, bribes, and one spectacular brawl in the market when the Kolmari-aligned brokers try to have you killed. Ossian\'s people. You recognize the rust marks on their wrists. They\'re good. You\'re better. Kovesse streams the whole thing.',
         'On the fourth day, Ossa Veile sends a message. One word: "Come."',
@@ -287,6 +291,8 @@ export const keldrissConquestScene: StoryScene = {
     {
       id: 'keldriss_conquest_04',
       title: 'THE NEW ORDER',
+      effect: 'flash',
+      sfx: 'combat_cinematic_boom',
       paragraphs: [
         'Keldriss doesn\'t change. That\'s the point. The stalls stay up. The smugglers keep smuggling. The brokers keep brokering. The difference is that you can hear it now. The information that used to flow around you flows through you.',
         'Suulen vanishes for an hour. Comes back with ink on her fingers and says nothing except: "It\'s done." She\'s been planning the dead-drop network since before you took the island. Maybe since before you arrived.',

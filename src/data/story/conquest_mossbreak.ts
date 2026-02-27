@@ -165,6 +165,8 @@ export const mossbreakConquestScene: StoryScene = {
       id: 'mossbreak_conquest_04d',
       speaker: 'karyudon',
       speakerName: 'Karyudon',
+      effect: 'flash',
+      sfx: 'combat_cinematic_boom',
       paragraphs: [
         '"I\'m not here to take Mossbreak." You stand. Seven feet of Oni, horns catching the lamplight, amber eyes sweeping the room. "I\'m here to turn it into something bigger. A headquarters. A meeting point. The place where the Bastion Sea comes when it wants to be part of what happens next."',
         'Silence.',

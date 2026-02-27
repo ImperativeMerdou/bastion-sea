@@ -28,6 +28,8 @@ export const epilogueScene: StoryScene = {
     {
       id: 'ep_kneel_03',
       stinger: 'story_revelation',
+      effect: 'flash_crimson',
+      sfx: 'combat_cinematic_boom',
       paragraphs: [
         'He did not kneel. The processing officer asked him twice. Goss stood with his hands at his sides, watching the flag, and said nothing. It was not defiance. There was no theatre in it. He simply stood the way he had stood for three decades of morning flag ceremonies, at attention, because that was where his body went when a flag moved on a mast.',
         'Karyudon was crossing the harbour. Twenty yards away. Walking with Dragghen toward the dry docks, discussing repairs, not looking for trouble. His gaze passed over the checkpoint the way it passed over everything that morning, proprietary, reflexive, the scan of a man who owned the ground beneath him and hadn\'t yet learned to be careful about it.',

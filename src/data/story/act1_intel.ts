@@ -136,6 +136,7 @@ export const act1IntelScene: StoryScene = {
       id: 'intel_10',
       speaker: 'karyudon',
       speakerName: 'Karyudon',
+      sfx: 'combat_cinematic_boom',
       paragraphs: [
         'Seven days. A harbor master. A Kolmari agent. A Wardensea patrol that comes like clockwork. And seven people who showed up at a food stall because one of them started cooking and the rest of them sat down.',
         'You eat a spoonful of Dragghen\'s fish. Deliberately.',

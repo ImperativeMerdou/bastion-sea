@@ -79,6 +79,7 @@ export const mossbreakArrivalScene: StoryScene = {
       title: 'THE GHOST',
       speaker: 'tessek',
       speakerName: 'Tessek Vayne',
+      sfx: 'combat_sword',
       paragraphs: [
         'The hooded figure is gone.',
         'Not left. Gone. You were watching the corner and then you weren\'t, and in the gap between looking away and looking back, the chair is empty. No scrape. No rustle. No footsteps.',

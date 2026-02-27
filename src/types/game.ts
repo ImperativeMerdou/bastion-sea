@@ -204,7 +204,8 @@ export interface StoryBeat {
   delay?: number;        // ms before auto-advance
   background?: string;   // background image
   music?: string;        // audio track
-  effect?: string;       // screen effect (shake, flash, etc.)
+  effect?: string;       // screen effect (shake, flash, heavy_shake, flash_red, explosion)
+  sfx?: string;          // SFX to play when this beat starts (SfxId from audio.ts)
   expression?: string;   // expression for the speaker portrait (e.g., 'angry', 'grim')
   characterExpressions?: Record<string, string>; // per-character expression overrides
   stinger?: StingerId;   // optional one-shot musical stinger for this beat

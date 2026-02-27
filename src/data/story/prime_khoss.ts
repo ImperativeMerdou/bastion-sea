@@ -9,6 +9,7 @@ export const primeKhossScene: StoryScene = {
       id: 'pkhoss_01',
       title: 'TWELVE GREY HULLS',
       stinger: 'story_revelation',
+      sfx: 'combat_cinematic_boom',
       background: 'scene_wardensea_blockade',
       speaker: 'kovesse',
       speakerName: 'Kovesse Grenn',
@@ -20,6 +21,8 @@ export const primeKhossScene: StoryScene = {
     },
     {
       id: 'pkhoss_02',
+      effect: 'heavy_shake',
+      sfx: 'combat_cinematic_boom',
       paragraphs: [
         'Twelve ships. Storm-grey hulls in formation, spread across the eastern approach. Not moving. Not anchoring. Holding position with the mechanical precision of a clock.',
         'Third Division markings. The wave crest on the mainmasts.',
@@ -28,6 +31,7 @@ export const primeKhossScene: StoryScene = {
     },
     {
       id: 'pkhoss_03',
+      effect: 'flash',
       speaker: 'vorreth',
       speakerName: 'Vorreth Khane',
       paragraphs: [
@@ -71,6 +75,8 @@ export const primeKhossScene: StoryScene = {
     },
     {
       id: 'pkhoss_07',
+      effect: 'shake',
+      sfx: 'combat_heavy',
       paragraphs: [
         'The letter is handwritten. Clean script. No flourishes.',
         '"Karyudon. I am Prime Edara Khoss, Third Division. I am authorized to offer the following terms:"',
@@ -233,6 +239,8 @@ export const primeKhossFightScene: StoryScene = {
     {
       id: 'pkhoss_fight_01',
       background: 'scene_wardensea_blockade',
+      effect: 'flash_red',
+      sfx: 'combat_explosion',
       paragraphs: [
         'You burn the letter. Kovesse broadcasts the footage to every Grimoire in the Bastion Sea.',
         'Mossbreak sends a militia detachment. Anvil Cay sends weapons, fresh-forged, Tessik\'s best. Sorren\'s Flat sends a message, unsigned, containing the fleet\'s patrol schedule and three blind spots in the blockade formation.',
@@ -240,6 +248,8 @@ export const primeKhossFightScene: StoryScene = {
     },
     {
       id: 'pkhoss_fight_02',
+      effect: 'flash_crimson',
+      sfx: 'combat_cinematic_boom',
       paragraphs: [
         'Khoss doesn\'t wait twenty-four hours. She comes in twelve.',
         'Alone. On a skiff. Boards your ship through the rain with her blade already drawn.',

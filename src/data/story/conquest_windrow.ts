@@ -7,6 +7,7 @@ export const windrowConquestScene: StoryScene = {
     {
       id: 'windrow_conquest_01',
       title: 'THE COLLAPSE',
+      effect: 'shake',
       paragraphs: [
         'You return to Windrow on a bad day.',
         'The wind is worse than you remember, a sustained howl that pins the ship sideways in the carved harbor and makes the docking ropes sing like instrument strings. Suulen fights the wheel with her whole body, threading the hull into the alcove with the grim precision of someone threading a needle in an earthquake.',
@@ -176,6 +177,8 @@ export const windrowConquestScene: StoryScene = {
       id: 'windrow_conquest_03b',
       speaker: 'dragghen',
       speakerName: 'Dragghen Kolve',
+      effect: 'shake',
+      sfx: 'combat_heavy',
       paragraphs: [
         '"I\'VE GOT THEM. SEVEN ALIVE. TWO UNCONSCIOUS. GET THE ROPES."',
       ],
@@ -270,6 +273,8 @@ export const windrowConquestScene: StoryScene = {
     {
       id: 'windrow_conquest_05',
       title: 'THE CLIFF EDGE',
+      effect: 'flash',
+      sfx: 'combat_cinematic_boom',
       paragraphs: [
         'The vote passes. Three to two.',
       ],

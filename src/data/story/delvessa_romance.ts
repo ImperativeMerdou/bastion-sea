@@ -500,6 +500,7 @@ export const delvessaRomance02: StoryScene = {
     },
     {
       id: 'dr02_beat3_response',
+      effect: 'flash',
 
       paragraphs: [
         'Whatever he did, whatever he chose in that moment, the storm went quiet around it. The rain hammered down and neither of them moved.',
@@ -865,6 +866,7 @@ export const delvessaRomance04: StoryScene = {
     // --- BEAT 1: The Morning After ---
     {
       id: 'dr04_beat1_1',
+      effect: 'shake',
 
       paragraphs: [
         'Dawn. The base smells like smoke and copper, the particular kind of exhaustion that settles into wood and stone after a fight that went too long. Last night\'s engagement had been ugly, three Wardensea cutters in the harbor mouth, a boarding action that turned into a brawl across two decks, and a stretch of about forty seconds where Karyudon took a harpoon bolt through the shoulder and kept swinging Danzai one-handed because stopping wasn\'t something his body understood how to do.',

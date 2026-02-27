@@ -10,6 +10,8 @@ export const conquestAftermathScene: StoryScene = {
       title: 'TAVVEN SHOAL IS YOURS',
       speaker: 'hella',
       speakerName: 'Hella',
+      effect: 'flash',
+      sfx: 'combat_cinematic_boom',
       paragraphs: [
         'Hella puts a plate down in front of you before you ask. Storm tea. Eel skewers. Same price as the first day.',
         '"You own the island now," she says, already turning back to the grill. "Congratulations. Try not to ruin it."',

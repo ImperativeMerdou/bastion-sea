@@ -728,6 +728,7 @@ export const tessekEvent01: StoryScene = {
     },
     {
       id: 'tes_01_demonstrate',
+      sfx: 'combat_sword',
       paragraphs: [
         'He draws Redtide. Points the tip at a mooring rope twenty paces away, thick as your wrist, crusted with salt. His eyes narrow, irises catching a shimmer like light bending through water. Sight Dominion reading the fibers. Counting the strands. Finding the weak one.',
         'He throws. Redtide leaves his hand in a flat spin, crosses the full length of the deck in a red blur, and catches the rope at a precise point where sun and salt have eaten the core threads thin. It shears clean through with a sound like a snapped whip. The blade buries itself two inches deep in the far railing.',

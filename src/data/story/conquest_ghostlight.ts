@@ -166,6 +166,8 @@ export const ghostlightConquestScene: StoryScene = {
     {
       id: 'ghostlight_conquest_03',
       title: 'THE AFTERMATH',
+      effect: 'heavy_shake',
+      sfx: 'combat_cinematic_boom',
       paragraphs: [
         'The leviathan dies hard. They always do, the old things, the deep things, the creatures that lived in the dark before anyone built a boat or cast a net. It thrashes. It screams, a sound that travels through the water and through the coral and through the reef itself, vibrating the stilt-houses above until the fishers clutch their children and stare at the sea.',
         'And then it stops.',
@@ -185,6 +187,7 @@ export const ghostlightConquestScene: StoryScene = {
     {
       id: 'ghostlight_conquest_04',
       title: 'THE PACT',
+      effect: 'flash',
       paragraphs: [
         'Tessavarra finds you on the central dock the next morning. She brings fish again. The same reef-caught silver bass, the same driftwood coals, the same ironwood plank. But this time she sits next to you instead of across from you. The difference is not small.',
       ],

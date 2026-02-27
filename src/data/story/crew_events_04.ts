@@ -701,7 +701,8 @@ export const orrenEvent04: StoryScene = {
   beats: [
     {
       id: 'orr_04_1',
-
+      effect: 'shake',
+      sfx: 'combat_heavy',
       paragraphs: [
         'The dock is coming apart. Not slowly. Support struts buckling, crossbeams splitting, the eastern pier shearing off in sections under sustained fire from a Wardensea raiding party that hit the harbor at dawn. Karyudon is fighting three marines at the waterline, boots sliding on wet planking. Tessek is cut off on the far side of the wreckage, Redtide catching smoke-light in short, vicious arcs. Dragghen has Bulkhead planted between three wounded crew and a section of wall that\'s folding inward, both arms locked, ninety pounds of iron holding back several tons of splintering timber. His boots are gouging trenches in the dock.',
         'Vorreth went down thirty seconds ago, stunned by a concussion charge that caught him mid-stride. He dropped like a slaughtered ox. Breathing. Not moving.',
@@ -744,7 +745,8 @@ export const orrenEvent04: StoryScene = {
     },
     {
       id: 'orr_04_6',
-
+      effect: 'explosion',
+      sfx: 'combat_explosion',
       paragraphs: [
         'Full output.',
         'The lightning doesn\'t arc. It POURS. A sustained white-blue discharge from both hands that turns the air into burning glass. It doesn\'t strike one target. It strikes every target. Every enemy in a thirty-foot radius catches the full force of a Rathai lightning wielder who spent months with the valve shut and just ripped it open. The dock planking cracks down the grain. Metal fittings warp and run. Compass needles fuse to their housings. For three seconds the harbor looks like the inside of a thunderhead, everything bleached to blue-white, shadows burned flat, the air itself screaming.',

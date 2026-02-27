@@ -41,6 +41,7 @@ export const rivalIntroScene: StoryScene = {
     },
     {
       id: 'rival_02',
+      sfx: 'combat_cinematic_boom',
       paragraphs: [
         'The gangplank drops. A giant comes down first: eight feet of Gorundai in a suit two sizes too small. He scans the dock with the professional disinterest of a man who has cleared a lot of rooms and expects to clear a lot more. His hands hang loose at his sides. They don\'t need to be near a weapon because they ARE the weapon.',
         'Then two figures, identical, walking in perfect sync. Thin, pale, dressed in matching dark coats. They don\'t speak to each other. They don\'t need to. One looks left. One looks right. They see everything.',
@@ -80,6 +81,7 @@ export const rivalIntroScene: StoryScene = {
       title: 'THE FIRST PRICE',
       speaker: 'sable_venn',
       speakerName: 'Sable Venn',
+      effect: 'shake',
       paragraphs: [
         'He stands. Brushes off his coat. Leaves enough money on the counter to buy the stall.',
         '"I\'m going to make you an offer, Karyudon. Not today. Today is introductions. But soon. And when I do, it will be generous. More generous than you deserve, frankly. Because I\'d rather buy a relationship than burn one."',

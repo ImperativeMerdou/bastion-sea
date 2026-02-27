@@ -142,6 +142,7 @@ export const noonArrivalScene: StoryScene = {
     {
       id: 'noon_arrive_03',
       title: 'THE SHADOWLESS HOUR',
+      effect: 'flash',
       paragraphs: [
         'It happens at noon. Obviously.',
         'The crew stands outside because you insisted, and because when you insist on something with that gleam in your amber eyes, the crew has learned that arguing is technically possible but practically useless. Even Suulen emerges from below deck, squinting murderously, wrapped in every piece of dark fabric she could find until she looks like a Morventhi mummy with strong opinions about sunlight.',

@@ -57,7 +57,8 @@ export const prologueScene: StoryScene = {
         'Prisoners scream. The Gorundai woman snaps awake and goes to full Iron in under a second, good reflexes for a corpse. The Rathai kid falls sideways and cracks his head on the floor. Blood from his hairline. He doesn\'t cry. Above, wood splinters and men shout orders.',
         'Second blast. Closer. The hull groans and seawater sprays through a crack in the planking. Cold, salt, and your blood flinches from it before it touches your skin. The God Fruit energy recoils from salt water the way a hand pulls from fire. Not your fruit. You haven\'t eaten it. But you\'re carrying it, and the ocean knows.',
       ],
-      effect: 'shake',
+      effect: 'explosion',
+      sfx: 'combat_explosion',
     },
     {
       id: 'prologue_07',
@@ -68,6 +69,8 @@ export const prologueScene: StoryScene = {
         'They\'re not here for you. They\'re here for the Fruit.',
         'Grappling hooks bite into the deck above. Boots on wood. The sharp metallic ring of Iron meeting Iron. Someone dies. You hear the specific sound a body makes when it stops being a person and starts being weight.',
       ],
+      effect: 'heavy_shake',
+      sfx: 'combat_explosion',
     },
     {
       id: 'prologue_08',
@@ -82,7 +85,8 @@ export const prologueScene: StoryScene = {
       paragraphs: [
         'You stand up.',
       ],
-      effect: 'shake',
+      effect: 'heavy_shake',
+      sfx: 'combat_cinematic_boom',
     },
     {
       id: 'prologue_combat',
@@ -93,6 +97,7 @@ export const prologueScene: StoryScene = {
         'One reaches for a saber. The other reaches for a whistle.',
         'Neither is going to finish.',
       ],
+      effect: 'flash_crimson',
       choices: [
         {
           id: 'prologue_fight',
@@ -159,6 +164,8 @@ export const prologueScene: StoryScene = {
         '"Who the HELL--"',
         'You\'re already at the case.',
       ],
+      effect: 'shake',
+      sfx: 'combat_heavy',
     },
     {
       id: 'prologue_11',
@@ -171,6 +178,8 @@ export const prologueScene: StoryScene = {
         'A God Fruit. In an Oni\'s hand. On a burning ship.',
       ],
       stinger: 'story_revelation',
+      effect: 'flash',
+      sfx: 'combat_cinematic_boom',
     },
     {
       id: 'prologue_final_choice',
@@ -225,6 +234,7 @@ export const prologueScene: StoryScene = {
         'The makeshift raft carries you away from the burning transport. Behind you: fire, screaming, and the sound of two crews killing each other over a prize that\'s already gone.',
         'Ahead of you: open water. No ship, no crew, no money, no name that anyone in this part of the world has heard. A stolen God Fruit. A body full of Forged Iron. And the understanding that everything you had was taken by people who assumed you\'d stay down.',
       ],
+      effect: 'shake',
     },
     {
       id: 'prologue_end',

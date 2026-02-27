@@ -193,6 +193,8 @@ export const vessConquestScene: StoryScene = {
     {
       id: 'vess_conquest_03',
       title: 'THE BREACH',
+      effect: 'flash',
+      sfx: 'combat_cinematic_boom',
       paragraphs: [
         'It begins at dawn.',
         'Not because every plan starts at dawn. The subversion begins with a letter smuggled through the officer\'s mess at first light, the blockade begins with a hull silhouette on the convoy horizon, the assault begins with an Oni dropping from the bow of a ship into waist-deep water inside the western battery\'s blind arc. They all begin at dawn because Karyudon decided that the day the Southern Reach changes is a day that starts with the sun.',
@@ -206,6 +208,7 @@ export const vessConquestScene: StoryScene = {
     {
       id: 'vess_conquest_04',
       title: 'THE FRONT DOOR',
+      effect: 'flash',
       paragraphs: [
         'You walk through the main gate of Vess Harbour at noon.',
         'You chose noon. Vorreth recommended darkness. You chose noon. Full sun. Six thousand personnel watching from every vantage point in the fortress.',
@@ -220,6 +223,8 @@ export const vessConquestScene: StoryScene = {
     {
       id: 'vess_conquest_05',
       title: 'THE COMMAND COMPLEX',
+      effect: 'heavy_shake',
+      sfx: 'combat_heavy',
       paragraphs: [
         'The inner ring. The heart of the fortress. Where the Second Division\'s senior command operates behind blast doors and signal-screened walls and the institutional certainty that no force in the southern Bastion Sea would be foolish enough to reach this room.',
         'You reach this room.',
@@ -303,6 +308,8 @@ export const vessConquestScene: StoryScene = {
     {
       id: 'vess_conquest_06',
       title: 'THE FLAG',
+      effect: 'flash',
+      sfx: 'combat_cinematic_boom',
       paragraphs: [
         'The Wardensea flag comes down at sunset.',
         'It takes three marines to lower it. The flagship standard of the Second Division, the iron cross on a field of deep blue, the emblem that has flown above this harbor since before you were born. The halyard sings as the fabric descends. The wind catches it halfway down and it billows once, full and proud, the way a flag flies when it doesn\'t know it\'s falling.',
