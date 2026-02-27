@@ -193,7 +193,7 @@ export const StoryPanel: React.FC = () => {
     }
     // No explicit speaker: try auto-detection.
     // Pass null as beatSpeaker so the Karyudon "you say" heuristic is allowed.
-    if (beat?.paragraphs) return detectSpeakerFromText(beat.paragraphs, null);
+    if (beat?.paragraphs && beat.paragraphs.length > 0) return detectSpeakerFromText(beat.paragraphs, null);
     return null;
   }, [beat?.speaker, beat?.paragraphs]);
 
@@ -248,8 +248,9 @@ export const StoryPanel: React.FC = () => {
 
       // Instant mode: show everything immediately
       if (typingSpeed === 0) {
-        setDisplayedLines(beat.paragraphs);
-        setCurrentLineIndex(beat.paragraphs.length);
+        const paras = beat.paragraphs || [];
+        setDisplayedLines(paras);
+        setCurrentLineIndex(paras.length);
         setCurrentCharIndex(0);
         setAllLinesComplete(true);
         setTyping(false);
@@ -299,8 +300,8 @@ export const StoryPanel: React.FC = () => {
   useEffect(() => {
     if (!beat || !isTyping || allLinesComplete || typingSpeed === 0) return;
 
-    const paragraphs = beat.paragraphs;
-    if (currentLineIndex >= paragraphs.length) {
+    const paragraphs = beat.paragraphs || [];
+    if (paragraphs.length === 0 || currentLineIndex >= paragraphs.length) {
       setAllLinesComplete(true);
       setTyping(false);
       if (beat.choices && beat.choices.length > 0) {
@@ -310,8 +311,10 @@ export const StoryPanel: React.FC = () => {
     }
 
     const currentLine = paragraphs[currentLineIndex];
-    if (currentCharIndex >= currentLine.length) {
-      setDisplayedLines((prev) => [...prev, currentLine]);
+    if (!currentLine || currentCharIndex >= currentLine.length) {
+      if (currentLine) {
+        setDisplayedLines((prev) => [...prev, currentLine]);
+      }
       setCurrentLineIndex((prev) => prev + 1);
       setCurrentCharIndex(0);
       return;
@@ -322,7 +325,8 @@ export const StoryPanel: React.FC = () => {
     }, typingSpeed);
 
     return () => clearTimeout(timer);
-  }, [beat, isTyping, currentLineIndex, currentCharIndex, allLinesComplete, setTyping, typingSpeed]);
+  // Use beat?.id instead of beat to avoid stale closure when beat object changes mid-type
+  }, [beat?.id, isTyping, currentLineIndex, currentCharIndex, allLinesComplete, setTyping, typingSpeed]); // eslint-disable-line react-hooks/exhaustive-deps
 
   // Auto-scroll dialogue to bottom when new lines appear
   useEffect(() => {
@@ -344,14 +348,15 @@ export const StoryPanel: React.FC = () => {
 
     if (isTyping && !allLinesComplete) {
       // Partial skip: complete the current paragraph, not all text
-      const currentLine = beat.paragraphs[currentLineIndex];
+      const paras = beat.paragraphs || [];
+      const currentLine = paras[currentLineIndex];
       if (currentLine) {
         const nextIndex = currentLineIndex + 1;
         setDisplayedLines((prev) => [...prev, currentLine]);
         setCurrentLineIndex(nextIndex);
         setCurrentCharIndex(0);
         // If that was the last paragraph, mark complete
-        if (nextIndex >= beat.paragraphs.length) {
+        if (nextIndex >= paras.length) {
           setAllLinesComplete(true);
           setTyping(false);
           if (beat.choices && beat.choices.length > 0) {
@@ -410,9 +415,10 @@ export const StoryPanel: React.FC = () => {
   // === EMPTY STATE: auto-advance if scene exists but beat is missing ===
   useEffect(() => {
     if (currentScene && !beat) {
-      // Guard against infinite loops from empty scenes chaining to empty scenes
+      // Guard: empty scenes (0 beats) are handled by scene chain logic in storyActions.
+      // Don't auto-advance here or it creates a tight render loop.
       if (currentScene.beats.length === 0) {
-        // Empty scene guard - auto-completing
+        return;
       }
       const store = useGameStore.getState();
       const timer = setTimeout(() => store.advanceBeat(), 0);
@@ -422,7 +428,7 @@ export const StoryPanel: React.FC = () => {
 
   // Detect emotional intensity from beat content for ambient effects
   const emotionalTone = useMemo(() => {
-    if (!beat) return null;
+    if (!beat || !beat.paragraphs) return null;
     const text = beat.paragraphs.join(' ').toLowerCase();
     if (text.includes('blood') || text.includes('scream') || text.includes('kill') || text.includes('die') || text.includes('death')) return 'intense';
     if (text.includes('laugh') || text.includes('smile') || text.includes('grin') || text.includes('cheer')) return 'warm';
@@ -439,7 +445,8 @@ export const StoryPanel: React.FC = () => {
   //   4. Beat-level speaker as final fallback
   const lineSpeakers = useMemo(() => {
     if (!beat) return [];
-    const paragraphs = beat.paragraphs;
+    const paragraphs = beat.paragraphs || [];
+    if (paragraphs.length === 0) return [];
     const beatSpeaker = activeSpeaker; // The beat-level speaker
     // Whether the beat has an explicit speaker field (not auto-detected).
     // When true, prev-line action-verb matches should NOT override the beat speaker.
