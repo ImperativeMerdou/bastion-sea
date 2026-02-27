@@ -20,6 +20,9 @@ type SfxId =
   | 'combat_hit'
   | 'combat_sword'
   | 'combat_heavy'
+  | 'combat_explosion'
+  | 'combat_crunch'
+  | 'combat_cinematic_boom'
   | 'combat_crew_assist'
   | 'combat_victory'
   | 'combat_defeat'
@@ -42,6 +45,9 @@ const sfxSources: Record<SfxId, string> = {
   combat_hit: '/audio/sfx_hit.wav',
   combat_sword: '/audio/sfx_sword.wav',
   combat_heavy: '/audio/sfx_heavy_hit.wav',
+  combat_explosion: '/audio/sfx_explosion.mp3',
+  combat_crunch: '/audio/sfx_crunch_hit.wav',
+  combat_cinematic_boom: '/audio/sfx_cinematic_boom.wav',
   combat_crew_assist: '/audio/sfx_crew_assist.mp3',
   combat_victory: '/audio/sfx_victory.mp3',
   combat_defeat: '/audio/sfx_defeat.mp3',

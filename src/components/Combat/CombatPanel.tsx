@@ -448,11 +448,17 @@ export const CombatPanel: React.FC = () => {
     // SFX by animation type
     if (animation === 'slash') audioManager.playSfx('combat_sword');
     if (animation === 'heavy_smash') audioManager.playSfx('combat_heavy');
-    if (animation === 'iron_pulse') audioManager.playSfx('combat_hit');
-    if (animation === 'thunder_strike') audioManager.playSfx('combat_heavy');
+    if (animation === 'iron_pulse') audioManager.playSfx('combat_explosion');
+    if (animation === 'thunder_strike') audioManager.playSfx('combat_explosion');
     if (animation === 'crew_assist') audioManager.playSfx('combat_crew_assist');
     if (animation === 'counter') audioManager.playSfx('combat_sword');
     if (animation === 'screen_shake') audioManager.playSfx('combat_hit');
+    if (animation === 'king_pressure') audioManager.playSfx('combat_explosion');
+
+    // Layer crunch on critical hits for extra impact
+    if (isCritical && damage && damage > 0) {
+      audioManager.playSfx('combat_crunch');
+    }
 
     // Slash trail for physical strikes
     if (animation === 'slash' || animation === 'heavy_smash') {
@@ -729,7 +735,7 @@ export const CombatPanel: React.FC = () => {
       if (bossPhaseState) {
         // Boss phase triggered -- show narration, then continue to enemy turns
         updateCombatState(bossPhaseState);
-        audioManager.playSfx('combat_heavy');
+        audioManager.playSfx('combat_cinematic_boom');
         return;
       }
 
@@ -803,7 +809,7 @@ export const CombatPanel: React.FC = () => {
       const bossPhaseState = checkBossPhases(newState);
       if (bossPhaseState) {
         updateCombatState(bossPhaseState);
-        audioManager.playSfx('combat_heavy');
+        audioManager.playSfx('combat_cinematic_boom');
         return;
       }
 
@@ -858,7 +864,7 @@ export const CombatPanel: React.FC = () => {
       const bossPhaseState = checkBossPhases(newState);
       if (bossPhaseState) {
         updateCombatState(bossPhaseState);
-        audioManager.playSfx('combat_heavy');
+        audioManager.playSfx('combat_cinematic_boom');
         return;
       }
       const endPhase = checkCombatEnd(newState);
