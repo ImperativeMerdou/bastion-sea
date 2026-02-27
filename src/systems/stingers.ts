@@ -23,14 +23,14 @@ export type StingerId =
 
 // Each stinger tries mp3 first, then wav. Howler picks the first it can load.
 const stingerSources: Record<StingerId, string[]> = {
-  title_intro: ['/audio/stinger_title.mp3', '/audio/stinger_title.wav'],
-  conquest_victory: ['/audio/stinger_conquest_victory.mp3', '/audio/stinger_conquest_victory.wav'],
-  boss_intro: ['/audio/stinger_boss_intro.mp3', '/audio/stinger_boss_intro.wav'],
-  story_revelation: ['/audio/stinger_revelation.mp3', '/audio/stinger_revelation.wav'],
-  act_transition: ['/audio/stinger_act_transition.mp3', '/audio/stinger_act_transition.wav'],
-  crew_join: ['/audio/stinger_crew_join.mp3', '/audio/stinger_crew_join.wav'],
-  character_death: ['/audio/stinger_character_death.mp3', '/audio/stinger_character_death.wav'],
-  grimoire_ping: ['/audio/stinger_grimoire_ping.mp3', '/audio/stinger_grimoire_ping.wav'],
+  title_intro: ['./audio/stinger_title.mp3', './audio/stinger_title.wav'],
+  conquest_victory: ['./audio/stinger_conquest_victory.mp3', './audio/stinger_conquest_victory.wav'],
+  boss_intro: ['./audio/stinger_boss_intro.mp3', './audio/stinger_boss_intro.wav'],
+  story_revelation: ['./audio/stinger_revelation.mp3', './audio/stinger_revelation.wav'],
+  act_transition: ['./audio/stinger_act_transition.mp3', './audio/stinger_act_transition.wav'],
+  crew_join: ['./audio/stinger_crew_join.mp3', './audio/stinger_crew_join.wav'],
+  character_death: ['./audio/stinger_character_death.mp3', './audio/stinger_character_death.wav'],
+  grimoire_ping: ['./audio/stinger_grimoire_ping.mp3', './audio/stinger_grimoire_ping.wav'],
 };
 
 // --- Stinger Manager ---

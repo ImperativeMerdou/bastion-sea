@@ -23,14 +23,14 @@ export type MusicTrackId =
   | 'silence';    // No music
 
 const trackSources: Record<Exclude<MusicTrackId, 'silence'>, string> = {
-  title: '/audio/music/title_screen.mp3',
-  adventure: '/audio/music/adventure.mp3',
-  cinematic: '/audio/music/cinematic.wav',
-  combat: '/audio/music/combat.mp3',
-  tavern: '/audio/music/tavern.mp3',
-  suspense: '/audio/music/suspense.mp3',
-  dramatic: '/audio/music/dramatic.mp3',
-  ambient: '/audio/music/ambient.mp3',
+  title: './audio/music/title_screen.mp3',
+  adventure: './audio/music/adventure.mp3',
+  cinematic: './audio/music/cinematic.wav',
+  combat: './audio/music/combat.mp3',
+  tavern: './audio/music/tavern.mp3',
+  suspense: './audio/music/suspense.mp3',
+  dramatic: './audio/music/dramatic.mp3',
+  ambient: './audio/music/ambient.mp3',
 };
 
 // --- Scene-to-Music Mapping ---

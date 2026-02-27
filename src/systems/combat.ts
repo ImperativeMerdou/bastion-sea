@@ -13,6 +13,7 @@ import { MC, CrewMember, Equipment, EquipmentSlot } from '../types/game';
 import { getKorvaanBonuses } from './korvaan';
 import { getDragonFruitBonuses, getDragonCombatActions } from './godfruit';
 import { COMBAT } from '../constants/balance';
+import { getPortrait } from '../utils/images';
 
 // ==========================================
 // KARYUDON'S MOVESET
@@ -1218,11 +1219,17 @@ function getEquipmentSpecialBonuses(gear: Record<EquipmentSlot, Equipment | null
  * Build enemy combatant from template
  */
 export function buildEnemyCombatant(template: EnemyTemplate, index: number): Combatant {
+  // Auto-resolve portrait: try enemy-specific key first, then template id
+  const resolvedPortrait = template.portrait
+    || getPortrait(template.id + '_enemy')
+    || getPortrait(template.id)
+    || undefined;
+
   return {
     id: `${template.id}_${index}`,
     name: template.name,
     title: template.title,
-    portrait: template.portrait,
+    portrait: resolvedPortrait,
     hp: template.hp,
     maxHp: template.hp,
     stamina: template.stamina,
