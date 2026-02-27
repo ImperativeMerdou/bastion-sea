@@ -1,0 +1,140 @@
+import { StoryScene } from '../../types/game';
+
+export const conquestNegotiationScene: StoryScene = {
+  id: 'conquest_negotiation',
+  title: 'THE BETTER OFFER',
+  characters: ['karyudon', 'delvessa', 'dragghen', 'suulen', 'kovesse', 'vorreth', 'pettha_koss'],
+  beats: [
+    {
+      id: 'negotiate_01',
+      title: 'DAY 5 - THE APPROACH',
+      speaker: 'delvessa',
+      speakerName: 'Delvessa Ghal',
+      paragraphs: [
+        'Delvessa\'s eyes widen. Just slightly. A tilt of the head.',
+        '"Negotiation. Good."',
+        '"Don\'t get too excited. I\'m not doing it because it\'s smart. I\'m doing it because Pettha Koss is more useful as an ally than a subject."',
+        '"Those can be the same thing," Delvessa says. She opens her ledger. "Here\'s what I need."',
+      ],
+    },
+    {
+      id: 'negotiate_02',
+      speaker: 'delvessa',
+      speakerName: 'Delvessa Ghal',
+      paragraphs: [
+        'The plan is elegant. Tessurren Dolch\'s Kolmari contract contains a buried clause: a forty percent rent increase on warehousing that kicks in after the first year. Delvessa has a copy. She stole it when she left the Confederation, along with ten other instruments that the Kolmari thought were locked behind seven layers of bureaucratic encryption.',
+        '"Pettha doesn\'t know about the rent clause. Nobody does, except the Confederation and the people who drafted it. Once she sees it, the Kolmari deal is dead."',
+        '"And then we offer her something better."',
+        '"Exactly. Protection from the Kolmari reprisal. Security for the harbor. Trade access to whatever routes we open as we expand."',
+        'Vorreth shakes his head. "You\'re offering her a partnership with a man who has no ships, no reputation, and a stolen God Fruit. Why would she take that over the Kolmari?"',
+        '"Because we\'re not lying to her," you say. "That\'s the whole pitch."',
+      ],
+    },
+    {
+      id: 'negotiate_03',
+      title: 'THE MEETING',
+      speaker: 'pettha_koss',
+      speakerName: 'Pettha Koss',
+      paragraphs: [
+        'Pettha Koss agrees to a meeting. Not because she trusts you. Because Delvessa arranged it through proper channels, with proper documentation, using the formal request protocols that Pettha respects.',
+        'She meets you at the Harbor Board. Her office. Her territory. She wears her spectacles and she does not offer tea.',
+        '"You have ten minutes. I have a schedule to maintain."',
+      ],
+    },
+    {
+      id: 'negotiate_04',
+      speaker: 'pettha_koss',
+      speakerName: 'Pettha Koss',
+      paragraphs: [
+        'You lay Delvessa\'s stolen contract on the desk. Pettha reads it. She reads fast. Her eyes move across the document like she\'s been reading fine print for twenty years, because she has.',
+        'She stops at page four. The rent clause. The one buried under three layers of subsidiary language and two referential appendices.',
+        'Her muzzle tightens. Her ears flatten. Just slightly. Just enough.',
+        '"Where did you get this?"',
+        '"Does it matter?"',
+        '"It matters a great deal, actually. If this document is authentic, it means the Kolmari Confederation has been negotiating in bad faith for six months. If it\'s forged, it means you\'re trying to manipulate me into an alliance I don\'t want."',
+        'Delvessa steps forward. "It\'s authentic. I drafted the template myself when I was with the Arbitration Division. Standard Kolmari extraction model. They use it on every frontier market."',
+        'Pettha studies Delvessa. Then she studies you.',
+      ],
+      choices: [
+        {
+          id: 'negotiate_honest',
+          text: '"I won\'t lie to you. I want this island. But I want it working, not broken."',
+          consequence: 'Direct. Honest.',
+          available: true,
+          effects: [
+            { type: 'loyalty', target: 'delvessa', value: 5 },
+            { type: 'reputation', value: 3 },
+            { type: 'flag', target: 'pettha_meeting', value: 'honest' },
+          ],
+        },
+        {
+          id: 'negotiate_business',
+          text: '"Here\'s my counter-offer. I protect Tavven Shoal from the Kolmari reprisal. You keep running the Board. We split the trade surplus sixty-forty."',
+          consequence: 'Business language. Practical.',
+          available: true,
+          effects: [
+            { type: 'loyalty', target: 'delvessa', value: 10 },
+            { type: 'flag', target: 'pettha_meeting', value: 'business' },
+          ],
+        },
+      ],
+    },
+    {
+      id: 'negotiate_05',
+      speaker: 'pettha_koss',
+      speakerName: 'Pettha Koss',
+      paragraphs: [
+        'Pettha looks at the contract. Then at you. Then at Delvessa, who stands with the calm of a woman who knows every number on every page.',
+        'The Harbor Master takes off her spectacles. Cleans them. Puts them back on.',
+        '"Seventy-thirty. I\'ve been running this island for twenty years. That\'s my price for not throwing you into the harbor."',
+        '"Sixty-forty."',
+        '"Sixty-five, thirty-five. And I maintain full scheduling authority."',
+        'You look at Delvessa. She nods.',
+        '"Deal."',
+        'Pettha extends a paw. Her grip is firm.',
+        '"I\'m not your ally, Captain. I\'m your business partner. There\'s a difference. Learn it."',
+      ],
+    },
+    {
+      id: 'negotiate_06',
+      title: 'THE KOLMARI PROBLEM',
+      paragraphs: [
+        'Tessurren Dolch receives the news through formal channels. Pettha Koss sends a written rejection of the exclusive warehousing agreement, citing "material discrepancies in the presented contract terms." She attaches a copy of his own hidden rent clause.',
+        'He stands on the dock reading the letter. His expression doesn\'t change. But the two guards behind him shift their weight.',
+        'He looks up. Finds you across the market. Holds eye contact for exactly three seconds.',
+        'Then he folds the letter precisely. Pockets it. Turns to the dock. Boards his boat.',
+        'He\'ll be back. The Kolmari always come back. But the next time, it won\'t be one agent with a contract. It\'ll be a financial response package designed to bleed Tavven Shoal dry.',
+        'You\'ll be ready.',
+      ],
+    },
+    {
+      id: 'negotiate_07',
+      title: 'THE ANNOUNCEMENT',
+      speaker: 'pettha_koss',
+      speakerName: 'Pettha Koss',
+      paragraphs: [
+        'Pettha makes the announcement herself, from the Harbor Board balcony. The crowd below, dock workers, vendors, fishermen, the morning market still half-asleep, listens.',
+        '"Tavven Shoal remains an independent trading port. The Kolmari agreement has been rejected. Security operations will be managed by Captain Karyudon and his crew, effective immediately. Harbor Board scheduling remains unchanged."',
+        'No applause. This is Tavven Shoal. People don\'t applaud here. They calculate. But the market opens a little louder that morning. The rope-bridge district feels a little lighter.',
+        'Kovesse broadcasts the whole thing. She frames it as a liberation story, the scrappy underdog who saved the island from corporate exploitation. It\'s not entirely accurate but it plays beautifully.',
+        'Thirty-five million Sovereigns. That\'s what the bounty board says by evening.',
+        'Pettha puts a memo in your dock slot the next morning: "Your first harbor fee is due Tuesday."',
+        'Business partner. Right.',
+      ],
+    },
+  ],
+  nextSceneId: 'conquest_aftermath',
+  onComplete: [
+    { type: 'notification', value: true, notification: {
+      type: 'grimoire',
+      title: 'KOLMARI TRADE BUREAU - FORMAL STATEMENT',
+      message: 'The Kolmari Trade Confederation considers the rejection of the Tavven Shoal warehousing agreement a breach of ongoing commercial negotiations. Financial review of all outstanding credit lines to Tavven Shoal merchants will commence within the week.',
+    }},
+    { type: 'notification', value: true, notification: {
+      type: 'crew',
+      title: 'DELVESSA GHAL - STRATEGIST ASSESSMENT',
+      message: 'The negotiation approach establishes legitimacy. Pettha Koss is a genuine partner, not a puppet. This gives us infrastructure and credibility. The Kolmari response will be economic, not military. We should prepare accordingly.',
+    }},
+  ],
+  currentBeat: 0,
+};

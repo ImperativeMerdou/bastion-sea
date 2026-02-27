@@ -1,0 +1,1412 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ==========================================
+   GODTIDE TYPOGRAPHY SYSTEM - CSS Custom Properties
+   ========================================== */
+:root {
+  /* Font families */
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  --font-narration: 'Crimson Text', Georgia, 'Times New Roman', serif;
+  --font-display: 'Cinzel', 'Playfair Display', Georgia, serif;
+
+  /* Font sizes */
+  --text-xs: 0.8125rem;     /* 13px - minor UI, minimum readable */
+  --text-sm: 0.875rem;      /* 14px - small labels, secondary info */
+  --text-base: 1.0625rem;   /* 17px - body text */
+  --text-lg: 1.125rem;      /* 18px - emphasized body */
+  --text-xl: 1.25rem;       /* 20px - section headers */
+  --text-2xl: 1.5rem;       /* 24px - scene titles */
+  --text-3xl: 1.75rem;      /* 28px - major titles */
+
+  /* Font weights */
+  --weight-normal: 500;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+
+  /* Line heights */
+  --leading-tight: 1.3;
+  --leading-normal: 1.6;
+  --leading-relaxed: 1.75;
+
+  /* Text colors - warm palette for dark backgrounds */
+  --text-primary: #E8E0D4;     /* warm off-white for body text */
+  --text-bright: #F5EDE1;      /* brighter for dialogue */
+  --text-dim: #A89B8C;         /* muted for secondary info */
+  --text-accent: #D4A574;      /* warm gold for names, highlights */
+  --text-ui: #C4B8A8;          /* UI labels */
+  --text-narrator: #B8C8D8;    /* narrator prose - soft blue-white */
+
+  /* Letter spacing */
+  --tracking-body: 0.01em;
+  --tracking-heading: 0.05em;
+  --tracking-label: 0.08em;
+}
+
+/* Base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+body {
+  background-color: #0a1628;
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-weight: var(--weight-normal);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  letter-spacing: var(--tracking-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Narration text uses Crimson Text serif for immersive reading */
+.font-narration {
+  font-family: var(--font-narration);
+}
+
+/* Display headers use Cinzel for fantasy-epic character */
+.font-display {
+  font-family: var(--font-display);
+}
+
+/* Inter body text utility class */
+.font-body {
+  font-family: var(--font-body);
+}
+
+/* Scrollbar styling - thin, dark, unobtrusive */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2d3d56;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #4a6382;
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #2d3d56 transparent;
+}
+
+/* Accessibility - Focus visible outlines for keyboard navigation */
+button:focus-visible,
+a:focus-visible,
+[role="button"]:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid #f59e0b;
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Screen-reader only utility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Text selection */
+::selection {
+  background: #991b1b;
+  color: #F5EDE1;
+}
+
+/* Typewriter cursor */
+@keyframes typewriter-cursor {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.typewriter-cursor::after {
+  content: '|';
+  animation: typewriter-cursor 0.8s infinite;
+  color: #f59e0b;
+}
+
+/* Glow effect for controlled islands */
+.glow-amber {
+  animation: pulseGlow 2s ease-in-out infinite;
+}
+
+/* Story line animation */
+.story-line {
+  opacity: 0;
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+/* Story text readability - multi-layer text shadow for outline effect over images */
+.story-text-shadow {
+  text-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.9),
+    0 2px 8px rgba(0, 0, 0, 0.7),
+    1px 1px 0 rgba(0, 0, 0, 0.5),
+    -1px -1px 0 rgba(0, 0, 0, 0.5),
+    0 0 12px rgba(0, 0, 0, 0.4);
+}
+
+/* Title shadow - bolder for scene headings */
+.story-title-shadow {
+  text-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.95),
+    0 4px 12px rgba(0, 0, 0, 0.7),
+    2px 2px 0 rgba(0, 0, 0, 0.6),
+    -2px -2px 0 rgba(0, 0, 0, 0.6),
+    0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Toast notification progress bar */
+@keyframes toast-progress {
+  from { width: 100%; }
+  to { width: 0%; }
+}
+
+/* Line clamp utility */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ==========================================
+   GODTIDE VISUAL IDENTITY - Panels, Buttons, Typography
+   ========================================== */
+
+/* Panel frame - standard dark panel with brass border + inner glow */
+.godtide-panel {
+  background: linear-gradient(180deg, rgba(17, 24, 39, 0.95) 0%, rgba(10, 22, 40, 0.98) 100%);
+  border: 1px solid #8b7355;
+  box-shadow:
+    inset 0 1px 0 rgba(139, 115, 85, 0.15),
+    0 4px 20px rgba(0, 0, 0, 0.5);
+  border-radius: 4px;
+}
+
+/* Modal frame - elevated panel with stronger shadow + gold top accent */
+.godtide-modal {
+  background: linear-gradient(180deg, rgba(17, 24, 39, 0.97) 0%, rgba(10, 22, 40, 0.99) 100%);
+  border: 1px solid rgba(139, 115, 85, 0.6);
+  box-shadow:
+    inset 0 1px 0 rgba(196, 148, 58, 0.2),
+    0 0 1px rgba(196, 148, 58, 0.3),
+    0 8px 40px rgba(0, 0, 0, 0.7),
+    0 2px 8px rgba(0, 0, 0, 0.4);
+  border-radius: 4px;
+  position: relative;
+}
+
+/* Gold accent line at top of modal */
+.godtide-modal::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #c4943a, transparent);
+}
+
+/* Choice button - textured, weighty */
+.godtide-btn-choice {
+  background: linear-gradient(180deg, rgba(26, 35, 50, 0.9) 0%, rgba(17, 24, 39, 0.95) 100%);
+  border: 1px solid rgba(139, 115, 85, 0.4);
+  border-radius: 3px;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.05),
+    0 2px 4px rgba(0, 0, 0, 0.3);
+  transition: all 0.2s ease;
+}
+
+.godtide-btn-choice:hover:not(:disabled) {
+  border-color: rgba(196, 148, 58, 0.6);
+  background: linear-gradient(180deg, rgba(36, 48, 68, 0.95) 0%, rgba(26, 35, 50, 0.98) 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(196, 148, 58, 0.1),
+    0 0 12px rgba(196, 148, 58, 0.1),
+    0 2px 8px rgba(0, 0, 0, 0.4);
+  transform: translateY(-1px);
+}
+
+.godtide-btn-choice:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow:
+    inset 0 2px 4px rgba(0, 0, 0, 0.3),
+    0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.godtide-btn-choice:disabled {
+  opacity: 0.4;
+  filter: saturate(0.5);
+  cursor: not-allowed;
+}
+
+/* Primary action button - gold accent */
+.godtide-btn-primary {
+  background: linear-gradient(180deg, rgba(196, 148, 58, 0.15) 0%, rgba(139, 115, 85, 0.1) 100%);
+  border: 1px solid rgba(196, 148, 58, 0.5);
+  color: #c4943a;
+  border-radius: 3px;
+  font-family: var(--font-display);
+  font-weight: var(--weight-semibold);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.godtide-btn-primary:hover:not(:disabled) {
+  background: linear-gradient(180deg, rgba(196, 148, 58, 0.25) 0%, rgba(139, 115, 85, 0.15) 100%);
+  border-color: rgba(196, 148, 58, 0.8);
+  box-shadow:
+    0 0 16px rgba(196, 148, 58, 0.15),
+    0 2px 12px rgba(0, 0, 0, 0.4);
+  transform: translateY(-1px);
+}
+
+/* Danger/crimson action button */
+.godtide-btn-danger {
+  background: linear-gradient(180deg, rgba(139, 32, 32, 0.2) 0%, rgba(92, 16, 16, 0.15) 100%);
+  border: 1px solid rgba(139, 32, 32, 0.5);
+  color: #ef4444;
+  border-radius: 3px;
+  font-family: var(--font-display);
+  font-weight: var(--weight-semibold);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: all 0.2s ease;
+}
+
+.godtide-btn-danger:hover:not(:disabled) {
+  background: linear-gradient(180deg, rgba(139, 32, 32, 0.3) 0%, rgba(92, 16, 16, 0.2) 100%);
+  border-color: rgba(185, 28, 28, 0.7);
+  box-shadow: 0 0 16px rgba(139, 32, 32, 0.15);
+}
+
+/* Gold bounty/resource number styling */
+.gold-number {
+  color: #c4943a;
+  font-family: var(--font-display);
+  font-weight: var(--weight-bold);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Narrator prose - serif, italic, immersive */
+.narrator-text {
+  font-family: var(--font-narration);
+  font-style: italic;
+  color: var(--text-narrator);
+  line-height: var(--leading-relaxed);
+  font-size: var(--text-lg);
+  letter-spacing: 0.01em;
+}
+
+/* Character dialogue - distinct from narration */
+.dialogue-text {
+  font-family: var(--font-narration);
+  color: var(--text-bright);
+  line-height: var(--leading-relaxed);
+  font-size: var(--text-lg);
+  letter-spacing: 0.01em;
+}
+
+/* Scene title / chapter card treatment */
+.scene-title-card {
+  font-family: var(--font-display);
+  font-weight: var(--weight-bold);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #c4943a;
+  text-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.95),
+    0 4px 16px rgba(0, 0, 0, 0.7),
+    0 0 40px rgba(196, 148, 58, 0.15);
+}
+
+/* Speaker name tag styling */
+.speaker-name {
+  font-family: var(--font-display);
+  font-weight: var(--weight-semibold);
+  font-variant: small-caps;
+  letter-spacing: 0.15em;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+/* Grimoire social feed post styling */
+.grimoire-post {
+  background: linear-gradient(180deg, rgba(17, 24, 39, 0.7) 0%, rgba(10, 22, 40, 0.8) 100%);
+  border: 1px solid rgba(74, 99, 130, 0.3);
+  border-left: 3px solid rgba(139, 115, 85, 0.5);
+  border-radius: 2px;
+  padding: 0.75rem 1rem;
+  transition: border-color 0.2s ease;
+}
+
+.grimoire-post:hover {
+  border-left-color: #c4943a;
+}
+
+/* Grimoire official (Wardensea) post */
+.grimoire-post-official {
+  border-left-color: rgba(74, 85, 104, 0.8);
+  background: linear-gradient(180deg, rgba(17, 24, 39, 0.8) 0%, rgba(15, 20, 30, 0.9) 100%);
+}
+
+/* Grimoire hot take / fan post */
+.grimoire-post-hot {
+  border-left-color: rgba(220, 38, 38, 0.5);
+}
+
+/* Panel texture overlay utility */
+.texture-overlay {
+  position: relative;
+}
+
+.texture-overlay::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.04;
+  mix-blend-mode: overlay;
+  background-size: cover;
+  background-position: center;
+  border-radius: inherit;
+}
+
+/* Notification slide-in from right */
+@keyframes notification-slide-in {
+  0% { transform: translateX(100%); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+
+.animate-notification-in {
+  animation: notification-slide-in 0.3s ease-out forwards;
+}
+
+/* Tab underline sweep */
+@keyframes tab-underline-sweep {
+  0% { transform: scaleX(0); }
+  100% { transform: scaleX(1); }
+}
+
+.tab-active-underline {
+  position: relative;
+}
+
+.tab-active-underline::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #c4943a;
+  transform-origin: left;
+  animation: tab-underline-sweep 0.25s ease-out forwards;
+}
+
+/* Resource badge styling */
+.resource-badge {
+  font-family: 'Consolas', Monaco, monospace;
+  font-weight: var(--weight-bold);
+  font-size: var(--text-xs);
+  padding: 2px 6px;
+  border-radius: 2px;
+  background: rgba(17, 24, 39, 0.8);
+  border: 1px solid rgba(74, 99, 130, 0.3);
+}
+
+/* Wardensea severity colors */
+.threat-low { color: #3aadad; }
+.threat-moderate { color: #fbbf24; }
+.threat-high { color: #ef4444; }
+.threat-critical { color: #f87171; text-shadow: 0 0 8px rgba(248, 113, 113, 0.3); }
+
+/* ==========================================
+   COMBAT ANIMATIONS - Make every hit feel HEAVY
+   ========================================== */
+
+/* Screen shake - light (basic hits) */
+@keyframes combat-shake {
+  0%, 100% { transform: translate(0, 0); }
+  10% { transform: translate(-4px, 2px); }
+  20% { transform: translate(6px, -3px); }
+  30% { transform: translate(-5px, 4px); }
+  40% { transform: translate(4px, -2px); }
+  50% { transform: translate(-3px, 3px); }
+  60% { transform: translate(5px, -1px); }
+  70% { transform: translate(-2px, 2px); }
+  80% { transform: translate(3px, -3px); }
+  90% { transform: translate(-1px, 1px); }
+}
+
+.animate-combat-shake {
+  animation: combat-shake 0.4s ease-in-out;
+}
+
+/* HEAVY screen shake - Thunder Danzai, Kosanze, etc */
+@keyframes combat-shake-heavy {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  5% { transform: translate(-10px, 5px) rotate(-0.5deg); }
+  10% { transform: translate(12px, -8px) rotate(0.8deg); }
+  15% { transform: translate(-14px, 10px) rotate(-0.6deg); }
+  20% { transform: translate(10px, -6px) rotate(0.4deg); }
+  30% { transform: translate(-8px, 8px) rotate(-0.3deg); }
+  40% { transform: translate(6px, -4px) rotate(0.2deg); }
+  50% { transform: translate(-5px, 3px) rotate(-0.1deg); }
+  60% { transform: translate(4px, -3px); }
+  70% { transform: translate(-3px, 2px); }
+  80% { transform: translate(2px, -1px); }
+  90% { transform: translate(-1px, 1px); }
+}
+
+.animate-combat-shake-heavy {
+  animation: combat-shake-heavy 0.6s ease-out;
+}
+
+/* Damage number float up */
+@keyframes damage-float {
+  0% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  15% {
+    transform: translateY(-10px) scale(1.5);
+  }
+  30% {
+    opacity: 1;
+    transform: translateY(-25px) scale(1.3);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-70px) scale(0.7);
+  }
+}
+
+.animate-damage-float {
+  animation: damage-float 1.4s ease-out forwards;
+}
+
+/* BIG damage number (criticals, specials) */
+@keyframes damage-float-big {
+  0% {
+    opacity: 1;
+    transform: translateY(0) scale(0.5);
+  }
+  10% {
+    transform: translateY(-5px) scale(2);
+  }
+  25% {
+    opacity: 1;
+    transform: translateY(-20px) scale(1.8);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-40px) scale(1.4);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-80px) scale(0.6);
+  }
+}
+
+.animate-damage-float-big {
+  animation: damage-float-big 1.6s ease-out forwards;
+}
+
+/* Fade in for narrative text */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+/* Slam in for heavy text (VICTORY, DEFEAT) */
+@keyframes slamIn {
+  0% { opacity: 0; transform: scale(2.5) translateY(-20px); }
+  40% { opacity: 1; transform: scale(0.9) translateY(2px); }
+  60% { transform: scale(1.05) translateY(-1px); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.animate-slam-in {
+  animation: slamIn 0.5s ease-out forwards;
+}
+
+/* King pressure pulse - the entire screen feels the weight */
+@keyframes king-pulse {
+  0% { box-shadow: inset 0 0 0 0 rgba(147, 51, 234, 0); }
+  30% { box-shadow: inset 0 0 80px 30px rgba(147, 51, 234, 0.4); }
+  60% { box-shadow: inset 0 0 40px 15px rgba(147, 51, 234, 0.2); }
+  100% { box-shadow: inset 0 0 0 0 rgba(147, 51, 234, 0); }
+}
+
+.animate-king-pulse {
+  animation: king-pulse 1s ease-out;
+}
+
+/* Impact flash - white burst on connection */
+@keyframes combat-impact-flash {
+  0% { opacity: 0; }
+  10% { opacity: 0.6; }
+  30% { opacity: 0.3; }
+  100% { opacity: 0; }
+}
+
+/* Enemy hurt shake */
+@keyframes enemy-hurt {
+  0%, 100% { transform: translateX(0); }
+  15% { transform: translateX(-8px); }
+  30% { transform: translateX(10px); }
+  45% { transform: translateX(-6px); }
+  60% { transform: translateX(4px); }
+  80% { transform: translateX(-2px); }
+}
+
+.animate-enemy-hurt {
+  animation: enemy-hurt 0.35s ease-in-out;
+}
+
+/* Enemy DEATH animation */
+@keyframes enemy-death {
+  0% { opacity: 1; transform: scale(1); filter: saturate(1); }
+  30% { opacity: 0.8; transform: scale(1.05); filter: saturate(0.5) brightness(1.5); }
+  60% { opacity: 0.4; transform: scale(0.95); filter: saturate(0); }
+  100% { opacity: 0.15; transform: scale(0.9) translateY(5px); filter: saturate(0) brightness(0.5); }
+}
+
+.animate-enemy-death {
+  animation: enemy-death 0.8s ease-out forwards;
+}
+
+/* Player hurt - red vignette */
+@keyframes player-hurt-vignette {
+  0% { box-shadow: inset 0 0 0 0 rgba(220, 38, 38, 0); }
+  20% { box-shadow: inset 0 0 60px 20px rgba(220, 38, 38, 0.4); }
+  100% { box-shadow: inset 0 0 0 0 rgba(220, 38, 38, 0); }
+}
+
+.animate-player-hurt {
+  animation: player-hurt-vignette 0.6s ease-out;
+}
+
+/* Glow pulse for King meter when full */
+@keyframes king-glow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(147, 51, 234, 0.3);
+    filter: brightness(1);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(147, 51, 234, 0.7);
+    filter: brightness(1.3);
+  }
+}
+
+.animate-king-glow {
+  animation: king-glow 1.5s ease-in-out infinite;
+}
+
+/* Iron pulse - Dominion activation visual */
+@keyframes iron-pulse-ring {
+  0% { opacity: 0.8; transform: scale(0.8); box-shadow: 0 0 20px rgba(156, 163, 175, 0.6); }
+  50% { opacity: 0.4; transform: scale(1.2); box-shadow: 0 0 40px rgba(156, 163, 175, 0.3); }
+  100% { opacity: 0; transform: scale(1.6); box-shadow: 0 0 0 rgba(156, 163, 175, 0); }
+}
+
+/* Thunder Danzai flash */
+@keyframes thunder-flash {
+  0% { opacity: 0; background: linear-gradient(135deg, rgba(251, 191, 36, 0.6), rgba(255, 255, 255, 0.4)); }
+  15% { opacity: 1; }
+  30% { opacity: 0.3; }
+  45% { opacity: 0.8; }
+  60% { opacity: 0.1; }
+  100% { opacity: 0; }
+}
+
+.animate-thunder-flash {
+  animation: thunder-flash 0.5s ease-out forwards;
+}
+
+/* ==========================================
+   LIGHTNING / HAKI VFX - One Piece-style
+   Forking bolts, afterglow, crackling energy
+   ========================================== */
+
+/* Main lightning bolt flash-in - appears instantly, fades with afterglow */
+@keyframes lightning-bolt-strike {
+  0% { opacity: 0; filter: brightness(1) blur(0px); }
+  5% { opacity: 1; filter: brightness(2.5) blur(0px); }
+  15% { opacity: 1; filter: brightness(2) blur(0px); }
+  25% { opacity: 0.7; filter: brightness(1.5) blur(0.5px); }
+  40% { opacity: 0.4; filter: brightness(1.2) blur(1px); }
+  60% { opacity: 0.15; filter: brightness(1) blur(1.5px); }
+  100% { opacity: 0; filter: brightness(1) blur(2px); }
+}
+
+.animate-lightning-bolt {
+  animation: lightning-bolt-strike 0.7s ease-out forwards;
+}
+
+/* Secondary bolt - delayed fork */
+@keyframes lightning-bolt-fork {
+  0% { opacity: 0; }
+  10% { opacity: 0; }
+  15% { opacity: 1; filter: brightness(2.2) blur(0px); }
+  30% { opacity: 0.8; filter: brightness(1.8) blur(0.3px); }
+  50% { opacity: 0.3; filter: brightness(1.2) blur(1px); }
+  100% { opacity: 0; filter: brightness(1) blur(2px); }
+}
+
+.animate-lightning-fork {
+  animation: lightning-bolt-fork 0.8s ease-out forwards;
+}
+
+/* Tertiary bolt - quick flicker for background branches */
+@keyframes lightning-flicker {
+  0% { opacity: 0; }
+  8% { opacity: 0; }
+  12% { opacity: 0.9; }
+  18% { opacity: 0.2; }
+  24% { opacity: 0.7; }
+  32% { opacity: 0.1; }
+  40% { opacity: 0.5; }
+  100% { opacity: 0; }
+}
+
+.animate-lightning-flicker {
+  animation: lightning-flicker 0.6s ease-out forwards;
+}
+
+/* Haki crackling aura - ambient electrical energy around the screen edges */
+@keyframes haki-crackle {
+  0% { opacity: 0; }
+  5% { opacity: 0.8; }
+  10% { opacity: 0.3; }
+  15% { opacity: 0.9; }
+  20% { opacity: 0.1; }
+  28% { opacity: 0.7; }
+  35% { opacity: 0.4; }
+  45% { opacity: 0.6; }
+  55% { opacity: 0.2; }
+  70% { opacity: 0.4; }
+  85% { opacity: 0.1; }
+  100% { opacity: 0; }
+}
+
+.animate-haki-crackle {
+  animation: haki-crackle 0.9s ease-out forwards;
+}
+
+/* Lightning afterglow - screen-wide amber tint that lingers */
+@keyframes lightning-afterglow {
+  0% { opacity: 0; }
+  8% { opacity: 0.5; }
+  20% { opacity: 0.2; }
+  35% { opacity: 0.35; }
+  50% { opacity: 0.1; }
+  100% { opacity: 0; }
+}
+
+.animate-lightning-afterglow {
+  animation: lightning-afterglow 1s ease-out forwards;
+}
+
+/* Action button hover glow */
+@keyframes action-glow {
+  0%, 100% { box-shadow: 0 0 0 rgba(245, 158, 11, 0); }
+  50% { box-shadow: 0 0 8px rgba(245, 158, 11, 0.3); }
+}
+
+.combat-action-btn:hover:not(:disabled) {
+  animation: action-glow 1s ease-in-out infinite;
+}
+
+/* ==========================================
+   ANIME COMBAT VFX - Kinetic. Explosive. IMPACT.
+   ========================================== */
+
+/* Diagonal slash trail effect */
+@keyframes slash-trail {
+  0% { clip-path: polygon(100% 0%, 100% 0%, 100% 0%, 100% 0%); opacity: 0.9; }
+  20% { clip-path: polygon(0% 100%, 100% 0%, 100% 15%, 5% 100%); opacity: 0.8; }
+  50% { clip-path: polygon(0% 100%, 100% 0%, 100% 15%, 5% 100%); opacity: 0.5; }
+  100% { clip-path: polygon(0% 100%, 100% 0%, 100% 15%, 5% 100%); opacity: 0; }
+}
+
+.animate-slash-trail {
+  animation: slash-trail 0.4s ease-out forwards;
+}
+
+/* Impact burst - radial flash at hit point */
+@keyframes impact-burst {
+  0% { transform: translate(-50%, -50%) scale(0.2); opacity: 0.95; }
+  30% { transform: translate(-50%, -50%) scale(1.4); opacity: 0.7; }
+  60% { transform: translate(-50%, -50%) scale(2.0); opacity: 0.3; }
+  100% { transform: translate(-50%, -50%) scale(2.8); opacity: 0; }
+}
+
+.animate-impact-burst {
+  animation: impact-burst 0.5s ease-out forwards;
+}
+
+/* ANIME move name splash - slams in from right, holds, exits left */
+@keyframes move-name-splash {
+  0% { transform: translateX(120%) skewX(-15deg); opacity: 0; }
+  12% { transform: translateX(-3%) skewX(-3deg); opacity: 1; }
+  20% { transform: translateX(0%) skewX(0deg); opacity: 1; }
+  75% { transform: translateX(0%) skewX(0deg); opacity: 1; }
+  100% { transform: translateX(-120%) skewX(10deg); opacity: 0; }
+}
+
+.animate-move-splash {
+  animation: move-name-splash 1.2s ease-out forwards;
+}
+
+/* Charge-up glow before special attacks */
+@keyframes charge-glow {
+  0% { box-shadow: 0 0 0 rgba(251, 191, 36, 0); filter: brightness(1); }
+  30% { box-shadow: 0 0 20px rgba(251, 191, 36, 0.5); filter: brightness(1.15); }
+  60% { box-shadow: 0 0 40px rgba(251, 191, 36, 0.7); filter: brightness(1.3); }
+  100% { box-shadow: 0 0 60px rgba(251, 191, 36, 0.9); filter: brightness(1.5); }
+}
+
+.animate-charge-glow {
+  animation: charge-glow 0.5s ease-in forwards;
+}
+
+/* Combo counter pulse */
+@keyframes combo-pulse {
+  0% { transform: scale(1.8); opacity: 1; }
+  25% { transform: scale(1.0); opacity: 1; }
+  100% { transform: scale(1.0); opacity: 0.85; }
+}
+
+.animate-combo-pulse {
+  animation: combo-pulse 0.3s ease-out;
+}
+
+/* IMPROVED enemy death - shatter effect */
+@keyframes enemy-shatter {
+  0% { transform: scale(1); opacity: 1; filter: saturate(1) brightness(1); }
+  8% { transform: translateX(-8px) scale(1.03); filter: brightness(2.5) saturate(0); }
+  16% { transform: translateX(10px) scale(1.05); filter: brightness(2.0); }
+  24% { transform: translateX(-5px) scale(1.02); filter: brightness(1.5) saturate(0); }
+  40% { transform: scale(1.08); opacity: 0.7; filter: blur(1px) brightness(1.2); }
+  65% { transform: scale(0.9) translateY(8px); opacity: 0.3; filter: blur(2px); }
+  100% { transform: scale(0.5) translateY(15px); opacity: 0; filter: blur(4px); }
+}
+
+.animate-enemy-shatter {
+  animation: enemy-shatter 0.8s ease-out forwards;
+}
+
+/* Crew assist portrait slide-in from left */
+@keyframes crew-slide-in {
+  0% { transform: translateX(-100%) scale(0.85); opacity: 0; }
+  35% { transform: translateX(8%) scale(1.05); opacity: 1; }
+  55% { transform: translateX(-2%) scale(1.0); opacity: 1; }
+  100% { transform: translateX(0%) scale(1.0); opacity: 1; }
+}
+
+.animate-crew-entry {
+  animation: crew-slide-in 0.5s ease-out forwards;
+}
+
+/* King meter ambient border glow - purple dominion energy */
+@keyframes king-border-pulse {
+  0%, 100% { box-shadow: inset 0 0 0 0 rgba(147, 51, 234, 0); }
+  50% { box-shadow: inset 0 0 25px 5px rgba(147, 51, 234, 0.12); }
+}
+
+.animate-king-border {
+  animation: king-border-pulse 2s ease-in-out infinite;
+}
+
+/* MEGA damage numbers - for named moves and specials */
+@keyframes damage-mega {
+  0% { transform: translateY(0) scale(0.3) rotate(-5deg); opacity: 1; text-shadow: 0 0 0 transparent; }
+  12% { transform: translateY(-10px) scale(2.8) rotate(3deg); opacity: 1; text-shadow: 0 0 30px currentColor; }
+  30% { transform: translateY(-25px) scale(2.2) rotate(-1deg); opacity: 1; text-shadow: 0 0 20px currentColor; }
+  60% { transform: translateY(-50px) scale(1.6) rotate(0deg); opacity: 0.9; }
+  100% { transform: translateY(-100px) scale(0.7) rotate(0deg); opacity: 0; }
+}
+
+.animate-damage-mega {
+  animation: damage-mega 1.8s ease-out forwards;
+}
+
+/* Status effect proc text ("+STUN", "+BLEED") */
+@keyframes effect-proc {
+  0% { transform: translateY(0) scale(0.5); opacity: 0; }
+  20% { transform: translateY(-8px) scale(1.2); opacity: 1; }
+  60% { transform: translateY(-16px) scale(1.0); opacity: 0.8; }
+  100% { transform: translateY(-30px) scale(0.8); opacity: 0; }
+}
+
+.animate-effect-proc {
+  animation: effect-proc 1.0s ease-out forwards;
+}
+
+/* HP bar drain effect */
+.hp-bar-damage {
+  transition: width 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Stamina bar smooth fill */
+.stamina-bar-fill {
+  transition: width 0.4s ease-out;
+}
+
+/* Combat log entry slide in */
+@keyframes log-slide-in {
+  from { opacity: 0; transform: translateX(-10px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.combat-log-entry {
+  animation: log-slide-in 0.3s ease-out;
+}
+
+/* Round transition banner */
+@keyframes round-banner {
+  0% { opacity: 0; transform: translateY(-20px) scale(0.95); }
+  20% { opacity: 1; transform: translateY(0) scale(1); }
+  80% { opacity: 1; transform: translateY(0) scale(1); }
+  100% { opacity: 0; transform: translateY(10px) scale(0.98); }
+}
+
+.animate-round-banner {
+  animation: round-banner 1.5s ease-in-out forwards;
+}
+
+/* Pulse glow for controlled islands (referenced in existing code) */
+@keyframes pulseGlow {
+  0%, 100% { filter: brightness(1) drop-shadow(0 0 2px rgba(245, 158, 11, 0.3)); }
+  50% { filter: brightness(1.1) drop-shadow(0 0 8px rgba(245, 158, 11, 0.6)); }
+}
+
+/* ==========================================
+   SEA TRAVEL ANIMATIONS
+   ========================================== */
+
+/* Star twinkling */
+@keyframes twinkle {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 0.8; }
+}
+
+.animate-twinkle {
+  animation: twinkle 3s ease-in-out infinite;
+}
+
+/* Wave animations */
+.animate-wave-slow {
+  animation: wave-drift 8s ease-in-out infinite;
+}
+
+.animate-wave-fast {
+  animation: wave-drift 5s ease-in-out infinite reverse;
+}
+
+@keyframes wave-drift {
+  0%, 100% { transform: translateX(0) translateY(0); }
+  50% { transform: translateX(-20px) translateY(-5px); }
+}
+
+/* ==========================================
+   TITLE SCREEN ANIMATIONS
+   ========================================== */
+
+/* Slow horizontal fog drift */
+@keyframes drift-slow {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-drift-slow {
+  animation: drift-slow 30s linear infinite;
+}
+
+/* Slow ambient pulse - crimson glow */
+@keyframes pulse-slow {
+  0%, 100% { opacity: 0.4; transform: translate(-50%, -50%) scale(1); }
+  50% { opacity: 0.7; transform: translate(-50%, -50%) scale(1.15); }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 4s ease-in-out infinite;
+}
+
+/* ==========================================
+   DIALOGUE CARD SYSTEM - Visual Novel Vibes
+   ========================================== */
+
+/* Card entrance - slides up + fades in */
+@keyframes card-enter {
+  0% { opacity: 0; transform: translateY(30px) scale(0.9); }
+  60% { opacity: 1; transform: translateY(-4px) scale(1.02); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.animate-card-enter {
+  animation: card-enter 0.5s ease-out forwards;
+}
+
+/* Active speaker glow burst - uses character accent color via CSS custom property */
+@keyframes speaker-glow {
+  0% { box-shadow: 0 0 0 0 transparent, 0 8px 32px rgba(0, 0, 0, 0.5); }
+  25% { box-shadow: 0 0 24px 6px var(--accent-glow-strong, rgba(255, 255, 255, 0.6)), 0 8px 32px rgba(0, 0, 0, 0.5); }
+  50% { box-shadow: 0 0 14px 3px var(--accent-glow, rgba(255, 255, 255, 0.3)), 0 8px 32px rgba(0, 0, 0, 0.5); }
+  100% { box-shadow: 0 0 10px 2px var(--accent-glow, rgba(255, 255, 255, 0.15)), 0 8px 32px rgba(0, 0, 0, 0.5); }
+}
+
+.animate-speaker-glow {
+  animation: speaker-glow 0.8s ease-out forwards;
+}
+
+/* Idle speaker glow breathing - subtle pulse after the initial burst */
+@keyframes speaker-glow-idle {
+  0%, 100% { box-shadow: 0 0 10px 2px var(--accent-glow, rgba(255, 255, 255, 0.15)), 0 8px 32px rgba(0, 0, 0, 0.5); }
+  50% { box-shadow: 0 0 18px 4px var(--accent-glow-strong, rgba(255, 255, 255, 0.35)), 0 8px 32px rgba(0, 0, 0, 0.5); }
+}
+
+.animate-speaker-glow-idle {
+  animation: speaker-glow 0.8s ease-out forwards, speaker-glow-idle 3s ease-in-out 0.8s infinite;
+}
+
+/* Speaker activation flash - bright white burst on the card */
+@keyframes speaker-flash {
+  0% { opacity: 0; }
+  15% { opacity: 0.7; }
+  40% { opacity: 0.3; }
+  100% { opacity: 0; }
+}
+
+.animate-speaker-flash {
+  animation: speaker-flash 0.6s ease-out forwards;
+}
+
+/* Speaker name tag slide in */
+@keyframes nametag-slide {
+  0% { opacity: 0; transform: translateY(8px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.animate-nametag {
+  animation: nametag-slide 0.3s ease-out forwards;
+}
+
+/* Background image crossfade - outgoing image fades away */
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.animate-fade-out {
+  animation: fadeOut 1.2s ease-in-out forwards;
+}
+
+/* Continue indicator bounce */
+@keyframes continue-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(4px); }
+}
+
+.animate-continue-bounce {
+  animation: continue-bounce 1.2s ease-in-out infinite;
+}
+
+/* === CINEMATIC DIALOGUE SYSTEM === */
+
+/* Portrait entrance - cinematic slide up with scale */
+@keyframes portrait-enter {
+  0% { opacity: 0; transform: translateY(40px) scale(0.85); filter: blur(4px); }
+  50% { opacity: 1; transform: translateY(-8px) scale(1.03); filter: blur(0); }
+  100% { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+}
+
+.animate-portrait-enter {
+  animation: portrait-enter 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* Speaker portrait card - breathing glow */
+.speaker-portrait-card {
+  animation: speaker-glow 0.6s ease-out forwards, speaker-glow-idle 3s ease-in-out 0.6s infinite;
+}
+
+/* Dialogue accent line shimmer */
+@keyframes accent-shimmer {
+  0% { opacity: 0.5; }
+  50% { opacity: 1; }
+  100% { opacity: 0.5; }
+}
+
+.dialogue-accent-line {
+  animation: accent-shimmer 3s ease-in-out infinite;
+}
+
+/* Dialogue box entrance */
+.dialogue-box {
+  animation: dialogue-enter 0.3s ease-out forwards;
+}
+
+@keyframes dialogue-enter {
+  0% { opacity: 0.5; transform: translateY(8px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* ==========================================
+   SHONEN ANIME VFX - Maximum Impact
+   ========================================== */
+
+/* Speed lines - radial burst from center during attacks */
+@keyframes speed-lines-burst {
+  0% { opacity: 0; transform: scale(0.3); }
+  15% { opacity: 0.8; transform: scale(0.8); }
+  40% { opacity: 0.6; transform: scale(1.2); }
+  100% { opacity: 0; transform: scale(2); }
+}
+
+.animate-speed-lines {
+  animation: speed-lines-burst 0.6s ease-out forwards;
+  background: repeating-conic-gradient(
+    rgba(255, 255, 255, 0.08) 0deg,
+    transparent 3deg,
+    transparent 12deg,
+    rgba(255, 255, 255, 0.08) 15deg
+  );
+}
+
+/* Critical hit freeze-frame -- brief brightness spike + scale */
+@keyframes crit-freeze {
+  0% { filter: brightness(1) contrast(1); transform: scale(1); }
+  8% { filter: brightness(2.5) contrast(1.5); transform: scale(1.02); }
+  20% { filter: brightness(2.0) contrast(1.3); transform: scale(1.02); }
+  35% { filter: brightness(1.5) contrast(1.1); transform: scale(1.01); }
+  60% { filter: brightness(1.1) contrast(1.0); transform: scale(1.0); }
+  100% { filter: brightness(1) contrast(1); transform: scale(1); }
+}
+
+.animate-crit-freeze {
+  animation: crit-freeze 0.5s ease-out;
+}
+
+/* Dramatic callout text -- slides in, holds, pulses out */
+@keyframes callout-dramatic {
+  0% { opacity: 0; transform: translateX(80px) scale(1.5) skewX(-10deg); letter-spacing: 0.5em; }
+  15% { opacity: 1; transform: translateX(-5px) scale(1.05) skewX(-2deg); letter-spacing: 0.2em; }
+  25% { opacity: 1; transform: translateX(0) scale(1) skewX(0deg); letter-spacing: 0.15em; }
+  70% { opacity: 1; transform: translateX(0) scale(1) skewX(0deg); letter-spacing: 0.15em; }
+  100% { opacity: 0; transform: translateX(-30px) scale(0.95); letter-spacing: 0.3em; }
+}
+
+.animate-callout-dramatic {
+  animation: callout-dramatic 1.5s ease-out forwards;
+}
+
+/* VS Splash -- two halves slam together */
+@keyframes vs-slam-left {
+  0% { transform: translateX(-120%); opacity: 0; }
+  30% { transform: translateX(5%); opacity: 1; }
+  40% { transform: translateX(0%); opacity: 1; }
+  80% { transform: translateX(0%); opacity: 1; }
+  100% { transform: translateX(0%); opacity: 0; }
+}
+
+@keyframes vs-slam-right {
+  0% { transform: translateX(120%); opacity: 0; }
+  30% { transform: translateX(-5%); opacity: 1; }
+  40% { transform: translateX(0%); opacity: 1; }
+  80% { transform: translateX(0%); opacity: 1; }
+  100% { transform: translateX(0%); opacity: 0; }
+}
+
+@keyframes vs-text-pop {
+  0% { opacity: 0; transform: scale(3) rotate(-10deg); }
+  25% { opacity: 1; transform: scale(0.9) rotate(2deg); }
+  35% { opacity: 1; transform: scale(1.1) rotate(-1deg); }
+  45% { opacity: 1; transform: scale(1) rotate(0deg); }
+  80% { opacity: 1; transform: scale(1) rotate(0deg); }
+  100% { opacity: 0; transform: scale(0.8) rotate(0deg); }
+}
+
+.animate-vs-left {
+  animation: vs-slam-left 2s ease-out forwards;
+}
+
+.animate-vs-right {
+  animation: vs-slam-right 2s ease-out forwards;
+}
+
+.animate-vs-text {
+  animation: vs-text-pop 2s ease-out forwards;
+}
+
+/* Dominion aura -- pulsing energy field around the player */
+@keyframes dominion-aura-pulse {
+  0%, 100% {
+    box-shadow: 0 0 15px 3px var(--aura-color, rgba(251,191,36,0.3)),
+                inset 0 0 10px 2px var(--aura-color, rgba(251,191,36,0.15));
+    filter: brightness(1.05);
+  }
+  50% {
+    box-shadow: 0 0 30px 8px var(--aura-color, rgba(251,191,36,0.5)),
+                inset 0 0 20px 5px var(--aura-color, rgba(251,191,36,0.25));
+    filter: brightness(1.15);
+  }
+}
+
+.animate-dominion-aura {
+  animation: dominion-aura-pulse 1.5s ease-in-out infinite;
+}
+
+/* Inner monologue flash -- dramatic text overlay */
+@keyframes inner-monologue {
+  0% { opacity: 0; transform: translateY(10px); }
+  15% { opacity: 0.9; transform: translateY(0); }
+  80% { opacity: 0.9; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-5px); }
+}
+
+.animate-inner-monologue {
+  animation: inner-monologue 2.5s ease-out forwards;
+}
+
+/* Cinematic black bars -- slide in from top/bottom */
+@keyframes cinema-bars-in {
+  0% { height: 0; }
+  100% { height: 60px; }
+}
+
+@keyframes cinema-bars-out {
+  0% { height: 60px; }
+  100% { height: 0; }
+}
+
+.cinema-bar-top {
+  animation: cinema-bars-in 0.4s ease-out forwards;
+}
+
+.cinema-bar-bottom {
+  animation: cinema-bars-in 0.4s ease-out forwards;
+}
+
+.cinema-bar-exit {
+  animation: cinema-bars-out 0.3s ease-in forwards;
+}
+
+/* Turn indicator dramatic pulse */
+@keyframes turn-pulse {
+  0% { opacity: 0; transform: scaleX(0.3); }
+  20% { opacity: 1; transform: scaleX(1.05); }
+  30% { transform: scaleX(0.98); }
+  40% { transform: scaleX(1); }
+  70% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.animate-turn-pulse {
+  animation: turn-pulse 1.8s ease-out forwards;
+}
+
+/* Power-up rising energy particles */
+@keyframes energy-rise {
+  0% { opacity: 0; transform: translateY(0) scale(0.5); }
+  20% { opacity: 1; transform: translateY(-10px) scale(1); }
+  100% { opacity: 0; transform: translateY(-80px) scale(0.3); }
+}
+
+.energy-particle {
+  animation: energy-rise 1.2s ease-out forwards;
+}
+
+/* Dramatic zoom for special moves */
+@keyframes dramatic-zoom {
+  0% { transform: scale(1); }
+  30% { transform: scale(1.03); }
+  60% { transform: scale(1.03); }
+  100% { transform: scale(1); }
+}
+
+.animate-dramatic-zoom {
+  animation: dramatic-zoom 1s ease-in-out;
+}
+
+/* Blood splatter on heavy hits */
+@keyframes splatter-burst {
+  0% { opacity: 0; transform: scale(0.1); }
+  15% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 0.3; transform: scale(1.3); }
+  100% { opacity: 0; transform: scale(1.5); }
+}
+
+.animate-splatter {
+  animation: splatter-burst 0.6s ease-out forwards;
+}
+
+/* Dramatic text reveal for story moments */
+@keyframes text-dramatic-reveal {
+  0% { clip-path: inset(0 100% 0 0); }
+  100% { clip-path: inset(0 0 0 0); }
+}
+
+.animate-text-reveal {
+  animation: text-dramatic-reveal 0.8s ease-out forwards;
+}
+
+/* Story panel emotional emphasis pulse */
+@keyframes emotion-pulse {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 0.15; }
+}
+
+.animate-emotion-pulse {
+  animation: emotion-pulse 3s ease-in-out infinite;
+}
+
+/* ==========================================
+   PREMIUM UI CHROME - Cards, Frames, Overlays
+   ========================================== */
+
+/* Breathing glow for active character cards */
+@keyframes card-glow-breathe {
+  0%, 100% {
+    box-shadow: 0 0 20px var(--accent-glow, rgba(255,255,255,0.2)),
+                0 0 40px var(--accent-glow-dim, rgba(255,255,255,0.1)),
+                0 8px 32px rgba(0, 0, 0, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 35px var(--accent-glow-strong, rgba(255,255,255,0.4)),
+                0 0 70px var(--accent-glow, rgba(255,255,255,0.2)),
+                0 8px 32px rgba(0, 0, 0, 0.5);
+  }
+}
+
+.character-card-glow-active {
+  animation: card-glow-breathe 2.5s ease-in-out infinite;
+}
+
+/* Edge shimmer for active speaker */
+@keyframes edge-shimmer {
+  0% { background-position: 0% 100%; }
+  100% { background-position: 0% -100%; }
+}
+
+.edge-shimmer-left,
+.edge-shimmer-right {
+  animation: edge-shimmer 3s linear infinite;
+  opacity: 0.2;
+}
+
+/* Portrait idle drift - micro-animation */
+@keyframes portrait-idle-drift {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-2px); }
+}
+
+.portrait-idle-drift {
+  animation: portrait-idle-drift 6s ease-in-out infinite;
+}
+
+/* Expression change flash */
+@keyframes expression-flash-anim {
+  0% { opacity: 0.8; }
+  100% { opacity: 0; }
+}
+
+.animate-expression-flash {
+  animation: expression-flash-anim 0.2s ease-out forwards;
+}
+
+/* Expression crossfade - new portrait fading in */
+@keyframes expression-crossfade {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.animate-expression-crossfade {
+  animation: expression-crossfade 0.3s ease-in-out forwards;
+}
+
+/* Character card entrance */
+@keyframes character-card-enter {
+  0% { opacity: 0; transform: translateY(30px) scale(0.95); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.animate-character-card-enter {
+  animation: character-card-enter 0.4s ease-out forwards;
+}
+
+/* Character card exit */
+@keyframes character-card-exit {
+  0% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(15px); }
+}
+
+.animate-character-card-exit {
+  animation: character-card-exit 0.3s ease-out forwards;
+}
+
+/* Dialogue box glow breathing - synced with character card */
+@keyframes dialogue-glow-breathe {
+  0%, 100% {
+    box-shadow: 0 0 50px var(--accent-glow-dim, rgba(255,255,255,0.1)),
+                0 0 100px rgba(0, 0, 0, 0.05),
+                0 8px 40px rgba(0, 0, 0, 0.8),
+                inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  }
+  50% {
+    box-shadow: 0 0 60px var(--accent-glow, rgba(255,255,255,0.15)),
+                0 0 120px var(--accent-glow-dim, rgba(255,255,255,0.05)),
+                0 8px 40px rgba(0, 0, 0, 0.8),
+                inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  }
+}
+
+.dialogue-box-glow-active {
+  animation: dialogue-glow-breathe 2.5s ease-in-out infinite;
+}
+
+/* Compass rose slow rotation */
+@keyframes compass-rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.animate-compass-rotate {
+  animation: compass-rotate 120s linear infinite;
+}
