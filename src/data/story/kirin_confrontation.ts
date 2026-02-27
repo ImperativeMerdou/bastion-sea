@@ -65,6 +65,13 @@ export const kirinConfrontationScene: StoryScene = {
         '"Before you decide. I need you to know something."',
         'He swallows.',
         '"That day on the ship. When they took you. I knew. I knew they were coming. The uncle told me it was the only way to protect the highlands from the Wardensea. That you were too dangerous. Too visible. That your bounty would bring the storm-grey coats to our door and they\'d burn everything."',
+      ],
+    },
+    {
+      id: 'kconf_06b',
+      speaker: 'kirin',
+      speakerName: 'Kirin',
+      paragraphs: [
         '"He was lying. I know that now. He wanted you gone because you were the only person in the highlands who didn\'t listen to him."',
       ],
     },
@@ -278,6 +285,13 @@ export const kirinEmotionalScene: StoryScene = {
       speakerName: 'Kirin',
       paragraphs: [
         '"The uncle." His voice is hoarse but steady. "I know everything. His network. His allies. His schedule. The compound layout. The guard rotations. Every Iron user and what tier they\'re at."',
+      ],
+    },
+    {
+      id: 'kconf_emotional_03c',
+      speaker: 'kirin',
+      speakerName: 'Kirin',
+      paragraphs: [
         '"He thinks I\'m loyal because of the bands." He holds up his forearms. The tattoos pulse faintly. "They\'re conditioning. Iron imprints from his shaman training. They make it hard to disobey direct orders. Not impossible. Just hard."',
         '"Hard isn\'t the same as can\'t."',
       ],

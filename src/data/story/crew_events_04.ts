@@ -594,7 +594,21 @@ export const tessekEvent04: StoryScene = {
       expression: 'fear',
       paragraphs: [
         '"Started when I was sixteen." He\'s watching you read. His eyes track every page turn. And his hands -- his hands are trembling. Tessek Vayne, who draws Redtide in combat without a flicker, who can find a fault line in plate armor at a glance, whose fingers are the steadiest you\'ve ever seen on a swordsman. Shaking. The folio pages vibrate where he\'s holding the edge.',
+      ],
+    },
+    {
+      id: 'tes_04_7b',
+      speaker: 'tessek',
+      speakerName: 'Tessek Vayne',
+      paragraphs: [
         '"Heh." He catches the tremor. Looks at his own hand like it betrayed him. Doesn\'t hide it. Can\'t.',
+      ],
+    },
+    {
+      id: 'tes_04_7c',
+      speaker: 'tessek',
+      speakerName: 'Tessek Vayne',
+      paragraphs: [
         '"This isn\'t about fame, Captain. I\'ve had attention. Attention fades." His voice drops. The showmanship peels away like old paint, and underneath it is just a man holding a leather folder full of his life\'s work. "This is about legacy. A kid in a harbor ring fifty years from now. Broken knuckles. Blunt sword. No money, no teacher, no name." He swallows. "Saying \'Vayne-Style.\' And knowing what it means. Knowing somebody built something with a blade that wasn\'t just about cutting people down."',
       ],
     },

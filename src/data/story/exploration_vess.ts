@@ -67,6 +67,13 @@ export const vessArrivalScene: StoryScene = {
         'Below deck. Charts spread across the table. Kovesse\'s Grimoire tablet throwing pale blue light across five faces planning to do something astronomically stupid in the vicinity of the most powerful military installation in the southern Bastion Sea.',
         'Vorreth takes the lead. The rigid tension doesn\'t vanish, but it channels. Becomes something useful. A man dismantling his own world because an Oni asked him to.',
         '"Harbor layout." He draws with his finger on the chart. Three rings. Traces them in silence. Then taps the western wall.',
+      ],
+    },
+    {
+      id: 'vess_arrive_02a',
+      speaker: 'vorreth',
+      speakerName: 'Vorreth Daaz',
+      paragraphs: [
         '"Blind spot. Seventeen degrees below the waterline. Rock foundation, they couldn\'t place a lower battery. Supposed to be covered by cutter patrol, but the rotation has a ninety-second gap at shift change." His jaw works. "That hasn\'t changed since I served. Doctrine doesn\'t update itself."',
       ],
     },

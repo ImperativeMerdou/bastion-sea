@@ -594,6 +594,13 @@ export const suulenEvent02: StoryScene = {
       speakerName: 'Suulen Vassere',
       paragraphs: [
         '"I think it\'s a Dominion source. Not a person\'s Dominion, the raw material that Dominions draw from. A wellspring." She says it flatly, the way she says everything, but her silver-blue eyes are brighter than you\'ve ever seen them. "The Morventhi government doesn\'t know. I filed my reports with the chamber redacted. If they knew, they\'d mine it. Strip it. Turn it into a weapon or a commodity."',
+      ],
+    },
+    {
+      id: 'suu_02_6b',
+      speaker: 'suulen',
+      speakerName: 'Suulen Vassere',
+      paragraphs: [
         '"I\'m telling you because you\'re building something. And I wanted you to know that the world has more in it than what\'s on the surface. There are things below the sea that would change everything. If the right person found them."',
       ],
     },
@@ -1355,6 +1362,13 @@ export const vorrethEvent01: StoryScene = {
       speakerName: 'Vorreth Khane',
       paragraphs: [
         '"Hrm. One more thing." He looks at Danzai. Your weapon. Studies it the way a smith studies another smith\'s work -- slow, critical, thorough. His eyes track the blade geometry, the grip wrap, the balance point. Takes his time. Then:',
+      ],
+    },
+    {
+      id: 'vor_01_end2b',
+      speaker: 'vorreth',
+      speakerName: 'Vorreth Khane',
+      paragraphs: [
         '"Decent."',
       ],
     },
@@ -1743,9 +1757,23 @@ export const vorrethEvent02: StoryScene = {
       speakerName: 'Vorreth Khane',
       paragraphs: [
         '"Wardensea. One night. Three Forged-tier officers and a battle fleet." His voice doesn\'t waver. No anger. No bitterness. Facts, laid out like bones on a table. "Hit all three islands at once. I fought for six hours. Thirty-two soldiers. Hand to hand. King Dominion against steel." His jaw sets. "When three Forged-tier officers finally pinned me, I was the last one standing on my ship."',
+      ],
+    },
+    {
+      id: 'vor_02_5b',
+      speaker: 'vorreth',
+      speakerName: 'Vorreth Khane',
+      paragraphs: [
         '"Barren Gate prison. Two years." He looks up. Stars. His throat works. "Stone walls. Iron bars. No sky."',
         'Silence. Then:',
         '"Broke out when a storm weakened the eastern wall. Punched through three feet of masonry." His mouth twitches. Gone before it finishes. "Guards heard me coming. Was not quiet about it."',
+      ],
+    },
+    {
+      id: 'vor_02_5c',
+      speaker: 'vorreth',
+      speakerName: 'Vorreth Khane',
+      paragraphs: [
         '"Heh." The smile dies. "Eighteen crew still inside. Four islands. Four prisons. I had two hands and no ship." He turns to you. First time. Moonlight catches the X-shaped scar through his open shirt, white against dark grey. "That\'s why I\'m here."',
       ],
     },
@@ -1791,6 +1819,13 @@ export const vorrethEvent02: StoryScene = {
       paragraphs: [
         'Oni quiet. The deck creaks under his weight and even that sound seems to hush itself.',
         '"They were stronger. Wasn\'t enough." No self-pity. Pure assessment. A fighter measuring the gap between where he was and where he needs to be. His fists clench on the railing. "Next time I won\'t be weaker."',
+      ],
+    },
+    {
+      id: 'vor_02_6b',
+      speaker: 'vorreth',
+      speakerName: 'Vorreth Khane',
+      paragraphs: [
         '"Thirty-two." He says the number like a prayer. Or an oath. Or both.',
       ],
     },

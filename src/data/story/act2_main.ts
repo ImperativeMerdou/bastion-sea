@@ -300,6 +300,14 @@ export const act2ConquerorScene: StoryScene = {
         '"The Grimoire calls us pirates." She laughs. It\'s a short, hard sound, like a stone hitting wood. "We\'re not pirates. We\'re the people who said no. No to the Wardensea, no to the Kolmari, no to the whole rotting system. And we built something that works in spite of all of them."',
         'She paces, restless, a woman who spent her life on decks that moved and doesn\'t know what to do with a floor that stays still.',
         '"Five Seats. Five captains. We don\'t answer to each other, we don\'t fight each other, and the only rule that matters is this: the Wardensea is the enemy. Everything else, we figure out."',
+      ],
+      characters: ['karyudon', 'tessavarra'],
+    },
+    {
+      id: 'conqueror_03b',
+      speaker: 'tessavarra',
+      speakerName: 'Tessavarra',
+      paragraphs: [
         '"There\'s been a sixth chair sitting empty for two years. Captain Drest went down in the Windrow Strait and nobody\'s been worth replacing him."',
         'She stops pacing. Faces you. Her good eye locks onto yours.',
         '"Three months. You took the Central Belt in three months. Drest couldn\'t do it in ten years. The Seats want to know if you\'re interested. I want to know if you\'re worth it."',
@@ -994,7 +1002,23 @@ export const act2SouthernGambitScene: StoryScene = {
       paragraphs: [
         'Vorreth draws the harbor from memory. His hand doesn\'t hesitate. He lived there for three years and the layout is carved into him.',
         '"Twelve warships at anchor. Six thousand souls behind the walls. Two shore batteries, one drydock, and the harbor mouth is three hundred meters wide at the choke." He sets the chalk down. Stares at his own drawing.',
+      ],
+      characters: ['karyudon', 'vorreth'],
+    },
+    {
+      id: 'gambit_02b',
+      speaker: 'vorreth',
+      speakerName: 'Vorreth Khane',
+      paragraphs: [
         '"I used to stand on those walls and watch for Conquerors. I knew every gun emplacement, every patrol rotation, every blind spot in the coverage." His voice is steady.',
+      ],
+      characters: ['karyudon', 'vorreth'],
+    },
+    {
+      id: 'gambit_02c',
+      speaker: 'vorreth',
+      speakerName: 'Vorreth Khane',
+      paragraphs: [
         '"The mouth is the key. Four ships at a time, maximum. Vasshen built her entire defense around that bottleneck."',
       ],
       characters: ['karyudon', 'vorreth'],

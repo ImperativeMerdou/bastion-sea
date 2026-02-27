@@ -107,6 +107,13 @@ export const kovesseRecruitmentScene: StoryScene = {
       speakerName: 'Kovesse Grenn',
       paragraphs: [
         '"The Signal Institute. That\'s where Grimoire operators train. Two years. Runestone calibration, signal modulation, relay management. Very technical. Very boring. Very controlled." She flips a tablet in her hand, catches it behind her back. "They teach you to maintain the network. They don\'t teach you to use it. There\'s a difference."',
+      ],
+    },
+    {
+      id: 'kovesse_05b',
+      speaker: 'kovesse',
+      speakerName: 'Kovesse Grenn',
+      paragraphs: [
         '"The Kolmari fund the Institute. The Wardensea licenses the relay network. Between them, they control what the Bastion Sea hears. Bounty updates, weather data, shipping manifests. All real. All curated. The information isn\'t fake. It\'s shaped. They broadcast what serves them and bury what doesn\'t."',
         'She taps a runestone. A feed of text scrolls across the surface. Numbers. Names. Updates.',
         '"I broadcast what\'s actually happening. No filter. No curation. No sponsor. That\'s why the Institute expelled me. Not because I broke anything. Because I made people hear things the Kolmari preferred they didn\'t."',

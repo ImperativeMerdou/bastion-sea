@@ -51,6 +51,13 @@ export const mirrorwaterConquestScene: StoryScene = {
         'Suulen unrolls the plans on the flat stone platform where the crew has gathered. Actual paper. Actual ink. She drew these by hand, not from memory, not in the dark by touch the way she usually works, but with light and care she\'s never taken before.',
         'The crew notices. Nobody says anything about it.',
         '"The lagoon has three natural advantages." Her voice is the same dry precision it always is, but her fingers smooth the paper like she\'s touching something alive. "Deep-water anchorage: twelve fathoms at the center, shelving to four at the edges. Flat stone platforms on the eastern wall, natural shelving suitable for construction. And here--" she taps a point on the map "--a freshwater spring. Tested. Clean. Enough volume for a permanent installation."',
+      ],
+    },
+    {
+      id: 'mirrorwater_conquest_02a',
+      speaker: 'suulen',
+      speakerName: 'Suulen Vassere',
+      paragraphs: [
         '"The cavern entrance is the only approach by sea. The cliff face above is sheer for two hundred feet in every direction. From the air, the canopy and overhang conceal ninety percent of the lagoon surface. This place is invisible."',
       ],
     },

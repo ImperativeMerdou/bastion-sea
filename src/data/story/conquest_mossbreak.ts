@@ -170,6 +170,13 @@ export const mossbreakConquestScene: StoryScene = {
         'Silence.',
         'Then someone at the back raises a glass. Then another. Then the whole tavern.',
         '"THE MOUNTAIN!" someone shouts.',
+      ],
+    },
+    {
+      id: 'mossbreak_conquest_04db',
+      speaker: 'karyudon',
+      speakerName: 'Karyudon',
+      paragraphs: [
         '"THE MOUNTAIN!"',
         'Mossbreak doesn\'t fly a flag. But tonight, it raises a glass.',
       ],

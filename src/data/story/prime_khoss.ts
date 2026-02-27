@@ -109,6 +109,13 @@ export const primeKhossScene: StoryScene = {
       paragraphs: [
         'Kovesse is running numbers on her Grimoire. Her tail is rigid. Bad sign.',
         '"The Grimoire feeds are going insane. Everyone in the Bastion Sea knows the fleet is here. Our territory morale is going to crater. Trade routes are already frozen. Nobody\'s going to dock at an island with twelve warships on the horizon."',
+      ],
+    },
+    {
+      id: 'pkhoss_10b',
+      speaker: 'kovesse',
+      speakerName: 'Kovesse Grenn',
+      paragraphs: [
         '"Captain, we need to respond. Fast. Before the fear does more damage than the fleet."',
       ],
     },

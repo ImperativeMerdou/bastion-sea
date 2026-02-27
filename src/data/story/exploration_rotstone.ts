@@ -128,6 +128,13 @@ export const rotstoneArrivalScene: StoryScene = {
         'But when you pull your hand from the wall, there\'s a mark. Burned into your palm. A pattern. Geometric. Angular. It looks like a horn. It looks like a crown. It looks like something older than both.',
         'The mark fades in seconds. But Suulen saw it. Kovesse recorded it. And you can still feel it, a warmth in the center of your hand that wasn\'t there before.',
         '"Captain." Suulen stands at the edge of the fissure. Her silver-blue eyes reflect the warm amber light from within. "Whatever is in there has been in there longer than any nation in the Bastion Sea. Longer than the Wardensea. Longer than the Morventhi. Longer than the Oni."',
+      ],
+    },
+    {
+      id: 'rotstone_arrive_endb',
+      speaker: 'suulen',
+      speakerName: 'Suulen Vassere',
+      paragraphs: [
         '"I don\'t know what it wants. But it\'s awake now, and I don\'t think it goes back to sleep."',
         'The island hums. The sea around it is strangely calm. Somewhere deep in the reddish-black stone, a door that has been closed longer than history has records stands open.',
         'You\'ll be back.',

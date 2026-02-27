@@ -175,6 +175,14 @@ export const act3VasshenScene: StoryScene = {
         '"The man on the quarterdeck of the third cruiser taught me how to read fleet formations. Torek. His name is Torek." He says it like it costs something. "Two of the officers on the Severance. I drank with them. They\'re good at this."',
         'His hand is still shaking. He doesn\'t look at you.',
         '"I should have--" He cuts himself off. Tries a different sentence. Can\'t find it. Goes back to the one he had.',
+      ],
+      characters: ['karyudon', 'vorreth'],
+    },
+    {
+      id: 'a3_vasshen_03b',
+      speaker: 'vorreth',
+      speakerName: 'Vorreth Khane',
+      paragraphs: [
         '"The First Division can be beaten. I spent twelve years studying how." His thumb moves across Greysalt\'s pommel. The pattern worn smooth by years. "That\'s what I have. That\'s the only useful thing I have right now."',
       ],
       characters: ['karyudon', 'vorreth'],
@@ -211,10 +219,31 @@ export const act3VasshenScene: StoryScene = {
       speakerName: 'Admiral Vasshen',
       paragraphs: [
         '"This is Admiral Vasshen, Commander of the Wardensea First Division, addressing the criminal known as Karyudon."',
+      ],
+    },
+    {
+      id: 'a3_vasshen_06b',
+      speaker: 'vasshen',
+      speakerName: 'Admiral Vasshen',
+      paragraphs: [
         '"You are occupying a Wardensea military installation. You have killed Wardensea personnel. You have disrupted trade routes, destabilized territories, and declared yourself sovereign over waters that belong to the Wardensea by treaty and by law."',
+      ],
+    },
+    {
+      id: 'a3_vasshen_06c',
+      speaker: 'vasshen',
+      speakerName: 'Admiral Vasshen',
+      paragraphs: [
         '"I gave you fourteen days to surrender. You used them to take my fortress."',
         'A pause. When the voice returns, it is quieter. Not softer. Quieter.',
         '"I respect that. It was well-executed. Your tactician, Daaz, I believe, trained under Commander Sorelle. I can see her fingerprints on the assault plan. Good. I taught Sorelle."',
+      ],
+    },
+    {
+      id: 'a3_vasshen_06d',
+      speaker: 'vasshen',
+      speakerName: 'Admiral Vasshen',
+      paragraphs: [
         '"You have one hour. Surrender Vess Harbour and submit to custody, and your crew will receive military tribunal, not execution. Refuse, and I will reduce this fortress to rubble with you inside it. This is not an ultimatum. Ultimatums imply negotiation. This is arithmetic."',
       ],
     },
@@ -314,6 +343,14 @@ export const act3ConquerorGambitScene: StoryScene = {
         '"We had a deal, Sixth Seat. Mutual defense. Blood contract. I honoured my end. My informants fed Suulen the patrol schedules that got you through the harbour mouth. The Third Seat provided the diversion off Rotstone. The Fifth Seat kept the Kolmari supply ships away from the fight."',
         'She crosses her arms.',
         '"The Seats have a price for continued support. Not gold. Not territory. A permanent seat at your council. Equal voice. The Conquerors do not serve. We partner."',
+      ],
+      characters: ['karyudon', 'tessavarra'],
+    },
+    {
+      id: 'a3_conqueror_03_alliedb',
+      speaker: 'tessavarra',
+      speakerName: 'Tessavarra',
+      paragraphs: [
         '"We fought beside you. Now we sit beside you. Or we walk, and you face whatever comes next alone."',
       ],
       characters: ['karyudon', 'tessavarra'],
@@ -326,6 +363,14 @@ export const act3ConquerorGambitScene: StoryScene = {
         '"You turned us down. The Sixth Seat, empty. Our networks, refused. And then you did what five Conquerors with decades of experience never managed. You took Vess Harbour with a crew of five and a sword."',
         'Her voice goes cold.',
         '"That makes you dangerous. To us. To everything the Seats built over forty years. You proved that one captain with enough nerve can do what we told ourselves was impossible. And now every warlord in the Bastion Sea is looking at you instead of at us."',
+      ],
+      characters: ['karyudon', 'tessavarra'],
+    },
+    {
+      id: 'a3_conqueror_03_rejectedb',
+      speaker: 'tessavarra',
+      speakerName: 'Tessavarra',
+      paragraphs: [
         '"I did not come to negotiate, Karyudon. I came to take what you would not share. Half of Vess Harbour. Half of the shipping lanes. Or we take all of it."',
       ],
       characters: ['karyudon', 'tessavarra'],
@@ -338,6 +383,14 @@ export const act3ConquerorGambitScene: StoryScene = {
         '"You asked for time. I gave it. The Seats gave it. We watched. We waited. You took Windrow, Ghostlight, Vess Harbour, all without our help. Impressive. Inconvenient."',
         'She tilts her head. Measuring.',
         '"The offer is still on the table. Sixth Seat. Blood contract. Mutual defense, shared intelligence, combined fleet strength. But the terms have changed. You proved you can fight alone. That makes you valuable. It also makes you a threat."',
+      ],
+      characters: ['karyudon', 'tessavarra'],
+    },
+    {
+      id: 'a3_conqueror_03_pendingb',
+      speaker: 'tessavarra',
+      speakerName: 'Tessavarra',
+      paragraphs: [
         '"Last chance, Karyudon. Ally or obstacle. There is no more \'pending.\'"',
       ],
       characters: ['karyudon', 'tessavarra'],
@@ -349,7 +402,23 @@ export const act3ConquerorGambitScene: StoryScene = {
       paragraphs: [
         'Delvessa is at your shoulder. She speaks low enough that only you can hear.',
         '"If she is allied: giving the Conquerors a council seat means sharing intelligence, revenue, and strategic decisions. Permanently. The benefit is real: five additional fleets, dozens of islands, a network that spans the sea. The cost is that you will never make a decision alone again."',
+      ],
+      characters: ['karyudon', 'delvessa'],
+    },
+    {
+      id: 'a3_conqueror_04b',
+      speaker: 'delvessa',
+      speakerName: 'Delvessa Ghal',
+      paragraphs: [
         '"If she is hostile: seven ships is not enough to take Vess Harbour. But seven ships plus whatever the other Seats send could make the next Wardensea attack survivable for them and fatal for us. She knows that."',
+      ],
+      characters: ['karyudon', 'delvessa'],
+    },
+    {
+      id: 'a3_conqueror_04c',
+      speaker: 'delvessa',
+      speakerName: 'Delvessa Ghal',
+      paragraphs: [
         '"Either way, the price of this moment is the same. You decide what Karyudon means: a name on a flag, or a name on a contract."',
       ],
       characters: ['karyudon', 'delvessa'],
@@ -975,6 +1044,13 @@ export const act3EndingScene: StoryScene = {
         '"The revenue projections are good."',
         'You look at her.',
         '"The revenue projections."',
+      ],
+    },
+    {
+      id: 'a3_ending_06b',
+      speaker: 'delvessa',
+      speakerName: 'Delvessa Ghal',
+      paragraphs: [
         '"Yes. They are good. I thought you should know."',
         'You laugh. The sound carries out over Vess Harbour and the dock workers look up and the sailors stop what they are doing because the Oni on the tower is laughing, and when Karyudon laughs, the whole harbour knows it.',
         'Delvessa watches you laugh. The corner of her mouth moves. Holds.',

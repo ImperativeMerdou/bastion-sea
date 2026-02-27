@@ -489,10 +489,7 @@ export const StoryPanel: React.FC = () => {
       // Only alternate speakers when dialogue lines are CONSECUTIVE (no narration gap).
       // When there's narration between dialogue lines, the conversation "resets"
       // and the next dialogue defaults to the beat speaker (Pass 4).
-      // IMPORTANT: Skip turn-taking when the beat has an explicit speaker field.
-      // A speaker-tagged beat is a monologue — consecutive dialogue lines belong to
-      // the same speaker. Turn-taking only applies to speakerless multi-voice beats.
-      if (!lineSpeakerId && lastDialogueSpeaker && !narrationGap && !hasBeatSpeaker) {
+      if (!lineSpeakerId && lastDialogueSpeaker && !narrationGap) {
         if (lastDialogueSpeaker === 'karyudon') {
           // Last line was Karyudon. Next unattributed line is the other speaker.
           // Use beat speaker if known, otherwise '__other__' (unnamed NPC).
