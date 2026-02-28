@@ -4,6 +4,7 @@ export const docksideScene: StoryScene = {
   id: 'dockside_confrontation',
   title: 'THE DOCKSIDE',
   characters: ['karyudon', 'dragghen', 'kovesse'],
+  nextSceneId: 'vorreth_recruitment',
   lockNavigation: true,
   onComplete: [
     { type: 'flag', target: 'dockside_complete', value: true },
