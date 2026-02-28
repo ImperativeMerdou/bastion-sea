@@ -234,7 +234,7 @@ export const anvilCayArrivalScene: StoryScene = {
       paragraphs: [
         'The others turn in. Vorreth stays up late, drawing assault plans, sketching approach vectors, counting things only a military mind counts. Eventually even he retreats below deck.',
         'Delvessa doesn\'t.',
-        'She finds you at the stern rail. Anvil Cay\'s forges glow through the night across the dark water, a dull orange heartbeat on the horizon. The air smells like smoke and heated iron.',
+        'She finds you on the forecastle, boots on the bowsprit rail, watching Anvil Cay\'s forges pulse through the dark. The volcanic glow turns the water a dull, shifting orange. The air smells like smoke and heated iron.',
         '"I need to say something strategic," she says. "And then I need to say something that isn\'t."',
         '"Start with whichever one you\'re better at."',
         '"Strategic, then. Attacking Anvil Cay is attacking a Conqueror asset directly. Not a contested territory, not a neutral island, not Wardensea bureaucracy. This is Vassago\'s operation. His forge. His fleet. When we hit it, he responds. Personally."',

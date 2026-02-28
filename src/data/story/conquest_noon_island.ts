@@ -430,7 +430,7 @@ export const noonConquestScene: StoryScene = {
       speaker: 'delvessa',
       speakerName: 'Delvessa Ghal',
       paragraphs: [
-        '"Captain," Delvessa says, beside you at the stern rail. The island is shrinking behind you. "Why this one? The supply chain cost alone is going to be a problem."',
+        '"Captain," Delvessa says from the galley doorway. You\'re sitting at the mess table. The island is shrinking through the porthole behind you. "Why this one? The supply chain cost alone is going to be a problem."',
       ],
     },
     {

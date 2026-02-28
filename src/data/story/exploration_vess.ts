@@ -238,7 +238,7 @@ export const vessArrivalScene: StoryScene = {
       speaker: 'karyudon',
       speakerName: 'Karyudon',
       paragraphs: [
-        'You stand at the stern rail. The ship drifts at the edge of Vess Harbour\'s outer patrol range, close enough to see the fortress, far enough to run. The sun is dropping toward the western horizon and the fortress catches the light in a way that turns iron to gold and stone to amber.',
+        'You lean over the navigation table, charts spread flat under lantern light. The ship drifts at the edge of Vess Harbour\'s outer patrol range, close enough to see the fortress, far enough to run. Through the cabin window, the sun drops toward the western horizon and the fortress catches the light in a way that turns iron to gold and stone to amber.',
         '"That\'s not a harbor. That\'s a weapon pointed at the sea." Low, certain. You recognize what you\'re looking at. "And it\'s pointed at everyone."',
       ],
     },
@@ -247,7 +247,7 @@ export const vessArrivalScene: StoryScene = {
       speaker: 'delvessa',
       speakerName: 'Delvessa Ghal',
       paragraphs: [
-        'Delvessa stands beside you. Watching the fortress. Cold and precise.',
+        'Delvessa leans into the doorframe behind you. Watching the fortress through the window. Cold and precise.',
         '"Including us," she says.',
       ],
     },
