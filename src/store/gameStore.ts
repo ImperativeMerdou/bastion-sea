@@ -610,12 +610,51 @@ export const useGameStore = create<GameState>((set, get) => ({
 
   // --- Game Flow ---
   startGame: () => {
+    // Full state reset (defensive: prevents stale state if page wasn't reloaded)
+    pendingTimeouts.forEach(id => clearTimeout(id));
+    pendingTimeouts.clear();
     set({
       gameStarted: true,
+      gamePhase: 'prologue',
+      dayCount: 1,
+      flags: {},
+      notifications: [],
+      pendingDailyReport: null,
+      firedReactionIds: [],
+      firedEventIds: [],
+      grimoireBroadcastDays: {},
+      currentIsland: 'tavven_shoal',
+      mc: { ...initialMC },
+      crew: initialCrew.map(c => ({ ...c })),
+      islands: initialIslands.map(i => ({ ...i })),
+      selectedIsland: null,
+      resources: {
+        sovereigns: ECONOMY.STARTING_SOVEREIGNS,
+        supplies: ECONOMY.STARTING_SUPPLIES,
+        materials: ECONOMY.STARTING_MATERIALS,
+        intelligence: ECONOMY.STARTING_INTELLIGENCE,
+      },
       activePanel: 'story',
       currentScene: { ...prologueScene, currentBeat: 0 },
+      storyHistory: [],
       isTyping: true,
+      typingSpeed: 18,
+      typingSpeedPreset: 'normal' as const,
+      combatState: null,
+      territoryStates: {},
+      travelState: null,
+      firedTravelEventIds: [],
+      dayPlannerOpen: false,
+      pendingDayEvent: null,
+      firedDayEventIds: [],
+      pendingRandomEvent: null,
+      threatState: { ...DEFAULT_THREAT_STATE },
+      crewIdentity: { name: '', flagDesign: 'crossed_horns', named: false },
+      tradeRoutes: [],
       equipment: { weapon: getStartingWeapon(), armor: null, accessory: null },
+      inventory: [],
+      ship: { ...DEFAULT_SHIP },
+      playerProfile: { ...DEFAULT_PLAYER_PROFILE },
     });
   },
 
