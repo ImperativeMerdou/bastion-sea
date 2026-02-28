@@ -46,17 +46,8 @@ export const act1IntelScene: StoryScene = {
     },
     {
       id: 'intel_04b',
-      speaker: 'dragghen',
-      speakerName: 'Dragghen Kolve',
       paragraphs: [
         '"You\'ve seen this before," Dragghen says.',
-      ],
-    },
-    {
-      id: 'intel_04c',
-      speaker: 'vorreth',
-      speakerName: 'Vorreth Khane',
-      paragraphs: [
         '"I\'ve done this before."',
         'The table goes quiet.',
         '"I\'m telling you what they\'ll do next because I know what they\'ll do next. Tessurren will double interest at the end of the week. Every vendor, every boat license, every warehouse lease. The population breaks or bends. Either way, Pettha signs."',
@@ -96,26 +87,10 @@ export const act1IntelScene: StoryScene = {
     },
     {
       id: 'intel_08',
-      speaker: 'tessek',
-      speakerName: 'Tessek Vayne',
       paragraphs: [
         'Tessek has been quiet. For Tessek, this is suspicious.',
         '"How many fighters?" He asks it the way he asks everything about combat: like it\'s the only question that matters and the rest is weather. "Tessurren\'s escorts. The harbor garrison. Anyone who picks up a weapon when things go loud."',
-      ],
-    },
-    {
-      id: 'intel_08b',
-      speaker: 'delvessa',
-      speakerName: 'Delvessa Ghal',
-      paragraphs: [
         '"Two permanent escorts," Delvessa says. "Both Tempered Iron. Plus six to eight seasonal dock security. Pettha\'s Harbor Board has no military arm. The island doesn\'t have a militia."',
-      ],
-    },
-    {
-      id: 'intel_08c',
-      speaker: 'tessek',
-      speakerName: 'Tessek Vayne',
-      paragraphs: [
         'Tessek nods. The corners of his mouth do something that on a normal person would be a smile.',
         '"CRIMSON TIDE: SEVEN-DAY COUNTDOWN." He touches Redtide\'s hilt. "I\'ve been warming up."',
       ],
@@ -129,19 +104,59 @@ export const act1IntelScene: StoryScene = {
         '"What happens to the people?"',
         'Everyone looks at him.',
         '"The vendors. The fishermen. The kid who hauls nets at the dock." His ears rotate through three positions. "If we take this island. What happens to them?"',
-        'The table waits.',
+      ],
+    },
+    {
+      id: 'intel_09_choice',
+      paragraphs: [
+        'The table waits. Orren\'s question sits in the air. The crew is watching you, not him.',
+      ],
+      choices: [
+        {
+          id: 'intel_protect_people',
+          text: '"They keep working. They keep eating. They keep living. The only thing that changes is who\'s standing between them and the Kolmari."',
+          consequence: 'Protector. The people matter.',
+          available: true,
+          effects: [
+            { type: 'flag', target: 'tavven_promise', value: 'protect' },
+            { type: 'loyalty', target: 'orren', value: 8 },
+            { type: 'loyalty', target: 'dragghen', value: 5 },
+            { type: 'reputation', value: 3 },
+          ],
+        },
+        {
+          id: 'intel_honest_answer',
+          text: '"I don\'t know. I\'ve never taken an island before. But I know what happens if the Kolmari take it, and it\'s worse."',
+          consequence: 'Honest. No promises you can\'t keep.',
+          available: true,
+          effects: [
+            { type: 'flag', target: 'tavven_promise', value: 'honest' },
+            { type: 'loyalty', target: 'orren', value: 5 },
+            { type: 'loyalty', target: 'delvessa', value: 5 },
+            { type: 'loyalty', target: 'vorreth', value: 5 },
+          ],
+        },
+        {
+          id: 'intel_conqueror_answer',
+          text: '"They get an Oni in the harbor instead of a Kolmari in the ledger. The rest depends on whether they\'re smart enough to see the difference."',
+          consequence: 'Conqueror. The island adapts to you, not the other way around.',
+          available: true,
+          effects: [
+            { type: 'flag', target: 'tavven_promise', value: 'conqueror' },
+            { type: 'infamy', value: 3 },
+            { type: 'loyalty', target: 'vorreth', value: 5 },
+            { type: 'loyalty', target: 'tessek', value: 5 },
+          ],
+        },
       ],
     },
     {
       id: 'intel_10',
-      speaker: 'karyudon',
-      speakerName: 'Karyudon',
       sfx: 'combat_cinematic_boom',
       paragraphs: [
-        'Seven days. A harbor master. A Kolmari agent. A Wardensea patrol that comes like clockwork. And seven people who showed up at a food stall because one of them started cooking and the rest of them sat down.',
         'You eat a spoonful of Dragghen\'s fish. Deliberately.',
         '"Tavven Shoal. Seven days. The Kolmari are squeezing it. The Wardensea is watching it."',
-        'You look at the crew. All seven. The analyst with her ledger. The shipwright with his hands. The broadcaster with her signal. The swordsman with his blade. The ghost with her knives. The first mate with his scars. The helmsman with his spark.',
+        'You look at the crew. All seven.',
         '"We\'re going to take it."',
       ],
     },
