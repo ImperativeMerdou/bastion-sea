@@ -26,6 +26,35 @@ export const characterNames: Record<string, string> = {
   kirin: 'KIRIN',
   prime_khoss: 'PRIME KHOSS',
   sable_venn: 'SABLE VENN',
+  // Island villains & named NPCs (BUG-004 fix)
+  rikkart: 'RIKKART',
+  kellan_gyre: 'KELLAN GYRE',
+  moth_calaveras: 'MOTH CALAVERAS',
+  brother_ossian: 'BROTHER OSSIAN',
+  merrik_sevaine: 'MERRIK SEVAINE',
+  maren_kade: 'MAREN KADE',
+  captain_hull: 'CAPTAIN HULL',
+  forge_mother_tessik: 'FORGE-MOTHER TESSIK',
+  the_orchid: 'THE ORCHID',
+  vessel_ahn: 'VESSEL AHN',
+  echo_salis: 'ECHO SALIS',
+  // Minor NPCs (BUG-003 fix)
+  bartender: 'BARTENDER',
+  brenn: 'BRENN',
+  chair_ruhl: 'CHAIR RUHL',
+  consul_duval: 'CONSUL DUVAL',
+  courier: 'COURIER',
+  drest: 'DREST',
+  drest_pohn: 'DREST POHN',
+  elder_veshtari: 'ELDER VESHTARI',
+  fael: 'FAEL',
+  gharen: 'GHAREN',
+  hella_foreman: 'HELLA FOREMAN',
+  maeven: 'MAEVEN',
+  matriarch_sorren: 'MATRIARCH SORREN',
+  ossa: 'OSSA',
+  raider_officer: 'RAIDER OFFICER',
+  varrek_dockhand: 'VARREK DOCKHAND',
 };
 
 // Character card accent colors (border glow when active)
@@ -52,6 +81,35 @@ export const characterAccents: Record<string, string> = {
   kirin: 'rgba(245, 158, 11, 0.7)',        // alias for kirin_akkan
   prime_khoss: 'rgba(148, 163, 184, 0.7)', // storm grey - Wardensea authority
   sable_venn: 'rgba(139, 92, 246, 0.6)',   // violet - rival presence
+  // Island villains & named NPCs (BUG-004 fix)
+  rikkart: 'rgba(220, 38, 38, 0.6)',        // crimson - rival enforcer
+  kellan_gyre: 'rgba(245, 158, 11, 0.6)',   // amber - smuggler lord
+  moth_calaveras: 'rgba(168, 85, 247, 0.6)',// purple - exotic, dangerous
+  brother_ossian: 'rgba(234, 179, 8, 0.6)', // gold - religious authority
+  merrik_sevaine: 'rgba(220, 120, 38, 0.6)',// burnt copper
+  maren_kade: 'rgba(14, 165, 163, 0.6)',    // teal - maritime authority
+  captain_hull: 'rgba(148, 163, 184, 0.6)', // storm grey - veteran captain
+  forge_mother_tessik: 'rgba(34, 197, 94, 0.6)', // green - Gorundai
+  the_orchid: 'rgba(139, 92, 246, 0.6)',    // violet - mysterious
+  vessel_ahn: 'rgba(14, 165, 163, 0.6)',    // teal - spiritual
+  echo_salis: 'rgba(96, 165, 250, 0.6)',    // blue - Ghostlight
+  // Minor NPCs (BUG-003 fix)
+  bartender: 'rgba(245, 158, 11, 0.5)',     // warm amber
+  brenn: 'rgba(156, 163, 175, 0.5)',        // neutral grey
+  chair_ruhl: 'rgba(245, 158, 11, 0.5)',    // warm amber - authority
+  consul_duval: 'rgba(14, 165, 233, 0.5)',  // ocean blue - official
+  courier: 'rgba(156, 163, 175, 0.5)',      // neutral grey
+  drest: 'rgba(156, 163, 175, 0.5)',        // neutral grey
+  drest_pohn: 'rgba(156, 163, 175, 0.5)',   // neutral grey
+  elder_veshtari: 'rgba(14, 165, 163, 0.5)',// teal - elder wisdom
+  fael: 'rgba(156, 163, 175, 0.5)',         // neutral grey
+  gharen: 'rgba(156, 163, 175, 0.5)',       // neutral grey
+  hella_foreman: 'rgba(34, 197, 94, 0.5)',  // green - Gorundai mine
+  maeven: 'rgba(156, 163, 175, 0.5)',       // neutral grey
+  matriarch_sorren: 'rgba(245, 158, 11, 0.5)', // warm amber - authority
+  ossa: 'rgba(156, 163, 175, 0.5)',         // neutral grey
+  raider_officer: 'rgba(220, 38, 38, 0.5)', // crimson - hostile
+  varrek_dockhand: 'rgba(156, 163, 175, 0.5)', // neutral grey
 };
 
 interface DialogueCardsProps {
