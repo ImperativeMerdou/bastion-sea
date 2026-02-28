@@ -220,6 +220,7 @@ export interface StoryScene {
   characters?: string[]; // default characters present in this scene (for dialogue cards)
   nextSceneId?: string; // scene to auto-load when this one ends
   onComplete?: StoryEffect[]; // effects to apply when scene ends
+  lockNavigation?: boolean; // when true, player cannot switch panels until scene ends
 }
 
 // --- Resource & Management Types ---

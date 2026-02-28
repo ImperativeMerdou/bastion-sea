@@ -5,6 +5,7 @@ export const dragghenRecruitmentScene: StoryScene = {
   title: 'THE DRY DOCK',
   characters: ['karyudon', 'dragghen'],
   nextSceneId: 'kovesse_recruitment',
+  lockNavigation: true,
   onComplete: [
     { type: 'recruit', target: 'dragghen', value: true },
     { type: 'flag', target: 'dragghen_recruited', value: true },

@@ -271,8 +271,13 @@ class MusicManager {
 
   set volume(vol: number) {
     this._volume = Math.max(0, Math.min(1, vol));
+    const eff = this._muted ? 0 : this.effectiveVol;
     if (this._currentHowl && !this._muted && !this._pauseDimmed) {
       this._currentHowl.volume(this.effectiveVol);
+    }
+    // Also update fading-out track so volume slider affects all audible music
+    if (this._fadingOut) {
+      this._fadingOut.volume(eff);
     }
   }
 
@@ -282,8 +287,12 @@ class MusicManager {
 
   set masterVolume(vol: number) {
     this._masterVolume = Math.max(0, Math.min(1, vol));
+    const eff = this._muted ? 0 : this.effectiveVol;
     if (this._currentHowl && !this._muted && !this._pauseDimmed) {
       this._currentHowl.volume(this.effectiveVol);
+    }
+    if (this._fadingOut) {
+      this._fadingOut.volume(eff);
     }
   }
 
@@ -303,6 +312,11 @@ class MusicManager {
 
   /** Re-trigger current track (e.g. after browser autoplay unlock) */
   retrigger(): void {
+    // Kill any fading-out track to prevent ghost audio
+    if (this._fadingOut) {
+      this._fadingOut.stop();
+      this._fadingOut = null;
+    }
     if (this._currentTrack !== 'silence') {
       const track = this._currentTrack;
       // Stop and unload the old (possibly broken) Howl

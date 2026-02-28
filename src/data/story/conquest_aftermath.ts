@@ -4,6 +4,7 @@ export const conquestAftermathScene: StoryScene = {
   id: 'conquest_aftermath',
   title: 'FIRST TERRITORY',
   characters: ['karyudon', 'delvessa', 'dragghen', 'suulen', 'kovesse', 'vorreth', 'tessek'],
+  lockNavigation: true,
   beats: [
     {
       id: 'aftermath_01',

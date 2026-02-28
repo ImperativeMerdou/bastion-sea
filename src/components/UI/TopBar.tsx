@@ -46,6 +46,8 @@ export const TopBar: React.FC = () => {
   const deleteSave = useGameStore(s => s.deleteSave);
   const islands = useGameStore(s => s.islands);
   const crew = useGameStore(s => s.crew);
+  const currentScene = useGameStore(s => s.currentScene);
+  const isNavLocked = !!currentScene?.lockNavigation;
   const playSfx = useSfx();
   const [showSaveMenu, setShowSaveMenu] = useState(false);
   const [saveFlash, setSaveFlash] = useState(false);
@@ -142,26 +144,32 @@ export const TopBar: React.FC = () => {
           ) : null;
         })()}
         <div className="flex gap-1">
-        {panelTabs.map((tab) => (
+        {panelTabs.map((tab) => {
+          const locked = isNavLocked && tab.id !== 'story';
+          return (
           <button
             key={tab.id}
-            onClick={() => { playSfx('click'); setActivePanel(tab.id); }}
+            onClick={() => { if (locked) return; playSfx('click'); setActivePanel(tab.id); }}
             className={`px-5 py-2.5 font-display font-bold tracking-[0.15em] transition-all duration-200 rounded-sm ${
-              activePanel === tab.id
-                ? 'bg-ocean-600 text-gold-400 border border-gold-500/30 shadow-sm shadow-gold-500/10'
-                : 'text-ocean-300 hover:text-ocean-100 hover:bg-ocean-700/70 border border-transparent hover:border-ocean-500/30'
+              locked
+                ? 'text-ocean-600 border border-transparent opacity-40 cursor-not-allowed'
+                : activePanel === tab.id
+                  ? 'bg-ocean-600 text-gold-400 border border-gold-500/30 shadow-sm shadow-gold-500/10'
+                  : 'text-ocean-300 hover:text-ocean-100 hover:bg-ocean-700/70 border border-transparent hover:border-ocean-500/30'
             }`}
             style={{ fontSize: '17px' }}
-            title={`${tab.label} (${tab.key})`}
-            aria-label={`${tab.label} panel, keyboard shortcut ${tab.key}`}
+            title={locked ? 'Complete the current scene first' : `${tab.label} (${tab.key})`}
+            aria-label={locked ? `${tab.label} panel (locked during scene)` : `${tab.label} panel, keyboard shortcut ${tab.key}`}
             aria-selected={activePanel === tab.id}
+            aria-disabled={locked}
             role="tab"
           >
             <span className="mr-2">{tab.icon}</span>
             {tab.label}
             <span className="ml-1.5 text-ocean-500 text-xs opacity-60">{tab.key}</span>
           </button>
-        ))}
+          );
+        })}
         </div>
       </div>
 

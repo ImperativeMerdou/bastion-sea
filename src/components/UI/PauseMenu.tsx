@@ -261,7 +261,7 @@ export const PauseMenu: React.FC<PauseMenuProps> = ({ isOpen, onClose }) => {
             <div className="space-y-3">
               <button
                 onClick={onClose}
-                className="w-full py-3 bg-ocean-700 hover:bg-ocean-600 border border-ocean-500 hover:border-amber-500/50 text-ocean-100 text-sm font-display font-bold tracking-[0.15em] uppercase transition-all rounded"
+                className="w-full py-3 bg-amber-700/80 hover:bg-amber-600 border border-amber-500/50 hover:border-amber-400 text-amber-100 text-sm font-display font-bold tracking-[0.15em] uppercase transition-all rounded shadow-sm shadow-amber-500/10"
               >
                 RESUME
               </button>

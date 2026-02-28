@@ -5,6 +5,7 @@ export const docksideScene: StoryScene = {
   title: 'THE DOCKSIDE',
   characters: ['karyudon', 'dragghen', 'kovesse'],
   nextSceneId: 'explore_keldriss',
+  lockNavigation: true,
   onComplete: [
     { type: 'flag', target: 'dockside_complete', value: true },
     { type: 'flag', target: 'prologue_complete', value: true },

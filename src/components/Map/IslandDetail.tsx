@@ -62,7 +62,7 @@ export const IslandDetail: React.FC<IslandDetailProps> = ({ island, onClose }) =
   const canAffordTravel = resources.supplies >= travelSupplyCost;
 
   return (
-    <div className="w-96 bg-ocean-800 border-l border-brass-500/20 flex flex-col overflow-hidden animate-fade-in">
+    <div className="w-96 max-w-[90vw] bg-ocean-800 border-l border-brass-500/20 flex flex-col overflow-hidden animate-fade-in">
       {/* Header */}
       <div className="px-6 py-4 border-b border-ocean-600 flex justify-between items-start">
         <div>

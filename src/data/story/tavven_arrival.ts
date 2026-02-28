@@ -5,6 +5,7 @@ export const tavvenArrivalScene: StoryScene = {
   title: 'TAVVEN SHOAL',
   characters: ['karyudon'],
   nextSceneId: 'dragghen_recruitment',
+  lockNavigation: true,
   onComplete: [
     { type: 'flag', target: 'tavven_arrival_complete', value: true },
   ],

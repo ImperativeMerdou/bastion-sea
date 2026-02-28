@@ -751,7 +751,7 @@ export const StoryPanel: React.FC = () => {
                 className="px-6 py-4 overflow-y-auto scrollbar-thin scrollbar-thumb-ocean-700 scrollbar-track-transparent flex-1"
               >
                 {/* Text content with per-line speaker tags */}
-                <div className="space-y-2">
+                <div className="space-y-2 max-w-[950px]">
                   {displayedLines.map((line, i) => {
                     // Skip empty/whitespace-only paragraphs
                     if (!line || !line.trim()) return null;

@@ -107,7 +107,7 @@ export const DayPlannerModal: React.FC = () => {
 
   // If there's a pending event, show the event UI
   if (pendingDayEvent) {
-    const { event, resultText } = pendingDayEvent;
+    const { event, resultText, statChanges } = pendingDayEvent;
     const showResult = resultText !== null;
 
     // Filter choices by crew requirements
@@ -136,6 +136,26 @@ export const DayPlannerModal: React.FC = () => {
             <p className={`text-ocean-200 text-sm leading-relaxed ${showResult ? 'animate-fade-in' : ''}`}>
               {showResult ? interpolateText(resultText || '', eventCtx) : interpolateText(event.description, eventCtx)}
             </p>
+            {/* Stat change badges after choice resolution */}
+            {showResult && statChanges && statChanges.length > 0 && (
+              <div className="flex flex-wrap gap-2 mt-3 animate-fade-in">
+                {statChanges.map((change, i) => {
+                  const isPositive = change.startsWith('+') || change.startsWith('Acquired');
+                  return (
+                    <span
+                      key={i}
+                      className={`text-xs font-bold px-2 py-0.5 rounded-sm border ${
+                        isPositive
+                          ? 'text-green-400 bg-green-900/30 border-green-700/40'
+                          : 'text-crimson-400 bg-crimson-900/30 border-crimson-700/40'
+                      }`}
+                    >
+                      {change}
+                    </span>
+                  );
+                })}
+              </div>
+            )}
           </div>
 
           {/* Choices or Dismiss */}

@@ -5,6 +5,7 @@ export const firstNightScene: StoryScene = {
   title: 'THE RAFT',
   characters: ['karyudon'],
   nextSceneId: 'tavven_arrival',
+  lockNavigation: true,
   beats: [
     {
       id: 'night_01',

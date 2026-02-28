@@ -79,5 +79,13 @@
 // Phase 6: startGame() defensive reset (all 30+ state fields initialized on new game)
 // Phase 7: Performance verified clean (all useEffect cleanup, no memory leaks, granular selectors)
 // Phase 8: Ship readiness confirmed (0 debug artifacts, PWA metadata complete, all assets filled)
+//
+// QA PASS #2 FIXES APPLIED (2026-02-28):
+// Phase 2: Story lock during prologue (CRITICAL) - lockNavigation on 7 opening scenes, setActivePanel guarded, TopBar locked, keyboard guarded
+// Phase 3: Dual music bug fixed - volume setter updates _fadingOut track, retrigger() cleans _fadingOut before recreating
+// Phase 4: Story text max-width 950px, IslandDetail mobile max-w-[90vw]
+// Phase 5: Narrative audit - zero kill-list words found across 50+ story files
+// Phase 6-8: Combat, save, performance verification passes - all solid
+// Phase 9: PauseMenu Resume button gold, stat change badges in event modals (RandomEventModal + DayPlannerModal)
 
 export {};

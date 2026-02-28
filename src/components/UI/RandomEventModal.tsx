@@ -61,7 +61,7 @@ export const RandomEventModal: React.FC = () => {
 
   if (!pendingRandomEvent) return null;
 
-  const { event, resultText } = pendingRandomEvent;
+  const { event, resultText, statChanges } = pendingRandomEvent;
   const showResult = resultText !== null;
   const choices = event.choices || [];
 
@@ -90,6 +90,26 @@ export const RandomEventModal: React.FC = () => {
           <p className="text-ocean-200 text-sm leading-relaxed">
             {showResult ? interpolateText(resultText || '', eventCtx) : interpolateText(event.notification.message, eventCtx)}
           </p>
+          {/* Stat change badges after choice resolution */}
+          {showResult && statChanges && statChanges.length > 0 && (
+            <div className="flex flex-wrap gap-2 mt-3 animate-fade-in">
+              {statChanges.map((change, i) => {
+                const isPositive = change.startsWith('+') || change.startsWith('Acquired');
+                return (
+                  <span
+                    key={i}
+                    className={`text-xs font-bold px-2 py-0.5 rounded-sm border ${
+                      isPositive
+                        ? 'text-green-400 bg-green-900/30 border-green-700/40'
+                        : 'text-crimson-400 bg-crimson-900/30 border-crimson-700/40'
+                    }`}
+                  >
+                    {change}
+                  </span>
+                );
+              })}
+            </div>
+          )}
         </div>
 
         {/* Choices or Dismiss */}

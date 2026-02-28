@@ -5,6 +5,7 @@ export const kovesseRecruitmentScene: StoryScene = {
   title: 'THE SIGNAL',
   characters: ['karyudon', 'dragghen', 'kovesse'],
   nextSceneId: 'dockside_confrontation',
+  lockNavigation: true,
   onComplete: [
     { type: 'recruit', target: 'kovesse', value: true },
     { type: 'flag', target: 'kovesse_recruited', value: true },

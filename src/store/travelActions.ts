@@ -38,6 +38,7 @@ interface ChoiceEffectFields {
 interface ChoiceResolutionResult {
   succeeded: boolean;
   displayText: string;
+  statChanges: string[];
 }
 
 export function createTravelActions(

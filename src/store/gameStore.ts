@@ -179,6 +179,7 @@ interface ChoiceEffectFields {
 interface ChoiceResolutionResult {
   succeeded: boolean;
   displayText: string;
+  statChanges: string[];
 }
 
 /**
@@ -195,6 +196,7 @@ function applyChoiceEffects(
 ): ChoiceResolutionResult {
   const { get, set, scale } = ctx;
   const state = get();
+  const statChanges: string[] = [];
 
   // --- Success roll ---
   let succeeded = true;
@@ -227,6 +229,11 @@ function applyChoiceEffects(
         intelligence: Math.max(0, res.intelligence + (fx.intelligence || 0)),
       },
     });
+    // Track stat deltas for display
+    if (fx.sovereigns) statChanges.push(`${fx.sovereigns > 0 ? '+' : ''}${fx.sovereigns} Sovereigns`);
+    if (fx.supplies) statChanges.push(`${fx.supplies > 0 ? '+' : ''}${fx.supplies} Supplies`);
+    if (fx.materials) statChanges.push(`${fx.materials > 0 ? '+' : ''}${fx.materials} Materials`);
+    if (fx.intelligence) statChanges.push(`${fx.intelligence > 0 ? '+' : ''}${fx.intelligence} Intel`);
   }
 
   // --- Success-gated effects ---
@@ -249,10 +256,13 @@ function applyChoiceEffects(
         }
         return { mc };
       });
+      if (choice.reputationChange) statChanges.push(`${choice.reputationChange > 0 ? '+' : ''}${choice.reputationChange} Reputation`);
+      if (choice.infamyChange) statChanges.push(`${choice.infamyChange > 0 ? '+' : ''}${choice.infamyChange} Infamy`);
     }
     // Bounty
     if (choice.bountyChange) {
       state.addBounty(choice.bountyChange);
+      statChanges.push(`${choice.bountyChange > 0 ? '+' : ''}${choice.bountyChange} Bounty`);
     }
     // Flags
     if (choice.setFlags) {
@@ -263,16 +273,20 @@ function applyChoiceEffects(
     // Equipment
     if (choice.grantEquipmentId) {
       const gear = getEquipment(choice.grantEquipmentId);
-      if (gear) state.addToInventory(gear);
+      if (gear) {
+        state.addToInventory(gear);
+        statChanges.push(`Acquired: ${gear.name}`);
+      }
     }
     // Dominion XP (day actions only)
     if (choice.dominionXP) {
       state.trainDominion(choice.dominionXP.expression, choice.dominionXP.amount);
+      statChanges.push(`+${choice.dominionXP.amount} ${choice.dominionXP.expression.charAt(0).toUpperCase() + choice.dominionXP.expression.slice(1)} XP`);
     }
     // Territory morale (day actions only, handled by caller for targeting)
   }
 
-  return { succeeded, displayText };
+  return { succeeded, displayText, statChanges };
 }
 
 // Scene registry - all scenes accessible by ID
@@ -416,11 +430,11 @@ export interface GameState {
   dayPlannerOpen: boolean;
 
   // --- Day Action Events ---
-  pendingDayEvent: { event: DayActionEvent; resultText: string | null; actionType: DayAction } | null;
+  pendingDayEvent: { event: DayActionEvent; resultText: string | null; actionType: DayAction; statChanges?: string[] } | null;
   firedDayEventIds: string[];
 
   // --- Random Event Choices ---
-  pendingRandomEvent: { event: RandomEvent; resultText: string | null } | null;
+  pendingRandomEvent: { event: RandomEvent; resultText: string | null; statChanges?: string[] } | null;
 
   // --- Threat System ---
   threatState: ThreatState;
@@ -606,7 +620,11 @@ export const useGameStore = create<GameState>((set, get) => ({
   playerProfile: { ...DEFAULT_PLAYER_PROFILE },
 
   // --- Panel ---
-  setActivePanel: (panel) => set({ activePanel: panel }),
+  setActivePanel: (panel) => {
+    const scene = get().currentScene;
+    if (scene?.lockNavigation && panel !== 'story') return;
+    set({ activePanel: panel });
+  },
 
   // --- Game Flow ---
   startGame: () => {
@@ -1934,7 +1952,7 @@ export const useGameStore = create<GameState>((set, get) => ({
     }
 
     // Unified effect pipeline (scaled rewards, includes dominionXP + equipment)
-    const { succeeded, displayText } = applyChoiceEffects(choice, { get, set, scale: true });
+    const { succeeded, displayText, statChanges } = applyChoiceEffects(choice, { get, set, scale: true });
 
     // Track player behavioral archetype
     if (choice.choiceArchetype) {
@@ -1967,8 +1985,8 @@ export const useGameStore = create<GameState>((set, get) => ({
     });
     const interpolatedText = interpolateText(displayText, eventCtx);
 
-    // Show result text in the modal
-    set({ pendingDayEvent: { ...pending, resultText: interpolatedText } });
+    // Show result text in the modal (with stat change badges)
+    set({ pendingDayEvent: { ...pending, resultText: interpolatedText, statChanges } });
 
     // Combat trigger
     if (succeeded && choice.triggerCombat) {
@@ -2152,7 +2170,7 @@ export const useGameStore = create<GameState>((set, get) => ({
     if (!choice) return;
 
     // Unified effect pipeline (scaled rewards)
-    const { succeeded, displayText } = applyChoiceEffects(choice, { get, set, scale: true });
+    const { succeeded, displayText, statChanges } = applyChoiceEffects(choice, { get, set, scale: true });
 
     // Track player behavioral archetype
     if (choice.choiceArchetype) {
@@ -2175,7 +2193,7 @@ export const useGameStore = create<GameState>((set, get) => ({
       title: pending.event.notification.title,
       message: rInterpolatedText,
     });
-    set({ pendingRandomEvent: { ...pending, resultText: rInterpolatedText } });
+    set({ pendingRandomEvent: { ...pending, resultText: rInterpolatedText, statChanges } });
 
     // Combat trigger
     if (succeeded && choice.triggerCombat) {

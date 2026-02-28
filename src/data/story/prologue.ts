@@ -5,6 +5,7 @@ export const prologueScene: StoryScene = {
   title: 'THE CHAINS',
   characters: ['karyudon'],
   nextSceneId: 'first_night',
+  lockNavigation: true,
   beats: [
     {
       id: 'prologue_01',
