@@ -257,9 +257,8 @@ export const delvessaRecruitmentScene: StoryScene = {
     {
       id: 'del_final',
       paragraphs: [
-        'Three. You have three people now.',
-        'A Gorundai shipwright who left the Kolmari because they sold people. A Rathai broadcaster expelled from the Signal Institute for being too good at her job. A former Kolmari analyst who walked out with the company\'s financial skeleton.',
-        'Not a crew yet. Three strangers eating together because one of them stood in front of a debt collector and said no.',
+        'Delvessa pulls a chair to the table. Dragghen slides a plate toward her without being asked. Kovesse starts narrating the meal to her Grimoire in a whisper that isn\'t quiet enough.',
+        'Not a crew yet. Something less defined than that. Three strangers eating together because one of them stood in front of a debt collector and said no.',
         'But the shape is there. You can feel it forming, the way you can feel weather change before the clouds arrive.',
       ],
       autoAdvance: false,

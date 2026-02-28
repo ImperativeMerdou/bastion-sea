@@ -149,9 +149,9 @@ export const act1IntelScene: StoryScene = {
       id: 'intel_11',
       paragraphs: [
         'Hella puts storm tea on the counter. Doesn\'t charge for it. She\'s been doing this since the first day. She\'ll keep doing it after. Some debts aren\'t denominated in Sovereigns.',
-        'Seven cups. Seven people. One island. One week.',
-        'The harbor lamps come on. The Fallow Tide sits at anchor. Dragghen\'s work visible in every joint and seam.',
-        'Tomorrow, the plan. Tonight, the last meal before everything changes.',
+        'Hella refills cups without being asked. The silence between them is different now. Comfortable. The kind that forms when people stop performing for each other.',
+        'The harbor lamps come on. The Fallow Tide sits at anchor, hull tight, rigging clean.',
+        'Tomorrow, everything changes. Tonight, one more cup.',
       ],
       autoAdvance: false,
     },

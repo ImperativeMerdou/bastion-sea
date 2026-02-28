@@ -171,7 +171,7 @@ export const firstCrewDinnerScene: StoryScene = {
         'They drink.',
         'Cups clink. Storm tea burns on the way down and warms on the way back. Kovesse coughs. Vorreth drinks his in one pull and doesn\'t blink. Delvessa sips. Dragghen holds his cup in both hands and stares into it like he\'s rating the steam.',
         'The harbor lamps come on. One by one, reflected in the black water. The Fallow Tide sits at anchor, hull patched, rigging re-strung, Dragghen\'s work visible in every joint and seam.',
-        'Five people. One table. One ship.',
+        'The table is full. For the first time since the raft, the table is full.',
         'Tomorrow, you plan. Tonight, you eat.',
       ],
       autoAdvance: false,
