@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useGameStore } from '../../store/gameStore';
 import { audioManager } from '../../systems/audio';
 
@@ -26,6 +26,15 @@ export const NotificationToast: React.FC = () => {
   const pendingDailyReport = useGameStore(s => s.pendingDailyReport);
   const [toasts, setToasts] = useState<ToastData[]>([]);
   const [shownIds, setShownIds] = useState<Set<string>>(new Set());
+  const dismissTimersRef = useRef<Map<string, ReturnType<typeof setTimeout>>>(new Map());
+
+  // Cleanup dismiss timers on unmount
+  useEffect(() => {
+    return () => {
+      dismissTimersRef.current.forEach(t => clearTimeout(t));
+      dismissTimersRef.current.clear();
+    };
+  }, []);
 
   // Watch for new notifications and show toasts
   useEffect(() => {
@@ -100,9 +109,14 @@ export const NotificationToast: React.FC = () => {
     setToasts((prev) =>
       prev.map((t) => (t.id === id ? { ...t, exiting: true } : t))
     );
-    setTimeout(() => {
+    // Clear any existing timer for this toast
+    const existing = dismissTimersRef.current.get(id);
+    if (existing) clearTimeout(existing);
+    const timer = setTimeout(() => {
       setToasts((prev) => prev.filter((t) => t.id !== id));
+      dismissTimersRef.current.delete(id);
     }, 500);
+    dismissTimersRef.current.set(id, timer);
   };
 
   // Suppress toasts while daily report modal is showing

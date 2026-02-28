@@ -58,6 +58,7 @@ export const TopBar: React.FC<TopBarProps> = ({ onPauseOpen }) => {
   const [showNotifLog, setShowNotifLog] = useState(false);
   const [confirmAction, setConfirmAction] = useState<null | 'load' | 'deleteSave'>(null);
   const [confirmSlot, setConfirmSlot] = useState<number>(0);
+  const flashTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const notifications = useGameStore((s) => s.notifications);
   const unreadCount = notifications.filter((n) => !n.read).length;
 
@@ -72,6 +73,13 @@ export const TopBar: React.FC<TopBarProps> = ({ onPauseOpen }) => {
   const threatLevel = getWardenThreatLevel(mc.bounty, conqueredCount);
   const threatInfo = getWardenThreatDescription(threatLevel);
 
+  // Cleanup flash timer on unmount (must be before early returns)
+  useEffect(() => {
+    return () => {
+      if (flashTimerRef.current) clearTimeout(flashTimerRef.current);
+    };
+  }, []);
+
   if (!gameStarted) return null;
 
   const inCombat = activePanel === 'combat';
@@ -80,7 +88,11 @@ export const TopBar: React.FC<TopBarProps> = ({ onPauseOpen }) => {
     const success = saveGame(1);
     if (success) {
       setSaveFlash(true);
-      setTimeout(() => setSaveFlash(false), 1200);
+      if (flashTimerRef.current) clearTimeout(flashTimerRef.current);
+      flashTimerRef.current = setTimeout(() => {
+        setSaveFlash(false);
+        flashTimerRef.current = null;
+      }, 1200);
     }
   };
 
@@ -88,9 +100,11 @@ export const TopBar: React.FC<TopBarProps> = ({ onPauseOpen }) => {
     const success = saveGame(slot);
     if (success) {
       setSaveFlash(true);
-      setTimeout(() => {
+      if (flashTimerRef.current) clearTimeout(flashTimerRef.current);
+      flashTimerRef.current = setTimeout(() => {
         setSaveFlash(false);
         setShowSaveMenu(false);
+        flashTimerRef.current = null;
       }, 800);
     }
   };

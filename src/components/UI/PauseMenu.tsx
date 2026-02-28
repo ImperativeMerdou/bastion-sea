@@ -34,6 +34,12 @@ export const PauseMenu: React.FC<PauseMenuProps> = ({ isOpen, onClose }) => {
   const [confirmAction, setConfirmAction] = useState<null | 'save' | 'load' | 'mainMenu' | 'deleteSave'>(null);
   const [confirmSlot, setConfirmSlot] = useState<number>(0);
   const trapRef = useFocusTrap(isOpen);
+  const flashTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  // Cleanup flash timer on unmount
+  useEffect(() => {
+    return () => { if (flashTimerRef.current) clearTimeout(flashTimerRef.current); };
+  }, []);
 
   // Reset to main tab when opened, dim music
   useEffect(() => {
@@ -84,7 +90,8 @@ export const PauseMenu: React.FC<PauseMenuProps> = ({ isOpen, onClose }) => {
     const success = saveGame(slot);
     if (success) {
       setSaveFlash(slot);
-      setTimeout(() => setSaveFlash(null), 1200);
+      if (flashTimerRef.current) clearTimeout(flashTimerRef.current);
+      flashTimerRef.current = setTimeout(() => setSaveFlash(null), 1200);
     }
   };
 
@@ -108,7 +115,8 @@ export const PauseMenu: React.FC<PauseMenuProps> = ({ isOpen, onClose }) => {
       const success = saveGame(confirmSlot);
       if (success) {
         setSaveFlash(confirmSlot);
-        setTimeout(() => setSaveFlash(null), 1200);
+        if (flashTimerRef.current) clearTimeout(flashTimerRef.current);
+        flashTimerRef.current = setTimeout(() => setSaveFlash(null), 1200);
       }
     }
     if (confirmAction === 'load') {

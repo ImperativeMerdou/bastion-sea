@@ -1158,7 +1158,7 @@ export const CombatPanel: React.FC = () => {
             {/* Shonen victory energy particles */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
               {[...Array(8)].map((_, i) => (
-                <div key={i} className="absolute w-1 h-1 bg-amber-400/40 rounded-full energy-particle"
+                <div key={`victory_particle_${i}`} className="absolute w-1 h-1 bg-amber-400/40 rounded-full energy-particle"
                   style={{
                     left: `${15 + i * 10}%`,
                     bottom: '10%',
@@ -1204,7 +1204,7 @@ export const CombatPanel: React.FC = () => {
           {/* Narrative text */}
           <div className="flex-1 overflow-y-auto px-8 py-6 space-y-4">
             {paragraphs.slice(0, narrativeIndex + 1).map((para, i) => (
-              <p key={i} className="text-ocean-100 text-lg leading-relaxed font-narration font-medium story-line story-text-shadow"
+              <p key={`narrative_${i}`} className="text-ocean-100 text-lg leading-relaxed font-narration font-medium story-line story-text-shadow"
                  style={{ animationDelay: `${i * 50}ms` }}>
                 {para}
               </p>
@@ -1242,7 +1242,7 @@ export const CombatPanel: React.FC = () => {
                     </div>
                     <div className="text-center">
                       <span className="text-ocean-500 uppercase tracking-wider block">HP Left</span>
-                      <span className={`font-bold text-lg ${state.player.hp / state.player.maxHp > 0.5 ? 'text-green-400' : state.player.hp / state.player.maxHp > 0.2 ? 'text-amber-400' : 'text-crimson-400'}`}>
+                      <span className={`font-bold text-lg ${(state.player.maxHp > 0 ? state.player.hp / state.player.maxHp : 0) > 0.5 ? 'text-green-400' : (state.player.maxHp > 0 ? state.player.hp / state.player.maxHp : 0) > 0.2 ? 'text-amber-400' : 'text-crimson-400'}`}>
                         {Math.floor(state.player.hp)}
                       </span>
                     </div>
@@ -1276,6 +1276,7 @@ export const CombatPanel: React.FC = () => {
                       startCombatEncounter(state.encounter);
                     }}
                     className="px-6 py-3 bg-crimson-600 hover:bg-crimson-500 text-white font-display font-bold tracking-wider rounded border border-crimson-400/30 transition-colors"
+                    aria-label="Retry this fight"
                   >
                     RETRY FIGHT
                   </button>
@@ -1285,6 +1286,7 @@ export const CombatPanel: React.FC = () => {
                       endCombat('defeat');
                     }}
                     className="px-6 py-3 bg-ocean-700 hover:bg-ocean-600 text-ocean-200 font-display tracking-wider rounded border border-ocean-500/30 transition-colors"
+                    aria-label="Accept defeat and continue"
                   >
                     ACCEPT DEFEAT
                   </button>
@@ -2228,14 +2230,14 @@ export const CombatPanel: React.FC = () => {
             {/* HP + SP side by side */}
             <div className="flex items-center gap-3">
               <div className="flex items-center gap-1.5 flex-1">
-                <span className={`text-xs font-semibold w-5 ${state.player.hp / state.player.maxHp < 0.25 ? 'text-red-400 animate-pulse' : 'text-red-400'}`}>HP</span>
+                <span className={`text-xs font-semibold w-5 ${(state.player.maxHp > 0 ? state.player.hp / state.player.maxHp : 0) < 0.25 ? 'text-red-400 animate-pulse' : 'text-red-400'}`}>HP</span>
                 <div className="flex-1 h-[10px] bg-ocean-700 rounded overflow-hidden border border-ocean-600/40 shadow-inner">
                   <div
                     className={`h-full rounded hp-bar-damage transition-all duration-500 ${getHpColor(state.player.hp, state.player.maxHp)}`}
-                    style={{ width: `${(state.player.hp / state.player.maxHp) * 100}%` }}
+                    style={{ width: `${state.player.maxHp > 0 ? (state.player.hp / state.player.maxHp) * 100 : 0}%` }}
                   />
                 </div>
-                <span className={`text-xs font-mono font-medium w-16 text-right ${state.player.hp / state.player.maxHp < 0.25 ? 'text-red-400' : 'text-ocean-300'}`}>
+                <span className={`text-xs font-mono font-medium w-16 text-right ${(state.player.maxHp > 0 ? state.player.hp / state.player.maxHp : 0) < 0.25 ? 'text-red-400' : 'text-ocean-300'}`}>
                   {Math.floor(state.player.hp)}/{Math.floor(state.player.maxHp)}
                 </span>
               </div>
@@ -2244,7 +2246,7 @@ export const CombatPanel: React.FC = () => {
                 <div className="flex-1 h-[10px] bg-ocean-700 rounded overflow-hidden border border-ocean-600/40 shadow-inner">
                   <div
                     className="h-full rounded bg-blue-400 stamina-bar-fill transition-all duration-500"
-                    style={{ width: `${(state.player.stamina / state.player.maxStamina) * 100}%` }}
+                    style={{ width: `${state.player.maxStamina > 0 ? (state.player.stamina / state.player.maxStamina) * 100 : 0}%` }}
                   />
                 </div>
                 <span className={`text-xs font-mono font-medium w-16 text-right ${state.player.stamina < 10 ? 'text-blue-300' : 'text-ocean-300'}`}>
