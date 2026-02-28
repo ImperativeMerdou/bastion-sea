@@ -1423,6 +1423,8 @@ export function calculateDamage(
     baseDamage += Math.floor(attacker.dominion.iron * COMBAT.DOMINION_DAMAGE_SCALING);
   } else if (action.damageType === 'dominion_king') {
     baseDamage += Math.floor(attacker.dominion.king * COMBAT.DOMINION_DAMAGE_SCALING);
+  } else if (action.damageType === 'dominion_sight') {
+    baseDamage += Math.floor(attacker.dominion.sight * COMBAT.DOMINION_DAMAGE_SCALING);
   } else if (action.damageType === 'resonance') {
     baseDamage += COMBAT.RESONANCE_FLAT_BONUS;
   }
@@ -1602,6 +1604,7 @@ function getEffectIcon(type: ActionEffect['type']): string {
     case 'buff_defense': return '🛡️';
     case 'buff_attack': return '⚔️';
     case 'heal': return '💚';
+    case 'heal_hp': return '💚';
     case 'dominion_surge': return '⚡';
     case 'intimidate': return '👁️';
     case 'expose': return '🎯';
@@ -1870,7 +1873,7 @@ export function executeEnemyTurn(
       action: 'Catching Breath',
       target: '',
       text: `${enemy.name} is exhausted and catches their breath, recovering stamina.`,
-      animation: 'slash',
+      animation: 'block',
     };
     newState.combatLog = [...state.combatLog, logEntry].slice(-100);
     return { newState, logEntry };

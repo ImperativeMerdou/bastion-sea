@@ -818,7 +818,7 @@ const TESSURREN_ACTIONS: CombatAction[] = [
     flavorText: 'The chain uncoils. Each link catches light like a coin. The impact feels like a bill coming due -- sharp, precise, and designed to remind you what you owe.',
     missText: 'The chain cracks empty air. Dolch retracts it with a flick. "Evasion is not a payment plan."',
     effects: [
-      { type: 'weaken', value: 3, duration: 99, chance: 100, description: 'Debt stack (-3 ATK)' },
+      { type: 'weaken', value: 3, duration: 3, chance: 100, description: 'Debt stack (-3 ATK)' },
     ],
   },
   {
@@ -837,7 +837,7 @@ const TESSURREN_ACTIONS: CombatAction[] = [
     flavorText: 'Dolch reads your stance, your habits, your patterns. Sight Dominion focused through the lens of financial analysis. He doesn\'t see a person. He sees a liability. The chain wraps.',
     missText: 'You tear free. The chain links scatter like dropped coins. Dolch frowns. "Aggressive non-compliance. Noted."',
     effects: [
-      { type: 'weaken', value: 3, duration: 99, chance: 100, description: 'Debt stack (-3 ATK)' },
+      { type: 'weaken', value: 3, duration: 3, chance: 100, description: 'Debt stack (-3 ATK)' },
       { type: 'stun', value: 1, duration: 1, chance: 35, description: 'Contractual bind' },
     ],
   },
