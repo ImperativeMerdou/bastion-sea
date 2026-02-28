@@ -312,7 +312,7 @@ export function createTerritoryActions(
         set((s) => ({
           islands: s.islands.map((i) =>
             i.id === islandId
-              ? { ...i, status: 'hostile' as const, conquered: false, controller: 'Rebel Forces' }
+              ? { ...i, status: 'discovered' as const, conquered: false, controller: 'Rebel Forces' }
               : i
           ),
           mc: {
