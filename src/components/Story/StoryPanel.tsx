@@ -177,6 +177,8 @@ export const StoryPanel: React.FC = () => {
   const historyRef = useRef<HTMLDivElement>(null);
   const dialogueScrollRef = useRef<HTMLDivElement>(null);
   const prevSpeakerRef = useRef<string | null>(null);
+  const effectTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const choiceTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const beat = currentScene?.beats[currentScene.currentBeat];
 
@@ -251,7 +253,8 @@ export const StoryPanel: React.FC = () => {
         setAllLinesComplete(true);
         setTyping(false);
         if (beat.choices && beat.choices.length > 0) {
-          setTimeout(() => setShowChoices(true), 100);
+          if (choiceTimerRef.current) clearTimeout(choiceTimerRef.current);
+          choiceTimerRef.current = setTimeout(() => setShowChoices(true), 100);
         }
       } else {
         setDisplayedLines([]);
@@ -262,10 +265,11 @@ export const StoryPanel: React.FC = () => {
       }
 
       if (beat.effect) {
+        if (effectTimerRef.current) clearTimeout(effectTimerRef.current);
         // 'explosion' is a combo effect: red flash + heavy shake
         if (beat.effect === 'explosion') {
           setScreenEffect('heavy_shake');
-          setTimeout(() => setScreenEffect(null), 700);
+          effectTimerRef.current = setTimeout(() => setScreenEffect(null), 700);
         } else {
           setScreenEffect(beat.effect);
           const duration =
@@ -275,7 +279,7 @@ export const StoryPanel: React.FC = () => {
             beat.effect === 'flash_red' ? 500 :
             beat.effect === 'flash_crimson' ? 500 :
             600;
-          setTimeout(() => setScreenEffect(null), duration);
+          effectTimerRef.current = setTimeout(() => setScreenEffect(null), duration);
         }
       }
 
@@ -289,6 +293,11 @@ export const StoryPanel: React.FC = () => {
         stingerManager.play(beat.stinger);
       }
     }
+    // Cleanup timers on beat change or unmount
+    return () => {
+      if (effectTimerRef.current) { clearTimeout(effectTimerRef.current); effectTimerRef.current = null; }
+      if (choiceTimerRef.current) { clearTimeout(choiceTimerRef.current); choiceTimerRef.current = null; }
+    };
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [beat?.id, setTyping, typingSpeed]);
 
@@ -301,7 +310,8 @@ export const StoryPanel: React.FC = () => {
       setAllLinesComplete(true);
       setTyping(false);
       if (beat.choices && beat.choices.length > 0) {
-        setTimeout(() => setShowChoices(true), 300);
+        if (choiceTimerRef.current) clearTimeout(choiceTimerRef.current);
+        choiceTimerRef.current = setTimeout(() => setShowChoices(true), 300);
       }
       return;
     }
@@ -356,7 +366,8 @@ export const StoryPanel: React.FC = () => {
           setAllLinesComplete(true);
           setTyping(false);
           if (beat.choices && beat.choices.length > 0) {
-            setTimeout(() => setShowChoices(true), 100);
+            if (choiceTimerRef.current) clearTimeout(choiceTimerRef.current);
+            choiceTimerRef.current = setTimeout(() => setShowChoices(true), 100);
           }
         }
       }

@@ -92,44 +92,45 @@ export function createCombatActions(
           state.setFlag('survived_pirate_raid', true);
         }
 
-        // Apply victory rewards
+        // Apply victory rewards (re-read state each iteration so same-type rewards stack correctly)
         encounter.rewards.forEach((reward) => {
+          const fresh = get();
           switch (reward.type) {
             case 'sovereigns':
-              state.updateResources({
-                sovereigns: state.resources.sovereigns + (reward.value as number),
+              fresh.updateResources({
+                sovereigns: fresh.resources.sovereigns + (reward.value as number),
               });
               break;
             case 'supplies':
-              state.updateResources({
-                supplies: state.resources.supplies + (reward.value as number),
+              fresh.updateResources({
+                supplies: fresh.resources.supplies + (reward.value as number),
               });
               break;
             case 'materials':
-              state.updateResources({
-                materials: state.resources.materials + (reward.value as number),
+              fresh.updateResources({
+                materials: fresh.resources.materials + (reward.value as number),
               });
               break;
             case 'intelligence':
-              state.updateResources({
-                intelligence: state.resources.intelligence + (reward.value as number),
+              fresh.updateResources({
+                intelligence: fresh.resources.intelligence + (reward.value as number),
               });
               break;
             case 'reputation':
-              state.updateMC({
-                reputation: Math.max(0, Math.min(TERRITORY.REPUTATION_MAX, state.mc.reputation + (reward.value as number))),
+              fresh.updateMC({
+                reputation: Math.max(0, Math.min(TERRITORY.REPUTATION_MAX, fresh.mc.reputation + (reward.value as number))),
               });
               break;
             case 'infamy':
-              state.updateMC({
-                infamy: Math.max(0, Math.min(TERRITORY.REPUTATION_MAX, state.mc.infamy + (reward.value as number))),
+              fresh.updateMC({
+                infamy: Math.max(0, Math.min(TERRITORY.REPUTATION_MAX, fresh.mc.infamy + (reward.value as number))),
               });
               break;
             case 'bounty':
-              state.addBounty(reward.value as number);
+              fresh.addBounty(reward.value as number);
               break;
             case 'flag':
-              if (reward.target) state.setFlag(reward.target, reward.value);
+              if (reward.target) fresh.setFlag(reward.target, reward.value);
               break;
           }
         });
