@@ -38,59 +38,22 @@ export const copperveinArrivalScene: StoryScene = {
     },
     {
       id: 'coppervein_arrive_03b',
-      speaker: 'maavi',
-      speakerName: 'Maavi',
       paragraphs: [
         '"Dragghen?"',
+        '"Hey, Maavi."',
+        '"Three years." She puts the skewer down. Picks it back up. Puts it down again. "They said you went Renegade."',
+        '"They weren\'t wrong."',
+        'She looks past him at you. At the crew. At the horns.',
+        '"Brought company."',
+        '"I did."',
       ],
     },
     {
       id: 'coppervein_arrive_03c',
-      speaker: 'dragghen',
-      speakerName: 'Dragghen Kolve',
-      paragraphs: [
-        '"Hey, Maavi."',
-      ],
-    },
-    {
-      id: 'coppervein_arrive_03d',
       speaker: 'maavi',
       speakerName: 'Maavi',
       paragraphs: [
-        '"Three years." She puts the skewer down. Picks it back up. Puts it down again. "They said you went Renegade."',
-      ],
-    },
-    {
-      id: 'coppervein_arrive_03e',
-      speaker: 'dragghen',
-      speakerName: 'Dragghen Kolve',
-      paragraphs: [
-        '"They weren\'t wrong."',
-        'She looks past him at you. At the crew. At the horns.',
-      ],
-    },
-    {
-      id: 'coppervein_arrive_03f',
-      speaker: 'maavi',
-      speakerName: 'Maavi',
-      paragraphs: [
-        '"Brought company."',
-      ],
-    },
-    {
-      id: 'coppervein_arrive_03g',
-      speaker: 'dragghen',
-      speakerName: 'Dragghen Kolve',
-      paragraphs: [
-        '"I did."',
         'Maavi studies you with the expression of a woman who has been evaluating risk since before you were born.',
-      ],
-    },
-    {
-      id: 'coppervein_arrive_03h',
-      speaker: 'maavi',
-      speakerName: 'Maavi',
-      paragraphs: [
         '"He eats double portions," she says to Dragghen. "Tell him the fish here is better than whatever he\'s been eating at sea. He\'ll know I\'m right."',
       ],
     },
@@ -260,40 +223,17 @@ export const copperveinArrivalScene: StoryScene = {
     },
     {
       id: 'coppervein_arrive_11',
-      speaker: 'dragghen',
-      speakerName: 'Dragghen Kolve',
       paragraphs: [
         'Dragghen has been watching. He walks over to Orren and looks at his hands. Not the electricity. The calluses.',
         '"Mine work. How many carts a day?"',
-      ],
-    },
-    {
-      id: 'coppervein_arrive_11b',
-      speaker: 'orren',
-      speakerName: 'Orren Mahk',
-      paragraphs: [
         '"Twelve. Sometimes fourteen."',
-      ],
-    },
-    {
-      id: 'coppervein_arrive_11c',
-      speaker: 'dragghen',
-      speakerName: 'Dragghen Kolve',
-      paragraphs: [
         '"Good output for a non-Gorundai." He looks at the jacket. "Naval issue. Tavven Harbor Authority. You were a dock runner."',
         'Orren\'s left ear drops. The right one stays up.',
-      ],
-    },
-    {
-      id: 'coppervein_arrive_11d',
-      speaker: 'orren',
-      speakerName: 'Orren Mahk',
-      paragraphs: [
         '"For two years. Before the. Before I found the fruit. I ran cargo manifests between the piers and the Harbor Board. Fast work. I was good at it." He touches the jacket. "I kept the jacket because it\'s the only thing I own that still fits right."',
       ],
     },
     {
-      id: 'coppervein_arrive_11e',
+      id: 'coppervein_arrive_11b',
       speaker: 'dragghen',
       speakerName: 'Dragghen Kolve',
       paragraphs: [
@@ -359,17 +299,8 @@ export const copperveinArrivalScene: StoryScene = {
     },
     {
       id: 'coppervein_arrive_13b',
-      speaker: 'orren',
-      speakerName: 'Orren Mahk',
       paragraphs: [
         '"Does he always stand like that?" Orren asks, nodding at Dragghen. "Like he\'s holding up the building?"',
-      ],
-    },
-    {
-      id: 'coppervein_arrive_13c',
-      speaker: 'karyudon',
-      speakerName: 'Karyudon',
-      paragraphs: [
         '"Yes," you say. "Since the day I met him."',
       ],
     },
@@ -451,25 +382,9 @@ export const copperveinArrivalScene: StoryScene = {
     },
     {
       id: 'coppervein_arrive_16b',
-      speaker: 'tessek',
-      speakerName: 'Tessek Vayne',
       paragraphs: [
         'Tessek appears from somewhere. He\'s been watching. "CRIMSON TIDE: THE LIGHTNING RECRUIT."',
-      ],
-    },
-    {
-      id: 'coppervein_arrive_16c',
-      speaker: 'kovesse',
-      speakerName: 'Kovesse Grenn',
-      paragraphs: [
         '"That\'s not a sword move," Kovesse says.',
-      ],
-    },
-    {
-      id: 'coppervein_arrive_16d',
-      speaker: 'tessek',
-      speakerName: 'Tessek Vayne',
-      paragraphs: [
         '"It\'s a narrative move. They count."',
         'Orren\'s ears go through four positions in two seconds. He settles on one up, one slightly tilted. The crew will learn to read this one. It means: "I have no idea what\'s happening but I think I might be okay with it."',
       ],

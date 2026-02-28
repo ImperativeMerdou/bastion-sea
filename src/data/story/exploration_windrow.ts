@@ -75,25 +75,9 @@ export const windrowArrivalScene: StoryScene = {
     },
     {
       id: 'windrow_arrive_03b',
-      speaker: 'delvessa',
-      speakerName: 'Delvessa Ghal',
       paragraphs: [
         '"You sound like you\'re falling in love," Delvessa says. She\'s holding her coat shut with one hand and her hair has escaped every pin she owns.',
-      ],
-    },
-    {
-      id: 'windrow_arrive_03c',
-      speaker: 'dragghen',
-      speakerName: 'Dragghen Kolve',
-      paragraphs: [
         '"Maybe I am." Dragghen runs a hand along a timber beam. His palm goes flat against the wood and stays there. "My family built tunnels. These people build shelves on a cliff face. Different problem, same solution: don\'t fight the rock. Ask it where it wants to be cut."',
-      ],
-    },
-    {
-      id: 'windrow_arrive_03d',
-      speaker: 'kovesse',
-      speakerName: 'Kovesse Grenn',
-      paragraphs: [
         'Kovesse is trying to record and failing spectacularly. The wind keeps snatching her Grimoire tablet out of her hands. She\'s shouting into the microphone and the audio is pure static. "LISTENERS-- I AM-- WINDROW IS-- THE WIND-- OKAY I GIVE UP, I\'LL DO A VOICEOVER LATER."',
         'Vorreth walks in silence. Counting. Steps, structures, people, defensive positions. The military mind that never turns off.',
       ],
@@ -113,50 +97,18 @@ export const windrowArrivalScene: StoryScene = {
     },
     {
       id: 'windrow_arrive_04b',
-      speaker: 'brenn',
-      speakerName: 'Brenn',
       paragraphs: [
         'A weathered man at the end of the table, fisherman by the look of him, speaks first. "That," he says, "is an Oni."',
-      ],
-    },
-    {
-      id: 'windrow_arrive_04c',
-      speaker: 'maeven',
-      speakerName: 'Maeven',
-      paragraphs: [
         '"I can see that, Brenn," the barrel-built woman says.',
-      ],
-    },
-    {
-      id: 'windrow_arrive_04d',
-      speaker: 'brenn',
-      speakerName: 'Brenn',
-      paragraphs: [
         '"Just making sure. In case the horns weren\'t clear enough."',
       ],
     },
     {
-      id: 'windrow_arrive_04e',
-      speaker: 'maeven',
-      speakerName: 'Maeven',
+      id: 'windrow_arrive_04c',
       paragraphs: [
         'The barrel-built woman, Maeven, stands. She doesn\'t flinch. She doesn\'t step back. She looks at you the way Windrow looks at everything: practically, without pretense, measuring usefulness against cost.',
         '"You\'re the one from the Grimoire feeds. Karyudon. The Renegade captain who thinks he\'s conquering the Bastion Sea."',
-      ],
-    },
-    {
-      id: 'windrow_arrive_04f',
-      speaker: 'karyudon',
-      speakerName: 'Karyudon',
-      paragraphs: [
         '"Doesn\'t think. Is."',
-      ],
-    },
-    {
-      id: 'windrow_arrive_04g',
-      speaker: 'maeven',
-      speakerName: 'Maeven',
-      paragraphs: [
         'Her eyes narrow. Not anger. Assessment. "This is Windrow. We don\'t have gold to steal, trade routes to hijack, or a military worth absorbing. We have timber, wind, and twenty-eight hundred people who\'d rather throw you off the cliff than bow to an outsider. So." She crosses her arms. "What do you want?"',
       ],
       choices: [
@@ -206,75 +158,27 @@ export const windrowArrivalScene: StoryScene = {
     },
     {
       id: 'windrow_arrive_05b',
-      speaker: 'drest',
-      speakerName: 'Drest',
       paragraphs: [
         '"The limestone layer shifts around level three," Drest says, pointing at a seam in the cliff face. "You can see where it transitions to sandstone. That\'s where the cracking happens."',
-      ],
-    },
-    {
-      id: 'windrow_arrive_05c',
-      speaker: 'dragghen',
-      speakerName: 'Dragghen Kolve',
-      paragraphs: [
         '"At Coppervein we used iron pins to bridge the seam," Dragghen says. "Drill in, let the rock settle around the metal. Takes a week but it holds for decades."',
-      ],
-    },
-    {
-      id: 'windrow_arrive_05d',
-      speaker: 'drest',
-      speakerName: 'Drest',
-      paragraphs: [
         'Drest stops walking. Stares at Dragghen. "You\'re a miner."',
-      ],
-    },
-    {
-      id: 'windrow_arrive_05e',
-      speaker: 'dragghen',
-      speakerName: 'Dragghen Kolve',
-      paragraphs: [
         '"Was. Coppervein. Seven years underground before I shipped out."',
       ],
     },
     {
-      id: 'windrow_arrive_05f',
-      speaker: 'drest',
-      speakerName: 'Drest',
+      id: 'windrow_arrive_05c',
       paragraphs: [
         '"Seven years." Drest\'s voice changes. The evaluation is over. A door has opened. "We lost a timber team last season. Section four. The supports gave way where the limestone meets the shale. Three workers trapped for two days before we dug them out. We\'ve been arguing about reinforcement methods for six months and nobody on the council knows rock the way a miner does."',
         'Dragghen goes still. His hand comes off the railing and goes flat against the cliff face. Reading the rock.',
-      ],
-    },
-    {
-      id: 'windrow_arrive_05g',
-      speaker: 'dragghen',
-      speakerName: 'Dragghen Kolve',
-      paragraphs: [
         '"Show me the section," Dragghen says.',
         'Drest nods. Once. The nod of a man who has found what he was looking for.',
       ],
     },
     {
-      id: 'windrow_arrive_05h',
-      speaker: 'delvessa',
-      speakerName: 'Delvessa Ghal',
+      id: 'windrow_arrive_05d',
       paragraphs: [
         'Delvessa appears at your elbow. "Dragghen is going to make more progress in two hours than we could in two weeks of negotiation."',
-      ],
-    },
-    {
-      id: 'windrow_arrive_05i',
-      speaker: 'karyudon',
-      speakerName: 'Karyudon',
-      paragraphs: [
         '"He\'s not negotiating. He\'s being himself."',
-      ],
-    },
-    {
-      id: 'windrow_arrive_05j',
-      speaker: 'delvessa',
-      speakerName: 'Delvessa Ghal',
-      paragraphs: [
         '"Exactly." She watches the Gorundai disappear around the cliff face with the quarry master, two men already deep in the language of stone and stress fractures and structural integrity. "That\'s why it\'ll work."',
       ],
     },

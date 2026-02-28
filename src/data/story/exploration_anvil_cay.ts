@@ -28,50 +28,13 @@ export const anvilCayArrivalScene: StoryScene = {
     },
     {
       id: 'anvil_arrive_01c',
-      speaker: 'karyudon',
-      speakerName: 'Karyudon',
       paragraphs: [
         'You lean on the rail. Danzai rests across your shoulders.',
-        '"Three warships," you say. "A garrison. Cannon emplacements. Volcanic terrain." You lean forward. "Vorreth, this is the most interesting island we\'ve found."',
-      ],
-    },
-    {
-      id: 'anvil_arrive_01d',
-      speaker: 'vorreth',
-      speakerName: 'Vorreth Daaz',
-      paragraphs: [
+        '"Three warships," you say. "A garrison. Cannon emplacements. Volcanic terrain. Vorreth, this is the most interesting island we\'ve found."',
         '"That\'s one word for it."',
-      ],
-    },
-    {
-      id: 'anvil_arrive_01e',
-      speaker: 'karyudon',
-      speakerName: 'Karyudon',
-      paragraphs: [
         '"What\'s your word?"',
-      ],
-    },
-    {
-      id: 'anvil_arrive_01f',
-      speaker: 'vorreth',
-      speakerName: 'Vorreth Daaz',
-      paragraphs: [
         '"Suicide."',
-      ],
-    },
-    {
-      id: 'anvil_arrive_01g',
-      speaker: 'karyudon',
-      speakerName: 'Karyudon',
-      paragraphs: [
         '"See, you say that. But I\'m looking at those forges and all I\'m thinking is... those are going to be my forges."',
-      ],
-    },
-    {
-      id: 'anvil_arrive_01h',
-      speaker: 'vorreth',
-      speakerName: 'Vorreth Daaz',
-      paragraphs: [
         'Vorreth exhales. "Then we need to do this smart. Because Anvil Cay doesn\'t forgive mistakes."',
       ],
     },
@@ -86,43 +49,18 @@ export const anvilCayArrivalScene: StoryScene = {
     },
     {
       id: 'anvil_arrive_02b',
-      speaker: 'delvessa',
-      speakerName: 'Delvessa Ghal',
       paragraphs: [
         '"Who runs it?" Delvessa, pen ready.',
+        '"Fleet Lieutenant Gharen. True believer. Not a mercenary. He executes orders with zero deviation."',
+        '"Sounds like your kind of man," Kovesse says.',
+        '"He\'s nothing like me." The sharpness surprises everyone. "Gharen chose his doctrine. I was born into mine."',
       ],
     },
     {
       id: 'anvil_arrive_02c',
-      speaker: 'vorreth',
-      speakerName: 'Vorreth Daaz',
       paragraphs: [
-        '"Fleet Lieutenant Gharen. True believer. Not a mercenary. He executes orders with zero deviation."',
-      ],
-    },
-    {
-      id: 'anvil_arrive_02d',
-      speaker: 'kovesse',
-      speakerName: 'Kovesse Grenn',
-      paragraphs: [
-        '"Sounds like your kind of man," Kovesse says.',
-      ],
-    },
-    {
-      id: 'anvil_arrive_02e',
-      speaker: 'vorreth',
-      speakerName: 'Vorreth Daaz',
-      paragraphs: [
-        '"He\'s nothing like me." The sharpness surprises everyone. "Gharen chose his doctrine. I was born into mine."',
-        'He turns back to the sketch. Points to the volcanic ridge. "The terrain is the real defense. Lava tubes, thermal vents, basalt too hard to tunnel. And these aren\'t Wardensea garrison troops." He pauses. "Conqueror marines are trained to take ground, not hold it. If we hit them, they counterattack. Hard. Fast."',
+        'Vorreth turns back to the sketch. Points to the volcanic ridge. "The terrain is the real defense. Lava tubes, thermal vents, basalt too hard to tunnel. And these aren\'t Wardensea garrison troops." He pauses. "Conqueror marines are trained to take ground, not hold it. If we hit them, they counterattack. Hard. Fast."',
         'Silence.',
-      ],
-    },
-    {
-      id: 'anvil_arrive_02f',
-      speaker: 'dragghen',
-      speakerName: 'Dragghen Kolve',
-      paragraphs: [
         '"So," Dragghen says carefully. "Volcano full of people who like fighting. With an Oni who also likes fighting." He looks at you. "I\'m going to cook something. I cook when I\'m nervous."',
       ],
     },
@@ -203,25 +141,9 @@ export const anvilCayArrivalScene: StoryScene = {
     },
     {
       id: 'anvil_arrive_04b',
-      speaker: 'kovesse',
-      speakerName: 'Kovesse Grenn',
       paragraphs: [
         '"So we burn it?" Kovesse asks. Already thinking about demolition charges.',
-      ],
-    },
-    {
-      id: 'anvil_arrive_04c',
-      speaker: 'dragghen',
-      speakerName: 'Dragghen Kolve',
-      paragraphs: [
         '"We take it." Dragghen\'s voice surprises everyone. The cook doesn\'t usually weigh in on military strategy. But his eyes are hard. "A shipyard like that could build our ships. We burn it, we destroy a tool. We take it, we own the forge."',
-      ],
-    },
-    {
-      id: 'anvil_arrive_04d',
-      speaker: 'vorreth',
-      speakerName: 'Vorreth Daaz',
-      paragraphs: [
         '"Dragghen\'s right," Vorreth says, and the fact that those two agree on anything tells you the situation is serious. "A functional shipyard changes the balance of power in the Bastion Sea. Whoever controls Anvil Cay controls the future of naval warfare in these waters."',
         'You look at the sketch. The volcanic ridgeline. The dry docks. The forges.',
         'The question isn\'t whether. It\'s when.',
