@@ -1092,7 +1092,7 @@ export const CombatPanel: React.FC = () => {
 
     // Target defense
     let def = target.defense;
-    const exposeReduction = Math.min(30, target.statusEffects.filter(e => e.type === 'expose').reduce((s, e) => s + e.value, 0));
+    const exposeReduction = Math.min(COMBAT.EXPOSE_CAP, target.statusEffects.filter(e => e.type === 'expose').reduce((s, e) => s + e.value, 0));
     def = Math.max(0, def - exposeReduction);
     const defBuffs = Math.min(COMBAT.DEFENSE_BUFF_CAP, target.statusEffects.filter(e => e.type === 'buff_defense').reduce((s, e) => s + e.value, 0));
     def += defBuffs;
@@ -2018,6 +2018,12 @@ export const CombatPanel: React.FC = () => {
                       <GameIcon iconKey={e.type} fallback={e.icon} className="w-4 h-4" />
                     </span>
                   ))}
+                  {/* Expose cap indicator */}
+                  {enemy.statusEffects.filter(e => e.type === 'expose').reduce((s, e) => s + e.value, 0) >= COMBAT.EXPOSE_CAP && (
+                    <span className="text-xs bg-amber-900/60 px-1.5 py-0.5 rounded border border-amber-500/40 text-amber-400 font-bold" title={`Expose capped at -${COMBAT.EXPOSE_CAP} DEF`}>
+                      EXPOSED MAX
+                    </span>
+                  )}
                 </div>
               )}
 
@@ -2204,7 +2210,7 @@ export const CombatPanel: React.FC = () => {
                          e.type === 'weaken' ? `Attack -${e.value}` :
                          e.type === 'stun' ? 'Cannot act' :
                          e.type === 'bleed' ? `${e.value} dmg/turn` :
-                         e.type === 'expose' ? `Defense -${e.value}` :
+                         e.type === 'expose' ? `Defense -${e.value}${state.player.statusEffects.filter(se => se.type === 'expose').reduce((s, se) => s + se.value, 0) >= COMBAT.EXPOSE_CAP ? ' (CAPPED)' : ''}` :
                          e.type === 'shield' ? `Absorbs ${e.value} dmg` :
                          e.type === 'heal' ? `+${e.value} stamina/turn` :
                          e.type === 'intimidate' ? `Accuracy -${e.value}%` :

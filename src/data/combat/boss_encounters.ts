@@ -694,6 +694,49 @@ const IRONCLAD_PHASE_2_ACTIONS: CombatAction[] = [
   },
 ];
 
+const IRONCLAD_PHASE_3_ACTIONS: CombatAction[] = [
+  {
+    id: 'ironclad_core_overload',
+    name: 'Core Overload',
+    description: 'The machine dumps its entire power reserve into a single devastating blast. It hurts you. It hurts itself.',
+    category: 'special',
+    targetType: 'single',
+    damage: 110,
+    damageType: 'physical',
+    accuracy: 75,
+    cooldown: 4,
+    currentCooldown: 0,
+    staminaCost: 40,
+    animation: 'heavy_smash',
+    flavorText: 'The Ironclad\'s chest plates split open. Light pours out, copper-white and screaming. The power core pulses once, twice, and then detonates outward. The blast hits everything in front of it. Including the machine itself. Plating cracks. Joints warp. Something inside it ruptures.',
+    missText: 'You see the chest plates opening and throw yourself sideways. The blast tears through the space where you stood. The Ironclad staggers, smoke pouring from its own ruptured core.',
+    effects: [
+      { type: 'stun', value: 1, duration: 1, chance: 70, description: 'Concussive overload' },
+      { type: 'expose', value: 20, duration: 2, chance: 100, description: 'Core breach' },
+    ],
+  },
+  {
+    id: 'ironclad_terminal_sweep',
+    name: 'Terminal Sweep',
+    description: 'Both arms swing in a full-circle arc. No targeting. No precision. Just destruction.',
+    category: 'strike',
+    targetType: 'single',
+    damage: 65,
+    damageType: 'physical',
+    accuracy: 90,
+    cooldown: 2,
+    currentCooldown: 0,
+    staminaCost: 25,
+    animation: 'slash',
+    flavorText: 'The Ironclad spins. Both arms extended. Eight hundred pounds of steel moving in a circle that doesn\'t care about aim, form, or structural integrity. The sweep catches everything in range. The machine\'s own joints scream under the torque.',
+    missText: 'You drop flat. The sweep passes over you close enough to part your hair. One of the machine\'s arms bends at an angle that wasn\'t in the specs.',
+    effects: [
+      { type: 'expose', value: 10, duration: 2, chance: 100, description: 'Shattered guard' },
+      { type: 'bleed', value: 8, duration: 3, chance: 45, description: 'Shrapnel wounds' },
+    ],
+  },
+];
+
 const ironcladBossPhases: BossPhase[] = [
   {
     id: 'ironclad_phase_2',
@@ -723,6 +766,8 @@ const ironcladBossPhases: BossPhase[] = [
       'The Ironclad isn\'t trying to win anymore. It\'s trying to take you with it.',
     ],
     statChanges: { attack: 14, defense: -15 },
+    newActions: IRONCLAD_PHASE_3_ACTIONS,
+    aiPatternChange: 'berserker',
     triggered: false,
   },
 ];

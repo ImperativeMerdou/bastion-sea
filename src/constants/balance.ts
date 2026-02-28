@@ -210,6 +210,8 @@ export const COMBAT = {
   STUN_ACCURACY_BONUS: 20,
   // Max accuracy cap
   ACCURACY_CAP: 95,
+  // Max expose debuff cap (total defense reduction from expose effects)
+  EXPOSE_CAP: 30,
   // Expose + Pressure Point damage multiplier (was 2.0, reduced to prevent degenerate stacking)
   EXPOSE_PRESSURE_MULTIPLIER: 1.6,
   // King meter: points per action
