@@ -1453,10 +1453,10 @@ export function calculateDamage(
     .reduce((sum, e) => sum + e.value, 0));
   defense += defenseBuffs;
 
-  // Weakened attackers deal less
-  const weakenDebuffs = attacker.statusEffects
+  // Weakened attackers deal less (capped like other debuffs)
+  const weakenDebuffs = Math.min(COMBAT.WEAKEN_CAP, attacker.statusEffects
     .filter((e) => e.type === 'weaken')
-    .reduce((sum, e) => sum + e.value, 0);
+    .reduce((sum, e) => sum + e.value, 0));
   baseDamage = Math.max(1, baseDamage - weakenDebuffs);
 
   // Critical hit (Sight-based + Sight Lens equipment bonus)
@@ -1489,7 +1489,9 @@ export function calculateDamage(
 
   // Random variance (wider swings = more tension) - applied AFTER shield calc
   const variance = COMBAT.DAMAGE_VARIANCE_MIN + Math.random() * COMBAT.DAMAGE_VARIANCE_RANGE;
-  finalDamage = Math.max(1, Math.floor(finalDamage * variance));
+  // If shields fully absorbed the hit, don't force minimum 1 damage
+  const minDamage = shieldAbsorbed > 0 && finalDamage === 0 ? 0 : 1;
+  finalDamage = Math.max(minDamage, Math.floor(finalDamage * variance));
 
   return { damage: finalDamage, isCritical, shieldAbsorbed };
 }
@@ -1563,7 +1565,7 @@ export function applyActionEffects(
 
     if (Math.random() * 100 < effectiveChance) {
       // For intimidate, check King resistance
-      if (effect.type === 'intimidate' && target.dominion.king > 30) {
+      if (effect.type === 'intimidate' && target.dominion.king > COMBAT.INTIMIDATE_RESIST_KING) {
         return; // Strong-willed targets resist King pressure
       }
 
@@ -2015,6 +2017,7 @@ export function executeEnemyTurn(
     if (hit) {
       const { damage, isCritical, shieldAbsorbed } = calculateDamage(enemy, player, action);
       player.hp = Math.max(0, player.hp - damage);
+      if (player.hp <= 0) player.isAlive = false;
       totalDamage = damage;
       isCrit = isCritical;
 
@@ -2177,11 +2180,13 @@ export function processEndOfRound(state: CombatState): CombatState {
       updated.stamina = Math.min(updated.maxStamina, updated.stamina + h.value);
     });
 
-    // HP heal effects (actual HP regeneration)
-    const hpHeals = updated.statusEffects.filter((e) => e.type === 'heal_hp');
-    hpHeals.forEach((h) => {
-      updated.hp = Math.min(updated.maxHp, updated.hp + h.value);
-    });
+    // HP heal effects (actual HP regeneration) -- skip if killed by bleed this round
+    if (updated.isAlive) {
+      const hpHeals = updated.statusEffects.filter((e) => e.type === 'heal_hp');
+      hpHeals.forEach((h) => {
+        updated.hp = Math.min(updated.maxHp, updated.hp + h.value);
+      });
+    }
 
     // Tick down status effects
     updated.statusEffects = updated.statusEffects
@@ -2316,11 +2321,11 @@ export function checkBossPhases(state: CombatState): CombatState | null {
           if (e.id !== enemy.id) return e;
           const updated = { ...e };
 
-          // Apply stat changes
+          // Apply stat changes (floor at 0 to prevent negative stats)
           if (phase.statChanges) {
-            if (phase.statChanges.attack) updated.attack += phase.statChanges.attack;
-            if (phase.statChanges.defense) updated.defense += phase.statChanges.defense;
-            if (phase.statChanges.speed) updated.speed += phase.statChanges.speed;
+            if (phase.statChanges.attack) updated.attack = Math.max(0, updated.attack + phase.statChanges.attack);
+            if (phase.statChanges.defense) updated.defense = Math.max(0, updated.defense + phase.statChanges.defense);
+            if (phase.statChanges.speed) updated.speed = Math.max(0, updated.speed + phase.statChanges.speed);
           }
 
           // Heal

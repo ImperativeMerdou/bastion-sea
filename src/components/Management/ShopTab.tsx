@@ -145,16 +145,18 @@ export const ShopTab: React.FC = () => {
                 </div>
                 <button
                   onClick={() => {
-                    if (resources.sovereigns < slot.currentPrice) {
+                    // Use fresh state to prevent double-purchase from rapid clicks
+                    const freshResources = useGameStore.getState().resources;
+                    if (freshResources.sovereigns < slot.currentPrice) {
                       addNotification({
                         type: 'story',
                         title: 'NOT ENOUGH SOVEREIGNS',
-                        message: `You need ${formatNumber(slot.currentPrice)} Sovereigns. You have ${formatNumber(resources.sovereigns)}.`,
+                        message: `You need ${formatNumber(slot.currentPrice)} Sovereigns. You have ${formatNumber(freshResources.sovereigns)}.`,
                       });
                       return;
                     }
                     // Deduct cost and apply resource effects in one update
-                    const updatedResources = { ...resources, sovereigns: resources.sovereigns - slot.currentPrice };
+                    const updatedResources = { ...freshResources, sovereigns: freshResources.sovereigns - slot.currentPrice };
                     if (slot.item.resourceEffect) {
                       if (slot.item.resourceEffect.supplies) updatedResources.supplies += slot.item.resourceEffect.supplies;
                       if (slot.item.resourceEffect.materials) updatedResources.materials += slot.item.resourceEffect.materials;

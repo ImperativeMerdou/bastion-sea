@@ -47,7 +47,7 @@ export const ShipTab: React.FC = () => {
                 className={`h-2.5 rounded-full transition-all duration-500 ${
                   ship.hull < ship.maxHull * 0.3 ? 'bg-crimson-500' : ship.hull < ship.maxHull * 0.6 ? 'bg-amber-500' : 'bg-green-500'
                 }`}
-                style={{ width: `${(ship.hull / ship.maxHull) * 100}%` }}
+                style={{ width: `${ship.maxHull > 0 ? (ship.hull / ship.maxHull) * 100 : 0}%` }}
               />
             </div>
           </div>

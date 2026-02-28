@@ -558,7 +558,7 @@ export const MapPanel: React.FC = () => {
             <div className="w-full h-1.5 bg-ocean-700 rounded-full mt-1 overflow-hidden">
               <div
                 className="h-full bg-gradient-to-r from-amber-600 to-amber-400 rounded-full transition-all duration-500"
-                style={{ width: `${(controlledCount / islands.length) * 100}%` }}
+                style={{ width: `${islands.length > 0 ? (controlledCount / islands.length) * 100 : 0}%` }}
               />
             </div>
           </div>

@@ -2071,9 +2071,8 @@ export const useGameStore = create<GameState>((set, get) => ({
     const lastGiftDay = (state.flags[`crew_gift_${crewId}_day`] as number) || 0;
     if (state.dayCount - lastGiftDay < CREW_BONUS.GIFT_COOLDOWN_DAYS) return false;
 
-    // Apply loyalty boost
-    const newLoyalty = Math.min(100, member.loyalty + CREW_BONUS.GIFT_LOYALTY_BOOST);
-    state.updateCrewMember(crewId, { loyalty: newLoyalty });
+    // Apply loyalty boost (use adjustLoyalty to properly derive mood + fire transition notifications)
+    state.adjustLoyalty(crewId, CREW_BONUS.GIFT_LOYALTY_BOOST);
 
     // Deduct cost and set cooldown flag
     set({
@@ -2261,8 +2260,9 @@ export const useGameStore = create<GameState>((set, get) => ({
 
   // --- Effect Processing ---
   applyEffects: (effects) => {
-    const state = get();
     effects.forEach((effect) => {
+      // Re-read state each iteration so sequential effects of the same type don't overwrite each other
+      const state = get();
       switch (effect.type) {
         case 'bounty':
           state.addBounty(effect.value as number);
@@ -2303,7 +2303,7 @@ export const useGameStore = create<GameState>((set, get) => ({
           break;
         case 'flag_increment':
           if (effect.target) {
-            const current = (state.flags[effect.target] as number) || 0;
+            const current = (get().flags[effect.target] as number) || 0;
             state.setFlag(effect.target, current + (effect.value as number));
           }
           break;
@@ -2339,7 +2339,7 @@ export const useGameStore = create<GameState>((set, get) => ({
           break;
         case 'conquer':
           if (effect.target) {
-            const rawApproach = (state.flags['conquest_approach'] as string) || 'force';
+            const rawApproach = (get().flags['conquest_approach'] as string) || 'force';
             const approach = (['force', 'negotiation', 'economic', 'subversion'] as ConquestApproach[]).includes(rawApproach as ConquestApproach)
               ? (rawApproach as ConquestApproach)
               : 'force';
@@ -2443,14 +2443,13 @@ export const useGameStore = create<GameState>((set, get) => ({
     const state = get();
     if (state.ship.hull >= state.ship.maxHull) return false;
 
-    const matCost = Math.ceil(amount * SHIP.REPAIR_COST_PER_HP);
-    const sovCost = Math.ceil(amount * SHIP.REPAIR_SOV_PER_HP);
-    if (state.resources.materials < matCost || state.resources.sovereigns < sovCost) return false;
-
+    // Clamp repair amount to actual hull deficit before checking affordability
     const newHull = Math.min(state.ship.maxHull, state.ship.hull + amount);
     const actualRepair = newHull - state.ship.hull;
+    if (actualRepair <= 0) return false;
     const actualMatCost = Math.ceil(actualRepair * SHIP.REPAIR_COST_PER_HP);
     const actualSovCost = Math.ceil(actualRepair * SHIP.REPAIR_SOV_PER_HP);
+    if (state.resources.materials < actualMatCost || state.resources.sovereigns < actualSovCost) return false;
 
     set({
       ship: { ...state.ship, hull: newHull },

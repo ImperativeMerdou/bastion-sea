@@ -239,6 +239,10 @@ export const COMBAT = {
   TERRITORY_BONUS_ATK_FACTOR: 0.6,
   TERRITORY_BONUS_DEF_FACTOR: 0.6,
   TERRITORY_BONUS_HP_FACTOR: 0.5,
+  // Weaken stack cap (mirrors EXPOSE_CAP for symmetry)
+  WEAKEN_CAP: 30,
+  // King dominion threshold for intimidation immunity
+  INTIMIDATE_RESIST_KING: 30,
   // Crew assist mood scaling
   CREW_MOOD_MUTINOUS: 0.0,
   CREW_MOOD_DISGRUNTLED: 0.6,
