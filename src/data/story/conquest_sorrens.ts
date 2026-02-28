@@ -43,7 +43,7 @@ export const sorrensConquestScene: StoryScene = {
       speakerName: 'Delvessa Ghal',
       expression: 'satisfaction',
       paragraphs: [
-        '"The Consortium files quarterly earnings reports with the Kolmari Trade Office. Publicly available. I\'ve been reading them for three years." She finally looks up. Her glasses catch the lamplight. "The Sorrens are over-leveraged on warehouse contracts that expire in nine days. The Veshtari shipping fleet is running at sixty-three percent capacity because they lost two routes to Wardensea tariffs last quarter. And the Duvals--" She almost smiles. Almost. "The Duvals are sitting on a surplus of trade goods they can\'t move because Kolmari intermediary fees are eating their margins alive."',
+        '"The Consortium files quarterly earnings reports with the Kolmari Trade Office. Publicly available. I\'ve been reading them for three years." She finally looks up. Her glasses catch the lamplight. "The Sorrens are over-extended on warehouse contracts that expire in nine days. The Veshtari shipping fleet is running at sixty-three percent capacity because they lost two routes to Wardensea tariffs last quarter. And the Duvals--" She almost smiles. Almost. "The Duvals are sitting on a surplus of trade goods they can\'t move because Kolmari intermediary fees are eating their margins alive."',
       ],
     },
     {
@@ -156,7 +156,7 @@ export const sorrensConquestScene: StoryScene = {
       speaker: 'vorreth',
       speakerName: 'Vorreth Khane',
       paragraphs: [
-        'Vorreth studies Delvessa\'s documents from across the table. His expression is the one he wears when he\'s watching a commander execute a plan he didn\'t expect to respect. "This is a three-front assault using financial leverage instead of marines. The Sorrens are the shield wall. The Veshtari are the flanks. The Duvals are the supply line." He looks at Delvessa. "You\'re running a military operation with contracts."',
+        'Vorreth studies Delvessa\'s documents from across the table. His expression is the one he wears when he\'s watching a commander execute a plan he didn\'t expect to respect. "This is a three-front assault using financial pressure instead of marines. The Sorrens are the shield wall. The Veshtari are the flanks. The Duvals are the supply line." He looks at Delvessa. "You\'re running a military operation with contracts."',
       ],
     },
     {
@@ -200,7 +200,7 @@ export const sorrensConquestScene: StoryScene = {
       speaker: 'elder_veshtari',
       speakerName: 'Elder Veshtari',
       paragraphs: [
-        'Elder Veshtari speaks first. "These projections are... optimistic. You\'re offering us access to Wardensea-patrolled lanes that you don\'t fully control. The Durrek garrison gives you leverage, but not dominion."',
+        'Elder Veshtari speaks first. "These projections are... optimistic. You\'re offering us access to Wardensea-patrolled lanes that you don\'t fully control. The Durrek garrison gives you a foothold, but not dominion."',
       ],
     },
     {
@@ -639,7 +639,7 @@ export const sorrensConquestScene: StoryScene = {
       speakerName: 'Delvessa Ghal',
       paragraphs: [
         'She\'s quiet for a long time. The wine moves in her glass. Below, someone laughs in the street, one of the Veshtari dock workers heading home.',
-        '"The version I gave Duval was true," she says. "I was too good at it. But that\'s not why I left." She stares out at the dark water. "I left because I looked at the work I was doing, the acquisitions, the leveraged buyouts, the hostile restructurings, and I realized I\'d stopped seeing people. They were numbers. Trade volumes. Risk assessments. I could dismantle a family\'s livelihood over lunch and feel nothing except satisfaction that the math worked out."',
+        '"The version I gave Duval was true," she says. "I was too good at it. But that\'s not why I left." She stares out at the dark water. "I left because I looked at the work I was doing, the acquisitions, the hostile buyouts, the hostile restructurings, and I realized I\'d stopped seeing people. They were numbers. Trade volumes. Risk assessments. I could dismantle a family\'s livelihood over lunch and feel nothing except satisfaction that the math worked out."',
         'Her voice is steady.',
         '"I was becoming someone I didn\'t recognize. Someone the Kolmari were very proud of and I was very afraid of. Leaving was--" She breathes. "Leaving was the hardest thing I\'ve ever done. I walked away from everything. The salary. The title. The certainty. I had a corner office with a view of the entire Kolmari trade district and I left it for a smuggler\'s bunk on a ship that smelled like fish."',
       ],

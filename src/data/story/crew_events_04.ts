@@ -51,7 +51,7 @@ export const delvessaEvent04: StoryScene = {
       speakerName: 'Delvessa Ghal',
       paragraphs: [
         '"I was waiting until it mattered." She meets your eyes. Steady. The Arbiter stare, the one that used to make Kolmari officers sweat through their collars. "Until we were far enough along that this would be a weapon instead of a death sentence."',
-        'She pulls out a sheaf of charts. Numbers. Names. Her hand is not quite steady. "Naval deployment schedule. Six months out. I designed the rotation pattern, so I know where every gap falls." Another sheaf. "Every Conqueror crew the Wardensea has active intelligence on. Capabilities. Known weaknesses. Kill conditions." She holds up a thinner document. Her thumb leaves a damp print on the paper. "Kolmari trade secrets. Proprietary formulas. Exclusive contracts. Every leverage point they use to choke commerce across three seas."',
+        'She pulls out a sheaf of charts. Numbers. Names. Her hand is not quite steady. "Naval deployment schedule. Six months out. I designed the rotation pattern, so I know where every gap falls." Another sheaf. "Every Conqueror crew the Wardensea has active intelligence on. Capabilities. Known weaknesses. Kill conditions." She holds up a thinner document. Her thumb leaves a damp print on the paper. "Kolmari trade secrets. Proprietary formulas. Exclusive contracts. Every pressure point they use to choke commerce across three seas."',
         'She sets everything down. The papers fan across the table like a field surgeon\'s instruments.',
         '"This is worth a war, Karyudon." Her throat bobs. "And it\'s mine to give. I need you to decide what we do with it."',
       ],
@@ -70,7 +70,7 @@ export const delvessaEvent04: StoryScene = {
       choices: [
         {
           id: 'del_04_use_intel',
-          text: '"We use everything. Deployment patterns, Conqueror weaknesses, trade leverage, all of it. This is the edge we needed."',
+          text: '"We use everything. Deployment patterns, Conqueror weaknesses, trade advantages, all of it. This is the edge we needed."',
           consequence: 'Use everything. Maximum advantage.',
           available: true,
           effects: [

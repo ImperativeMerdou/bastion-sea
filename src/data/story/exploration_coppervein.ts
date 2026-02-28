@@ -108,7 +108,7 @@ export const copperveinArrivalScene: StoryScene = {
       choices: [
         {
           id: 'coppervein_trade_deal',
-          text: 'Propose a trade agreement. Buy copper at market rate. Give the cooperative leverage.',
+          text: 'Propose a trade agreement. Buy copper at market rate. Give the cooperative a fighting chance.',
           consequence: 'Business before conquest. Lead with trade.',
           available: true,
           effects: [

@@ -191,7 +191,7 @@ export const keldrissConquestScene: StoryScene = {
         'It takes three days. Three days of meetings, threats, bribes, and one spectacular brawl in the market when the Kolmari-aligned brokers try to have you killed. Ossian\'s people. You recognize the rust marks on their wrists. They\'re good. You\'re better. Kovesse streams the whole thing.',
         'On the fourth day, Ossa Veile sends a message. One word: "Come."',
         'Her office is a cave behind a waterfall. The mist coats everything, your skin, the ironwood desk, the books on shelves carved directly into the rock. Ossa Veile sits behind the desk with a cup of tea that hasn\'t been touched and a face that has seen enough to stop being surprised by anything.',
-        'She\'s old. Older than Suulen, maybe. Her hands are covered in ink stains so deep they\'ve become part of her skin. A Grimoire tablet sits dark beside her, and the walls are covered in charts. Not navigation charts. Network charts. Lines connecting names to names, debts to favors, secrets to leverage. Decades of work.',
+        'She\'s old. Older than Suulen, maybe. Her hands are covered in ink stains so deep they\'ve become part of her skin. A Grimoire tablet sits dark beside her, and the walls are covered in charts. Not navigation charts. Network charts. Lines connecting names to names, debts to favors, secrets to pressure. Decades of work.',
         '"Three cutthroats in the infirmary. Two brokers hiding in the reef caves. One market stall on fire, which I assume was the Rathai." She lifts the untouched tea. Sets it back down without drinking. "You\'ve cost me a great deal of quiet, Captain."',
       ],
     },

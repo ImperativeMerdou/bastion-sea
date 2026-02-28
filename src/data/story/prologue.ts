@@ -190,7 +190,7 @@ export const prologueScene: StoryScene = {
       choices: [
         {
           id: 'keep_fruit',
-          text: 'Pocket it. This is leverage, not lunch.',
+          text: 'Pocket it. This is a bargaining chip, not lunch.',
           consequence: 'Hold the card. Play it when the table\'s right.',
           available: true,
           effects: [

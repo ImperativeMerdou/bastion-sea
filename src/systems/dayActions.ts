@@ -727,7 +727,7 @@ const exploreEvents: DayActionEvent[] = [
         choiceArchetype: 'diplomatic',
         effects: { sovereigns: -100 },
         successChance: 55,
-        failText: '"Hundred sov? Try three hundred." They know they have leverage in this alley. You pay. Through gritted teeth. And they take your supply pouch too.',
+        failText: '"Hundred sov? Try three hundred." They know they have the upper hand in this alley. You pay. Through gritted teeth. And they take your supply pouch too.',
         failEffects: { sovereigns: -300, supplies: -5 },
       },
     ],
@@ -925,7 +925,7 @@ const exploreEvents: DayActionEvent[] = [
       {
         id: 'compass_keep',
         text: 'Keep it. A Dominion compass is invaluable.',
-        resultText: 'Suulen calibrates the compass over the next hour. It works. Dominion sources light up the needle like a beacon. "The ancients used these to find each other," she says. "And to find threats." Both useful.',
+        resultText: 'Suulen calibrates the compass over the next hour. It works. Dominion sources light up the needle like a signal fire. "The ancients used these to find each other," she says. "And to find threats." Both useful.',
         choiceArchetype: 'practical',
         grantEquipmentId: 'ancient_compass',
         loyaltyEffects: { suulen: 4 },

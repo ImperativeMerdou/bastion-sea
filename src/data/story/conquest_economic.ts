@@ -12,7 +12,7 @@ export const conquestEconomicScene: StoryScene = {
       speakerName: 'Delvessa Ghal',
       paragraphs: [
         'Delvessa lays eleven stolen Kolmari documents on Hella\'s table. She arranges them like a surgeon arranges instruments, each one in the precise position it needs to be, in the order it will be used.',
-        '"The Kolmari don\'t conquer territory. They acquire debt. Then they convert debt into leverage, leverage into dependency, dependency into control." She taps the first document. "This is Tessurren\'s contract. Here\'s the buried clause. Forty percent rent increase, year two. Every vendor who signed a Kolmari credit line, Rukessa, the spice merchants, half the rope-bridge district, is twelve months away from economic strangulation."',
+        '"The Kolmari don\'t conquer territory. They acquire debt. Then they convert debt into a grip, a grip into dependency, dependency into control." She taps the first document. "This is Tessurren\'s contract. Here\'s the buried clause. Forty percent rent increase, year two. Every vendor who signed a Kolmari credit line, Rukessa, the spice merchants, half the rope-bridge district, is twelve months away from economic strangulation."',
       ],
     },
     {

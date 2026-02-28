@@ -325,7 +325,7 @@ export const kovesseEvent02: StoryScene = {
         {
           id: 'kov_02_consider',
           text: '"Credentials could be useful. Is there a version of this where you get what you\'re owed without giving him anything?"',
-          consequence: 'Strategic. Look for leverage in the offer.',
+          consequence: 'Strategic. Look for an angle in the offer.',
           available: true,
           effects: [
             { type: 'loyalty', target: 'kovesse', value: 4 },

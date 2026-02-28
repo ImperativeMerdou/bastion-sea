@@ -863,7 +863,7 @@ export const randomEvents: RandomEvent[] = [
       },
       {
         id: 'scandal_archive',
-        text: 'Save it. Use it as leverage privately.',
+        text: 'Save it. Use it as a bargaining chip privately.',
         resultText: 'Delvessa archives every document with annotations. "This is worth more as a threat than as a headline," she says. "When we need the Wardensea to back down from something, we\'ll have ammunition."',
         choiceArchetype: 'cautious',
         effects: { intelligence: 8 },
