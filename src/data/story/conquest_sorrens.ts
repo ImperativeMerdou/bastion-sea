@@ -15,158 +15,78 @@ export const sorrensConquestScene: StoryScene = {
     },
     {
       id: 'sorrens_conquest_01b',
-      speaker: 'karyudon',
-      speakerName: 'Karyudon',
-      paragraphs: [
-        '"Delvessa."',
-      ],
-    },
-    {
-      id: 'sorrens_conquest_01c',
-      speaker: 'delvessa',
-      speakerName: 'Delvessa Ghal',
-      paragraphs: [
-        '"Mm."',
-      ],
-    },
-    {
-      id: 'sorrens_conquest_01d',
-      speaker: 'karyudon',
-      speakerName: 'Karyudon',
-      paragraphs: [
-        '"You\'ve been at this since we left Mossbreak."',
-      ],
-    },
-    {
-      id: 'sorrens_conquest_01e',
       speaker: 'delvessa',
       speakerName: 'Delvessa Ghal',
       expression: 'satisfaction',
       paragraphs: [
-        '"The Consortium files quarterly earnings reports with the Kolmari Trade Office. Publicly available. I\'ve been reading them for three years." She finally looks up. Her glasses catch the lamplight. "The Sorrens are over-extended on warehouse contracts that expire in nine days. The Veshtari shipping fleet is running at sixty-three percent capacity because they lost two routes to Wardensea tariffs last quarter. And the Duvals--" She almost smiles. Almost. "The Duvals are sitting on a surplus of trade goods they can\'t move because Kolmari intermediary fees are eating their margins alive."',
-      ],
-    },
-    {
-      id: 'sorrens_conquest_01f',
-      speaker: 'karyudon',
-      speakerName: 'Karyudon',
-      paragraphs: [
+        '"Delvessa."',
+        '"Mm."',
+        '"You\'ve been at this since we left Mossbreak."',
+        'She finally looks up. Her glasses catch the lamplight. "The Consortium files quarterly earnings reports with the Kolmari Trade Office. Publicly available. I\'ve been reading them for three years. The Sorrens are over-extended on warehouse contracts that expire in nine days. The Veshtari shipping fleet is running at sixty-three percent capacity. And the Duvals--" She almost smiles. "The Duvals are sitting on a surplus they can\'t move because Kolmari fees are eating their margins alive."',
         '"In words I understand?"',
-      ],
-    },
-    {
-      id: 'sorrens_conquest_01g',
-      speaker: 'delvessa',
-      speakerName: 'Delvessa Ghal',
-      paragraphs: [
         '"They\'re bleeding. All three families. Slowly, quietly, and they\'re too proud to admit it to each other." Now she does smile. "The Consortium isn\'t a government, Captain. It\'s a business. And businesses can be acquired."',
       ],
     },
     {
-      id: 'sorrens_conquest_01h',
-      speaker: 'dragghen',
-      speakerName: 'Dragghen Kolve',
+      id: 'sorrens_conquest_01c',
       paragraphs: [
         'Dragghen leans against the doorframe, arms crossed. "Are we buying an island? Because I don\'t think we can afford an island."',
-      ],
-    },
-    {
-      id: 'sorrens_conquest_01i',
-      speaker: 'delvessa',
-      speakerName: 'Delvessa Ghal',
-      paragraphs: [
-        '"We\'re not buying it." Delvessa straightens the documents into a stack with mechanical precision. "I\'m going to convince an island that being bought is in its best interest."',
-      ],
-    },
-    {
-      id: 'sorrens_conquest_01j',
-      speaker: 'dragghen',
-      speakerName: 'Dragghen Kolve',
-      paragraphs: [
+        '"We\'re not buying it." Delvessa straightens the documents with mechanical precision. "I\'m going to convince an island that being bought is in its best interest."',
         '"I understood none of that. Do I need to hit someone?"',
-      ],
-    },
-    {
-      id: 'sorrens_conquest_01k',
-      speaker: 'delvessa',
-      speakerName: 'Delvessa Ghal',
-      paragraphs: [
         '"Not today, Dragghen. Today we use words."',
+        'He stares at her. Then at you. Then back at her. "Worse."',
       ],
     },
     {
-      id: 'sorrens_conquest_01l',
-      speaker: 'dragghen',
-      speakerName: 'Dragghen Kolve',
+      id: 'sorrens_conquest_01d',
       paragraphs: [
-        'He stares at her. Then at you. Then back at her.',
-        '"Worse."',
-      ],
-    },
-    {
-      id: 'sorrens_conquest_01m',
-      speaker: 'suulen',
-      speakerName: 'Suulen Vassere',
-      paragraphs: [
-        'Suulen drops from the rigging above. She\'s been listening from the crow\'s nest. "The Consortium\'s main conference hall is on the east side of the trade district. Marble floors. Three entrances. I\'ve mapped the building from the outside. Six windows, all ground level, iron-framed."',
-      ],
-    },
-    {
-      id: 'sorrens_conquest_01n',
-      speaker: 'delvessa',
-      speakerName: 'Delvessa Ghal',
-      paragraphs: [
-        '"We\'re not infiltrating, Suulen. We have an appointment."',
-      ],
-    },
-    {
-      id: 'sorrens_conquest_01o',
-      speaker: 'suulen',
-      speakerName: 'Suulen Vassere',
-      paragraphs: [
-        '"I like to know where the exits are." She pauses. "In case the words don\'t work."',
-      ],
-    },
-    {
-      id: 'sorrens_conquest_01p',
-      speaker: 'kovesse',
-      speakerName: 'Kovesse Grenn',
-      paragraphs: [
-        'Kovesse appears with a Grimoire tablet, already typing. "I\'m setting up a live feed. Low-key, business channel, not combat broadcast. But Captain, if this works? An island taken without a single punch? The viewer numbers are going to be--"',
-      ],
-    },
-    {
-      id: 'sorrens_conquest_01q',
-      speaker: 'karyudon',
-      speakerName: 'Karyudon',
-      paragraphs: [
-        '"Kovesse."',
-      ],
-    },
-    {
-      id: 'sorrens_conquest_01r',
-      speaker: 'kovesse',
-      speakerName: 'Kovesse Grenn',
-      paragraphs: [
-        '"Right. Focus. Words today. Punches never. Got it." She keeps typing.',
-      ],
-    },
-    {
-      id: 'sorrens_conquest_01s',
-      speaker: 'vorreth',
-      speakerName: 'Vorreth Khane',
-      paragraphs: [
-        'Vorreth studies Delvessa\'s documents from across the table. His expression is the one he wears when he\'s watching a commander execute a plan he didn\'t expect to respect. "This is a three-front assault using financial pressure instead of marines. The Sorrens are the shield wall. The Veshtari are the flanks. The Duvals are the supply line." He looks at Delvessa. "You\'re running a military operation with contracts."',
-      ],
-    },
-    {
-      id: 'sorrens_conquest_01t',
-      speaker: 'delvessa',
-      speakerName: 'Delvessa Ghal',
-      paragraphs: [
+        'Suulen drops from the rigging. She\'s been listening from the crow\'s nest. "The Consortium\'s main conference hall is on the east side. Marble floors. Three entrances. Six windows, ground level, iron-framed." Delvessa opens her mouth. "I know we have an appointment. I like to know where the exits are. In case the words don\'t work."',
+        'Kovesse appears with a Grimoire tablet, already typing. "Low-key live feed. Business channel, not combat broadcast. Captain, if this works? An island without a single punch? The numbers are going to be--"',
+        '"Kovesse." She stops typing. Doesn\'t stop grinning.',
+        'Vorreth studies the documents from across the table. "This is a three-front assault using financial pressure instead of marines. The Sorrens are the shield wall. The Veshtari are the flanks. The Duvals are the supply line. You\'re running a military operation with contracts."',
         'Delvessa adjusts her glasses. "I prefer to think of it as aggressive accounting."',
-        'You watch her gather the documents, straighten her collar, check the ink on her fingers and decide it doesn\'t matter. ',
-        'Suulen glances at you. One white eyebrow raised. You look at the map.',
+      ],
+    },
+    {
+      id: 'sorrens_conquest_01e',
+      paragraphs: [
+        'You watch her gather the documents, straighten her collar, check the ink on her fingers and decide it doesn\'t matter.',
+        'Suulen glances at you. One white eyebrow raised. The crew is ready. The question is what you do when you walk into a room full of people who think numbers are weapons.',
+      ],
+      choices: [
+        {
+          id: 'sorrens_prep_study',
+          text: '"Show me the contracts. If I\'m sitting at that table, I\'m not sitting there blind."',
+          consequence: 'Do the homework. Know the battlefield.',
+          available: true,
+          effects: [
+            { type: 'flag', target: 'sorrens_prep', value: 'studied' },
+            { type: 'loyalty', target: 'delvessa', value: 5 },
+            { type: 'resource', target: 'intelligence', value: 3 },
+          ],
+        },
+        {
+          id: 'sorrens_prep_presence',
+          text: '"Delvessa handles the numbers. I\'ll handle the room. People make different decisions with an Oni at the table."',
+          consequence: 'Physical presence as negotiation tool.',
+          available: true,
+          effects: [
+            { type: 'flag', target: 'sorrens_prep', value: 'presence' },
+            { type: 'infamy', value: 3 },
+            { type: 'loyalty', target: 'vorreth', value: 3 },
+          ],
+        },
+        {
+          id: 'sorrens_prep_read',
+          text: '"I want background on the three families. Who they are, what they fear, what they want that has nothing to do with contracts."',
+          consequence: 'Read the people, not the paper.',
+          available: true,
+          effects: [
+            { type: 'flag', target: 'sorrens_prep', value: 'intelligence' },
+            { type: 'loyalty', target: 'suulen', value: 4 },
+            { type: 'reputation', value: 3 },
+          ],
+        },
       ],
     },
     {
@@ -293,159 +213,76 @@ export const sorrensConquestScene: StoryScene = {
     },
     {
       id: 'sorrens_conquest_03b',
-      speaker: 'consul_duval',
-      speakerName: 'Consul Duval',
       paragraphs: [
-        'At the eight-hour mark, Consul Duval sets down his pen and says, "You trained under the Kolmari Arbiter program."',
+        'At the eight-hour mark, Consul Duval sets down his pen. "You trained under the Kolmari Arbiter program."',
+        '"I did."',
+        '"Year?" "Thirty-two through thirty-eight." "Graduated?" "Top of my class. Cohort of forty-seven."',
+        '"And you left."',
+        '"I left."',
+        '"Why?"',
+        'A pause. "Because I was too good at it. And the Kolmari use that skill for the wrong things."',
+        'Consul Duval stares at her for a long time. Then he signs.',
+        'By evening, all three families have entered preliminary agreements. The final documents need twenty-four hours for legal review, but the deal is done. Everyone in the room knows it.',
       ],
     },
     {
       id: 'sorrens_conquest_03c',
-      speaker: 'delvessa',
-      speakerName: 'Delvessa Ghal',
       paragraphs: [
-        '"I did."',
+        'You find Delvessa in the hallway afterward. She\'s leaning against the marble wall with her eyes closed and her glasses in one hand. The ink stains on her fingers have spread to her wrist.',
+        'She opens one eye when she hears you. "Blades are your department, Captain. This is mine."',
+      ],
+      choices: [
+        {
+          id: 'sorrens_praise_sincere',
+          text: '"Twelve hours. Three families. Not a single threat. That\'s not competent, Delvessa. That\'s art."',
+          consequence: 'Genuine admiration. She\'ll remember this.',
+          available: true,
+          effects: [
+            { type: 'loyalty', target: 'delvessa', value: 8 },
+            { type: 'flag', target: 'sorrens_hallway', value: 'sincere' },
+          ],
+        },
+        {
+          id: 'sorrens_praise_tactical',
+          text: '"You separated a three-headed rival into three separate negotiations. Vorreth would call that a flanking maneuver."',
+          consequence: 'Professional respect. The captain reads strategy.',
+          available: true,
+          effects: [
+            { type: 'loyalty', target: 'delvessa', value: 4 },
+            { type: 'loyalty', target: 'vorreth', value: 3 },
+            { type: 'flag', target: 'sorrens_hallway', value: 'tactical' },
+          ],
+        },
+        {
+          id: 'sorrens_praise_captain',
+          text: '"Next time, I sit at the table. Not the hallway."',
+          consequence: 'Assert the captain\'s role. Respect, but boundaries.',
+          available: true,
+          effects: [
+            { type: 'reputation', value: 3 },
+            { type: 'loyalty', target: 'delvessa', value: 2 },
+            { type: 'flag', target: 'sorrens_hallway', value: 'captain' },
+          ],
+        },
       ],
     },
     {
       id: 'sorrens_conquest_03d',
-      speaker: 'consul_duval',
-      speakerName: 'Consul Duval',
+      speaker: 'delvessa',
+      speakerName: 'Delvessa Ghal',
       paragraphs: [
-        '"Year?"',
+        '"They realized it." She puts her glasses back on. "They just couldn\'t find a reason to object. That\'s the difference between coercion and persuasion." She almost smiles. "The Kolmari taught me coercion. I taught myself the rest."',
       ],
     },
     {
       id: 'sorrens_conquest_03e',
-      speaker: 'delvessa',
-      speakerName: 'Delvessa Ghal',
-      paragraphs: [
-        '"Thirty-two through thirty-eight."',
-      ],
-    },
-    {
-      id: 'sorrens_conquest_03f',
-      speaker: 'consul_duval',
-      speakerName: 'Consul Duval',
-      paragraphs: [
-        '"Graduated?"',
-      ],
-    },
-    {
-      id: 'sorrens_conquest_03g',
-      speaker: 'delvessa',
-      speakerName: 'Delvessa Ghal',
-      paragraphs: [
-        '"Top of my class. Cohort of forty-seven."',
-      ],
-    },
-    {
-      id: 'sorrens_conquest_03h',
-      speaker: 'consul_duval',
-      speakerName: 'Consul Duval',
-      paragraphs: [
-        '"And you left."',
-      ],
-    },
-    {
-      id: 'sorrens_conquest_03i',
-      speaker: 'delvessa',
-      speakerName: 'Delvessa Ghal',
-      paragraphs: [
-        '"I left."',
-      ],
-    },
-    {
-      id: 'sorrens_conquest_03j',
-      speaker: 'consul_duval',
-      speakerName: 'Consul Duval',
-      paragraphs: [
-        '"Why?"',
-      ],
-    },
-    {
-      id: 'sorrens_conquest_03k',
-      speaker: 'delvessa',
-      speakerName: 'Delvessa Ghal',
-      paragraphs: [
-        'A pause.',
-        '"Because I was too good at it. And the Kolmari use that skill for the wrong things."',
-        'Consul Duval stares at her for a long time. Then he signs.',
-        'By evening, all three families have entered preliminary agreements. The final documents need twenty-four hours for legal review, the Consortium doesn\'t rush paperwork, but the deal is done. Everyone in the room knows it.',
-      ],
-    },
-    {
-      id: 'sorrens_conquest_03l',
-      speaker: 'karyudon',
-      speakerName: 'Karyudon',
-      paragraphs: [
-        'You find Delvessa in the hallway afterward. She\'s leaning against the marble wall with her eyes closed and her glasses in one hand. The ink stains on her fingers have spread to her wrist.',
-        '"You just conquered an island without drawing a blade."',
-      ],
-    },
-    {
-      id: 'sorrens_conquest_03m',
-      speaker: 'delvessa',
-      speakerName: 'Delvessa Ghal',
-      paragraphs: [
-        'She opens one eye. "Blades are your department, Captain. This is mine."',
-      ],
-    },
-    {
-      id: 'sorrens_conquest_03n',
-      speaker: 'karyudon',
-      speakerName: 'Karyudon',
-      paragraphs: [
-        '"I watched you play three families against each other for twelve hours and none of them realized it until it was too late."',
-      ],
-    },
-    {
-      id: 'sorrens_conquest_03o',
-      speaker: 'delvessa',
-      speakerName: 'Delvessa Ghal',
-      paragraphs: [
-        '"They realized it." She puts her glasses back on. "They just couldn\'t find a reason to object. That\'s the difference between coercion and persuasion. Coercion makes people do what you want. Persuasion makes people want what you\'re offering." She almost smiles. "The Kolmari taught me coercion. I taught myself the rest."',
-      ],
-    },
-    {
-      id: 'sorrens_conquest_03p',
-      speaker: 'dragghen',
-      speakerName: 'Dragghen Kolve',
       paragraphs: [
         'Down the hall, Dragghen emerges from a side room where he\'s been waiting for twelve hours. He looks like a man who has been imprisoned by boredom.',
-        '"Is it over? Are we done? Did words win?"',
-      ],
-    },
-    {
-      id: 'sorrens_conquest_03q',
-      speaker: 'karyudon',
-      speakerName: 'Karyudon',
-      paragraphs: [
+        '"Is it over? Did words win?"',
         '"Words won, Dragghen."',
-      ],
-    },
-    {
-      id: 'sorrens_conquest_03r',
-      speaker: 'dragghen',
-      speakerName: 'Dragghen Kolve',
-      paragraphs: [
         '"Good. Because I found the Consortium\'s kitchen and it has a spice cabinet the size of my quarters and I need to cook something or I will actually lose my mind."',
-      ],
-    },
-    {
-      id: 'sorrens_conquest_03s',
-      speaker: 'kovesse',
-      speakerName: 'Kovesse Grenn',
-      paragraphs: [
-        'Kovesse slides up behind you, Grimoire tablet clutched to her chest. "Captain. Captain. The business channel broadcast got eighteen thousand viewers. Eighteen thousand people watched contract negotiations. I didn\'t think that was possible. I didn\'t think ANYTHING could make paperwork exciting, but she--" She points at Delvessa. "She made math threatening. I\'m genuinely afraid of her now."',
-      ],
-    },
-    {
-      id: 'sorrens_conquest_03t',
-      speaker: 'karyudon',
-      speakerName: 'Karyudon',
-      paragraphs: [
-        '"Join the club," you say.',
+        'Kovesse slides up, Grimoire clutched to her chest. "Captain. Eighteen thousand viewers. She made math threatening. I\'m genuinely afraid of her now."',
+        '"Join the club."',
         'Delvessa\'s mouth twitches. She\'s too tired to fight the smile. It wins.',
       ],
     },
@@ -461,34 +298,14 @@ export const sorrensConquestScene: StoryScene = {
     },
     {
       id: 'sorrens_conquest_04b',
-      speaker: 'vorreth',
-      speakerName: 'Vorreth Khane',
       paragraphs: [
-        'Vorreth reads over the final draft and his eyebrows rise incrementally, the Vorreth equivalent of open-mouthed astonishment. "These contracts have seventeen mutual dependency clauses. If any one family breaks their agreement, the other two lose their preferential terms. She\'s--"',
+        'Vorreth reads over the final draft. His eyebrows rise incrementally, the Vorreth equivalent of open-mouthed astonishment. "These contracts have seventeen mutual dependency clauses. If any one family breaks their agreement, the other two lose their preferential terms. She\'s bound them together. They\'re more unified under your flag than they were independently." He sets the document down. "That woman is terrifying."',
+        '"I know."',
       ],
     },
     {
       id: 'sorrens_conquest_04c',
-      speaker: 'karyudon',
-      speakerName: 'Karyudon',
       paragraphs: [
-        '"Bound them together," you say.',
-      ],
-    },
-    {
-      id: 'sorrens_conquest_04d',
-      speaker: 'vorreth',
-      speakerName: 'Vorreth Khane',
-      paragraphs: [
-        '"She\'s made it so they can\'t leave without hurting each other. They\'re more unified under your flag than they were independently." He sets the document down. "That woman is terrifying."',
-      ],
-    },
-    {
-      id: 'sorrens_conquest_04e',
-      speaker: 'karyudon',
-      speakerName: 'Karyudon',
-      paragraphs: [
-        '"I know."',
         'The three families sign. Matriarch Sorren with a firm stroke. Elder Veshtari with a flourish. Consul Duval with the slow deliberation of a man who has read every word three times and found no fault.',
         'Your turn.',
       ],
@@ -553,15 +370,22 @@ export const sorrensConquestScene: StoryScene = {
       expression: 'happy',
       paragraphs: [
         '"There\'s another glass by the bottle."',
+        'The wine is from the Consortium\'s private reserve. Twelve years old. You don\'t know enough about wine to say more than that.',
+        '"This is good."',
+        '"The Consortium does three things well: trade, paperwork, and wine." She takes a sip. "I\'m starting to think we should have conquered them sooner."',
       ],
     },
     {
       id: 'sorrens_conquest_05c',
-      speaker: 'karyudon',
-      speakerName: 'Karyudon',
       paragraphs: [
-        'The wine is from the Consortium\'s private reserve. Twelve years old. It\'s good. You don\'t know enough about wine to say more than that. Delvessa would know. You don\'t ask.',
-        '"This is good."',
+        'You sit beside her. The ledge is wide enough for both of you, but just barely. Your shoulder is close to hers. She doesn\'t move away.',
+        'Below, the harbor is still busy. Sorren\'s Flat doesn\'t close. Ships arrive at all hours, and somewhere a Consortium clerk is probably filing today\'s paperwork while cursing Delvessa\'s handwriting.',
+        '"You were brilliant today."',
+        'She looks at her wine. "I was competent."',
+        '"Twelve hours. Three families. Not a single threat. You gave them exactly what they wanted and took exactly what we needed, and they thanked you for it." You take a drink. "That\'s not competent. That\'s art."',
+        '"You\'re being generous."',
+        '"I\'m being honest. I don\'t do generous."',
+        'She laughs. Short. Genuine. You both pretend it didn\'t happen. The wine helps.',
       ],
     },
     {
@@ -569,156 +393,36 @@ export const sorrensConquestScene: StoryScene = {
       speaker: 'delvessa',
       speakerName: 'Delvessa Ghal',
       paragraphs: [
-        '"The Consortium does three things well: trade, paperwork, and wine." She takes a sip. "I\'m starting to think we should have conquered them sooner."',
+        '"Can I ask you something?"',
+        '"You\'re going to regardless."',
+        '"Why did you leave the Kolmari? The real reason. Not the version you gave Consul Duval."',
+        'She\'s quiet for a long time. The wine moves in her glass. Below, someone laughs in the street.',
+        '"The version I gave Duval was true. I was too good at it. But that\'s not why I left." She stares out at the dark water. "I left because I looked at the work I was doing and I realized I\'d stopped seeing people. They were numbers. Trade volumes. Risk assessments. I could dismantle a family\'s livelihood over lunch and feel nothing except satisfaction that the math worked out."',
+        'Her voice is steady.',
+        '"I was becoming someone I didn\'t recognize. Someone the Kolmari were very proud of and I was very afraid of. Leaving was--" She breathes. "The hardest thing I\'ve ever done. I walked away from everything. The salary. The title. The certainty. A corner office with a view of the entire Kolmari trade district, and I left it for a smuggler\'s bunk on a ship that smelled like fish."',
       ],
     },
     {
       id: 'sorrens_conquest_05e',
-      speaker: 'karyudon',
-      speakerName: 'Karyudon',
-      paragraphs: [
-        'You sit beside her. The ledge is wide enough for both of you, but just barely. Your shoulder is close to hers. She doesn\'t move away.',
-        'Below, the harbor is still busy. Sorren\'s Flat doesn\'t close. Ships arrive at all hours, cargo moves in the dark, and somewhere a Consortium clerk is probably filing the paperwork on today\'s agreements while cursing Delvessa\'s handwriting.',
-        '"You were brilliant today," you say.',
-      ],
-    },
-    {
-      id: 'sorrens_conquest_05f',
-      speaker: 'delvessa',
-      speakerName: 'Delvessa Ghal',
-      paragraphs: [
-        'She looks at her wine. "I was competent."',
-      ],
-    },
-    {
-      id: 'sorrens_conquest_05g',
-      speaker: 'karyudon',
-      speakerName: 'Karyudon',
-      paragraphs: [
-        '"Twelve hours. Three families. Not a single threat, not a single lie. You gave them exactly what they wanted and took exactly what we needed, and they thanked you for it." You take a drink. "That\'s not competent. That\'s art."',
-      ],
-    },
-    {
-      id: 'sorrens_conquest_05h',
-      speaker: 'delvessa',
-      speakerName: 'Delvessa Ghal',
-      paragraphs: [
-        '"You\'re being generous."',
-      ],
-    },
-    {
-      id: 'sorrens_conquest_05i',
-      speaker: 'karyudon',
-      speakerName: 'Karyudon',
-      paragraphs: [
-        '"I\'m being honest. I don\'t do generous."',
-        'She laughs. Short. Genuine.',
-        'You both pretend it didn\'t happen. The wine helps.',
-        '"Can I ask you something?" you say.',
-      ],
-    },
-    {
-      id: 'sorrens_conquest_05j',
-      speaker: 'delvessa',
-      speakerName: 'Delvessa Ghal',
-      paragraphs: [
-        '"You\'re going to regardless."',
-      ],
-    },
-    {
-      id: 'sorrens_conquest_05k',
-      speaker: 'karyudon',
-      speakerName: 'Karyudon',
-      paragraphs: [
-        '"Why did you leave the Kolmari? The real reason. Not the version you gave Consul Duval."',
-      ],
-    },
-    {
-      id: 'sorrens_conquest_05l',
-      speaker: 'delvessa',
-      speakerName: 'Delvessa Ghal',
-      paragraphs: [
-        'She\'s quiet for a long time. The wine moves in her glass. Below, someone laughs in the street, one of the Veshtari dock workers heading home.',
-        '"The version I gave Duval was true," she says. "I was too good at it. But that\'s not why I left." She stares out at the dark water. "I left because I looked at the work I was doing, the acquisitions, the hostile buyouts, the hostile restructurings, and I realized I\'d stopped seeing people. They were numbers. Trade volumes. Risk assessments. I could dismantle a family\'s livelihood over lunch and feel nothing except satisfaction that the math worked out."',
-        'Her voice is steady.',
-        '"I was becoming someone I didn\'t recognize. Someone the Kolmari were very proud of and I was very afraid of. Leaving was--" She breathes. "Leaving was the hardest thing I\'ve ever done. I walked away from everything. The salary. The title. The certainty. I had a corner office with a view of the entire Kolmari trade district and I left it for a smuggler\'s bunk on a ship that smelled like fish."',
-      ],
-    },
-    {
-      id: 'sorrens_conquest_05m',
-      speaker: 'karyudon',
-      speakerName: 'Karyudon',
       paragraphs: [
         '"And now?"',
-      ],
-    },
-    {
-      id: 'sorrens_conquest_05n',
-      speaker: 'delvessa',
-      speakerName: 'Delvessa Ghal',
-      paragraphs: [
-        'She turns to look at you. The lamplight. The wine. The rooftop. Her hair down and her guard somewhere below it.',
-        '"Now I\'m helping an Oni conquer the world with a war club and a dream." She shakes her head. The corner of her mouth pulls. "I\'m not sure that\'s better."',
-      ],
-    },
-    {
-      id: 'sorrens_conquest_05o',
-      speaker: 'karyudon',
-      speakerName: 'Karyudon',
-      paragraphs: [
+        'She turns to look at you. Her hair down and her guard somewhere below it.',
+        '"Now I\'m helping an Oni conquer the world with a war club and a dream." She shakes her head. "I\'m not sure that\'s better."',
         '"It\'s better."',
-      ],
-    },
-    {
-      id: 'sorrens_conquest_05p',
-      speaker: 'delvessa',
-      speakerName: 'Delvessa Ghal',
-      paragraphs: [
-        'She looks at her glass. Doesn\'t agree. Doesn\'t disagree. Tips the last of the wine back and sets the glass down between you with a click that sounds louder than it should.',
-        '"The salary was better," she says. "The hours were better. The certainty was better. The wine was definitely better." She holds up the empty glass. "This tastes like someone filtered it through a boot."',
-      ],
-    },
-    {
-      id: 'sorrens_conquest_05q',
-      speaker: 'karyudon',
-      speakerName: 'Karyudon',
-      paragraphs: [
+        'She doesn\'t agree. Doesn\'t disagree. Tips the last of the wine back and sets the glass down between you. "The salary was better. The hours were better. The certainty was better. The wine was definitely better." She holds up the empty glass. "This tastes like someone filtered it through a boot."',
         '"Dragghen made it."',
-      ],
-    },
-    {
-      id: 'sorrens_conquest_05r',
-      speaker: 'delvessa',
-      speakerName: 'Delvessa Ghal',
-      paragraphs: [
         '"That explains the boot."',
       ],
     },
     {
-      id: 'sorrens_conquest_05s',
-      speaker: 'delvessa',
-      speakerName: 'Delvessa Ghal',
+      id: 'sorrens_conquest_05f',
       paragraphs: [
-        'The harbor below is quieting. Fewer lights. Fewer voices. Somewhere inside, Dragghen is singing a Gorundai mining song. The smell of pepper and something sweet drifts up through the open window.',
-        '"I should go over the contract language one more time," she says. "Consul Duval\'s second clause has a loophole I don\'t like. She probably put it there on purpose."',
-      ],
-    },
-    {
-      id: 'sorrens_conquest_05t',
-      speaker: 'karyudon',
-      speakerName: 'Karyudon',
-      paragraphs: [
+        'The harbor below is quieting. Fewer lights. Somewhere inside, Dragghen is singing a Gorundai mining song. The smell of pepper drifts up through the open window.',
+        '"I should go over the contract language one more time," she says. "Consul Duval\'s second clause has a loophole I don\'t like."',
         '"It\'s midnight."',
-      ],
-    },
-    {
-      id: 'sorrens_conquest_05u',
-      speaker: 'delvessa',
-      speakerName: 'Delvessa Ghal',
-      paragraphs: [
         '"Loopholes don\'t sleep, Captain." She stands. Picks up both glasses. Pauses. "Neither do I, apparently. Not anymore."',
-        'She goes downstairs. You hear her boots on the stone steps, then the scrape of a chair being pulled out, then the rustle of paper. Working. At midnight. After a twelve-hour negotiation she won completely.',
-        'You stay on the roof. The wine is gone. The harbor smells like salt and fish and the faint chemical tang of Grimoire coolant from Kovesse\'s rig. Not a beautiful night. A useful one.',
+        'She goes downstairs. You hear her boots on the stone steps, then the scrape of a chair, then the rustle of paper. Working. At midnight. After a twelve-hour negotiation she won completely.',
+        'You stay on the roof. The harbor smells like salt and fish and the faint chemical tang of Grimoire coolant from Kovesse\'s rig. Not a beautiful night. A useful one.',
       ],
     },
   ],
