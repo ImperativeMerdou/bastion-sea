@@ -37,15 +37,49 @@ export const firstNightScene: StoryScene = {
       ],
     },
     {
-      id: 'night_04',
+      id: 'night_03_choice',
       paragraphs: [
-        'You sleep in fits. Wake to the same stars in different positions. Sleep again. The second day is sun and nothing else. Your lips crack from salt. Your stomach has moved past complaints into a kind of cold, offended silence. You drink what rain gathers in the hollow of the plank, which is not enough, and you wait, which is the worst thing an Oni can do.',
-        'An Oni is built for action. For hitting something or building something or yelling at something until it changes shape. Sitting still on a piece of wood while the ocean decides your fate is a violation of every instinct you own.',
+        'The laughing fades. The stars don\'t. You stare at them until your vision blurs and the constellations smear into streaks.',
+        'Three things burning in the dark. The twins somewhere out there. Kirin sitting in a chair that used to be your father\'s. The whole rotting sea, full of islands nobody\'s bothered to hold properly.',
+        'All of them pull. One pulls hardest.',
+      ],
+      choices: [
+        {
+          id: 'drive_family',
+          text: '"The twins. Find them first. Everything else can wait."',
+          consequence: 'Family first. The rest is noise.',
+          available: true,
+          effects: [
+            { type: 'flag', target: 'primary_drive', value: 'family' },
+            { type: 'dominion', target: 'iron', value: 3 },
+          ],
+        },
+        {
+          id: 'drive_revenge',
+          text: '"Kirin. He handed me to slavers. That gets answered."',
+          consequence: 'Revenge. Cold and patient.',
+          available: true,
+          effects: [
+            { type: 'flag', target: 'primary_drive', value: 'revenge' },
+            { type: 'dominion', target: 'king', value: 3 },
+          ],
+        },
+        {
+          id: 'drive_ambition',
+          text: '"The sea. All of it. I didn\'t survive chains to settle for half."',
+          consequence: 'Ambition. The only honest answer.',
+          available: true,
+          effects: [
+            { type: 'flag', target: 'primary_drive', value: 'ambition' },
+            { type: 'dominion', target: 'sight', value: 3 },
+          ],
+        },
       ],
     },
     {
-      id: 'night_05',
+      id: 'night_04',
       paragraphs: [
+        'You sleep in fits. Wake to the same stars in different positions. The second day is sun and nothing but sun, your lips cracking from salt, your stomach past complaints into offended silence.',
         'Third morning. The current turns and the wind changes and on the horizon, in the grey light before sunrise, there\'s land.',
         'An island. Coral foundations, timber structures stacked three stories high, ships in the harbor. The smell of frying fish carried on the wind from two miles out. Commerce. Industry. People doing business before breakfast.',
         'You don\'t know its name yet.',
