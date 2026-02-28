@@ -115,7 +115,7 @@ const App: React.FC = () => {
 
   return (
     <div className="h-screen w-screen flex flex-col bg-ocean-900 overflow-hidden">
-      <TopBar />
+      <TopBar onPauseOpen={() => setPauseMenuOpen(true)} />
       <div className="flex-1 overflow-hidden relative">
         <AnimatePresence mode="wait">
           {activePanel === 'story' && (

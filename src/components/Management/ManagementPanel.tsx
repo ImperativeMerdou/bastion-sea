@@ -73,9 +73,6 @@ export const ManagementPanel: React.FC = () => {
     }
     return tab;
   }).filter((tab) => {
-    // Shop tab is hidden entirely if no shop on this island (preserving existing behavior)
-    // But if locked, still show it greyed out so players know it exists
-    if (tab.id === 'shop' && !hasShop && !tab.locked) return false;
     return true;
   });
 
@@ -170,7 +167,15 @@ export const ManagementPanel: React.FC = () => {
         {effectiveTab === 'territory' && <TerritoryTab />}
 
         {/* SHOP TAB */}
-        {effectiveTab === 'shop' && hasShop && <ShopTab />}
+        {effectiveTab === 'shop' && (hasShop ? <ShopTab /> : (
+          <div className="flex-1 flex items-center justify-center text-ocean-500 text-sm">
+            <div className="text-center">
+              <span className="text-2xl block mb-2">🏪</span>
+              <p className="font-bold text-ocean-400">No shop available</p>
+              <p className="text-ocean-600 text-xs mt-1">This island doesn't have a merchant. Try a larger port.</p>
+            </div>
+          </div>
+        ))}
 
         {/* GRIMOIRE TAB */}
         {effectiveTab === 'grimoire' && <GrimoireTab />}

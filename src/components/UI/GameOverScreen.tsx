@@ -67,10 +67,22 @@ export default function GameOverScreen() {
   };
 
   const handleLoadSave = () => {
-    // Find the most recent save
-    if (hasSaveData(0)) { loadGame(0); setDismissed(true); return; }
-    if (hasSaveData(1)) { loadGame(1); setDismissed(true); return; }
-    if (hasSaveData(2)) { loadGame(2); setDismissed(true); return; }
+    // Find the most recent save by timestamp
+    let bestSlot = -1;
+    let bestTs = -1;
+    for (const slot of [0, 1, 2]) {
+      if (!hasSaveData(slot)) continue;
+      try {
+        const key = slot === 0 ? 'godtide_autosave' : `godtide_save_${slot}`;
+        const raw = localStorage.getItem(key);
+        if (raw) {
+          const data = JSON.parse(raw);
+          const ts = data.timestamp || 0;
+          if (ts > bestTs) { bestTs = ts; bestSlot = slot; }
+        }
+      } catch { /* skip corrupt saves */ }
+    }
+    if (bestSlot >= 0) { loadGame(bestSlot); setDismissed(true); }
   };
 
   const hasAnySave = hasSaveData(0) || hasSaveData(1) || hasSaveData(2);

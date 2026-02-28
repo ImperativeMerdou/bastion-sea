@@ -33,7 +33,11 @@ const panelTabs: { id: GamePanel; label: string; icon: string; key: string }[] =
   { id: 'management', label: 'COMMAND', icon: '⚓', key: '3' },
 ];
 
-export const TopBar: React.FC = () => {
+interface TopBarProps {
+  onPauseOpen?: () => void;
+}
+
+export const TopBar: React.FC<TopBarProps> = ({ onPauseOpen }) => {
   const activePanel = useGameStore(s => s.activePanel);
   const setActivePanel = useGameStore(s => s.setActivePanel);
   const mc = useGameStore(s => s.mc);
@@ -353,7 +357,7 @@ export const TopBar: React.FC = () => {
 
           {/* Pause/Menu Button */}
           <button
-            onClick={() => window.dispatchEvent(new KeyboardEvent('keydown', { code: 'Escape' }))}
+            onClick={() => onPauseOpen?.()}
             className="text-ocean-400 hover:text-ocean-200 transition-colors text-lg"
             title="Menu (Esc)"
             aria-label="Open pause menu"

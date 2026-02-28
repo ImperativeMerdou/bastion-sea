@@ -54,8 +54,20 @@ export const TitleScreen: React.FC = () => {
   const hasSave2 = hasSaveData(2);
   const hasAnySave = hasAutoSave || hasSave1 || hasSave2;
 
-  // Get metadata for the best available save
-  const bestSaveSlot = hasAutoSave ? 0 : hasSave1 ? 1 : hasSave2 ? 2 : -1;
+  // Get metadata for the most recent save (by timestamp, not slot priority)
+  const bestSaveSlot = (() => {
+    let best = -1;
+    let bestTs = -1;
+    for (const slot of [0, 1, 2]) {
+      if (!hasSaveData(slot)) continue;
+      const info = getSaveInfo(slot);
+      if (info && info.timestamp > bestTs) {
+        bestTs = info.timestamp;
+        best = slot;
+      }
+    }
+    return best;
+  })();
   const saveInfo = bestSaveSlot >= 0 ? getSaveInfo(bestSaveSlot) : null;
 
   // Title intro stinger: play once on mount, do not replay if user returns
@@ -76,9 +88,7 @@ export const TitleScreen: React.FC = () => {
 
   const handleContinue = () => {
     audioManager.playSfx('click');
-    if (hasAutoSave) { loadGame(0); return; }
-    if (hasSave1) { loadGame(1); return; }
-    if (hasSave2) { loadGame(2); return; }
+    if (bestSaveSlot >= 0) { loadGame(bestSaveSlot); return; }
   };
 
   const handleNewGame = () => {

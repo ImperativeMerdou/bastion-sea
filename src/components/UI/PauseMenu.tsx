@@ -26,7 +26,7 @@ export const PauseMenu: React.FC<PauseMenuProps> = ({ isOpen, onClose }) => {
   const setTypingSpeed = useGameStore(s => s.setTypingSpeed);
   const flags = useGameStore(s => s.flags);
   const inCombat = !!combatState;
-  const { isMuted, masterVol, sfxVol, musicVol, toggleMute, setMasterVolume, setSfxVolume, setMusicVolume } = useAudioControls();
+  const { isMuted, masterVol, sfxVol, ambientVol, musicVol, toggleMute, setMasterVolume, setSfxVolume, setAmbientVolume, setMusicVolume } = useAudioControls();
   const [tab, setTab] = useState<PauseTab>('main');
   const [saveFlash, setSaveFlash] = useState<number | null>(null);
   const [codexCategory, setCodexCategory] = useState<CodexCategory>('world');
@@ -382,6 +382,21 @@ export const PauseMenu: React.FC<PauseMenuProps> = ({ isOpen, onClose }) => {
                       onChange={(e) => setMusicVolume(Number(e.target.value) / 100)}
                       className="w-full h-1.5 bg-ocean-700 rounded-full appearance-none cursor-pointer accent-crimson-400"
                       aria-label="Music volume"
+                    />
+                  </div>
+                  <div>
+                    <div className="flex items-center justify-between mb-1.5">
+                      <span className="text-ocean-300 text-xs font-display font-bold tracking-[0.15em]">AMBIENCE</span>
+                      <span className="text-ocean-400 text-xs">{Math.round(ambientVol * 100)}%</span>
+                    </div>
+                    <input
+                      type="range"
+                      min="0"
+                      max="100"
+                      value={Math.round(ambientVol * 100)}
+                      onChange={(e) => setAmbientVolume(Number(e.target.value) / 100)}
+                      className="w-full h-1.5 bg-ocean-700 rounded-full appearance-none cursor-pointer accent-blue-400"
+                      aria-label="Ambience volume"
                     />
                   </div>
                 </div>
