@@ -47,8 +47,11 @@ const App: React.FC = () => {
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (!gameStartedRef.current) return;
-      // Escape toggles pause
-      if (e.code === 'Escape' && activePanelRef.current !== 'combat') {
+      // Don't handle shortcuts when modals are open (they have their own keyboard handlers)
+      const st = useGameStore.getState();
+      const modalOpen = !!(st.pendingDailyReport?.length || st.dayPlannerOpen || st.pendingDayEvent || st.pendingRandomEvent);
+      // Escape toggles pause (but not when modals are handling their own Escape)
+      if (e.code === 'Escape' && activePanelRef.current !== 'combat' && !modalOpen) {
         e.preventDefault();
         setPauseMenuOpen((prev) => !prev);
         return;
@@ -59,8 +62,8 @@ const App: React.FC = () => {
         setShowKeyboardHelp((prev) => !prev);
         return;
       }
-      // Don't switch panels during combat, typing, or when pause is open
-      if (activePanelRef.current === 'combat') return;
+      // Don't switch panels during combat, modals, or when pause is open
+      if (activePanelRef.current === 'combat' || modalOpen) return;
       // Panel shortcuts: 1=Story, 2=Map, 3=Crew
       if (e.key === '1') { setActivePanel('story'); return; }
       if (e.key === '2') { setActivePanel('map'); return; }
