@@ -41,6 +41,65 @@ export const mirrorwaterArrivalScene: StoryScene = {
       ],
     },
     {
+      id: 'mirrorwater_arrive_03_tension',
+      paragraphs: [
+        'You don\'t get far. Three steps past the old man\'s platform, a woman on the second level raises a crossbow. Calm. Practiced. Not a threat display. A fact.',
+        '"You\'re not staying," she says.',
+        'More of them appear. On the platforms, on the walkways, in the shadows between the stilt structures. Two hundred people who came to the Bastion Sea to disappear, looking at an Oni who just found them.',
+        'The old man puts down his net.',
+        '"My daughter," he says. "She\'s less patient than I am."',
+      ],
+    },
+    {
+      id: 'mirrorwater_arrive_03_choice',
+      paragraphs: [
+        'Suulen\'s hand moves to her belt. Dragghen goes very still. Vorreth is already counting exits, positions, angles.',
+        'The woman with the crossbow isn\'t bluffing. Eight more behind her, armed and positioned at the platforms. Covering the dock, the channel entrance, your ship.',
+        'Two hundred people. They\'ve had practice at this.',
+      ],
+      choices: [
+        {
+          id: 'mirrorwater_negotiate',
+          text: '"We\'re not staying. But I want to talk before we go."',
+          consequence: 'Negotiation. Lower the temperature.',
+          available: true,
+          effects: [
+            { type: 'reputation', value: 3 },
+            { type: 'flag', target: 'mirrorwater_community', value: 'negotiated' },
+          ],
+        },
+        {
+          id: 'mirrorwater_intimidate',
+          text: 'Stand to your full height. Seven feet of Oni. Let the Iron speak.',
+          consequence: 'Intimidation. They need to know what they\'re pointing at.',
+          available: true,
+          effects: [
+            { type: 'infamy', value: 3 },
+            { type: 'flag', target: 'mirrorwater_community', value: 'intimidated' },
+          ],
+        },
+        {
+          id: 'mirrorwater_suulen_handle',
+          text: '"Suulen. You speak their language better than I do."',
+          consequence: 'Let the Morventhi talk to the tunnel-runners.',
+          available: true,
+          effects: [
+            { type: 'loyalty', target: 'suulen', value: 5 },
+            { type: 'flag', target: 'mirrorwater_community', value: 'suulen_handled' },
+          ],
+        },
+      ],
+    },
+    {
+      id: 'mirrorwater_arrive_03_aftermath',
+      paragraphs: [
+        'The crossbows come down. Not all at once. One by one, the way trust is built in places that have learned not to give it freely.',
+        'The old man, whose name turns out to be Harren, explains it over salted fish. "We\'ve been here nine years. Before that, Duskveil. Before that, a Kolmari work camp." He says the last part like he\'s describing the weather. "People find this place. We make sure they don\'t come back. You\'re the first one who didn\'t run."',
+        '"I don\'t run."',
+        '"I noticed." He looks at Suulen. Something passes between them. Recognition. Old routes, old language, old debts. "Your navigator knows what this place is. Ask her sometime."',
+      ],
+    },
+    {
       id: 'mirrorwater_arrive_03b',
       speaker: 'vorreth',
       speakerName: 'Vorreth Daaz',
@@ -119,25 +178,9 @@ export const mirrorwaterArrivalScene: StoryScene = {
     },
     {
       id: 'mirrorwater_arrive_05b',
-      speaker: 'kovesse',
-      speakerName: 'Kovesse Grenn',
       paragraphs: [
         'Kovesse starts recording. "Mysterious ancient carvings at the hidden lagoon. The Oni Captain Karyudon discovers a forgotten waypoint. Is this a sign? A message from the old world? Stay tuned--"',
-      ],
-    },
-    {
-      id: 'mirrorwater_arrive_05c',
-      speaker: 'karyudon',
-      speakerName: 'Karyudon',
-      paragraphs: [
         '"Kovesse."',
-      ],
-    },
-    {
-      id: 'mirrorwater_arrive_05d',
-      speaker: 'kovesse',
-      speakerName: 'Kovesse Grenn',
-      paragraphs: [
         '"Fine. But this is CONTENT, Captain."',
       ],
     },

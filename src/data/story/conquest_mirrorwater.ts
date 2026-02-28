@@ -27,17 +27,8 @@ export const mirrorwaterConquestScene: StoryScene = {
     },
     {
       id: 'mirrorwater_conquest_01c',
-      speaker: 'karyudon',
-      speakerName: 'Karyudon',
       paragraphs: [
         '"We\'re not visiting this time," you say.',
-      ],
-    },
-    {
-      id: 'mirrorwater_conquest_01d',
-      speaker: 'suulen',
-      speakerName: 'Suulen Vassere',
-      paragraphs: [
         'Suulen turns from the bowsprit. Something in her stance is different.',
         '"No," she says. "We\'re not."',
       ],
@@ -63,73 +54,20 @@ export const mirrorwaterConquestScene: StoryScene = {
     },
     {
       id: 'mirrorwater_conquest_02b',
-      speaker: 'vorreth',
-      speakerName: 'Vorreth Khane',
       paragraphs: [
         'Vorreth leans forward. "I want defensive positions on the cavern mouth. Three choke points minimum. If someone finds this place, I want to make them regret it before they\'re twenty feet inside."',
-      ],
-    },
-    {
-      id: 'mirrorwater_conquest_02c',
-      speaker: 'suulen',
-      speakerName: 'Suulen Vassere',
-      paragraphs: [
         '"Noted." Suulen marks it without looking up.',
-      ],
-    },
-    {
-      id: 'mirrorwater_conquest_02d',
-      speaker: 'dragghen',
-      speakerName: 'Dragghen Kolve',
-      paragraphs: [
         'Dragghen raises a hand like he\'s in school. "Kitchen."',
-      ],
-    },
-    {
-      id: 'mirrorwater_conquest_02e',
-      speaker: 'suulen',
-      speakerName: 'Suulen Vassere',
-      paragraphs: [
         '"You always want a kitchen."',
-      ],
-    },
-    {
-      id: 'mirrorwater_conquest_02f',
-      speaker: 'dragghen',
-      speakerName: 'Dragghen Kolve',
-      paragraphs: [
         '"If we\'re going to hide, we\'re going to eat well while we do it. I\'m not living off hardtack in a place this beautiful."',
       ],
     },
     {
-      id: 'mirrorwater_conquest_02g',
-      speaker: 'kovesse',
-      speakerName: 'Kovesse Grenn',
+      id: 'mirrorwater_conquest_02c',
       paragraphs: [
         'Kovesse bounces on her heels. "Grimoire monitoring station. Full signal array. I can set up passive receivers that--"',
-      ],
-    },
-    {
-      id: 'mirrorwater_conquest_02h',
-      speaker: 'suulen',
-      speakerName: 'Suulen Vassere',
-      paragraphs: [
         '"Receive only," Suulen cuts her off.',
-      ],
-    },
-    {
-      id: 'mirrorwater_conquest_02i',
-      speaker: 'kovesse',
-      speakerName: 'Kovesse Grenn',
-      paragraphs: [
         '"...fine. Receive only. But a GOOD one. Multi-band. Long range. I want to hear everything the Bastion Sea says about us."',
-      ],
-    },
-    {
-      id: 'mirrorwater_conquest_02j',
-      speaker: 'delvessa',
-      speakerName: 'Delvessa Ghal',
-      paragraphs: [
         'Delvessa speaks last, as she usually does. "A records room. Secure storage for intelligence files, financial ledgers, operational planning. Somewhere dry, somewhere locked."',
       ],
     },
@@ -202,10 +140,16 @@ export const mirrorwaterConquestScene: StoryScene = {
     },
     {
       id: 'mirrorwater_conquest_03b',
-      speaker: 'karyudon',
-      speakerName: 'Karyudon',
       paragraphs: [
         '"Suulen."',
+        'She doesn\'t startle. She heard you coming sixty feet ago. Forged Sight.',
+        '"Captain."',
+        'You sit next to her. The ledge groans. Seven feet of Oni is a lot for a rock shelf. She glances at you sideways, the closest thing to alarm a Morventhi shows, and then decides the stone will hold.',
+        'For a while, neither of you says anything. Below, Dragghen laughs at something Kovesse said. The sound rises and softens against the cavern walls.',
+        '"Morventhi live underground," she says. Not to you. To the lagoon. "The deep places. Touch, sound, the shape of air on skin. I was a tunnel-runner for forty years."',
+        'She stops. Her hands move once, measuring something that isn\'t there.',
+        '"I never built anything." Quiet. "Eighty-seven years. I found places. I mapped places. I led people to places." She\'s looking at the construction below, the lights reflecting in the water. "Finding was always the job. I didn\'t know it wasn\'t enough."',
+        'You sit with that. Below, Dragghen drops something metal and swears in Gorundai.',
       ],
     },
     {
@@ -213,48 +157,78 @@ export const mirrorwaterConquestScene: StoryScene = {
       speaker: 'suulen',
       speakerName: 'Suulen Vassere',
       paragraphs: [
-        'She doesn\'t startle. She heard you coming sixty feet ago. Forged Sight.',
-        '"Captain."',
-      ],
-    },
-    {
-      id: 'mirrorwater_conquest_03d',
-      speaker: 'suulen',
-      speakerName: 'Suulen Vassere',
-      paragraphs: [
-        'You sit next to her. The ledge groans. Seven feet of Oni is a lot for a rock shelf. She glances at you sideways, the closest thing to alarm a Morventhi shows, and then decides the stone will hold.',
-        'For a while, neither of you says anything. Below, Dragghen laughs at something Kovesse said. The sound rises and softens against the cavern walls.',
-        '"Morventhi live underground," she says. Not to you. To the lagoon. "The deep places. Touch, sound, the shape of air on skin. I was a tunnel-runner for forty years."',
-        'She stops. Her hands move once, measuring something that isn\'t there.',
-        '"I never built anything." Quiet. "Eighty-seven years. I found places. I mapped places. I led people to places." She\'s looking at the construction below, the lights reflecting in the water. "Finding was always the job. I didn\'t know it wasn\'t enough."',
-        'You sit with that. Below, Dragghen drops something metal and swears in Gorundai.',
         '"The ventilation shaft on the kitchen is wrong," she says. "The angle pulls smoke toward the signal station. Kovesse hasn\'t noticed yet because she\'s been too busy hiding a transmitter inside the receiver array." She stands up. Her hands are moving again. "I need to fix it before she broadcasts our location to the entire Central Belt."',
         'She\'s halfway down the ledge before she stops.',
-      ],
-    },
-    {
-      id: 'mirrorwater_conquest_03e',
-      speaker: 'suulen',
-      speakerName: 'Suulen Vassere',
-      paragraphs: [
         '"Captain."',
-      ],
-    },
-    {
-      id: 'mirrorwater_conquest_03f',
-      speaker: 'karyudon',
-      speakerName: 'Karyudon',
-      paragraphs: [
         '"Yeah."',
-      ],
-    },
-    {
-      id: 'mirrorwater_conquest_03g',
-      speaker: 'suulen',
-      speakerName: 'Suulen Vassere',
-      paragraphs: [
         '"The stone here is good. Old limestone. It holds." She doesn\'t turn around. "I\'m going to make it hold."',
         'She leaves. You stay on the ledge. Below, the lagoon reflects the construction lights back imperfectly, the water disturbed by work, by boats, by the ripples of things being built. Not a mirror anymore. Something better. Something used.',
+      ],
+    },
+    {
+      id: 'mirrorwater_conquest_03_signal',
+      title: 'CONTACT',
+      speaker: 'kovesse',
+      speakerName: 'Kovesse Grenn',
+      paragraphs: [
+        'Day five. Kovesse\'s voice cuts through the cavern like a blade.',
+        '"Signal contact. Wardensea sweep pattern, bearing two-seven-zero. Three ships. One heavy. They\'re running a standard reef survey along the outer shelf."',
+        'The cavern goes quiet. Dragghen puts down his trowel. Vorreth is already moving toward the entrance.',
+        '"Distance?" you ask.',
+        '"Four miles. Closing." She pulls the headset tighter. "They\'re not looking for us. This is a standard patrol sweep. But if they get within two miles of the cliff face, their sounding equipment will read the channel. And if they read the channel..."',
+        '"They find us."',
+      ],
+    },
+    {
+      id: 'mirrorwater_conquest_03_signal_choice',
+      paragraphs: [
+        'Three Wardensea ships. Standard patrol. Probably routine.',
+        'Suulen is at the cavern mouth, her Forged Sight tracking the patrol through stone. Vorreth has his defensive positions manned. Delvessa is already calculating options.',
+        'Two miles. Maybe twenty minutes.',
+      ],
+      choices: [
+        {
+          id: 'mirrorwater_go_dark',
+          text: '"Go dark. Kill every light, every sound. We\'re stone and water until they pass."',
+          consequence: 'Silence. Trust the hiding place.',
+          available: true,
+          effects: [
+            { type: 'flag', target: 'mirrorwater_patrol', value: 'hidden' },
+            { type: 'loyalty', target: 'suulen', value: 4 },
+          ],
+        },
+        {
+          id: 'mirrorwater_false_signal',
+          text: '"Kovesse. Can you spoof a reef echo? Make them think the channel is solid rock?"',
+          consequence: 'Deception. Use the signal station offensively.',
+          available: true,
+          effects: [
+            { type: 'flag', target: 'mirrorwater_patrol', value: 'spoofed' },
+            { type: 'loyalty', target: 'kovesse', value: 6 },
+            { type: 'resource', target: 'intelligence', value: 5 },
+          ],
+        },
+        {
+          id: 'mirrorwater_intercept',
+          text: '"Vorreth. If they enter the channel, can you stop them quietly?"',
+          consequence: 'Aggression. No witnesses.',
+          available: true,
+          effects: [
+            { type: 'flag', target: 'mirrorwater_patrol', value: 'intercepted' },
+            { type: 'infamy', value: 3 },
+            { type: 'loyalty', target: 'vorreth', value: 6 },
+          ],
+        },
+      ],
+    },
+    {
+      id: 'mirrorwater_conquest_03_resolve',
+      paragraphs: [
+        'Twenty-three minutes. The longest twenty-three minutes since the raft.',
+        'The patrol passes. Close enough that Suulen can count the rivets on the heavy ship\'s hull through the rock. Close enough that everyone holds their breath and listens to the sounding pulses bounce off the cliff face.',
+        'The pulses don\'t find the channel. Whether that\'s luck, geometry, or Kovesse\'s hurried modifications to the signal station, nobody asks.',
+        'The patrol moves on. The crew exhales. Dragghen picks up his trowel.',
+        '"So," he says. "Kitchen\'s not going to build itself."',
       ],
     },
     {
@@ -268,58 +242,14 @@ export const mirrorwaterConquestScene: StoryScene = {
     },
     {
       id: 'mirrorwater_conquest_04b',
-      speaker: 'kovesse',
-      speakerName: 'Kovesse Grenn',
       paragraphs: [
         'Kovesse stands at the dock with the expression of a woman in physical pain.',
         '"The world should know about this."',
-      ],
-    },
-    {
-      id: 'mirrorwater_conquest_04c',
-      speaker: 'karyudon',
-      speakerName: 'Karyudon',
-      paragraphs: [
         '"No."',
-      ],
-    },
-    {
-      id: 'mirrorwater_conquest_04d',
-      speaker: 'kovesse',
-      speakerName: 'Kovesse Grenn',
-      paragraphs: [
         '"But Captain, the visuals alone, a hidden lagoon base? The Grimoire audience would lose their minds. I can see the headline: KARYUDON\'S SECRET FORTRESS--"',
-      ],
-    },
-    {
-      id: 'mirrorwater_conquest_04e',
-      speaker: 'karyudon',
-      speakerName: 'Karyudon',
-      paragraphs: [
         '"Kovesse."',
-      ],
-    },
-    {
-      id: 'mirrorwater_conquest_04f',
-      speaker: 'kovesse',
-      speakerName: 'Kovesse Grenn',
-      paragraphs: [
         '"One broadcast. Five minutes. I won\'t even show the entrance--"',
-      ],
-    },
-    {
-      id: 'mirrorwater_conquest_04g',
-      speaker: 'karyudon',
-      speakerName: 'Karyudon',
-      paragraphs: [
         '"Some things are ours." You put a hand on her shoulder. Gently, by your standards, which means she only staggers a little. "Just ours."',
-      ],
-    },
-    {
-      id: 'mirrorwater_conquest_04h',
-      speaker: 'kovesse',
-      speakerName: 'Kovesse Grenn',
-      paragraphs: [
         'She looks at the lagoon. The still water. The hidden docks. The base that nobody in the Bastion Sea knows exists.',
         '"...fine." She pulls out a notebook. "But I\'m keeping notes for the memoir."',
       ],
@@ -335,58 +265,19 @@ export const mirrorwaterConquestScene: StoryScene = {
     },
     {
       id: 'mirrorwater_conquest_04j',
-      speaker: 'delvessa',
-      speakerName: 'Delvessa Ghal',
       paragraphs: [
         '"I need to tell you something," she says.',
-      ],
-    },
-    {
-      id: 'mirrorwater_conquest_04k',
-      speaker: 'karyudon',
-      speakerName: 'Karyudon',
-      paragraphs: [
         '"Go ahead."',
-      ],
-    },
-    {
-      id: 'mirrorwater_conquest_04l',
-      speaker: 'delvessa',
-      speakerName: 'Delvessa Ghal',
-      paragraphs: [
         '"The supply calculations for this base assume continued access to Sorrens shipping lanes. If we lose Sorrens, Mirrorwater starves in three weeks." She pulls her feet out of the water. The glow clings for a second, then fades. "I should have mentioned that before we committed six days of labor."',
-      ],
-    },
-    {
-      id: 'mirrorwater_conquest_04m',
-      speaker: 'karyudon',
-      speakerName: 'Karyudon',
-      paragraphs: [
         '"You\'re mentioning it now."',
-      ],
-    },
-    {
-      id: 'mirrorwater_conquest_04n',
-      speaker: 'delvessa',
-      speakerName: 'Delvessa Ghal',
-      paragraphs: [
         '"I\'m mentioning it now." She dries her feet on the dock planks. "I wanted to wait until it was built. Because if I said it before, you might have made a practical decision. And Suulen needed this."',
         'You look at her. She\'s not looking at you. She\'s looking at the lagoon like it\'s a spreadsheet with a formula error she can\'t find.',
       ],
     },
     {
-      id: 'mirrorwater_conquest_04o',
-      speaker: 'karyudon',
-      speakerName: 'Karyudon',
+      id: 'mirrorwater_conquest_04k',
       paragraphs: [
         '"That\'s the least strategic thing you\'ve ever done," you say.',
-      ],
-    },
-    {
-      id: 'mirrorwater_conquest_04p',
-      speaker: 'delvessa',
-      speakerName: 'Delvessa Ghal',
-      paragraphs: [
         '"I know." She stands up. "Don\'t tell Vorreth."',
         'She leaves. The dock is quieter with one person on it. The bioluminescence drifts. Somewhere in the dark, the large thing circles back.',
       ],
