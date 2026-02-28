@@ -28,7 +28,48 @@ export const conquestEconomicScene: StoryScene = {
       speaker: 'delvessa',
       speakerName: 'Delvessa Ghal',
       paragraphs: [
-        '"No. We show the right people. At the right time. In the right order."',
+        '"No. We show the right people. At the right time. In the right order." She looks at you. "This operation needs all five of us. But your role depends on what kind of pressure we want on the ground."',
+      ],
+    },
+    {
+      id: 'economic_01_choice',
+      paragraphs: [
+        'The documents are laid out. The plan is forming. But Delvessa is asking the real question: what does the Captain do while the crew works?',
+      ],
+      choices: [
+        {
+          id: 'econ_visible_threat',
+          text: '"I walk the market. Let them see me. An Oni in the harbor changes the math."',
+          consequence: 'Visible presence. Let the Iron do the talking.',
+          available: true,
+          effects: [
+            { type: 'flag', target: 'econ_approach', value: 'visible' },
+            { type: 'infamy', value: 3 },
+            { type: 'reputation', value: 2 },
+          ],
+        },
+        {
+          id: 'econ_backroom',
+          text: '"I talk to Pettha directly. She runs this island. She should hear from me, not through the market."',
+          consequence: 'Backroom politics. Captain to Harbor Master.',
+          available: true,
+          effects: [
+            { type: 'flag', target: 'econ_approach', value: 'diplomatic' },
+            { type: 'reputation', value: 5 },
+            { type: 'loyalty', target: 'delvessa', value: 3 },
+          ],
+        },
+        {
+          id: 'econ_ghost',
+          text: '"I stay invisible. If the Kolmari don\'t know I\'m involved, they can\'t retaliate against me. They retaliate against the market instead, and the market turns to us."',
+          consequence: 'Let the system eat itself. Watch from the dark.',
+          available: true,
+          effects: [
+            { type: 'flag', target: 'econ_approach', value: 'ghost' },
+            { type: 'loyalty', target: 'suulen', value: 5 },
+            { type: 'resource', target: 'intelligence', value: 5 },
+          ],
+        },
       ],
     },
     {
@@ -101,6 +142,51 @@ export const conquestEconomicScene: StoryScene = {
       ],
     },
     {
+      id: 'economic_05_choice',
+      title: 'THE TESSURREN QUESTION',
+      paragraphs: [
+        'Tessurren Dolch is packing. Two guards, four crates, and a rented cart. He\'s leaving before the public meeting. Before the vendors can confront him directly. Running the numbers on a clean exit.',
+        'Suulen spots him from the rooftop opposite. Dragghen is two streets away. Kovesse has her Grimoire pointed at the harbor road.',
+        'You have about ten minutes before he reaches his ship.',
+      ],
+      choices: [
+        {
+          id: 'tessurren_let_go',
+          text: '"Let him run. A Kolmari agent who goes home with nothing is a better message than anything we could do to him."',
+          consequence: 'Let the failure speak for itself.',
+          available: true,
+          effects: [
+            { type: 'flag', target: 'tessurren_fate', value: 'fled' },
+            { type: 'reputation', value: 3 },
+            { type: 'loyalty', target: 'delvessa', value: 5 },
+          ],
+        },
+        {
+          id: 'tessurren_confront',
+          text: '"I want to look him in the eye. He should know who did this."',
+          consequence: 'Personal. Make him carry your face home.',
+          available: true,
+          effects: [
+            { type: 'flag', target: 'tessurren_fate', value: 'confronted' },
+            { type: 'infamy', value: 4 },
+            { type: 'bounty', value: 5000000 },
+          ],
+        },
+        {
+          id: 'tessurren_steal_cargo',
+          text: '"Those crates. That\'s Kolmari property he\'s removing from our island. Dragghen, Suulen, intercept the cargo."',
+          consequence: 'Take what he\'s carrying. Spoils of an invisible war.',
+          available: true,
+          effects: [
+            { type: 'flag', target: 'tessurren_fate', value: 'robbed' },
+            { type: 'resource', target: 'sovereigns', value: 80 },
+            { type: 'resource', target: 'intelligence', value: 8 },
+            { type: 'infamy', value: 2 },
+          ],
+        },
+      ],
+    },
+    {
       id: 'economic_06',
       title: 'DAY 7 - THE COLLAPSE',
       paragraphs: [
@@ -120,10 +206,45 @@ export const conquestEconomicScene: StoryScene = {
     },
     {
       id: 'economic_07b',
-      speaker: 'karyudon',
-      speakerName: 'Karyudon',
       paragraphs: [
-        '"I might."',
+        'She studies you over her spectacles. Waiting. The crowd is still murmuring behind her. Vendors are comparing contracts, voices rising. Pettha Koss needs an answer before the market decides to solve its own problems.',
+      ],
+      choices: [
+        {
+          id: 'econ_terms_accept',
+          text: '"Standard terms. You run the island, I handle security, we split revenue on trade volume. Partners."',
+          consequence: 'Accept her offer. Equal partnership.',
+          available: true,
+          effects: [
+            { type: 'flag', target: 'econ_terms', value: 'partnership' },
+            { type: 'reputation', value: 5 },
+            { type: 'loyalty', target: 'delvessa', value: 3 },
+            { type: 'resource', target: 'sovereigns', value: 50 },
+          ],
+        },
+        {
+          id: 'econ_terms_push',
+          text: '"I want authority over the harbor schedule. Security, trade routes, docking priority. You keep the market."',
+          consequence: 'Push for more. The harbor is the real prize.',
+          available: true,
+          effects: [
+            { type: 'flag', target: 'econ_terms', value: 'harbor_control' },
+            { type: 'infamy', value: 2 },
+            { type: 'resource', target: 'sovereigns', value: 100 },
+            { type: 'resource', target: 'materials', value: 10 },
+          ],
+        },
+        {
+          id: 'econ_terms_generous',
+          text: '"Keep your scheduling. Keep your revenue. I want one thing: when I call, Tavven answers. Loyalty over profit."',
+          consequence: 'Generous terms. Buy loyalty with restraint.',
+          available: true,
+          effects: [
+            { type: 'flag', target: 'econ_terms', value: 'loyalty_deal' },
+            { type: 'reputation', value: 8 },
+            { type: 'resource', target: 'sovereigns', value: -30 },
+          ],
+        },
       ],
     },
     {
@@ -131,7 +252,8 @@ export const conquestEconomicScene: StoryScene = {
       speaker: 'pettha_koss',
       speakerName: 'Pettha Koss',
       paragraphs: [
-        '"Standard protection terms. You handle security. I handle scheduling. Revenue split based on trade volume. We\'ll negotiate the specifics when I\'m not managing a financial crisis." She pauses. "You played this well, Captain. Don\'t think that means I trust you."',
+        'Pettha studies your face for a long time. Whatever she\'s looking for, she either finds it or decides it doesn\'t matter.',
+        '"You played this well, Captain. Don\'t think that means I trust you."',
       ],
     },
     {
