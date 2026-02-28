@@ -4,7 +4,6 @@ export const copperveinArrivalScene: StoryScene = {
   id: 'explore_coppervein',
   title: 'COPPERVEIN - THE SPARK',
   characters: ['karyudon', 'dragghen', 'kovesse', 'tessek', 'suulen'],
-  nextSceneId: 'vorreth_recruitment',
   beats: [
     {
       id: 'coppervein_arrive_01',
