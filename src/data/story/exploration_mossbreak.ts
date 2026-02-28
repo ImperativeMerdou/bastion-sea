@@ -4,7 +4,6 @@ export const mossbreakArrivalScene: StoryScene = {
   id: 'explore_mossbreak',
   title: 'MOSSBREAK - THE DARK',
   characters: ['karyudon', 'dragghen', 'kovesse', 'tessek'],
-  nextSceneId: 'explore_coppervein',
   beats: [
     {
       id: 'mossbreak_arrive_01',

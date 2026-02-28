@@ -4,7 +4,6 @@ export const keldrisArrivalScene: StoryScene = {
   id: 'explore_keldriss',
   title: 'KELDRISS - THE BLADE',
   characters: ['karyudon', 'dragghen', 'kovesse'],
-  nextSceneId: 'explore_mossbreak',
   beats: [
     {
       id: 'keldriss_arrive_01',
