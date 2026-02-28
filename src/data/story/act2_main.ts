@@ -782,9 +782,20 @@ export const act2FirstStrikeScene: StoryScene = {
         {
           id: 'strike_engage',
           text: '"We meet them in the channel. No retreat."',
-          consequence: 'No retreat. Meet them head-on.',
+          consequence: 'Head-on. Let them break against the rocks.',
           available: true,
           effects: [
+            { type: 'infamy', value: 5 },
+            { type: 'combat', target: 'wardensea_first_strike', value: true },
+          ],
+        },
+        {
+          id: 'strike_ambush',
+          text: '"Let them into the narrows. Hit them from the cliffs."',
+          consequence: 'Ambush. Use the terrain.',
+          available: true,
+          effects: [
+            { type: 'reputation', value: 5 },
             { type: 'combat', target: 'wardensea_first_strike', value: true },
           ],
         },
@@ -873,7 +884,7 @@ export const act2CrisisScene: StoryScene = {
       paragraphs: [
         'Three problems at once. The local harvest coordinator, a woman named Pela, is withholding grain from the supply chain. She says the quota Delvessa set is too high. She\'s not wrong, but the timing is deliberate.',
         'Second: Kolmari agitators have been operating on Mossbreak for two weeks. They\'re not trying to retake the island. They\'re trying to make it ungovernable. Whisper campaigns. Rumor networks. The classic destabilization playbook.',
-        'Third: morale. The people of Mossbreak did not choose you. They were conquered. The difference between a liberator and an occupier is in the details, and right now the details are not in your favor.',
+        'Third: morale. The people of Mossbreak did not choose you. They were conquered. And right now they are looking for reasons to regret it.',
       ],
     },
     {
