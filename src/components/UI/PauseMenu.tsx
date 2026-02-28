@@ -307,14 +307,14 @@ export const PauseMenu: React.FC<PauseMenuProps> = ({ isOpen, onClose }) => {
 
           {tab === 'save' && (
             <div className="space-y-3">
-              {[1, 2, 3].map((slot) => renderSlot(slot, 'save'))}
+              {[1, 2].map((slot) => renderSlot(slot, 'save'))}
             </div>
           )}
 
           {tab === 'load' && (
             <div className="space-y-3">
               {renderSlot(0, 'load')}
-              {[1, 2, 3].map((slot) => renderSlot(slot, 'load'))}
+              {[1, 2].map((slot) => renderSlot(slot, 'load'))}
             </div>
           )}
 

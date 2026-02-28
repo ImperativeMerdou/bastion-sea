@@ -64,6 +64,7 @@ export const MapPanel: React.FC = () => {
     if (e.key === 'Escape') {
       if (selectedIsland) {
         e.preventDefault();
+        e.stopPropagation();
         selectIsland(null);
         setFocusedIsland(null);
       }

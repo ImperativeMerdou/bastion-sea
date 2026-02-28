@@ -1,4 +1,5 @@
 import React from 'react';
+import { useGameStore } from '../../store/gameStore';
 
 interface ErrorBoundaryState {
   hasError: boolean;
@@ -21,16 +22,11 @@ export class ErrorBoundary extends React.Component<
 
   componentDidCatch(error: Error, info: React.ErrorInfo) {
     this.setState({ errorInfo: info.componentStack || '' });
-    // Attempt autosave on crash
+    // Emergency autosave on crash via Zustand vanilla access
     try {
-      const raw = localStorage.getItem('godtide_autosave');
-      if (!raw) {
-        // No existing autosave - try to save current state
-        // Try to save a crash backup marker so we know a crash occurred
-        localStorage.setItem('godtide_crash_backup', JSON.stringify({
-          timestamp: Date.now(),
-          error: error.message,
-        }));
+      const store = useGameStore.getState();
+      if (store.gamePhase !== 'prologue' || store.dayCount > 0) {
+        store.saveGame(0);
       }
     } catch {
       // Silent fail - don't make the crash worse
@@ -42,7 +38,6 @@ export class ErrorBoundary extends React.Component<
   };
 
   handleReturnToTitle = () => {
-    // Clear the error and let the app re-render from scratch
     this.setState({ hasError: false, error: null, errorInfo: '' });
     window.location.reload();
   };
@@ -60,7 +55,7 @@ export class ErrorBoundary extends React.Component<
             </h1>
 
             <p className="text-ocean-300 text-lg mb-6">
-              The Bastion Sea hit rough waters. Your progress is safe. The last autosave is intact.
+              The Bastion Sea hit rough waters. An emergency save has been attempted.
             </p>
 
             {/* Error details (collapsed) */}

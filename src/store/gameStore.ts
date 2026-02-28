@@ -1360,7 +1360,14 @@ export const useGameStore = create<GameState>((set, get) => ({
           ...(!event.repeatable ? { firedEventIds: [...s.firedEventIds, event.id] } : {}),
         }));
         rpt.push({ category: 'event', icon: '📜', text: event.notification.title, severity: 'info' });
-        get().addNotification({ type: event.notification.type, title: event.notification.title, message: event.notification.message });
+        const evtState = get();
+        const evtCtx = buildEventContext({
+          islands: evtState.islands, crew: evtState.crew, currentIsland: evtState.currentIsland,
+          reputation: evtState.mc.reputation, infamy: evtState.mc.infamy, bounty: evtState.mc.bounty,
+          threatLevel: evtState.threatState.level, wardenseaAlert: evtState.threatState.wardenseaAlert,
+          dayCount: newDay, gamePhase: evtState.gamePhase,
+        });
+        get().addNotification({ type: event.notification.type, title: interpolateText(event.notification.title, evtCtx), message: interpolateText(event.notification.message, evtCtx) });
       }
     };
 
