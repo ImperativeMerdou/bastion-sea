@@ -90,8 +90,12 @@ export function rollDayActionEvent(input: DayActionEventInput): DayActionEvent |
   const { action, dayCount, flags, currentIsland, aliveCrew, firedEventIds } = input;
   const firedSet = new Set(firedEventIds);
 
-  // 85% chance of narrative event (every day should matter)
-  if (Math.random() > 0.85) return null;
+  // Event chance scales down over time: 85% early game, decreasing as events fire
+  // Prevents narrative fatigue in late game while keeping early days rich
+  const baseChance = 0.85;
+  const firedPenalty = Math.min(0.25, firedEventIds.length * 0.005); // -0.5% per fired event, max -25%
+  const eventChance = Math.max(0.45, baseChance - firedPenalty); // Floor at 45%
+  if (Math.random() > eventChance) return null;
 
   const eligible = dayActionEvents.filter((event) => {
     // Must match the action type

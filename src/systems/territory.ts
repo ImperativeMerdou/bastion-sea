@@ -904,9 +904,9 @@ export function processTerritoryMorale(
   moraleChange -= TERRITORY.MORALE_DECAY_BASE;
 
   // Empire strain: more territories = faster morale bleed (capped to prevent death spiral)
-  // At 3 islands: -1.5 extra. At 6+: capped at -3 extra. Large empires are hard, not impossible.
+  // Smooth scaling: 3 islands = -0.45, 6 = -0.9, 10 = -1.5 (cap). No floor -- gradual pressure.
   const rawEmpireStrain = controlledCount * TERRITORY.MORALE_DECAY_PER_TERRITORY;
-  const territoryCountDecay = Math.floor(Math.min(rawEmpireStrain, TERRITORY.MORALE_DECAY_EMPIRE_STRAIN_CAP));
+  const territoryCountDecay = Math.min(rawEmpireStrain, TERRITORY.MORALE_DECAY_EMPIRE_STRAIN_CAP);
   moraleChange -= territoryCountDecay;
 
   // Threat penalty: higher threat = faster morale drain

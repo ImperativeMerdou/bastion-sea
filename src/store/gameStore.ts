@@ -1371,8 +1371,8 @@ export const useGameStore = create<GameState>((set, get) => ({
       }
     };
 
-    /** Phase 7: Grimoire broadcasts -- world commentary, one-shot flag cleanup. */
-    const processGrimoireBroadcasts = (rpt: DailyReportEntry[]) => {
+    /** Phase 7: Grimoire broadcasts -- world commentary, one-shot flag cleanup. Returns updatedDays if changed. */
+    const processGrimoireBroadcasts = (rpt: DailyReportEntry[]): Record<string, number> | null => {
       const bState = get();
       const crewMoods: Record<string, string> = {};
       bState.crew.filter((m) => m.recruited).forEach((m) => { crewMoods[m.id] = m.mood; });
@@ -1385,8 +1385,9 @@ export const useGameStore = create<GameState>((set, get) => ({
         playerArchetype: getPlayerArchetype(bState.playerProfile),
       };
       const { broadcasts, updatedDays } = generateGrimoireBroadcasts(broadcastCtx, bState.grimoireBroadcastDays);
+      let broadcastDaysChanged: Record<string, number> | null = null;
       if (broadcasts.length > 0) {
-        set({ grimoireBroadcastDays: updatedDays });
+        broadcastDaysChanged = updatedDays;
         stingerManager.play('grimoire_ping');
         broadcasts.forEach((b) => {
           rpt.push({ category: 'broadcast', icon: '📡', text: b.title, severity: 'info' });
@@ -1396,6 +1397,7 @@ export const useGameStore = create<GameState>((set, get) => ({
       if (get().flags['territory_recently_lost']) {
         get().setFlag('territory_recently_lost', false);
       }
+      return broadcastDaysChanged;
     };
 
     // ==========================================
@@ -1410,11 +1412,14 @@ export const useGameStore = create<GameState>((set, get) => ({
     processCrewMorale(report, controlledIslands.length > 0 ? upkeepCtx.territoryDeficit : upkeepCtx.deficit);
     processRandomEvents(report);
     get().processWorldReactions();
-    processGrimoireBroadcasts(report);
+    const broadcastDays = processGrimoireBroadcasts(report);
 
-    // Set the daily report for modal display
-    if (report.length > 0) {
-      set({ pendingDailyReport: report });
+    // Batch: daily report + grimoire broadcast days in single set() to reduce re-renders
+    const endOfDayBatch: Record<string, unknown> = {};
+    if (report.length > 0) endOfDayBatch.pendingDailyReport = report;
+    if (broadcastDays) endOfDayBatch.grimoireBroadcastDays = broadcastDays;
+    if (Object.keys(endOfDayBatch).length > 0) {
+      set(endOfDayBatch as Partial<typeof state>);
     }
 
     // Trigger bounty hunter combat after daily report is dismissed
