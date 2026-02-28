@@ -389,7 +389,7 @@ export const act2ConquerorScene: StoryScene = {
     {
       id: 'conqueror_07',
       paragraphs: [
-        'Tessavarra nods. She expected each possible answer. Conquerors survive by being prepared for every outcome.',
+        'Tessavarra studies you for a moment. Whatever calculation she\'s running finishes behind her good eye.',
         '"You know where to find me. Ghostlight Reef. The channel is always open, for now."',
         'She steps back onto her sloop. No ceremony. No handshake. The boat slides out of the shadow channel and vanishes into the dark water like it was never there.',
         'Suulen watches her go. She stays on the dock for a long time after the sloop vanishes.',
@@ -430,7 +430,7 @@ export const act2BlockadeScene: StoryScene = {
         'Delvessa drops a ledger on the table. It hits with a sound like a verdict.',
         '"Eighteen days." She doesn\'t sit down. "That\'s what we have. Eighteen days of supplies at full consumption. If something goes wrong on any island, twelve."',
         'She opens the ledger and runs her finger down a column of numbers, each one crossed out in red.',
-        '"They\'re strangling three routes: Coppervein minerals, Sorrens trade, Mirrorwater fish. They don\'t need to starve us. They just need to make every island cost more than it earns." She crosses out another number, harder than necessary. "It\'s not a blockade. It\'s an invoice. And the Kolmari have been writing these for centuries."',
+        '"They\'re strangling three routes: Coppervein minerals, Sorrens trade, Mirrorwater fish. They don\'t need to starve us. They just need to make every island cost more than it earns." Her pen stops on a number. Stays there. "It\'s not a blockade. It\'s an invoice. And the Kolmari have been writing these for centuries."',
       ],
       characters: ['karyudon', 'delvessa'],
     },
@@ -453,12 +453,6 @@ export const act2BlockadeScene: StoryScene = {
         '"Right now, both stories are true. Whichever one wins depends on what we do next. Give me something to broadcast and I\'ll make sure it\'s our version. But I can\'t spin a blockade into a victory if we\'re sitting here starving."',
       ],
       characters: ['karyudon', 'kovesse'],
-    },
-    {
-      id: 'blockade_05',
-      paragraphs: [
-        'Three approaches. Delvessa has prepared each one.',
-      ],
     },
     {
       id: 'blockade_06',
@@ -627,7 +621,6 @@ export const act2CouncilScene: StoryScene = {
     {
       id: 'council_07',
       paragraphs: [
-        'You listen to all of it. The numbers. The morale. The intelligence. The narrative. The military math.',
         'Then you ask the first question.',
       ],
       characters: ['karyudon', 'delvessa', 'dragghen', 'suulen', 'kovesse', 'vorreth'],
@@ -962,9 +955,8 @@ export const act2CrisisScene: StoryScene = {
     {
       id: 'crisis_07',
       paragraphs: [
-        'Whatever you chose, the immediate crisis is contained. Mossbreak\'s harvest resumes within days. The supply chain stabilizes. The Kolmari agitators withdraw, not because you defeated them, but because the story they were selling stopped being convincing.',
-        'But the cracks remain. Hairline fractures in the foundation of everything you\'ve built. The question is whether they heal or widen.',
-        'That depends on what comes next.',
+        'Mossbreak\'s harvest resumes within days. The supply chain stabilizes. The Kolmari agitators withdraw quietly, their story no longer selling.',
+        'But the cracks don\'t disappear. They just go quiet.',
       ],
     },
   ],
@@ -1123,7 +1115,33 @@ export const act2SouthernGambitScene: StoryScene = {
       speakerName: 'Karyudon',
       paragraphs: [
         'You pocket the letter.',
-        '"Move south. Take Windrow. Take Ghostlight. When we\'re standing in Vess Harbour, this friend can come say hello in person."',
+      ],
+      choices: [
+        {
+          id: 'gambit_south',
+          text: '"Move south. Take Windrow. Take Ghostlight. Whoever this is can say hello in Vess Harbour."',
+          consequence: 'Push into the southern islands. Bold.',
+          available: true,
+          effects: [
+            { type: 'reputation', value: 5 },
+            { type: 'flag', target: 'gambit_response', value: 'aggressive' },
+          ],
+        },
+        {
+          id: 'gambit_cautious',
+          text: '"South. But carefully. We map the route before we commit."',
+          consequence: 'Move south with preparation. The prudent path.',
+          available: true,
+          effects: [
+            { type: 'resource', target: 'intelligence', value: 10 },
+            { type: 'flag', target: 'gambit_response', value: 'cautious' },
+          ],
+        },
+      ],
+    },
+    {
+      id: 'gambit_07g',
+      paragraphs: [
         'Vorreth is already marking the southern route before you finish the sentence.',
       ],
     },

@@ -141,7 +141,7 @@ export const epilogueScene: StoryScene = {
       stinger: 'act_transition',
       paragraphs: [
         '\u200B',
-        'GODTIDE: BASTION SEA \u2014 END',
+        'GODTIDE: BASTION SEA -- END',
         '\u200B',
         'Kirin\'s story continues.',
       ],

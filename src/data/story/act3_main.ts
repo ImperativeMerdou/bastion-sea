@@ -1020,11 +1020,8 @@ export const act3EndingScene: StoryScene = {
       id: 'a3_ending_02',
       paragraphs: [
         'The Bastion Sea spreads below you. North to south, the islands trace a spine of stone and green, harbour lights scattered through water that is every shade of grey and blue the world has to offer.',
-        'Tavven Shoal, where it started. A prison transport. A stolen fruit. A man with nothing who decided to have everything.',
-        'Keldriss. Coppervein. Sorrens Flat. Anvil Cay. Mirrorwater. The Central Belt, five islands that had been taxed and bled dry by people who never set foot on their docks. Five islands that fly your flag now because you gave them something the Wardensea never did: a reason to.',
-        'Windrow. Ghostlight Reef. The southern arc, the stepping stones to the fortress where you now stand.',
-        'And Vess Harbour itself. The Wardensea\'s crown jewel. The seat of Admiral Vasshen\'s power. The fortress that was supposed to be the wall that stopped everything like you.',
-        'The wall fell. You are still standing.',
+        'Tavven Shoal, where it started. A prison transport. A stolen fruit. And now this. All of it yours because you were stubborn enough to take it and smart enough to hold it.',
+        'The Wardensea built a wall. The wall fell. You are still standing.',
       ],
     },
     {
@@ -1083,7 +1080,7 @@ export const act3EndingScene: StoryScene = {
         'It was five people in a stolen ship with bad odds and worse manners, held together by cooking and stubbornness and loyalty that nobody had the sense to put in a contract.',
         'But it worked. Against every calculation, every model, every precedent in the Bastion Sea\'s long and bloody history, it worked.',
         'You are still here. Your crew is still here. Your islands are still here.',
-        'And the sea, the whole vast, grey, beautiful, terrible sea, is yours.',
+        'And the sea. The whole grey, terrible sea. Yours.',
       ],
     },
     {
