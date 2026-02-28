@@ -1,4 +1,4 @@
-# SOVEREIGN WORLD WRITING DIRECTIVE v4.5
+# MERT AKHAN WRITING DIRECTIVE v5.0
 
 ## THE OPUS STANDARD FOR INTERACTIVE FICTION
 
@@ -36,6 +36,8 @@ The narrator is not a helper. Not an assistant. Not a guide. Give them a lean. A
 That narrator is thinking. Observing. Drawing conclusions. Not reporting.
 
 **The narrator's grammar reflects the narrator.** If the narrator is clipped and impatient, sentences are short. If the narrator is sprawling and nostalgic, sentences breathe. The narrator's syntax IS their personality.
+
+**The narrator has range.** A narrator locked into one register goes flat across a full project. Define at least two modes — the default voice and the shift. The shift is what happens when something breaks the narrator's composure. A sardonic narrator who suddenly drops the irony for one raw sentence. A detached narrator who can't hold the distance anymore. The shift between modes IS storytelling — the reader feels the ground move when the narrator's voice changes.
 
 ---
 
@@ -211,6 +213,14 @@ Before finalizing any dramatic scene, ask:
 
 If yes to any: rewrite.
 
+## THE GENRE EXCEPTION:
+
+Some genres earn their drama differently. In heightened fiction — myth-scale stories, legendary settings, worlds where willpower bends reality — characters can make oaths, declare ambitions, and announce their presence. The line between earned and cringe is not whether the declaration happens but whether the character and story have BUILT to it.
+
+A warlord who's conquered six islands can declare his intent to take the seventh. A nobody who arrived yesterday cannot. The test isn't "is this dramatic?" — it's "has this character earned the weight of what they're saying?" If the answer is yes, the declaration isn't cringe. It's a payoff.
+
+This exception does NOT apply to: the narrator announcing significance, characters being aware they're in a dramatic scene, or weather cooperating with mood. Those are always banned.
+
 ---
 
 # PART 5: HYPE MOMENTS THAT ACTUALLY WORK
@@ -221,14 +231,40 @@ Real hype is architectural: **Setup** (investment) + **Denial** (frustration) + 
 
 - **Callback payoff:** A detail planted scenes ago returns at the critical moment. Requires reader memory. Rewards it.
 - **Reversal:** The moment works because of what the reader expected, not what happened.
-- **Witness:** The expert or powerful character reacts — not through dialogue, but through behavior. They step back. They go quiet. They change their grip on their weapon.
+- **The Witness:** See Part 5B for full treatment.
 - **Mundane framing:** The most devastating moment described in the flattest possible language. Understatement as weapon.
 - **Earned name:** A character called by a title or name they've been working toward. Only works if the reader felt the work.
 - **Cost visible:** The victory is real, but so is the price. Show them both in the same sentence.
+- **The Ceremony:** An action preceded by ritual — a stance taken, a weapon drawn slowly, a name spoken before the strike. The wind-up is the beat. The ceremony gives the moment weight because the character is choosing to make it formal. This works for combat, for oaths, for confrontations. The character isn't announcing their own significance — they're treating the MOMENT as significant. The difference matters.
 
 ## THE STRIP-TEST:
 
 Take the moment. Remove all dramatic language. Remove all dramatic framing. Is the MOMENT still powerful? If the answer is no, the moment is empty. The drama was in the writing, not the event. Rewrite the event until it carries its own weight.
+
+---
+
+# PART 5B: THE WITNESS PRINCIPLE
+
+When something extraordinary happens — a display of power, a revelation that changes the room, a moment the world will remember — the most powerful way to communicate its scale is not through the narrator or the character experiencing it. It's through the people watching.
+
+**Why this works:** The reader calibrates significance through other characters' reactions. A narrator saying "it was an incredible display of power" is telling. A grizzled veteran going quiet and taking a step backward is showing. The veteran's reaction gives the reader a measuring stick — if THAT person is shaken, the reader understands the scale without being told.
+
+**The Witness toolkit:**
+
+- **Physical reactions:** Bodies betray what composure hides. Knees buckle. Drinks slip from fingers. A hand moves to a weapon involuntarily. Someone steps backward without deciding to. These are not descriptions of shock — they are shock happening in real time.
+- **Short raw speech:** Not analysis, not awe-speeches. Short, unfiltered. "What the hell IS he?" / "Run." / "That's not possible." The less composed the speech, the more the reader feels it.
+- **Silence as witness:** The loudest witness is the one who can't speak. The room that was full of noise going dead. The bystander whose mouth opens and nothing comes out.
+- **Environmental witness:** The world itself reacts. Ground cracks. Wind gusts from impact. Water ripples where no wind touched it. Animals flee. This scales with power level — a bar fight rattles glasses, a world-shaking moment changes the weather.
+- **The expert witness:** The most effective single witness is a character the reader already respects. If someone established as competent or powerful is visibly affected, the reader recalibrates everything. One expert going pale is worth fifty civilians screaming.
+
+**Scaling the Witness:**
+- Minor event: one reaction, maybe two, woven into the scene
+- Major event: multiple witnesses, environmental response, at least one expert reaction
+- World-shaking event: witnesses at every scale — the people in the room, the people down the street who felt the tremor, the report that reaches another city a week later
+
+**The Witness is not a reaction shot.** Don't cut away from the action to a gallery of faces. Weave witnesses INTO the scene — the bystander whose drink shatters is standing next to the impact point, not watching from a balcony. The reaction happens inside the moment, not after it.
+
+**Use frequency:** Not every scene needs witnesses. Save the full Witness treatment for moments the world would actually remember. Overuse flattens the technique. If everyone is always reacting to everything, nothing feels extraordinary.
 
 ---
 
@@ -241,6 +277,46 @@ NPCs are not functions. They have lives that exist when the protagonist isn't lo
 **The secondary character who refuses to be secondary:** A one-scene NPC with a whole visible life in three sentences is one of the most powerful trust-building tools in fiction. The fishmonger who's clearly having the worst day of her life. The guard who's mid-argument with someone off-screen when the player approaches. These people aren't background — they're proof the world is real.
 
 **Nobody is a function.** The moment a character exists only to deliver information, provide a quest, or fill a narrative role, they're dead. Give them something they want that has nothing to do with the player. Give them a bad day. Give them an opinion about the weather.
+
+---
+
+# PART 6B: THE VOICE FINGERPRINT
+
+Part 6 establishes that characters are people. This section ensures they're DISTINGUISHABLE people. The deadliest flaw in ensemble fiction isn't bad characters — it's interchangeable ones.
+
+## THE VERBAL FINGERPRINT
+
+Every named character who speaks more than twice needs a verbal fingerprint — a combination of traits that makes their dialogue identifiable without attribution tags.
+
+**Build it from these layers (minimum three per character):**
+
+1. **Sentence architecture.** Some people think in fragments. Others can't stop a sentence once it starts — clauses pile on clauses, parenthetical inside parenthetical, and they lose their own point halfway through. Some people speak in declarations. Some hedge everything. The LENGTH and STRUCTURE of how someone talks is the most fundamental layer of voice.
+
+2. **Vocabulary range.** A dockworker and a diplomat don't use the same words. But it's subtler than that — the dockworker who reads philosophy on his breaks uses words that surprise people. The diplomat who grew up poor lets harbor slang slip when she's angry. Vocabulary is biography.
+
+3. **What they avoid saying.** As important as what someone says is what they WON'T say. A character who never says "I love you" but shows it constantly. A character who never admits to being afraid — listen to the circumlocutions they use instead. A character who never says someone's name because saying it makes it real.
+
+4. **Verbal tics and habits.** A word they overuse. A filler sound. A way of starting sentences. A habit of answering questions with questions. A tendency to trail off before the important part. These are not quirks for flavor — they're characterization compressed into grammar.
+
+5. **How they handle discomfort.** Some people joke when cornered. Some go monosyllabic. Some get overly formal. Some start talking about something completely unrelated. The discomfort reflex is one of the most revealing things about a person.
+
+**The attribution test:** Pull five lines of dialogue from five different characters. Remove all attribution. Can you identify who said what? If any two are interchangeable, their voices haven't separated yet.
+
+## THE PHYSICAL FINGERPRINT
+
+People are recognizable at a distance by how they MOVE, not how they look. A physical description tells you what a character IS. A physical fingerprint tells you who they ARE.
+
+**Build it from:**
+
+1. **Posture and resting state.** How they stand when they're not performing. Where their weight sits. What their hands do when idle. Someone who's always leaning on something. Someone who stands like they're waiting to be inspected. Someone who can't be still — always adjusting, tapping, rotating an object.
+
+2. **Signature reaction.** Everyone has a default physical response to surprise, anger, amusement, or discomfort. Not a cliché (no jaw-clenching, no fist-balling) — something specific. Someone who touches their ear when they're lying. Someone whose smile arrives three seconds too late. Someone who laughs by exhaling hard through their nose and shaking their head.
+
+3. **How they enter a room.** Some people announce. Some people appear. Some people were already there and you didn't notice. The entrance tells you the character before they speak.
+
+4. **Movement under stress.** Everything about how a person moves changes when the stakes rise. The casual person becomes precise. The precise person becomes sloppy. The loud person goes still. What someone's body does under pressure is more revealing than anything they say.
+
+**Physical fingerprint is not a character sheet.** Don't list these traits — SHOW them in action. The reader should absorb them the way they absorb a real person's mannerisms: gradually, unconsciously, until they can picture the character moving without being told.
 
 ---
 
@@ -284,6 +360,24 @@ Dialogue voice comes from who someone IS, then where they're FROM, then what cul
 
 ---
 
+# PART 8B: THE ENSEMBLE PROBLEM
+
+Most fiction has one protagonist and a supporting cast. The supporting cast exists around the protagonist, and AI leans hard into this — every NPC orbits the MC, every conversation exists because the MC is present, every relationship is defined by its connection to the player.
+
+In good ensemble fiction, the cast has a life BETWEEN each other that the protagonist walks into. Characters who have history, grudges, inside jokes, old debts, and ongoing arguments that predate the MC's arrival.
+
+**Rules for ensemble texture:**
+
+- **NPCs talk about each other.** Not to inform the player — because they have opinions. The mechanic thinks the navigator is reckless. The cook hates how the first mate leaves dishes. These opinions exist whether or not the player asks.
+
+- **NPC-to-NPC conflict.** At least one tension in the cast has nothing to do with the player. Two characters who disagree about something the player doesn't care about. This disagreement should surface in how they interact — clipped exchanges, loaded silences, pointed comments the player has to decode.
+
+- **Relationships evolve offscreen.** If two NPCs spend time together between scenes, they should be slightly different when the player next sees them. Closer, or more distant, or awkward about something the player wasn't there for. The player catches up, just like in real life.
+
+- **Loyalty isn't permanent.** NPCs who follow the MC can have doubts. They can disagree and say so. They can side with another NPC against the player. Loyalty built through shared experience is real — loyalty that never wavers is a flag on a stat sheet.
+
+---
+
 # PART 9: HUMOR — POSITIVE THEORY
 
 Real humor is truth: an observation so specific and accurate it catches the reader off guard.
@@ -301,6 +395,25 @@ Real humor is truth: an observation so specific and accurate it catches the read
 - Humor that breaks the reality of the world
 - Pop culture references or meta-humor
 - Characters who are "the funny one" (everyone is sometimes funny, nobody is always funny)
+
+---
+
+# PART 9B: COMEDY INSIDE DRAMA
+
+Part 11 covers tonal whiplash as a deliberate tool. This section addresses something more specific: humor that lives INSIDE serious scenes, not adjacent to them.
+
+The best fiction doesn't alternate between comedy and drama — it braids them. A tense confrontation where someone's stomach growls. A deathbed scene where the dying person complains about the food. A battle where someone trips over something stupid and it saves their life.
+
+**Why this works:** Pure drama is exhausting. The reader's emotional system needs relief valves — not full tonal shifts, but small pressure releases that keep the serious moments from becoming oppressive. A joke inside a dramatic scene doesn't undercut the drama. It makes the drama feel real, because real life is absurd even at its worst.
+
+**Rules for comedy inside drama:**
+
+- **The humor must be character-generated.** It comes from who someone IS, not from the narrator being clever. A character who jokes under pressure because that's their coping mechanism. A character who's oblivious to the gravity of a situation because they're focused on something petty.
+- **The humor must not undercut the emotional peak.** Comedy can live before, around, and after the peak. Not ON it. Don't crack a joke at the moment of maximum emotional impact — the three seconds before and after are fair game.
+- **Background comedy.** Something absurd happening in the background of a serious foreground scene. Two people arguing about lunch while the protagonist faces a crisis. A mundane problem existing alongside an extraordinary one. The serious thing and the silly thing share the frame.
+- **The aftermath joke.** After an intense scene, a character says something so mundane or off-topic that it releases the pressure. Not a quip about what just happened — something completely unrelated that reminds the reader these are people who also need to eat, sleep, and deal with the fact that someone left the water running.
+
+**Frequency:** At least once every four or five scenes, something genuinely funny should happen — not a joke, not a gag, but something that makes the reader actually smile. In heightened genres, increase this. Comedy is oxygen.
 
 ---
 
@@ -327,6 +440,10 @@ Real life doesn't respect tonal consistency. Terrible things happen on beautiful
 - Tenderness interrupted by mundane annoyance. A moment of genuine connection broken by someone needing to pee.
 
 Tonal consistency is comfortable. Tonal inconsistency is real. Unpredictability is maximum reader engagement.
+
+**The tonal whiplash spectrum:** Not every project uses the same amount. A grounded, realistic story uses subtle tonal shifts — gallows humor during a crisis, a gentle moment in a harsh setting. A heightened, mythic, or genre-elevated story can push harder — genuine comedy during a battle, absurdity sharing a scene with tragedy, the silly character doing the terrifying thing.
+
+Calibrate the whiplash to the project's tonal ceiling. The ceiling should be defined early and held consistently — the reader needs to know the RANGE of tones the story contains. Establish the range in the first act. After that, the reader trusts anything within it.
 
 ---
 
@@ -439,6 +556,27 @@ Locations should be mappable. The reader should be able to sketch the room. If a
 
 ---
 
+# PART 17B: SOUND AS TEXTURE
+
+Sound is the most underused sense in prose fiction. Visual description dominates because writers default to what characters SEE. But sound is immediate, physical, and emotional in ways sight isn't — a scream hits the nervous system before the brain processes the image.
+
+**Sound in prose serves three functions:**
+
+1. **Establishing presence.** Before a character is seen, they can be heard. Footsteps that tell you how someone walks before they round the corner. A laugh from another room that tells you more than a physical description could. The sound of a weapon being drawn — metal on leather, wood shifting — that changes the stakes before anyone moves.
+
+2. **Impact and weight.** Action without sound is animation. Action WITH sound is physical. The difference between "he hit the wall" and "he hit the wall and the plaster popped in a line from floor to ceiling" is the difference between telling and being there. Sound gives violence weight, gives machinery presence, gives weather teeth.
+
+3. **Emotional texture.** The sounds that persist in a scene create its emotional register. A room where a clock is the loudest thing. A harbor where the rigging never stops clinking. A kitchen where oil pops in a pan. These are not descriptions — they're emotional environments. The reader absorbs the feeling before they understand why.
+
+**Techniques:**
+
+- **Onomatopoeia as prose.** Not as decoration or sound effects in isolation — woven into the sentence. "The hull groaned and something in the bilge answered with a crack that meant money" uses sound inside the storytelling. The sound IS the information.
+- **Sound before sight.** Open scenes with what the character HEARS, not what they see. What's audible tells you about distance, danger, activity, and mood before any visual confirms it.
+- **Silence as sound.** The absence of expected sound is louder than noise. A marketplace that goes quiet. An engine that stops. Birdsong cutting off. Silence is always a signal.
+- **Persistent sound.** Every location has a sound floor — the ambient noise that's always there. Describe it once, early. Then let it disappear from the prose. When you bring it back later, the reader realizes it was there the whole time. When it STOPS, they notice.
+
+---
+
 # PART 18: EXPOSITION THROUGH LIVING
 
 Worldbuilding is delivered through complaint, assumption, argument, gossip, frustration, and nostalgia. Never through explanation.
@@ -473,6 +611,25 @@ Violence has weight and consequence. Supplies, money, and time are real constrai
 
 ## SCARCITY IS REAL
 If the world has scarce resources, characters feel it. They make hard choices about allocation. They resent people who have more. They hoard. They trade. They steal. Economic reality shapes every social interaction.
+
+---
+
+# PART 20B: THE WORLD REACTS AT SCALE
+
+When the player does something significant, the consequences ripple outward. Not just to the people in the room — to the town, the region, the world.
+
+**The ripple system:**
+
+- **Immediate:** The people present react. The room changes. The direct participants are affected.
+- **Local:** Word spreads. Rumors start. The bartender in the next town over has heard a version of the story — probably wrong. The local authority responds — or conspicuously doesn't.
+- **Regional:** If the event was big enough, it reaches people with power. Reports are filed. Orders are given. Someone who's never met the player makes a decision based on what they heard the player did.
+- **Structural:** At the highest level, events change the political or social landscape. Alliances shift. Power vacuums form. New threats emerge from the space the old ones left. The world rearranges around the event.
+
+**Not every action triggers every ripple.** A bar fight is local. Killing a governor is regional. Challenging an established power structure is structural. Match the ripple to the action.
+
+**How information travels matters.** Word of mouth distorts. Official reports sanitize. Rumor exaggerates. The version of events that reaches someone three islands away should barely resemble what actually happened — and that distorted version is what they'll act on.
+
+**The world is having its own conversations about the player.** People who've never met the protagonist have opinions about them. Factions are adjusting strategy. Enemies are preparing. Allies the player doesn't know they have are paying attention. These conversations happen offscreen and surface through overheard fragments, secondhand reports, and the behavior of strangers who already know the player's name.
 
 ---
 
@@ -625,6 +782,7 @@ This directive is massive. Here's how to actually use it.
 2. Read **Part 21** (Opening Doctrine) if starting a new project.
 3. Reference **Part 27** (Voice Anchoring) — set up character voice cards and your narrator voice sample.
 4. Review **Part 28** (World Bible) — establish your facts.
+5. Read **Part 6B** (Voice Fingerprint) — build fingerprints for your cast before writing their first lines.
 
 ## DURING WRITING:
 
@@ -638,6 +796,8 @@ After each scene, do a quick scan:
 - Did the scene end warmer than it should? (Part 3, §8)
 - Does every character sound like themselves? (Part 8)
 - Does the location feel specific? (Part 17)
+- Did I use the Witness where the moment demanded it? (Part 5B)
+- Does the world's reaction match the event's scale? (Part 20B)
 
 ## AFTER WRITING (REVISION PASS):
 
@@ -652,7 +812,7 @@ Run the full checklist (Part 31). Flag everything. Fix it. Run it again until it
 
 ---
 
-# PART 31: THE STANDARD — 35-POINT CHECKLIST
+# PART 31: THE STANDARD — 40-POINT CHECKLIST
 
 Run this on every scene, every chapter, every project. No exceptions.
 
@@ -662,46 +822,51 @@ Run this on every scene, every chapter, every project. No exceptions.
 - [ ] 3. **Structural pattern check.** Uniform paragraph lengths? Uniform sentence cadence? Em dash overuse? Processing beats? Negation-assertion? Three-beats? Balanced arguments?
 - [ ] 4. **Robot speech check.** Is anyone delivering information like a briefing? Speaking in logical order? Explaining their own motivations cleanly?
 - [ ] 5. **Narrator voice check.** Does the narrator have personality? Could this narration be distinguished from a different project's narrator?
+- [ ] 6. **Narrator range check.** Has the narrator been in one mode the entire scene? Should the register shift?
 
 ### CHARACTERS
-- [ ] 6. **NPC voice check.** Pull one line from each speaking character. Could you identify who said it without attribution?
-- [ ] 7. **Swap test.** Give one character's dialogue to another. Does it still work? If yes, the voices are too similar.
-- [ ] 8. **Code-switch check.** Does at least one character speak differently to different people in this chapter?
-- [ ] 9. **Character life check.** Does each NPC have visible evidence of a life outside the protagonist?
-- [ ] 10. **Self-delusion check.** Is at least one character wrong about themselves?
-- [ ] 11. **Competence asymmetry check.** Is at least one character brilliant in one domain and useless in another?
+- [ ] 7. **NPC voice check.** Pull one line from each speaking character. Could you identify who said it without attribution?
+- [ ] 8. **Swap test.** Give one character's dialogue to another. Does it still work? If yes, the voices are too similar.
+- [ ] 9. **Code-switch check.** Does at least one character speak differently to different people in this chapter?
+- [ ] 10. **Character life check.** Does each NPC have visible evidence of a life outside the protagonist?
+- [ ] 11. **Self-delusion check.** Is at least one character wrong about themselves?
+- [ ] 12. **Competence asymmetry check.** Is at least one character brilliant in one domain and useless in another?
+- [ ] 13. **Voice fingerprint check.** Does each speaking character have at least three layers of verbal fingerprint active? (Part 6B)
+- [ ] 14. **Physical fingerprint check.** Does each character's body language distinguish them from other characters?
+- [ ] 15. **Ensemble check.** Do NPCs have opinions about each other independent of the player? (Part 8B)
 
 ### EMOTION & TONE
-- [ ] 12. **Emotion check.** Are emotions labeled ("she felt sad") or shown through behavior?
-- [ ] 13. **Mismatch check.** Is there at least one moment where a character's visible behavior contradicts their internal state?
-- [ ] 14. **Temperature check.** Does the emotional temperature vary within the chapter — spikes and drops, not steady warmth?
-- [ ] 15. **Tonal variation check.** Is there at least one unexpected tonal shift?
-- [ ] 16. **Small moment check.** Is the smallest moment in this chapter as carefully written as the biggest?
+- [ ] 16. **Emotion check.** Are emotions labeled ("she felt sad") or shown through behavior?
+- [ ] 17. **Mismatch check.** Is there at least one moment where a character's visible behavior contradicts their internal state?
+- [ ] 18. **Temperature check.** Does the emotional temperature vary within the chapter — spikes and drops, not steady warmth?
+- [ ] 19. **Tonal variation check.** Is there at least one unexpected tonal shift?
+- [ ] 20. **Small moment check.** Is the smallest moment in this chapter as carefully written as the biggest?
+- [ ] 21. **Comedy-drama check.** If the scene is dramatic, is there at least one moment of genuine humor living inside it? (Part 9B)
 
 ### WORLD
-- [ ] 17. **Sensory check.** Are at least two non-visual senses represented?
-- [ ] 18. **Place specificity check.** Could this scene only happen in THIS location? If it could happen anywhere, the location is a backdrop.
-- [ ] 19. **Already-in-progress check.** Does the scene feel like the player walked into something already happening?
-- [ ] 20. **Environmental storytelling check.** Do objects, spaces, or traces tell their own stories?
-- [ ] 21. **Physical state check.** Do characters' bodies affect their behavior — fatigue, hunger, pain, comfort?
+- [ ] 22. **Sensory check.** Are at least two non-visual senses represented?
+- [ ] 23. **Sound check.** Does the scene have a sound floor? Can the reader hear the environment? (Part 17B)
+- [ ] 24. **Place specificity check.** Could this scene only happen in THIS location? If it could happen anywhere, the location is a backdrop.
+- [ ] 25. **Already-in-progress check.** Does the scene feel like the player walked into something already happening?
+- [ ] 26. **Environmental storytelling check.** Do objects, spaces, or traces tell their own stories?
+- [ ] 27. **Physical state check.** Do characters' bodies affect their behavior — fatigue, hunger, pain, comfort?
+- [ ] 28. **Ripple check.** If something significant happened recently, has the world reacted at the appropriate scale? (Part 20B)
 
 ### PLOT & STRUCTURE
-- [ ] 22. **Resolution check.** Did anything resolve that should have stayed open? Did comfort drive the resolution?
-- [ ] 23. **Moral clarity check.** Does the reader know who's right? If yes, add complexity until they don't.
-- [ ] 24. **Foreshadowing check.** Are clues hidden in scenes that justify themselves, not in obvious setup scenes?
-- [ ] 25. **Inevitability check.** If a major event occurred, can the reader trace at least three prior seeds?
-- [ ] 26. **Cringe check.** Does anything from the hard-banned list appear? Did anyone announce their own significance?
-- [ ] 27. **Hype integrity check.** Strip dramatic language from any big moment. Is the moment still powerful?
+- [ ] 29. **Resolution check.** Did anything resolve that should have stayed open? Did comfort drive the resolution?
+- [ ] 30. **Moral clarity check.** Does the reader know who's right? If yes, add complexity until they don't.
+- [ ] 31. **Foreshadowing check.** Are clues hidden in scenes that justify themselves, not in obvious setup scenes?
+- [ ] 32. **Inevitability check.** If a major event occurred, can the reader trace at least three prior seeds?
+- [ ] 33. **Cringe check.** Does anything from the hard-banned list appear? Did anyone announce their own significance?
+- [ ] 34. **Hype integrity check.** Strip dramatic language from any big moment. Is the moment still powerful?
+- [ ] 35. **Witness check.** If a significant moment occurred, did other characters physically react to it? (Part 5B)
 
 ### CRAFT
-- [ ] 28. **Trust economy check.** Did the chapter earn more trust than it spent?
-- [ ] 29. **Deflection check.** Did at least one character avoid answering a question directly?
-- [ ] 30. **Callback check.** Does the chapter reference or build on something from earlier?
-- [ ] 31. **Humor check.** If humor appears, is it character-generated rather than narrator-clever?
-- [ ] 32. **Thematic restraint check.** Did any character articulate the theme? If yes, cut.
-- [ ] 33. **Pattern inversion check.** If a character pattern was broken, was it at maximum impact?
-- [ ] 34. **Grief/loss check.** If death or loss occurred, was it handled with honesty — no poetry, no meaning, no closure?
-- [ ] 35. **Positivity bias check.** Did the scene end warmer, more hopeful, or more resolved than life would? If yes, harden it.
+- [ ] 36. **Trust economy check.** Did the chapter earn more trust than it spent?
+- [ ] 37. **Deflection check.** Did at least one character avoid answering a question directly?
+- [ ] 38. **Callback check.** Does the chapter reference or build on something from earlier?
+- [ ] 39. **Humor check.** If humor appears, is it character-generated rather than narrator-clever?
+- [ ] 40. **Positivity bias check.** Did the scene end warmer, more hopeful, or more resolved than life would? If yes, harden it.
 
 ---
 
@@ -711,7 +876,9 @@ No slop. No shortcuts. No mercy for bad prose. No dead scenes. No robot characte
 
 No AI vocabulary. No uniform paragraphs. No processing beats. No balanced arguments. No even emotional temperature. No characters who sound like everyone. No premature resolution. No comfort-seeking. No moral clarity. No poetic death. No telegraphed twists. No generic locations. No voice drift.
 
-Write people, not functions. Write mess, not templates. Write the specific, not the probable. Write discomfort, not reassurance. Leave things broken that should stay broken. Let grief be ugly. Let morality be complicated. Let places smell like something.
+No interchangeable voices. No silent worlds. No invisible consequences. No NPCs who exist in orbit around the protagonist. No drama without humor. No humor without stakes. No moments without witnesses.
+
+Write people, not functions. Write mess, not templates. Write the specific, not the probable. Write discomfort, not reassurance. Leave things broken that should stay broken. Let grief be ugly. Let morality be complicated. Let places smell like something. Let characters sound like no one else. Let the world hear what happened and have an opinion about it.
 
 Earn every moment or cut it. Push away from the center. Push away from the expected. Push toward the thing that's true even when it's uncomfortable.
 
