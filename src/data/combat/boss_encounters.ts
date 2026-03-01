@@ -1750,6 +1750,7 @@ export const kirinEncounter: CombatEncounter = {
   onVictoryEffects: [
     { type: 'flag', target: 'kirin_defeated', value: true },
     { type: 'flag', target: 'kirin_alive', value: true },
+    { type: 'flag', target: 'kirin_confrontation_complete', value: true },
     { type: 'notification', value: true, notification: {
       type: 'story',
       title: 'THE HIGHLAND DEBT - PAID',
@@ -1759,6 +1760,7 @@ export const kirinEncounter: CombatEncounter = {
   onDefeatEffects: [
     { type: 'flag', target: 'kirin_encounter_lost', value: true },
     { type: 'flag', target: 'kirin_alive', value: true },
+    { type: 'flag', target: 'kirin_confrontation_complete', value: true },
   ],
 };
 

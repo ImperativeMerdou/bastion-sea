@@ -251,7 +251,8 @@ export const kirinRivalryScene: StoryScene = {
   currentBeat: 0,
   onComplete: [
     { type: 'combat', target: 'kirin_boss_fight', value: true },
-    { type: 'flag', target: 'kirin_confrontation_complete', value: true },
+    // kirin_confrontation_complete is set by the combat encounter's onVictoryEffects/onDefeatEffects
+    // so it only fires AFTER combat resolves, not when this scene ends
   ],
 };
 

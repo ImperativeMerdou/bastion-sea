@@ -9,9 +9,15 @@ const DEATH_BACKGROUNDS: Record<string, string> = {
   crew_mutiny: 'game_over_mutiny.webp',
   total_defeat: 'game_over_defeat.webp',
   territory_lost: 'game_over_territory.webp',
+  surrender: 'game_over_defeat.webp',
 };
 
 const DEATH_CAUSES: Record<string, { title: string; flavor: string }> = {
+  surrender: {
+    title: 'THE PRICE OF PEACE',
+    flavor:
+      'You accepted Prime Khoss\'s terms. The crew walks free. That is not nothing. A hundred and twelve lives who followed you across the Bastion Sea, who bled for every island you took, who believed in the name you were building. They live. They go home. The Wardensea gets the territory. You get the knowledge that you chose them over the empire. The Bastion Sea will remember what you built, even if the Wardensea dismantles it. Some things are not measured in islands.',
+  },
   starvation: {
     title: 'THE SEA TAKES ITS DUE',
     flavor:

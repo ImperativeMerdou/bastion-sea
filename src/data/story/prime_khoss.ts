@@ -139,7 +139,8 @@ export const primeKhossScene: StoryScene = {
           available: true,
           effects: [
             { type: 'flag', target: 'khoss_response', value: 'surrender' },
-            { type: 'flag', target: 'game_ending_type', value: 'surrender' },
+            { type: 'flag', target: 'game_over', value: true },
+            { type: 'flag', target: 'game_over_cause', value: 'surrender' },
             { type: 'flag', target: 'prime_khoss_confrontation_begun', value: true },
             { type: 'notification', value: true, notification: {
               type: 'story',
