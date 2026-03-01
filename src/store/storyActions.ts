@@ -18,14 +18,21 @@ export function createStoryActions(
     advanceBeat: () => {
       const state = get();
       if (!state.currentScene) return;
-      // Skip beats whose requireFlag is not satisfied
+      // Skip beats whose requireFlag or requireFlagValue is not satisfied
       let nextBeat = state.currentScene.currentBeat + 1;
-      while (
-        nextBeat < state.currentScene.beats.length &&
-        state.currentScene.beats[nextBeat].requireFlag &&
-        !state.flags[state.currentScene.beats[nextBeat].requireFlag!]
-      ) {
-        nextBeat++;
+      while (nextBeat < state.currentScene.beats.length) {
+        const beat = state.currentScene.beats[nextBeat];
+        const failsRequireFlag = beat.requireFlag && !state.flags[beat.requireFlag];
+        const failsRequireFlagValue = beat.requireFlagValue && (() => {
+          const actual = state.flags[beat.requireFlagValue!.flag];
+          const expected = beat.requireFlagValue!.value;
+          return Array.isArray(expected) ? !expected.includes(actual as string | boolean) : actual !== expected;
+        })();
+        if (failsRequireFlag || failsRequireFlagValue) {
+          nextBeat++;
+        } else {
+          break;
+        }
       }
       if (nextBeat >= state.currentScene.beats.length) {
         const completedScene = state.currentScene;

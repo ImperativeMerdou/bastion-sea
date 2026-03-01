@@ -317,11 +317,12 @@ export const CombatPanel: React.FC = () => {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [state?.player.hp]);
 
-  // Reset shonen refs when combat changes
+  // Reset shonen refs and local UI state when combat changes (encounter switch or retry)
   useEffect(() => {
     hasShownVs.current = false;
     hasShownFirstBlood.current = false;
     lastHpRef.current = null;
+    setBossPhaseIdx(0);
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [state?.encounter.id]);
 
@@ -815,9 +816,16 @@ export const CombatPanel: React.FC = () => {
 
       const endPhase = checkCombatEnd(newState);
       if (endPhase) {
-        if (endPhase === 'victory') audioManager.playSfx('combat_victory');
-        if (endPhase === 'defeat') audioManager.playSfx('combat_defeat');
-        updateCombatState({ ...newState, phase: endPhase, animating: false });
+        if (endPhase === 'wave_transition') {
+          const waveState = spawnNextWave(newState);
+          animDispatch({ type: 'SET', field: 'showRoundBanner', value: true });
+          safeTimeout(() => animDispatch({ type: 'SET', field: 'showRoundBanner', value: false }), 1500);
+          advanceCombat(waveState);
+        } else {
+          if (endPhase === 'victory') audioManager.playSfx('combat_victory');
+          if (endPhase === 'defeat') audioManager.playSfx('combat_defeat');
+          updateCombatState({ ...newState, phase: endPhase, animating: false });
+        }
         return;
       }
       advanceCombat(newState);
@@ -869,9 +877,16 @@ export const CombatPanel: React.FC = () => {
       }
       const endPhase = checkCombatEnd(newState);
       if (endPhase) {
-        if (endPhase === 'victory') audioManager.playSfx('combat_victory');
-        if (endPhase === 'defeat') audioManager.playSfx('combat_defeat');
-        updateCombatState({ ...newState, phase: endPhase, animating: false });
+        if (endPhase === 'wave_transition') {
+          const waveState = spawnNextWave(newState);
+          animDispatch({ type: 'SET', field: 'showRoundBanner', value: true });
+          safeTimeout(() => animDispatch({ type: 'SET', field: 'showRoundBanner', value: false }), 1500);
+          advanceCombat(waveState);
+        } else {
+          if (endPhase === 'victory') audioManager.playSfx('combat_victory');
+          if (endPhase === 'defeat') audioManager.playSfx('combat_defeat');
+          updateCombatState({ ...newState, phase: endPhase, animating: false });
+        }
         return;
       }
       advanceCombat(newState);
@@ -1858,9 +1873,9 @@ export const CombatPanel: React.FC = () => {
             ROUND {state.round}
           </span>
           <span className={`text-xs font-bold tracking-wider ${
-            state.phase === 'player_turn' ? 'text-amber-400' : 'text-red-400'
+            state.phase === 'player_turn' && !state.animating ? 'text-amber-400' : 'text-red-400'
           }`}>
-            {state.phase === 'player_turn' ? '▶ YOUR TURN' : '◀ ENEMY TURN'}
+            {state.phase === 'player_turn' && !state.animating ? '▶ YOUR TURN' : '◀ ENEMY TURN'}
           </span>
 
           {/* Turn Order Tracker */}
@@ -1870,7 +1885,8 @@ export const CombatPanel: React.FC = () => {
               const combatant = isPlayer ? state.player : state.enemies.find(e => e.id === id);
               const isAlive = combatant?.isAlive ?? false;
               const isCurrent = idx === state.currentTurnIndex;
-              const hasActed = idx < state.currentTurnIndex || state.currentTurnIndex === -1;
+              // Only dim acted dots when a valid turn is in progress (not during -1 reset)
+              const hasActed = state.currentTurnIndex >= 0 && idx < state.currentTurnIndex;
               return (
                 <div
                   key={id}

@@ -210,6 +210,7 @@ export interface StoryBeat {
   characterExpressions?: Record<string, string>; // per-character expression overrides
   stinger?: StingerId;   // optional one-shot musical stinger for this beat
   requireFlag?: string;  // skip this beat unless this flag is truthy
+  requireFlagValue?: { flag: string; value: string | boolean | (string | boolean)[] }; // skip unless flag equals specific value (or one of array values)
 }
 
 export interface StoryScene {

@@ -98,7 +98,7 @@ export const act1IntelScene: StoryScene = {
     {
       id: 'intel_09',
       speaker: 'orren',
-      speakerName: 'Orren Dael',
+      speakerName: 'Orren Mahk',
       paragraphs: [
         'Orren hasn\'t spoken. His hands are in his pockets. A blue-white spark jumps from his right knuckle to the crate he\'s sitting on. He flinches.',
         '"What happens to the people?"',

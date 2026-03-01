@@ -727,7 +727,7 @@ export const orrenEvent04: StoryScene = {
     {
       id: 'orr_04_4',
       speaker: 'orren',
-      speakerName: 'Orren Dael',
+      speakerName: 'Orren Mahk',
       expression: 'grim',
       paragraphs: [
         '"Everyone get behind Dragghen."',
@@ -736,7 +736,7 @@ export const orrenEvent04: StoryScene = {
     {
       id: 'orr_04_5',
       speaker: 'orren',
-      speakerName: 'Orren Dael',
+      speakerName: 'Orren Mahk',
       paragraphs: [
         'The crew moves. Something in the way he said it, not volume, not authority, just certainty, makes people listen. They pull back behind Bulkhead. Dragghen braces. Digs in. He doesn\'t ask what\'s coming. He\'s a Gorundai with a shield and a man he trusts just told him to brace. That\'s enough.',
         'Orren plants his feet. His fur lifts off his skin, every strand vertical. The air shifts. Temperature drops five degrees in a heartbeat. Static charge builds until the metal fittings on the dock start whining, high and thin, and the compass mounted on the nearest piling spins once and stops dead.',
@@ -758,7 +758,7 @@ export const orrenEvent04: StoryScene = {
     {
       id: 'orr_04_7',
       speaker: 'orren',
-      speakerName: 'Orren Dael',
+      speakerName: 'Orren Mahk',
       expression: 'happy',
       paragraphs: [
         '"I didn\'t lose it."',
@@ -821,7 +821,7 @@ export const orrenEvent04: StoryScene = {
     {
       id: 'orr_04_end3',
       speaker: 'orren',
-      speakerName: 'Orren Dael',
+      speakerName: 'Orren Mahk',
       expression: 'angry',
       paragraphs: [
         '"STOP CATALOGUING MY EARS."',

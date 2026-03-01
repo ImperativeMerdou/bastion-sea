@@ -349,6 +349,7 @@ export const act3ConquerorGambitScene: StoryScene = {
     },
     {
       id: 'a3_conqueror_03_allied',
+      requireFlagValue: { flag: 'conqueror_alliance', value: 'allied' },
       speaker: 'tessavarra',
       speakerName: 'Tessavarra',
       paragraphs: [
@@ -360,6 +361,7 @@ export const act3ConquerorGambitScene: StoryScene = {
     },
     {
       id: 'a3_conqueror_03_alliedb',
+      requireFlagValue: { flag: 'conqueror_alliance', value: 'allied' },
       speaker: 'tessavarra',
       speakerName: 'Tessavarra',
       paragraphs: [
@@ -369,6 +371,7 @@ export const act3ConquerorGambitScene: StoryScene = {
     },
     {
       id: 'a3_conqueror_03_rejected',
+      requireFlagValue: { flag: 'conqueror_alliance', value: 'rejected' },
       speaker: 'tessavarra',
       speakerName: 'Tessavarra',
       paragraphs: [
@@ -380,6 +383,7 @@ export const act3ConquerorGambitScene: StoryScene = {
     },
     {
       id: 'a3_conqueror_03_rejectedb',
+      requireFlagValue: { flag: 'conqueror_alliance', value: 'rejected' },
       speaker: 'tessavarra',
       speakerName: 'Tessavarra',
       paragraphs: [
@@ -389,6 +393,7 @@ export const act3ConquerorGambitScene: StoryScene = {
     },
     {
       id: 'a3_conqueror_03_pending',
+      requireFlagValue: { flag: 'conqueror_alliance', value: 'pending' },
       speaker: 'tessavarra',
       speakerName: 'Tessavarra',
       paragraphs: [
@@ -400,6 +405,7 @@ export const act3ConquerorGambitScene: StoryScene = {
     },
     {
       id: 'a3_conqueror_03_pendingb',
+      requireFlagValue: { flag: 'conqueror_alliance', value: 'pending' },
       speaker: 'tessavarra',
       speakerName: 'Tessavarra',
       paragraphs: [
@@ -437,6 +443,7 @@ export const act3ConquerorGambitScene: StoryScene = {
     },
     {
       id: 'a3_conqueror_05_allied',
+      requireFlagValue: { flag: 'conqueror_alliance', value: 'allied' },
       paragraphs: [
         'She came as an ally asking for more. The blood contract is real. The support was real. And the price, a seat at the table, is the kind of demand that only comes from someone who has already earned the right to make it.',
       ],
@@ -473,6 +480,7 @@ export const act3ConquerorGambitScene: StoryScene = {
     },
     {
       id: 'a3_conqueror_05_hostile',
+      requireFlagValue: { flag: 'conqueror_alliance', value: ['rejected', 'pending'] },
       paragraphs: [
         'She came for blood or territory. Seven ships at her back. The other Seats watching through her eyes. Whatever happens next, the Conquerors will know whether Karyudon shares or whether Karyudon fights.',
         'You already know which one you are.',

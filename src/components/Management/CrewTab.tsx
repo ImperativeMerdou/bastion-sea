@@ -191,9 +191,9 @@ export const CrewTab: React.FC = () => {
           )}
 
           <div className="space-y-2">
-            <DominionBar label="Iron" tier={selectedMember.dominion.iron.tier} level={selectedMember.dominion.iron.level} />
-            <DominionBar label="Sight" tier={selectedMember.dominion.sight.tier} level={selectedMember.dominion.sight.level} />
-            <DominionBar label="King" tier={selectedMember.dominion.king.tier} level={selectedMember.dominion.king.level} />
+            <DominionBar label="Iron" tier={selectedMember.dominion?.iron?.tier ?? 'flicker'} level={selectedMember.dominion?.iron?.level ?? 0} />
+            <DominionBar label="Sight" tier={selectedMember.dominion?.sight?.tier ?? 'flicker'} level={selectedMember.dominion?.sight?.level ?? 0} />
+            <DominionBar label="King" tier={selectedMember.dominion?.king?.tier ?? 'flicker'} level={selectedMember.dominion?.king?.level ?? 0} />
           </div>
 
           {selectedMember.weapon && (

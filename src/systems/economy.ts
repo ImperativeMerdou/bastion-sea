@@ -25,7 +25,7 @@ export function calculateDailyUpkeep(crew: CrewMember[], controlledIslandCount: 
   const crewCount = crew.filter((m) => m.recruited && m.alive).length;
   const extraIslands = Math.max(0, controlledIslandCount - ECONOMY.CREW_UPKEEP_SCALING_THRESHOLD);
   const perMember = ECONOMY.CREW_UPKEEP_PER_MEMBER + extraIslands * ECONOMY.CREW_UPKEEP_SCALING_RATE;
-  return crewCount * perMember;
+  return Math.floor(crewCount * perMember);
 }
 
 /**

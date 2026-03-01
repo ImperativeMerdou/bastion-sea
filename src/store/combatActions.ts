@@ -146,7 +146,7 @@ export function createCombatActions(
         const combatState = state.combatState;
         if (combatState) {
           // Determine highest enemy tier
-          const tierPriority = ['fodder', 'soldier', 'elite', 'commander', 'prime'];
+          const tierPriority = ['fodder', 'soldier', 'elite', 'commander', 'prime', 'boss'];
           const highestTier = encounter.enemies.reduce((best, e) => {
             const idx = tierPriority.indexOf(e.tier);
             return idx > tierPriority.indexOf(best) ? e.tier : best;

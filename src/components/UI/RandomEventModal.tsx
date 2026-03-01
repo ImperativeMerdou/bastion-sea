@@ -27,6 +27,13 @@ export const RandomEventModal: React.FC = () => {
     threatState.level, threatState.wardenseaAlert, dayCount, gamePhase]);
 
   const [hoveredChoice, setHoveredChoice] = useState<string | null>(null);
+  const [processingChoice, setProcessingChoice] = useState(false);
+
+  // Reset processing guard when event changes or result appears
+  const showResult = !!pendingRandomEvent && pendingRandomEvent.resultText !== null;
+  React.useEffect(() => {
+    if (showResult) setProcessingChoice(false);
+  }, [showResult]);
 
   const isVisible = !!pendingRandomEvent;
   const trapRef = useFocusTrap(isVisible);
@@ -62,7 +69,6 @@ export const RandomEventModal: React.FC = () => {
   if (!pendingRandomEvent) return null;
 
   const { event, resultText, statChanges } = pendingRandomEvent;
-  const showResult = resultText !== null;
   const choices = event.choices || [];
 
   return (
@@ -154,10 +160,15 @@ export const RandomEventModal: React.FC = () => {
                 return (
                   <button
                     key={choice.id}
-                    onClick={() => resolveRandomEventChoice(choice.id)}
+                    onClick={() => {
+                      if (processingChoice) return;
+                      setProcessingChoice(true);
+                      resolveRandomEventChoice(choice.id);
+                    }}
                     onMouseEnter={() => setHoveredChoice(choice.id)}
                     onMouseLeave={() => setHoveredChoice(null)}
-                    className="w-full text-left px-5 py-3 bg-ocean-800/70 hover:bg-ocean-700/80 border border-ocean-600/50 hover:border-amber-500/40 rounded-sm transition-all duration-200 group"
+                    disabled={processingChoice}
+                    className="w-full text-left px-5 py-3 bg-ocean-800/70 hover:bg-ocean-700/80 border border-ocean-600/50 hover:border-amber-500/40 rounded-sm transition-all duration-200 group disabled:opacity-60 disabled:cursor-not-allowed"
                   >
                     <span className="text-ocean-100 text-sm font-medium">
                       {choice.text}

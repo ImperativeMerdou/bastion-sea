@@ -2131,6 +2131,9 @@ export function predictEnemyIntent(
   // Build descriptive labels based on likely action
   if (likelyCategory === 'attack') {
     // Show estimated damage from strongest available offensive action
+    if (offensiveActions.length === 0) {
+      return { icon: '⚔️', label: 'Attacking', category: 'attack' };
+    }
     const strongest = offensiveActions.reduce((best, a) => a.damage > best.damage ? a : best, offensiveActions[0]);
     if (strongest) {
       const atkDmg = strongest.damage + Math.floor(enemy.attack * COMBAT.ATTACK_STAT_MULTIPLIER);

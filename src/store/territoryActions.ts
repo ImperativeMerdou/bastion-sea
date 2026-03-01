@@ -345,16 +345,22 @@ export function createTerritoryActions(
         get().setFlag('last_rebellion_island', islandName);
       });
 
-      // Warn about reduced income from low-morale territories
+      // Warn about reduced income from low-morale territories (rate-limited to once per 5 days per island)
       const currentTStates = get().territoryStates;
+      const currentDay = get().dayCount;
       Object.entries(currentTStates).forEach(([islandId, tState]) => {
         const island = state.islands.find((i) => i.id === islandId);
         if (tState.morale > 0 && tState.morale < MISC.CIVIL_UNREST_THRESHOLD) {
-          get().addNotification({
-            type: 'crew',
-            title: `${(island?.name || islandId).toUpperCase()} - CIVIL UNREST`,
-            message: `Morale at ${tState.morale}. Income suspended. One more drop and they revolt.`,
-          });
+          const flagKey = `civil_unrest_notified_${islandId}`;
+          const lastNotifiedDay = get().flags[flagKey] as number | undefined;
+          if (!lastNotifiedDay || currentDay - lastNotifiedDay >= 5) {
+            get().setFlag(flagKey, currentDay);
+            get().addNotification({
+              type: 'crew',
+              title: `${(island?.name || islandId).toUpperCase()} - CIVIL UNREST`,
+              message: `Morale at ${tState.morale}. Income suspended. One more drop and they revolt.`,
+            });
+          }
         }
       });
     },

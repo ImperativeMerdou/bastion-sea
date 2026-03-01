@@ -949,7 +949,7 @@ export function processTerritoryMorale(
 
   return {
     ...state,
-    morale: Math.max(0, Math.min(100, state.morale + moraleChange)),
+    morale: Math.round(Math.max(0, Math.min(100, state.morale + moraleChange))),
     // Clear expired dispatch
     crewDispatched: dispatchActive ? state.crewDispatched : undefined,
   };

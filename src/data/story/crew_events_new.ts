@@ -1079,7 +1079,7 @@ export const orrenEvent01: StoryScene = {
     {
       id: 'orr_01_3',
       speaker: 'orren',
-      speakerName: 'Orren Dael',
+      speakerName: 'Orren Mahk',
       expression: 'fear',
       paragraphs: [
         '"Yes. Sir. Captain. Sorry." He tries to let go of the railing. His left hand sticks. Magnetized. He yanks it free with a pop and a shower of sparks, shakes his fingers out like they\'re burning. "I\'m Orren. Orren Mahk. Pettha said you needed a helmsman. I can steer. I\'m good at steering. The lightning thing isn\'t usually this--" He looks at his hands. A bolt jumps between his thumb and forefinger. "...New ship. New people. It gets worse when I\'m nervous."',
@@ -1097,7 +1097,7 @@ export const orrenEvent01: StoryScene = {
     {
       id: 'orr_01_5',
       speaker: 'orren',
-      speakerName: 'Orren Dael',
+      speakerName: 'Orren Mahk',
       expression: 'grim',
       paragraphs: [
         '"Nn." He swallows. "Storm Eel." Says it the way you\'d say "live grenade" or "terminal diagnosis." "Element class. I was working cargo for Pettha, sorting a seized smuggler\'s shipment. Found it in a crate between two bags of rice. I thought it was food." He looks at you, bracing for the laugh. "I was hungry, Captain. I ate a God Fruit because I was hungry."',
@@ -1115,7 +1115,7 @@ export const orrenEvent01: StoryScene = {
     {
       id: 'orr_01_7',
       speaker: 'orren',
-      speakerName: 'Orren Dael',
+      speakerName: 'Orren Mahk',
       paragraphs: [
         '"Tch." He peels the fork off his boot and sets it on the railing. It slides back immediately, clinking against his buckle. "...That happens. A lot."',
       ],
@@ -1130,7 +1130,7 @@ export const orrenEvent01: StoryScene = {
     {
       id: 'orr_01_9',
       speaker: 'orren',
-      speakerName: 'Orren Dael',
+      speakerName: 'Orren Mahk',
       expression: 'fear',
       paragraphs: [
         '"Ghhk-- I\'M SORRY. I didn\'t mean to-- was that me? That was me. I\'m so sorry, I can pay for-- do you need me to-- I\'m sorry."',
@@ -1190,7 +1190,7 @@ export const orrenEvent01: StoryScene = {
     {
       id: 'orr_01_after_choice',
       speaker: 'orren',
-      speakerName: 'Orren Dael',
+      speakerName: 'Orren Mahk',
       paragraphs: [
         'His ears settle. Not flat, not perked. Hovering at half-mast. For Orren, that is the closest thing to calm.',
         '"I\'ll try to keep the magnetism under control. The compass should be fine as long as I stay at least ten feet from it." He pauses. "Fifteen, maybe. Suulen might have to navigate by stars for a while."',
@@ -1446,7 +1446,7 @@ export const orrenEvent02: StoryScene = {
     {
       id: 'orr_02_3',
       speaker: 'orren',
-      speakerName: 'Orren Dael',
+      speakerName: 'Orren Mahk',
       expression: 'fear',
       paragraphs: [
         '"Memory." Barely a voice. More like air shaped into a word. His amber-gold eyes glow faint in the dark, two dull coins. The only light on the lower deck. "Six months ago. Before Pettha sent me here. Market on Tavven Shoal. Buying fish." He swallows. "Normal day."',
@@ -1465,7 +1465,7 @@ export const orrenEvent02: StoryScene = {
     {
       id: 'orr_02_5',
       speaker: 'orren',
-      speakerName: 'Orren Dael',
+      speakerName: 'Orren Mahk',
       expression: 'fear',
       paragraphs: [
         '"Twenty feet." His throat bobs. "Everyone in that radius dropped. Just-- collapsed. Strings cut." His voice cracks on the next word. "Three hospitalized. One was a kid. Eight years old. She was buying candied nuts with her mother."',
@@ -1514,7 +1514,7 @@ export const orrenEvent02: StoryScene = {
     {
       id: 'orr_02_6',
       speaker: 'orren',
-      speakerName: 'Orren Dael',
+      speakerName: 'Orren Mahk',
       paragraphs: [
         'He looks up. Amber-gold eyes wet, catching light that shouldn\'t be there. "You... really think so?"',
       ],
@@ -1636,7 +1636,7 @@ export const orrenEvent03: StoryScene = {
     {
       id: 'orr_03_5b',
       speaker: 'orren',
-      speakerName: 'Orren Dael',
+      speakerName: 'Orren Mahk',
       expression: 'angry',
       effect: 'flash_crimson',
       paragraphs: [
@@ -1671,7 +1671,7 @@ export const orrenEvent03: StoryScene = {
     {
       id: 'orr_03_8',
       speaker: 'orren',
-      speakerName: 'Orren Dael',
+      speakerName: 'Orren Mahk',
       paragraphs: [
         '"Tch. I hate the ear thing." His left ear perks up anyway. Traitorous, traitorous ear.',
       ],
@@ -1679,7 +1679,7 @@ export const orrenEvent03: StoryScene = {
     {
       id: 'orr_03_end',
       speaker: 'orren',
-      speakerName: 'Orren Dael',
+      speakerName: 'Orren Mahk',
       paragraphs: [
         'Dragghen watches from the railing. Arms crossed. Face unreadable. Orren catches his eye.',
         '"Rate that performance?"',
@@ -1697,7 +1697,7 @@ export const orrenEvent03: StoryScene = {
     {
       id: 'orr_03_endc',
       speaker: 'orren',
-      speakerName: 'Orren Dael',
+      speakerName: 'Orren Mahk',
       paragraphs: [
         'Orren\'s tail wags once. Just once. "I\'ll take it."',
       ],
