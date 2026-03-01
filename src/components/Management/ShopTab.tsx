@@ -178,9 +178,10 @@ export const ShopTab: React.FC = () => {
                     }
                     // Set flag
                     if (slot.item.setFlag) setFlag(slot.item.setFlag, true);
-                    // Crew loyalty boost (rum, good food, etc.)
+                    // Crew loyalty boost (rum, good food, etc.) — use fresh state to avoid stale closure
                     if (slot.item.loyaltyBoost) {
-                      crew.filter((m) => m.recruited && m.alive).forEach((m) => {
+                      const freshCrew = useGameStore.getState().crew;
+                      freshCrew.filter((m) => m.recruited && m.alive).forEach((m) => {
                         adjustLoyalty(m.id, slot.item.loyaltyBoost!);
                       });
                     }
