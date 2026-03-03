@@ -1462,9 +1462,9 @@ export const useGameStore = create<GameState>((set, get) => ({
       if (daysSinceConquest === 1) {
         reportMessage = `"Day one of the ledger." ${baseReport} Delvessa has the books open. Crew assignments are live.`;
       } else if (daysSinceConquest === 2) {
-        reportMessage = `${baseReport} Kovesse broadcast your numbers to 43 subscribers before breakfast. "You're not losing money yet. Technically that's progress," she says. The Wardensea patrol window is four days.`;
+        reportMessage = `${baseReport} Kovesse broadcast your numbers to 43 subscribers before breakfast. "You're not losing money yet. Technically that's progress," she says.`;
       } else if (daysSinceConquest === 3) {
-        reportMessage = `${baseReport} Delvessa: "Three days in. Income is real. Upkeep is real. The patrol window closes in two days. Move when you're ready -- but the clock was already running."`;
+        reportMessage = `${baseReport} Vorreth asked for the supply ledger this morning. He didn't say why.`;
       }
 
       state.addNotification({
