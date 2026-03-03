@@ -311,6 +311,8 @@ export const sceneBackgrounds: Record<string, string> = {
   'ghostlight_conquest_01': 'scene_ghostlight_reef.webp',
   'ghostlight_conquest_02': 'scene_ghostlight_reef_night.webp',
   'ghostlight_conquest_03': 'scene_ghostlight_reef_night.webp',
+  'ghostlight_conquest_03_trap': 'scene_ghostlight_reef_night.webp',
+  'ghostlight_conquest_03_lair': 'scene_ghostlight_reef_night.webp',
   'ghostlight_conquest_04': 'scene_ghostlight_reef.webp',
   'ghostlight_conquest_05': 'scene_ghostlight_reef_night.webp',
 
@@ -674,6 +676,8 @@ export const characterPortraits: Record<string, string> = {
   // Kirin Arc
   'kirin_akkan': 'kirin_akkan_portrait.webp',
   'kirin': 'kirin_akkan_portrait.webp',
+  // Conqueror
+  'vassago': 'vassago_portrait.webp',
   // Wardensea Prime
   'prime_khoss': 'prime_khoss_portrait.webp',
   // Generic NPC portraits
@@ -694,7 +698,7 @@ export const characterPortraits: Record<string, string> = {
   'drest_pohn': 'unknown_portrait.webp',
   'elder_veshtari': 'unknown_portrait.webp',
   'fael': 'unknown_portrait.webp',
-  'gharen': 'unknown_portrait.webp',
+  'gharen': 'gharen_portrait.webp',
   'hella_foreman': 'mine_worker_portrait.webp',
   'maeven': 'unknown_portrait.webp',
   'matriarch_sorren': 'unknown_portrait.webp',
@@ -791,6 +795,13 @@ export const speakerToCharacter: Record<string, string> = {
   'Edara Khoss': 'prime_khoss',
   'Prime Khoss': 'prime_khoss',
   'prime_khoss': 'prime_khoss',
+  // Conqueror + Fleet
+  'Vassago': 'vassago',
+  'Vassago Moren': 'vassago',
+  'vassago': 'vassago',
+  'Gharen': 'gharen',
+  'Fleet Lieutenant Gharen': 'gharen',
+  'gharen': 'gharen',
 };
 
 // ==========================================
