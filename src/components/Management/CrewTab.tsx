@@ -2,12 +2,46 @@ import React, { useState, useMemo } from 'react';
 import { useGameStore } from '../../store/gameStore';
 import { CrewMember, CrewAssignment } from '../../types/game';
 import { getPortrait } from '../../utils/images';
-import { getAvailableCrewEvents } from '../../data/story/crew_events';
+import { getAvailableCrewEvents, getNextBlockedCrewEvent, BlockedReason } from '../../data/story/crew_events';
 import { DominionBar, PortraitImage, moodColors } from './shared';
 import { CREW_BONUS } from '../../constants/balance';
 
 // Crew job assignments require 2+ controlled islands
 const CREW_ASSIGNMENTS_THRESHOLD = 2;
+
+// ==========================================
+// LOCKED STATE COPY
+// Per-character + per-reason. Writing Directive compliant.
+// No em dashes, no hype, no resolution.
+// ==========================================
+
+const CREW_LOCKED_FLAVOR: Record<string, string> = {
+  delvessa: "She hasn't decided what to do with you yet.",
+  dragghen: "A Gorundai doesn't open a door until he trusts the frame.",
+  suulen: "She watches. She waits. Not yet.",
+  kovesse: "Entertained isn't invested. She hasn't crossed that line with you.",
+  tessek: "You've fought beside him. That's not the same as knowing him.",
+  orren: "He has questions he hasn't asked yet.",
+  vorreth: "He keeps his own counsel. That hasn't changed.",
+};
+
+const CREW_LOCKED_HINT: Record<BlockedReason, string> = {
+  loyalty: "Build toward it. Keep your word.",
+  day: "Give it more time.",
+  prerequisite: "There's a conversation that needs to happen first.",
+  act: "The campaign needs to go further before this opens.",
+  flirt: "She hasn't seen that side of you yet.",
+};
+
+const CREW_ALL_DONE: Record<string, string> = {
+  delvessa: "Everything she was willing to share, she's shared.",
+  dragghen: "He's said what he had to say.",
+  suulen: "What needed saying has been said.",
+  kovesse: "She's told you more than she tells most people.",
+  tessek: "You know the shape of him. He knows you.",
+  orren: "He asked what he came to ask. You answered.",
+  vorreth: "The walls are lower than they were.",
+};
 
 const CrewCard: React.FC<{ member: CrewMember; selected: boolean; onClick: () => void; hasEvent?: boolean }> = ({
   member, selected, onClick, hasEvent,
@@ -138,7 +172,7 @@ export const CrewTab: React.FC = () => {
                   NEW CONVERSATIONS ({Object.values(crewEventCounts).filter(c => c > 0).length})
                 </p>
                 <p className="text-amber-400/70 text-xs mt-0.5">
-                  Click to view, or select a crew member below
+                  Someone's been waiting to talk.
                 </p>
               </div>
             </div>
@@ -307,31 +341,82 @@ export const CrewTab: React.FC = () => {
             </div>
           )}
 
-          {/* Talk button -- triggers crew events */}
+          {/* Relationship depth + conversation action */}
           {selectedMember.recruited && (() => {
             const available = getAvailableCrewEvents(selectedMember.id, flags, dayCount, selectedMember.loyalty);
-            if (available.length === 0) return (
-              <div className="mt-4 px-3 py-2 bg-ocean-700/50 border border-ocean-600 rounded-sm">
-                <p className="text-ocean-500 text-xs italic">No conversations available right now. Check back later.</p>
-              </div>
-            );
+            const blocked = available.length === 0
+              ? getNextBlockedCrewEvent(selectedMember.id, flags, dayCount, selectedMember.loyalty)
+              : null;
+
+            const completionFlags = [
+              `${selectedMember.id}_event_01_complete`,
+              `${selectedMember.id}_event_02_complete`,
+              `${selectedMember.id}_event_03_complete`,
+              `${selectedMember.id}_event_04_complete`,
+            ];
+            const completedCount = completionFlags.filter(f => !!flags[f]).length;
+
             return (
-              <button
-                onClick={() => {
-                  const event = available[0];
-                  startScene({ ...event.scene, currentBeat: 0 });
-                  setActivePanel('story');
-                }}
-                className="mt-4 w-full px-4 py-3 bg-amber-700/60 hover:bg-amber-600/70 border border-amber-500/40 text-amber-100 font-bold text-sm tracking-widest uppercase transition-all rounded-sm flex items-center justify-center gap-2"
-              >
-                <span>💬</span> TALK TO {selectedMember.name.split(' ')[0].toUpperCase()}
-              </button>
+              <div className="mt-4 space-y-3">
+                {/* Bond depth dots */}
+                <div className="flex items-center gap-2 pt-2 border-t border-ocean-700/30">
+                  <span className="text-ocean-600 text-[10px] font-bold tracking-[0.12em] uppercase">Bond</span>
+                  <div className="flex items-center gap-1.5">
+                    {completionFlags.map((_, i) => (
+                      <div
+                        key={i}
+                        className={`w-2 h-2 rounded-full border transition-all ${
+                          i < completedCount
+                            ? 'bg-amber-500/70 border-amber-400/60'
+                            : i === completedCount
+                              ? 'bg-transparent border-ocean-400/80'
+                              : 'bg-transparent border-ocean-700/60'
+                        }`}
+                      />
+                    ))}
+                  </div>
+                </div>
+
+                {/* Action: available, locked, or all done */}
+                {available.length > 0 ? (
+                  <button
+                    onClick={() => {
+                      const event = available[0];
+                      startScene({ ...event.scene, currentBeat: 0 });
+                      setActivePanel('story');
+                    }}
+                    className="w-full px-4 py-3 bg-amber-700/60 hover:bg-amber-600/70 border border-amber-500/40 text-amber-100 font-bold text-sm tracking-widest uppercase transition-all rounded-sm flex items-center justify-center gap-2"
+                  >
+                    <span>💬</span> TALK TO {selectedMember.name.split(' ')[0].toUpperCase()}
+                  </button>
+                ) : blocked ? (
+                  <div className="px-4 py-3 bg-ocean-900/50 border border-ocean-700/50 rounded-sm">
+                    <div className="flex items-start gap-3">
+                      <span className="text-ocean-600 text-base mt-0.5 select-none">&#128274;</span>
+                      <div>
+                        <p className="text-ocean-300/80 text-sm italic leading-relaxed">
+                          {CREW_LOCKED_FLAVOR[selectedMember.id] ?? "Not yet."}
+                        </p>
+                        <p className="text-ocean-500 text-xs mt-2">
+                          {CREW_LOCKED_HINT[blocked.reason]}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                ) : (
+                  <div className="px-4 py-3 bg-ocean-900/40 border border-ocean-700/30 rounded-sm">
+                    <p className="text-ocean-500 text-sm italic leading-relaxed">
+                      {CREW_ALL_DONE[selectedMember.id] ?? "Nothing left unsaid. For now."}
+                    </p>
+                  </div>
+                )}
+              </div>
             );
           })()}
 
           {!selectedMember.recruited && (
-            <div className="mt-4 px-3 py-2 bg-ocean-700 border border-ocean-500 rounded-sm">
-              <p className="text-ocean-400 text-xs italic">Not yet recruited. Progress the story to unlock.</p>
+            <div className="mt-4 px-4 py-3 bg-ocean-900/50 border border-ocean-700/40 rounded-sm">
+              <p className="text-ocean-500 text-sm italic">Not yet arrived. Their story begins elsewhere.</p>
             </div>
           )}
         </div>

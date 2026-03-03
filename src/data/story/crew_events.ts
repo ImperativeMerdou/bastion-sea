@@ -1075,6 +1075,80 @@ export const crewEventRegistry: CrewEventEntry[] = [
   },
 ];
 
+/** Reason a crew event is blocked. Used to drive locked-state UI copy. */
+export type BlockedReason = 'loyalty' | 'day' | 'prerequisite' | 'act' | 'flirt';
+
+export interface BlockedEventInfo {
+  entry: CrewEventEntry;
+  reason: BlockedReason;
+}
+
+/**
+ * Find the next crew event that exists but is currently blocked by an unmet gate.
+ * Returns null when all events for the crew member are complete.
+ * Only call this when getAvailableCrewEvents() returns an empty array.
+ */
+export function getNextBlockedCrewEvent(
+  crewId: string,
+  flags: Record<string, boolean | number | string>,
+  dayCount: number,
+  loyalty?: number,
+): BlockedEventInfo | null {
+  // All entries for this crew member that are not yet completed
+  const candidates = crewEventRegistry
+    .filter((entry) => {
+      if (entry.crewId !== crewId) return false;
+      const scene = entry.scene;
+      if (scene.onComplete) {
+        for (const effect of scene.onComplete) {
+          if (effect.type === 'flag' && typeof effect.target === 'string') {
+            if (flags[effect.target]) return false; // already completed
+          }
+        }
+      }
+      return true;
+    })
+    .sort((a, b) => b.priority - a.priority);
+
+  for (const entry of candidates) {
+    // requiredFlags -- failing means either prerequisite or act gate
+    if (entry.requiredFlags) {
+      for (const [key, required] of Object.entries(entry.requiredFlags)) {
+        let failing = false;
+        if (typeof required === 'boolean') {
+          if (required && !flags[key]) failing = true;
+          if (!required && flags[key]) failing = true;
+        } else {
+          if (flags[key] !== required) failing = true;
+        }
+        if (failing) {
+          return { entry, reason: key === 'act2_begun' ? 'act' : 'prerequisite' };
+        }
+      }
+    }
+    // Day gate
+    if (entry.minDay && dayCount < entry.minDay) {
+      return { entry, reason: 'day' };
+    }
+    // Loyalty gate
+    if (entry.minLoyalty !== undefined && (loyalty === undefined || loyalty < entry.minLoyalty)) {
+      return { entry, reason: 'loyalty' };
+    }
+    // Numeric flag gate (flirt count, etc.)
+    if (entry.minFlagValue) {
+      for (const [key, minVal] of Object.entries(entry.minFlagValue)) {
+        const actual = typeof flags[key] === 'number' ? (flags[key] as number) : 0;
+        if (actual < minVal) {
+          return { entry, reason: 'flirt' };
+        }
+      }
+    }
+    // All gates pass -- this entry is already in available, skip to next
+  }
+
+  return null; // all events for this crew member complete
+}
+
 /**
  * Get available crew events for the current game state
  */
