@@ -911,9 +911,9 @@ export const useGameStore = create<GameState>((set, get) => ({
           // Suulen intro 01: 6+ days after Tavven
           } else if (ts.dayCount >= conquestDay + 6 && !ts.flags['suulen_intro_01_seen']) {
             fireScene('crew_suulen_intro_01');
-          // Suulen intro 02: 12+ days after Tavven, after intro 01, requires Wardensea threat present
+          // Suulen intro 02: 12+ days after Tavven, after intro 01, requires 3+ islands (she's watching an empire, not a raft)
           } else if (ts.dayCount >= conquestDay + 12 && ts.flags['suulen_intro_01_seen'] && !ts.flags['suulen_intro_02_seen']
-            && ts.threatState.level >= 30) {
+            && ts.islands.filter(i => i.status === 'controlled').length >= 3) {
             fireScene('crew_suulen_intro_02');
           }
         }
@@ -1451,9 +1451,26 @@ export const useGameStore = create<GameState>((set, get) => ({
         rpt.push({ category: 'economy', icon: '⚠️', text: 'Supply deficit. Crew morale suffering.', severity: 'critical' });
       }
 
+      // Voiced economy reports for first 3 days after Tavven conquest.
+      // Delvessa and Kovesse frame the numbers in character before
+      // the reports settle into plain dashboard format on day 4+.
+      const conquestDay = typeof state.flags['tavven_conquered_day'] === 'number'
+        ? (state.flags['tavven_conquered_day'] as number) : 0;
+      const daysSinceConquest = conquestDay > 0 ? newDay - conquestDay : null;
+      const baseReport = `${netSov >= 0 ? '+' : ''}${netSov} sov, ${netSupplies >= 0 ? '+' : ''}${netSupplies} supplies, +${totalMat} mat, +${totalIntel} intel.${showDeficit ? ' SUPPLY DEFICIT.' : ''}`;
+
+      let reportMessage = baseReport;
+      if (daysSinceConquest === 1) {
+        reportMessage = `"Day one of the ledger." ${baseReport} Delvessa has the books open. Crew assignments are live.`;
+      } else if (daysSinceConquest === 2) {
+        reportMessage = `${baseReport} Kovesse broadcast your numbers to 43 subscribers before breakfast. "You're not losing money yet. Technically that's progress," she says. The Wardensea patrol window is four days.`;
+      } else if (daysSinceConquest === 3) {
+        reportMessage = `${baseReport} Delvessa: "Three days in. Income is real. Upkeep is real. The patrol window closes in two days. Move when you're ready -- but the clock was already running."`;
+      }
+
       state.addNotification({
         type: 'story', title: `DAY ${newDay} REPORT`,
-        message: `${netSov >= 0 ? '+' : ''}${netSov} sov, ${netSupplies >= 0 ? '+' : ''}${netSupplies} supplies, +${totalMat} mat, +${totalIntel} intel.${showDeficit ? ' SUPPLY DEFICIT.' : ''}`,
+        message: reportMessage,
       });
 
       const atRisk = checkTerritoryMorale(get().territoryStates);

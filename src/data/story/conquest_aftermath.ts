@@ -75,6 +75,27 @@ export const conquestAftermathScene: StoryScene = {
       ],
     },
     {
+      id: 'aftermath_06b',
+      speaker: 'delvessa',
+      speakerName: 'Delvessa Ghal',
+      paragraphs: [
+        'Delvessa sets the ledger in front of you without asking if you want it.',
+        '"Territory income starts today. Tavven generates three sovereigns and two supplies per day at current activity levels. Crew upkeep runs seven sovereigns daily. Net position: sustainable, barely." She taps the facing page. "That changes when you take a second island, and again when you take a third. The curve runs in your favor once you\'re holding four."',
+        'She slides the ledger across. "The Wardensea patrol window is six days. The crew assignments are open: check the management tab. I recommend putting Kovesse on the Grimoire feeds first. She finds things before they become problems."',
+        'She does not look up. The next page is already open.',
+      ],
+    },
+    {
+      id: 'aftermath_06c',
+      speaker: 'kovesse',
+      speakerName: 'Kovesse Grenn',
+      paragraphs: [
+        'Kovesse is sitting on the harbor wall with all three Grimoires in her lap, watching the early fishing boats come in. She does not turn when you sit beside her.',
+        '"You said it on the raft." Her voice is conversational. Unhurried. "First night out, alone on a piece of deck plank in the middle of the ocean. You said it out loud because there was nobody around to hear." She closes one Grimoire. "You were wrong about that part. I got a broadcast signal off a drifting relay buoy. Terrible quality. But the words came through."',
+        'She turns. Her eyes are bright. "One island. Twelve more. You\'re behind schedule, Captain."',
+      ],
+    },
+    {
       id: 'aftermath_07',
       paragraphs: [
         'You stand on the coral platform and look south. The wind smells like salt and fish oil and something else. Something new. Yours.',

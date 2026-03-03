@@ -132,6 +132,63 @@ export const randomEvents: RandomEvent[] = [
   },
 
   // ============================================
+  // ACT 1 EARLY - Post-prologue, Post-Tavven
+  // Primary drive echoes: fire once, reflect the player's
+  // opening choice back at them with world-level consequence.
+  // Wardensea sighting: concrete antagonist presence, week 1.
+  // ============================================
+  {
+    id: 'drive_echo_family',
+    weight: 10,
+    phase: 'act1',
+    requiredFlags: { prologue_complete: true, primary_drive: 'family' },
+    notification: {
+      type: 'wardensea',
+      title: 'TRANSFER MANIFEST — NORTHERN ARC',
+      message: 'A Wardensea prisoner transport logged through Sorrens Flat three days ago. Manifest lists twelve Oni-class detainees. No names. Suulen found the entry in a routing archive and left it on your chart table without comment. The twins are eighteen. You don\'t know what Wardensea holding looks like from the inside. You know exactly what it looks like from the inside.',
+    },
+    repeatable: false,
+  },
+  {
+    id: 'drive_echo_revenge',
+    weight: 10,
+    phase: 'act1',
+    requiredFlags: { prologue_complete: true, primary_drive: 'revenge' },
+    notification: {
+      type: 'grimoire',
+      title: 'SIGNAL TRAFFIC — SORRENS FLAT',
+      message: 'Kovesse pulled it from the port registry: a ship bearing Kirin\'s crew colors docked at Sorrens Flat four days ago. Cargo manifest listed as "private transport, non-commercial." Departed before dawn. "He\'s moving," she says, without inflection. "He knows you\'re alive." She doesn\'t ask what you want to do with that information. She already knows.',
+    },
+    repeatable: false,
+  },
+  {
+    id: 'drive_echo_ambition',
+    weight: 10,
+    phase: 'act1',
+    requiredFlags: { prologue_complete: true, primary_drive: 'ambition' },
+    notification: {
+      type: 'grimoire',
+      title: 'GRIMOIRE SPIKE — KARYUDON OF TAVVEN',
+      message: 'Kovesse\'s feeds show the Tavven incident generated 847 Grimoire mentions in the first week. "Someone in the Kolmari northern office is pulling a profile on you," she says. "Not for a bounty. A profile. They want to understand whether you\'re a disruption or a pattern." She looks at you. "Tell me which one to broadcast."',
+    },
+    repeatable: false,
+    resourceChanges: { intelligence: 3 },
+  },
+  {
+    id: 'wardensea_early_sighting',
+    weight: 8,
+    phase: 'act1',
+    minDay: 3,
+    requiredFlags: { prologue_complete: true },
+    notification: {
+      type: 'wardensea',
+      title: 'WARDENSEA CUTTER — SPOTTED',
+      message: 'The cutter Suulen mentioned. It appeared on the horizon at first light, running parallel to the harbor at watch-range. Two hours. Then it turned north. Nobody on board waved. Nobody docked. They counted hulls and flags and one Oni standing at the rail who didn\'t look away. Suulen: "They\'re not chasing. They\'re measuring." Her voice is even. It shouldn\'t be reassuring. It is.',
+    },
+    repeatable: false,
+  },
+
+  // ============================================
   // ACT 1 - Post-Tavven, Pre-Central Belt
   // ============================================
 
