@@ -108,7 +108,7 @@ export const CrewTab: React.FC = () => {
     const counts: Record<string, number> = {};
     for (const member of crew) {
       if (!member.recruited) continue;
-      const available = getAvailableCrewEvents(member.id, flags, dayCount);
+      const available = getAvailableCrewEvents(member.id, flags, dayCount, member.loyalty);
       counts[member.id] = available.length;
     }
     return counts;
@@ -309,7 +309,7 @@ export const CrewTab: React.FC = () => {
 
           {/* Talk button -- triggers crew events */}
           {selectedMember.recruited && (() => {
-            const available = getAvailableCrewEvents(selectedMember.id, flags, dayCount);
+            const available = getAvailableCrewEvents(selectedMember.id, flags, dayCount, selectedMember.loyalty);
             if (available.length === 0) return (
               <div className="mt-4 px-3 py-2 bg-ocean-700/50 border border-ocean-600 rounded-sm">
                 <p className="text-ocean-500 text-xs italic">No conversations available right now. Check back later.</p>

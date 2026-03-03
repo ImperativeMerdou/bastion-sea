@@ -897,22 +897,25 @@ export const useGameStore = create<GameState>((set, get) => ({
           // Delvessa intro 01: 2+ days after Tavven
           if (ts.dayCount >= conquestDay + 2 && !ts.flags['delvessa_intro_01_seen']) {
             fireScene('crew_delvessa_intro_01');
-          // Delvessa intro 02: 7+ days after Tavven, after intro 01, requires expansion beyond Tavven
+          // Delvessa intro 02: 7+ days after Tavven, after intro 01, requires expansion beyond Tavven + min loyalty 25
           } else if (ts.dayCount >= conquestDay + 7 && ts.flags['delvessa_intro_01_seen'] && !ts.flags['delvessa_intro_02_seen']
-            && ts.islands.filter(i => i.status === 'controlled' && i.id !== 'tavven').length >= 1) {
+            && ts.islands.filter(i => i.status === 'controlled' && i.id !== 'tavven').length >= 1
+            && (ts.crew.find(m => m.id === 'delvessa')?.loyalty ?? 0) >= 25) {
             fireScene('crew_delvessa_intro_02');
           // Dragghen intro 01: 4+ days after Tavven
           } else if (ts.dayCount >= conquestDay + 4 && !ts.flags['dragghen_intro_01_seen']) {
             fireScene('crew_dragghen_intro_01');
-          // Dragghen intro 02: 9+ days after Tavven, after intro 01
-          } else if (ts.dayCount >= conquestDay + 9 && ts.flags['dragghen_intro_01_seen'] && !ts.flags['dragghen_intro_02_seen']) {
+          // Dragghen intro 02: 9+ days after Tavven, after intro 01, min loyalty 25
+          } else if (ts.dayCount >= conquestDay + 9 && ts.flags['dragghen_intro_01_seen'] && !ts.flags['dragghen_intro_02_seen']
+            && (ts.crew.find(m => m.id === 'dragghen')?.loyalty ?? 0) >= 25) {
             fireScene('crew_dragghen_intro_02');
           // Suulen intro 01: 6+ days after Tavven
           } else if (ts.dayCount >= conquestDay + 6 && !ts.flags['suulen_intro_01_seen']) {
             fireScene('crew_suulen_intro_01');
-          // Suulen intro 02: 12+ days after Tavven, after intro 01, requires 3+ islands (she's watching an empire, not a raft)
+          // Suulen intro 02: 12+ days after Tavven, after intro 01, requires 3+ islands + min loyalty 25
           } else if (ts.dayCount >= conquestDay + 12 && ts.flags['suulen_intro_01_seen'] && !ts.flags['suulen_intro_02_seen']
-            && ts.islands.filter(i => i.status === 'controlled').length >= 3) {
+            && ts.islands.filter(i => i.status === 'controlled').length >= 3
+            && (ts.crew.find(m => m.id === 'suulen')?.loyalty ?? 0) >= 25) {
             fireScene('crew_suulen_intro_02');
           }
         }

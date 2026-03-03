@@ -49,7 +49,7 @@ export const ManagementPanel: React.FC = () => {
     let total = 0;
     for (const member of crew) {
       if (!member.recruited) continue;
-      total += getAvailableCrewEvents(member.id, flags, dayCount).length;
+      total += getAvailableCrewEvents(member.id, flags, dayCount, member.loyalty).length;
     }
     return total;
   }, [crew, flags, dayCount]);

@@ -791,7 +791,11 @@ export interface CrewEventEntry {
   crewId: string;
   scene: StoryScene;
   requiredFlags?: Record<string, boolean | string | number>;
+  /** Numeric flag >= threshold checks (unlike requiredFlags which does exact match). */
+  minFlagValue?: Record<string, number>;
   minDay?: number;
+  /** Minimum crew member loyalty required to unlock this event. */
+  minLoyalty?: number;
   priority: number; // Higher = shows first in the list
 }
 
@@ -809,6 +813,7 @@ export const crewEventRegistry: CrewEventEntry[] = [
     scene: delvessaEvent02,
     requiredFlags: { delvessa_event_01_complete: true },
     minDay: 5,
+    minLoyalty: 30,
     priority: 9,
   },
   {
@@ -817,6 +822,7 @@ export const crewEventRegistry: CrewEventEntry[] = [
     scene: delvessaEvent03,
     requiredFlags: { delvessa_event_02_complete: true },
     minDay: 10,
+    minLoyalty: 45,
     priority: 8,
   },
   // Dragghen
@@ -832,6 +838,7 @@ export const crewEventRegistry: CrewEventEntry[] = [
     scene: dragghenEvent02,
     requiredFlags: { dragghen_event_01_complete: true },
     minDay: 5,
+    minLoyalty: 30,
     priority: 9,
   },
   {
@@ -840,6 +847,7 @@ export const crewEventRegistry: CrewEventEntry[] = [
     scene: dragghenEvent03,
     requiredFlags: { dragghen_event_02_complete: true },
     minDay: 10,
+    minLoyalty: 45,
     priority: 8,
   },
   // Kovesse
@@ -855,6 +863,7 @@ export const crewEventRegistry: CrewEventEntry[] = [
     scene: kovesseEvent02,
     requiredFlags: { kovesse_event_01_complete: true },
     minDay: 5,
+    minLoyalty: 30,
     priority: 9,
   },
   {
@@ -863,6 +872,7 @@ export const crewEventRegistry: CrewEventEntry[] = [
     scene: kovesseEvent03,
     requiredFlags: { kovesse_event_02_complete: true },
     minDay: 10,
+    minLoyalty: 45,
     priority: 8,
   },
   // Suulen
@@ -878,6 +888,7 @@ export const crewEventRegistry: CrewEventEntry[] = [
     scene: suulenEvent02,
     requiredFlags: { suulen_event_01_complete: true },
     minDay: 5,
+    minLoyalty: 30,
     priority: 9,
   },
   {
@@ -886,6 +897,7 @@ export const crewEventRegistry: CrewEventEntry[] = [
     scene: suulenEvent03,
     requiredFlags: { suulen_event_02_complete: true },
     minDay: 10,
+    minLoyalty: 45,
     priority: 8,
   },
   // Tessek
@@ -901,6 +913,7 @@ export const crewEventRegistry: CrewEventEntry[] = [
     scene: tessekEvent02,
     requiredFlags: { tessek_event_01_complete: true },
     minDay: 5,
+    minLoyalty: 30,
     priority: 9,
   },
   {
@@ -909,6 +922,7 @@ export const crewEventRegistry: CrewEventEntry[] = [
     scene: tessekEvent03,
     requiredFlags: { tessek_event_02_complete: true },
     minDay: 10,
+    minLoyalty: 45,
     priority: 8,
   },
   // Orren
@@ -924,6 +938,7 @@ export const crewEventRegistry: CrewEventEntry[] = [
     scene: orrenEvent02,
     requiredFlags: { orren_event_01_complete: true },
     minDay: 5,
+    minLoyalty: 30,
     priority: 9,
   },
   {
@@ -932,6 +947,7 @@ export const crewEventRegistry: CrewEventEntry[] = [
     scene: orrenEvent03,
     requiredFlags: { orren_event_02_complete: true },
     minDay: 10,
+    minLoyalty: 45,
     priority: 8,
   },
   // Vorreth
@@ -947,6 +963,7 @@ export const crewEventRegistry: CrewEventEntry[] = [
     scene: vorrethEvent02,
     requiredFlags: { vorreth_event_01_complete: true },
     minDay: 5,
+    minLoyalty: 30,
     priority: 9,
   },
   {
@@ -955,6 +972,7 @@ export const crewEventRegistry: CrewEventEntry[] = [
     scene: vorrethEvent03,
     requiredFlags: { vorreth_event_02_complete: true },
     minDay: 10,
+    minLoyalty: 45,
     priority: 8,
   },
   // === Event 04 - Late Game (Act 2+) ===
@@ -964,6 +982,7 @@ export const crewEventRegistry: CrewEventEntry[] = [
     scene: delvessaEvent04,
     requiredFlags: { delvessa_event_03_complete: true, act2_begun: true },
     minDay: 15,
+    minLoyalty: 60,
     priority: 7,
   },
   {
@@ -972,6 +991,7 @@ export const crewEventRegistry: CrewEventEntry[] = [
     scene: dragghenEvent04,
     requiredFlags: { dragghen_event_03_complete: true, act2_begun: true },
     minDay: 15,
+    minLoyalty: 60,
     priority: 7,
   },
   {
@@ -980,6 +1000,7 @@ export const crewEventRegistry: CrewEventEntry[] = [
     scene: kovesseEvent04,
     requiredFlags: { kovesse_event_03_complete: true, act2_begun: true },
     minDay: 15,
+    minLoyalty: 60,
     priority: 7,
   },
   {
@@ -988,6 +1009,7 @@ export const crewEventRegistry: CrewEventEntry[] = [
     scene: suulenEvent04,
     requiredFlags: { suulen_event_03_complete: true, act2_begun: true },
     minDay: 15,
+    minLoyalty: 60,
     priority: 7,
   },
   {
@@ -996,6 +1018,7 @@ export const crewEventRegistry: CrewEventEntry[] = [
     scene: tessekEvent04,
     requiredFlags: { tessek_event_03_complete: true, act2_begun: true },
     minDay: 15,
+    minLoyalty: 60,
     priority: 7,
   },
   {
@@ -1004,6 +1027,7 @@ export const crewEventRegistry: CrewEventEntry[] = [
     scene: orrenEvent04,
     requiredFlags: { orren_event_03_complete: true, act2_begun: true },
     minDay: 15,
+    minLoyalty: 60,
     priority: 7,
   },
   {
@@ -1012,6 +1036,7 @@ export const crewEventRegistry: CrewEventEntry[] = [
     scene: vorrethEvent04,
     requiredFlags: { vorreth_event_03_complete: true, act2_begun: true },
     minDay: 15,
+    minLoyalty: 60,
     priority: 7,
   },
   // === Delvessa Romance Chain ===
@@ -1020,6 +1045,7 @@ export const crewEventRegistry: CrewEventEntry[] = [
     crewId: 'delvessa',
     scene: delvessaRomance01,
     requiredFlags: { delvessa_event_01_complete: true },
+    minFlagValue: { delvessa_flirt_count: 2 },
     minDay: 8,
     priority: 6,
   },
@@ -1056,6 +1082,7 @@ export function getAvailableCrewEvents(
   crewId: string,
   flags: Record<string, boolean | number | string>,
   dayCount: number,
+  loyalty?: number,
 ): CrewEventEntry[] {
   return crewEventRegistry
     .filter((entry) => {
@@ -1074,6 +1101,17 @@ export function getAvailableCrewEvents(
 
       // Day check
       if (entry.minDay && dayCount < entry.minDay) return false;
+
+      // Loyalty check -- deeper events require trust built through play
+      if (entry.minLoyalty !== undefined && (loyalty === undefined || loyalty < entry.minLoyalty)) return false;
+
+      // Min flag value check -- numeric >= comparison (requiredFlags does exact match)
+      if (entry.minFlagValue) {
+        for (const [key, minVal] of Object.entries(entry.minFlagValue)) {
+          const actual = typeof flags[key] === 'number' ? (flags[key] as number) : 0;
+          if (actual < minVal) return false;
+        }
+      }
 
       // Required flags
       if (entry.requiredFlags) {
