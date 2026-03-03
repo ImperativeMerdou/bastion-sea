@@ -47,6 +47,8 @@ export interface RandomEvent {
   phase?: GamePhase;
   /** Minimum day for this event to appear. */
   minDay?: number;
+  /** Minimum bounty (in raw value) for this event to appear. */
+  minBounty?: number;
   /** Flags required for this event. */
   requiredFlags?: Record<string, boolean | string | number>;
   /** Notification to show when event fires. */
@@ -142,10 +144,25 @@ export const randomEvents: RandomEvent[] = [
     notification: {
       type: 'story',
       title: 'MERCHANT VESSEL DOCKS',
-      message: 'An independent trader from the Central Belt noses into the harbor at dawn, salt-crusted hull and a captain who smells like bilge and cinnamon. She trades Southern Reach spices and Coppervein copper sheeting for berth rates half what the Wardensea charges. "You\'re cheaper and you don\'t inspect my hold," she says. "That\'s the whole pitch." Delvessa runs the numbers and smiles. Thin margins, but margins.',
+      message: 'An independent trader from the Central Belt noses into the harbor at dawn, salt-crusted hull and a captain who smells like bilge and cinnamon. She trades Southern Reach spices and Coppervein copper sheeting for berth rates half what the Wardensea charges. "You\'re cheaper and you don\'t inspect my hold," she says. Delvessa is watching from the dock, already running numbers.',
     },
-    resourceChanges: { sovereigns: 30, supplies: 5 },
     repeatable: true,
+    choices: [
+      {
+        id: 'merchant_welcome',
+        text: 'Standard berth rate. Take the trade.',
+        resultText: 'Clean transaction. She\'ll be back. Delvessa marks her as reliable.',
+        choiceArchetype: 'trade',
+        effects: { sovereigns: 30, supplies: 5 },
+      },
+      {
+        id: 'merchant_routes',
+        text: '"Tell me your route. I\'ll give you half rates."',
+        resultText: 'She talks. Two hours of navigation charts, patrol avoidance lanes, and supplier contacts. Worth more than the tariff reduction. She doesn\'t know she just paid twice.',
+        choiceArchetype: 'practical',
+        effects: { sovereigns: 10, intelligence: 6 },
+      },
+    ],
   },
   {
     id: 'fishing_bounty',
@@ -167,10 +184,25 @@ export const randomEvents: RandomEvent[] = [
     notification: {
       type: 'story',
       title: 'STORM APPROACHING',
-      message: 'The barometric drop hits at midmorning. Suulen feels it before anyone sees the clouds: a pressure change in the air that makes her ears pop. "Southern wall. Big. Four hours." The fishing fleet turns for port in a ragged line. Dragghen lashes everything that moves to everything that doesn\'t. By the time the rain hits, the harbor is buttoned up. The sea turns grey-green and furious. Supplies lost to spray damage.',
+      message: 'The barometric drop hits at midmorning. Suulen feels it before anyone sees the clouds. "Southern wall. Big. Four hours." The fishing fleet turns for port. Dragghen is already looking at you.',
     },
-    resourceChanges: { supplies: -3 },
     repeatable: true,
+    choices: [
+      {
+        id: 'storm_batten',
+        text: 'Full lockdown. Spend what it takes.',
+        resultText: 'Dragghen seals every gap. By the time the rain hits, nothing moves. Nothing is lost. The crew is tired but the holds are dry.',
+        choiceArchetype: 'cautious',
+        effects: { materials: -4 },
+      },
+      {
+        id: 'storm_skeleton',
+        text: 'Skeleton crew. Ride it out.',
+        resultText: 'Most of the crew shelters. The storm hammers for eight hours. You lose some supplies to spray damage and a barrel comes loose below. Could have been worse.',
+        choiceArchetype: 'risky',
+        effects: { supplies: -6 },
+      },
+    ],
   },
   {
     id: 'smuggler_contact',
@@ -180,11 +212,27 @@ export const randomEvents: RandomEvent[] = [
     requiredFlags: { tavven_conquered: true },
     notification: {
       type: 'crew',
-      title: 'SUULEN VASSERE - Intelligence',
-      message: '"A contact from Keldriss reached out through the tunnel network. They have materials to move, discreetly. I took the liberty of arranging a drop."',
+      title: 'SUULEN VAREK - Intelligence',
+      message: '"A contact from Keldriss reached out through the tunnel network. They have materials to move, discreetly. They want a quick clean exchange and no questions."',
     },
-    resourceChanges: { materials: 5, intelligence: 2 },
     repeatable: true,
+    choices: [
+      {
+        id: 'smuggler_accept',
+        text: 'Accept the deal as offered.',
+        resultText: 'Clean drop. No complications. Suulen handles it herself. Materials arrive before dawn.',
+        choiceArchetype: 'trade',
+        effects: { materials: 5, intelligence: 2 },
+      },
+      {
+        id: 'smuggler_info',
+        text: '"I want to know who they are before anything moves."',
+        resultText: 'Suulen negotiates. The contact is a former Wardensea harbormaster who moved to Keldriss three years ago and has not stopped being useful since. The materials are delayed but the contact is worth more.',
+        choiceArchetype: 'practical',
+        effects: { materials: 3, intelligence: 7 },
+        setFlags: { 'keldriss_network_contact': true },
+      },
+    ],
   },
 
   // --- Grimoire Chatter ---
@@ -262,9 +310,26 @@ export const randomEvents: RandomEvent[] = [
     notification: {
       type: 'crew',
       title: 'VORRETH DAAZ - Daily Report',
-      message: '"I have been drilling the dock workers on basic security protocols. They are not soldiers, but they can spot a Wardensea scout at two hundred meters. It is something." He says this while leaning against the harbor wall, eyes half-closed. He might be asleep in ten minutes. But for now, the assessment is precise.',
+      message: '"I have been drilling the dock workers on basic security protocols. They are not soldiers, but they can spot a Wardensea scout at two hundred meters. It is something." He says this while leaning against the harbor wall, eyes half-closed. He adds: "I have a request."',
     },
     repeatable: false,
+    choices: [
+      {
+        id: 'vorreth_hear',
+        text: '"Go ahead."',
+        resultText: '"More armed men on the south pier. The approach angle is blind." You authorize it. He nods once, like he expected this, and goes to set it up. The south pier is covered by morning.',
+        choiceArchetype: 'practical',
+        loyaltyEffects: { vorreth: 3 },
+        effects: { materials: -2 },
+      },
+      {
+        id: 'vorreth_hold',
+        text: '"We don\'t have the people. Not yet."',
+        resultText: '"Understood." He doesn\'t argue. He doesn\'t push. He notes the blind spot in his report and moves on. Three days later he finds a way to cover it with two people instead of four. He does not report this as a request.',
+        choiceArchetype: 'cautious',
+        loyaltyEffects: { vorreth: 1 },
+      },
+    ],
   },
   {
     id: 'delvessa_ledger',
@@ -291,10 +356,25 @@ export const randomEvents: RandomEvent[] = [
     notification: {
       type: 'story',
       title: 'SHIP MAINTENANCE',
-      message: 'Dragghen spent the morning scraping barnacles off the hull. "Ship talks to you if you listen," he says, pulling a cluster the size of his fist off the rudder housing. "This one\'s been screaming for a week. Six out of ten, now. Was a three yesterday." The hull sits lighter in the water now. Materials spent on patch-work.',
+      message: 'Dragghen comes up from the hull inspection with a barnacle cluster the size of his fist. "She\'s been screaming for a week. Rudder housing, keel seam, probably the starboard prop channel too." He sets the cluster down. "I can do it right or I can do it fast. Tell me which one you want."',
     },
-    resourceChanges: { materials: -3 },
     repeatable: true,
+    choices: [
+      {
+        id: 'hull_full',
+        text: '"Do it right."',
+        resultText: '"Eight out of ten," Dragghen says at sundown, wiping his hands. He rates his own work higher than he rates most things. The hull sits noticeably lighter in the water.',
+        choiceArchetype: 'practical',
+        effects: { materials: -5 },
+      },
+      {
+        id: 'hull_fast',
+        text: '"Do it fast. We might need to move."',
+        resultText: 'Two hours. He gets most of it. "Six out of ten," he says. "Functional." He has opinions about this. He does not share them.',
+        choiceArchetype: 'cautious',
+        effects: { materials: -2 },
+      },
+    ],
   },
   {
     id: 'harbor_celebration',
@@ -305,10 +385,26 @@ export const randomEvents: RandomEvent[] = [
     notification: {
       type: 'story',
       title: 'HARBOR FESTIVAL',
-      message: 'The dock workers organized a feast. Lanterns strung between the mooring posts, salt-grilled fish, a fiddler playing shanties older than the Wardensea. Pettha contributed three barrels of something she calls "harbor wine." Nobody asks what\'s in it. Morale is high. Supplies are lower.',
+      message: 'The dock workers organized a feast. Lanterns between the mooring posts, salt-grilled fish, a fiddler playing shanties older than the Wardensea. Pettha contributed three barrels of something she calls "harbor wine." The crew is already moving toward the noise.',
     },
-    resourceChanges: { supplies: -4 },
     repeatable: true,
+    choices: [
+      {
+        id: 'festival_join',
+        text: 'Go. Let the crew see you in it.',
+        resultText: 'You eat, drink harbor wine (it is mostly fermented fruit), and someone challenges you to a drinking contest that you win by existing. The crew comes back closer. Supplies are lower.',
+        choiceArchetype: 'diplomatic',
+        effects: { supplies: -6 },
+        loyaltyEffects: { dragghen: 2, delvessa: 1, suulen: 1, kovesse: 2, tessek: 1, orren: 1, vorreth: 1 },
+      },
+      {
+        id: 'festival_watch',
+        text: 'Let them celebrate. You listen from the edge.',
+        resultText: 'You learn things at the edge of a party that you don\'t learn in the middle of one. Three dock workers have ties to a Wardensea informant network they think is still active. Delvessa is interested.',
+        choiceArchetype: 'practical',
+        effects: { supplies: -2, intelligence: 3 },
+      },
+    ],
   },
   {
     id: 'tide_pool_find',
@@ -331,11 +427,26 @@ export const randomEvents: RandomEvent[] = [
     requiredFlags: { tavven_conquered: true },
     notification: {
       type: 'story',
-      title: 'SUPPLY LOSS',
-      message: 'Rats got into the grain stores. Not the small island rats, the big grey ones that come off merchant ships. Dragghen spent the night hunting them with a lantern and a boat hook. He got most of them. They got some of the supplies first. He sealed every gap in the hold by morning.',
+      title: 'RAT PROBLEM',
+      message: 'Rats got into the grain stores. Not the small island kind -- the big grey ones off merchant ships. Dragghen reports it at dawn, which means he found it at midnight and has already been thinking about it for six hours. He has two approaches.',
     },
-    resourceChanges: { supplies: -6 },
     repeatable: true,
+    choices: [
+      {
+        id: 'rats_hunt',
+        text: 'Full sweep. Dragghen hunts them tonight.',
+        resultText: 'Four hours with a lantern and a boat hook. He gets most of them and seals every gap by morning. The grain stores are safe. The smell takes longer to leave.',
+        choiceArchetype: 'aggressive',
+        effects: { supplies: -4 },
+      },
+      {
+        id: 'rats_traps',
+        text: 'Set traps. Let them come to us.',
+        resultText: 'Twelve traps, three days. The kill count is respectable but the rats got another two days of access. More supplies lost than the sweep would have cost. Dragghen says nothing. His expression says everything.',
+        choiceArchetype: 'cautious',
+        effects: { supplies: -8, materials: -1 },
+      },
+    ],
   },
   {
     id: 'drifting_wreckage',
@@ -344,11 +455,27 @@ export const randomEvents: RandomEvent[] = [
     minDay: 5,
     notification: {
       type: 'story',
-      title: 'SALVAGE',
-      message: 'A shattered hull drifted into the harbor mouth overnight. No flag, no crew, no name. Vorreth identified the damage pattern: Wardensea cannon, close range. Whoever this was, they ran and didn\'t make it. You strip the wreckage for materials and don\'t talk about it.',
+      title: 'DRIFTING WRECKAGE',
+      message: 'A shattered hull drifted into the harbor mouth overnight. No flag, no crew, no name. Vorreth identified the damage pattern: Wardensea cannon, close range. Whoever this was, they ran and didn\'t make it. Delvessa and Dragghen are waiting on your call.',
     },
-    resourceChanges: { materials: 6, sovereigns: 10 },
     repeatable: true,
+    choices: [
+      {
+        id: 'wreck_strip',
+        text: 'Strip it for materials. Fast.',
+        resultText: 'Two hours. Dragghen and three dock workers take everything worth taking. The hull goes under by afternoon. Whatever story it carried goes with it.',
+        choiceArchetype: 'practical',
+        effects: { materials: 6, sovereigns: 10 },
+      },
+      {
+        id: 'wreck_investigate',
+        text: 'Examine it first. Delvessa reads the damage.',
+        resultText: 'Three hours. Delvessa finds a log fragment, partial manifest, and a merchant seal from a Sorrens Flat trading house. Vorreth cross-references the cannon angle. This ship was running from a position two miles east of where any Wardensea patrol should have been. Delvessa calls it a ghost patrol. She wants to follow up.',
+        choiceArchetype: 'cautious',
+        effects: { materials: 3, intelligence: 8 },
+        setFlags: { 'wreckage_investigated': true },
+      },
+    ],
   },
   {
     id: 'kovesse_interview',
@@ -396,11 +523,28 @@ export const randomEvents: RandomEvent[] = [
     requiredFlags: { tavven_conquered: true },
     notification: {
       type: 'story',
-      title: 'PETTHA\'S CONTRIBUTION',
-      message: 'Pettha showed up at the harbor office with two carts of dried fish, rope, and tar. "I\'m not joining your little revolution," she said. "But if you\'re going to run my island, you\'re going to run it properly. This is an investment, not a gift. I expect returns." Delvessa is already running the numbers.',
+      title: 'PETTHA KOSS',
+      message: 'Pettha showed up at the harbor office with two carts of dried fish, rope, and tar. "This is an investment, not a gift," she says. "I expect returns. Specifically, I expect you to make sure the Wardensea doesn\'t torch my pier." She folds her arms. "Those are my terms."',
     },
-    resourceChanges: { supplies: 6, materials: 3 },
     repeatable: false,
+    choices: [
+      {
+        id: 'pettha_agree',
+        text: '"Agreed. Your pier is protected."',
+        resultText: 'She pushes both carts forward and walks back to her business. Delvessa notes the arrangement in the ledger under "local partnerships." Pettha notes it in whatever she uses for a ledger, probably a very good memory.',
+        choiceArchetype: 'diplomatic',
+        effects: { supplies: 6, materials: 3 },
+        setFlags: { 'pettha_pier_deal': true },
+      },
+      {
+        id: 'pettha_push',
+        text: '"Your pier is already protected. The supplies are welcome."',
+        resultText: 'She looks at you for a long moment. Then she laughs, once, short. "Fair." She pushes the carts in and walks away. The protection isn\'t in writing. Neither is the trust that just got built.',
+        choiceArchetype: 'aggressive',
+        effects: { supplies: 6, materials: 3 },
+        reputationChange: 2,
+      },
+    ],
   },
 
   // ============================================
@@ -427,10 +571,26 @@ export const randomEvents: RandomEvent[] = [
     notification: {
       type: 'story',
       title: 'TERRITORIAL DISPUTE',
-      message: 'Two of your island governors arrived on the same morning boat and started shouting before their feet hit the dock. Fishing rights. The reef between their territories is productive enough for both, but neither will say so first. Delvessa mediates for three hours in the harbor office. She emerges looking like she aged a year. "I split the reef at the tideline. Neither is happy. Both accepted." She pauses. "This is what governing actually looks like. It looks like this."',
+      message: 'Two of your island governors arrived on the same morning boat and started shouting before their feet hit the dock. Fishing rights. The reef between their territories is productive enough for both, but neither will say so first. Delvessa intercepts them at the gangway and looks at you. Her expression says: your call.',
     },
-    resourceChanges: { supplies: -5, intelligence: 2 },
     repeatable: true,
+    choices: [
+      {
+        id: 'dispute_delvessa',
+        text: 'Let Delvessa handle it.',
+        resultText: '"Three hours in the harbor office. I split the reef at the tideline." She emerges looking like she aged a year. "Neither is happy. Both accepted." She pauses. "This is what governing looks like. It looks like this." Delvessa has a talent for this. It costs her something every time.',
+        choiceArchetype: 'diplomatic',
+        effects: { supplies: -5, intelligence: 2 },
+        loyaltyEffects: { delvessa: -1 },
+      },
+      {
+        id: 'dispute_yourself',
+        text: 'Handle it yourself.',
+        resultText: 'You sit them down and tell them: you both fish the reef, split the catch three ways -- two thirds to the territories, one third to the harbor fund. Neither had considered a tax solution. They accept because you are very large and very calm and neither of them wants to find out what happens if you get less calm.',
+        choiceArchetype: 'aggressive',
+        effects: { sovereigns: 20, supplies: -3 },
+      },
+    ],
   },
   {
     id: 'conqueror_sighting',
@@ -440,9 +600,26 @@ export const randomEvents: RandomEvent[] = [
     notification: {
       type: 'conqueror',
       title: 'CONQUEROR FLEET SIGHTING',
-      message: 'Suulen\'s reef network picks them up at dawn: three warships flying Conqueror colors, cutting through the Central Belt on a heading that passes within four nautical miles of your outer territories. Not approaching. Not avoiding. A deliberate, measured transit that says "we know where you are." Vorreth watches them through the spyglass for twenty minutes without blinking. "Forged-tier Iron on the lead ship. At least two God Fruit signatures on the second. They are not here to fight. They are here to be seen."',
+      message: 'Three Conqueror warships cutting through the Central Belt. Four nautical miles from your outer territories. Not approaching. Not avoiding. Vorreth puts down the spyglass. "Forged-tier Iron on the lead ship. God Fruit signatures on the second. They are here to be seen." He pauses. "Question is: do we let them see us looking back?"',
     },
     repeatable: true,
+    choices: [
+      {
+        id: 'conqueror_ignore',
+        text: 'Don\'t react. Log it and move on.',
+        resultText: 'You note the formation, heading, and time. Delvessa adds it to the pattern analysis. The Conquerors continue their transit and disappear south. You learn nothing new. They learn nothing new. The standoff continues.',
+        choiceArchetype: 'cautious',
+        effects: { intelligence: 2 },
+      },
+      {
+        id: 'conqueror_signal',
+        text: 'Send a ship to shadow them. Make it obvious.',
+        resultText: 'You put a single fast sloop on their wake at two miles. The lead warship adjusts course slightly -- acknowledging without engaging. Vorreth says this is Conqueror protocol for "we see your message." Delvessa says this is either an opening or a test. She cannot determine which. The intelligence yield is significant.',
+        choiceArchetype: 'risky',
+        effects: { intelligence: 8 },
+        infamyChange: 2,
+      },
+    ],
   },
   {
     id: 'wardensea_probe',
@@ -451,10 +628,27 @@ export const randomEvents: RandomEvent[] = [
     notification: {
       type: 'wardensea',
       title: 'WARDENSEA RECONNAISSANCE',
-      message: 'A light cutter with Wardensea markings was spotted running the perimeter near {current_island}. Vorreth identified the hull type: intelligence-gathering vessel, not combat. They\'re mapping your patrol patterns across {territory_count} territories.',
+      message: 'A light cutter with Wardensea markings running the perimeter near {current_island}. Vorreth: "Intelligence vessel. Hull type 3. They are mapping our patrol patterns across {territory_count} territories." He is already watching it through the glass. "Your call."',
     },
-    resourceChanges: { intelligence: 3 },
     repeatable: true,
+    choices: [
+      {
+        id: 'probe_let_pass',
+        text: 'Let it run. Don\'t engage.',
+        resultText: 'You watch it complete the survey. Delvessa notes the course and timing. Next time you know where it will be and when. Sometimes information is better than an incident.',
+        choiceArchetype: 'cautious',
+        effects: { intelligence: 5 },
+      },
+      {
+        id: 'probe_intercept',
+        text: 'Intercept. Board and search.',
+        resultText: 'Vorreth takes a fast sloop and cuts it off at the channel mouth. The Wardensea crew surrenders without a fight -- they are surveyors, not soldiers. The intelligence cache on board is considerable. The diplomatic cost is also considerable. Delvessa marks both in the ledger.',
+        choiceArchetype: 'aggressive',
+        effects: { intelligence: 12, materials: 2 },
+        infamyChange: 3,
+        bountyChange: 5000000,
+      },
+    ],
   },
   {
     id: 'kolmari_trade_embargo',
@@ -463,11 +657,27 @@ export const randomEvents: RandomEvent[] = [
     minDay: 15,
     notification: {
       type: 'grimoire',
-      title: 'KOLMARI TRADE OFFICE - Sanctions Update',
-      message: 'The Kolmari Confederation has extended trade sanctions to all ports under Renegade control. Independent merchants face penalties for docking at {current_island} and your other territories. Supply costs are rising.',
+      title: 'KOLMARI TRADE OFFICE - Sanctions',
+      message: 'The Kolmari Confederation has extended trade sanctions to all ports under Renegade control. Independent merchants face penalties for docking with you. Kovesse has the full text. She also has three ideas.',
     },
-    resourceChanges: { sovereigns: -20, supplies: -5 },
     repeatable: false,
+    choices: [
+      {
+        id: 'embargo_absorb',
+        text: 'Absorb the cost. Keep existing trade relationships.',
+        resultText: 'You eat the price increase. Merchants who value your lower tariffs stay anyway -- the Confederation fine is less than the Wardensea inspection tax they were already paying. Delvessa calls this a wash. It is not a comfortable wash.',
+        choiceArchetype: 'cautious',
+        effects: { sovereigns: -20, supplies: -5 },
+      },
+      {
+        id: 'embargo_smuggle',
+        text: '"Kovesse. Find me the routes that avoid Kolmari customs."',
+        resultText: 'She finds four. Two are barely legal, one is not legal at all, and one is "a grey area that the Confederation itself uses for internal logistics." The embargo loses most of its bite within a week. The Kolmari Trade Office files a protest on the Grimoire. Kovesse responds publicly. It is a very entertaining read.',
+        choiceArchetype: 'risky',
+        effects: { sovereigns: -5, intelligence: 6 },
+        infamyChange: 2,
+      },
+    ],
   },
   {
     id: 'recruit_volunteers',
@@ -476,9 +686,26 @@ export const randomEvents: RandomEvent[] = [
     notification: {
       type: 'crew',
       title: 'VORRETH DAAZ - Personnel Report',
-      message: '"Twelve volunteers this week at {current_island}. Fishermen, dock workers, a retired Wardensea marine who says she is done pretending. I am running them through basics. Most will not make it past the first week. The ones who do will be worth something."',
+      message: '"Twelve volunteers this week at {current_island}. Fishermen, dock workers, a retired Wardensea marine who says she is done pretending." Vorreth pauses. "I can take them all, or I can screen for the three who will actually hold a line. Your call. Resources are different either way."',
     },
     repeatable: true,
+    choices: [
+      {
+        id: 'recruit_all',
+        text: 'Take them all. Volume matters.',
+        resultText: 'Vorreth runs a hard week. Three quit. Two are quietly redirected to dock labor. Seven make it to basic. Four of those will be useful in three months. None of it is clean but all of it is movement.',
+        choiceArchetype: 'aggressive',
+        effects: { supplies: -8, sovereigns: -15 },
+        reputationChange: 2,
+      },
+      {
+        id: 'recruit_screen',
+        text: '"Screen for three. I want people who will hold."',
+        resultText: 'Vorreth selects three. The retired Wardensea marine, a dock worker who already knew how to throw a punch correctly, and a fisherman who asked the right questions during the interview. He puts them with Tessek immediately. "These three will be ready faster than twelve would have been," he says.',
+        choiceArchetype: 'practical',
+        effects: { supplies: -3, intelligence: 3 },
+      },
+    ],
   },
 
   // --- Grimoire Chatter Act 2 ---
@@ -562,9 +789,26 @@ export const randomEvents: RandomEvent[] = [
     notification: {
       type: 'wardensea',
       title: 'TERRITORY DEFENSE ALERT',
-      message: 'Suulen\'s reef network detected a {threat_desc} strike group staging near {island:random}. Three cruisers, two support ships. They\'re probing your defenses across {territory_count} territories, testing response times.',
+      message: 'Suulen\'s reef network: a {threat_desc} strike group staging near {island:random}. Three cruisers, two support ships. Testing your response times across {territory_count} territories. Delvessa has two recommendations and they cost different things.',
     },
     repeatable: true,
+    choices: [
+      {
+        id: 'attack_reinforce',
+        text: 'Reinforce the threatened territory. Full deployment.',
+        resultText: 'You move everything to the threat position. The strike group assesses the response time, notes the reinforcement, and pulls back without engaging. Delvessa marks this as "deterrence success." It cost significantly to get there.',
+        choiceArchetype: 'aggressive',
+        effects: { supplies: -15, materials: -8 },
+        reputationChange: 3,
+      },
+      {
+        id: 'attack_scout',
+        text: 'Send a fast sloop. Get eyes on their command ship.',
+        resultText: 'Suulen takes the sloop herself. She comes back with formation data, flag registry, and the name of the strike group commander stenciled on the lead cruiser\'s stern. Intelligence that Delvessa calls "worth more than a territorial defense." The territory remains exposed for six hours. Nothing attacks it.',
+        choiceArchetype: 'cautious',
+        effects: { intelligence: 12, supplies: -4 },
+      },
+    ],
   },
   {
     id: 'grimoire_act3_fame',
@@ -1512,6 +1756,219 @@ export const randomEvents: RandomEvent[] = [
     repeatable: false,
     resourceChanges: { intelligence: 5 },
   },
+
+  // ============================================
+  // ACT 3 ADDITIONS -- 8 new events
+  // ============================================
+
+  // --- Wardensea Diplomatic Offers ---
+  {
+    id: 'wardensea_final_offer',
+    weight: 3,
+    phase: 'act3',
+    minDay: 45,
+    notification: {
+      type: 'wardensea',
+      title: 'WARDENSEA HIGH COMMAND -- DIPLOMATIC CONTACT',
+      message: 'A Kolmari trade vessel requests neutral harbor. The captain -- who has absolutely nothing to do with the Wardensea, according to the manifest -- delivers a sealed document. Three conditions, stamped with the High Command seal: cease expansion. Pay 200 sovereigns monthly tribute. Accept a Wardensea liaison officer aboard. In exchange: your existing territories remain yours, under Wardensea recognition. Delvessa reads it twice. "They are scared," she says. "They would not offer this if they were not scared."',
+    },
+    repeatable: false,
+    choices: [
+      {
+        id: 'negotiate_wardensea_offer',
+        text: 'Send a counter-offer. Open the channel.',
+        resultText: 'Your counter-offer goes back via the same neutral vessel. Full recognition. No tribute. No liaison. No response yet. But the channel is open, which is not nothing.',
+        reputationChange: 5,
+        loyaltyEffects: { delvessa: 3 },
+        setFlags: { wardensea_negotiation_opened: true },
+      },
+      {
+        id: 'reject_wardensea_offer',
+        text: 'No terms. No liaison. No.',
+        resultText: 'The neutral captain waits an hour, reads the silence correctly, and leaves. The document goes into the sea. Vorreth watches it sink and says nothing. The silence is approval.',
+        infamyChange: 3,
+        loyaltyEffects: { vorreth: 4, dragghen: 2, delvessa: -2 },
+        setFlags: { wardensea_offer_rejected: true },
+      },
+    ],
+  },
+  {
+    id: 'wardensea_back_channel',
+    weight: 2,
+    phase: 'act3',
+    minDay: 50,
+    notification: {
+      type: 'wardensea',
+      title: 'PRIVATE WARDENSEA CONTACT',
+      message: 'A personal Grimoire signal. No seal. The sender identifies as Commander Yeleth Branne, 4th Division, currently at the forward base. Their message: "I have been in four campaigns. I know what a war that nobody wins looks like. This is one. I am not speaking for High Command. I am speaking for the two thousand sailors who would prefer to go home." A pause. Then: "Is there a version of this where people stop dying?"',
+    },
+    repeatable: false,
+    choices: [
+      {
+        id: 'back_channel_yes',
+        text: 'Tell them: yes. Find out what they\'re actually offering.',
+        resultText: 'You send back: working on it. It\'s true. You don\'t know what comes next. But someone on the other side doesn\'t want to die either, and that is a fact worth having.',
+        loyaltyEffects: { delvessa: 2 },
+        effects: { intelligence: 8 },
+        reputationChange: 4,
+      },
+      {
+        id: 'back_channel_no',
+        text: 'No contact. This is a probe.',
+        resultText: 'Vorreth calls it right: "They want to know if you\'re soft." No response goes out. No response is an answer.',
+        infamyChange: 2,
+        loyaltyEffects: { vorreth: 3 },
+      },
+    ],
+  },
+
+  // --- Crew Endgame Moments ---
+  {
+    id: 'crew_act3_dragghen_end',
+    weight: 2,
+    phase: 'act3',
+    notification: {
+      type: 'crew',
+      title: 'DRAGGHEN KOLVE -- After Watch',
+      message: 'After the evening watch change, Dragghen is in the hold. Not fixing anything. Hand flat on the main keel. You ask what he\'s doing. "Learning her," he says. "She has four years of hard sailing in the planks. Storms. That boarding action off Anvil Cay. The channel she almost went under in, past Windrow." He pulls his hand back. "A ship this used either breaks or becomes something else. Something that knows what it survived." He heads topside. You stand in the hold a moment longer.',
+    },
+    repeatable: false,
+  },
+  {
+    id: 'crew_act3_suulen_end',
+    weight: 2,
+    phase: 'act3',
+    notification: {
+      type: 'crew',
+      title: 'SUULEN VASSERE -- Navigation Log',
+      message: 'Suulen\'s navigation log for the past month is ninety pages. Routes mapped. Hazards marked. Places that do not appear on any Wardensea chart. She leaves it on the table without comment, open to a page showing a route through the eastern shoals you have never used. Annotated in her handwriting: "After. If we are still here." Below that, smaller: "We will be." You have no idea when she started believing that.',
+    },
+    repeatable: false,
+  },
+
+  // --- Grimoire: World Scale Broadens ---
+  {
+    id: 'grimoire_act3_kingsrun',
+    weight: 2,
+    phase: 'act3',
+    minDay: 40,
+    notification: {
+      type: 'grimoire',
+      title: 'GRIMOIRE -- KINGSRUN DISPATCH',
+      message: '"Writing from past Ossengaard Fortress, which is already more danger than most of you will accept. The Kingsrun crews are talking about something that has nothing to do with the Threshold. They are talking about an Oni in the Bastion Sea. Took Tavven Shoal from a standing Wardensea garrison in three hours. The deepcallers are watching. The navigators who have run the Kingsrun for thirty years are watching. They do not get impressed often." -- Kingsrun Watch, dispatched from Brannach.',
+    },
+    repeatable: false,
+  },
+  {
+    id: 'grimoire_act3_world_scale',
+    weight: 2,
+    phase: 'act3',
+    minDay: 48,
+    notification: {
+      type: 'grimoire',
+      title: 'GRIMOIRE -- FOREIGN OBSERVER',
+      message: '"From outside the Bastion Sea, since apparently we are a spectator sport now: the Ossengaard Guild has opened a betting pool. Options: Wardensea victory. Oni capitulation. Mutual destruction. Conqueror intervention. And what they call The Third Thing, described only as \'unexpected.\' Odds on The Third Thing: three to one. That is the highest probability any Ossengaard bookmaker has ever assigned to a category they cannot define." -- Cross-sea dispatch, source redacted.',
+    },
+    repeatable: false,
+  },
+
+  // --- Ally Island Tribute ---
+  {
+    id: 'ally_island_tribute_act3',
+    weight: 2,
+    phase: 'act3',
+    minDay: 35,
+    notification: {
+      type: 'story',
+      title: 'TRIBUTE FROM THE TERRITORIES',
+      message: 'A delegation arrives from {island:random}. Six people. They bring smoked fish, copper, and forty sovereigns wrapped in oilcloth. The delegation\'s head, a Gorundai man with grey in his plating, says: "We do not have soldiers to offer. We have what the island makes." He puts the oilcloth on the table. "It is not enough. But it is what we have and we want you to have it." He is not asking for anything in return. He already calculated that he owed it.',
+    },
+    repeatable: false,
+    resourceChanges: { sovereigns: 40, supplies: 15, materials: 10 },
+  },
+
+  // --- Kirin Final Message ---
+  {
+    id: 'kirin_final_message',
+    weight: 2,
+    phase: 'act3',
+    minDay: 45,
+    requiredFlags: { kirin_arrived: true },
+    notification: {
+      type: 'story',
+      title: 'MESSAGE FROM KIRIN',
+      message: 'A sealed message, through a channel you did not know Kirin had. No preamble. "I have watched you burn across the Bastion Sea for two years. I am still not certain what you are. But I know what you have done." Then: "The Wardensea is going to make a decisive move in the next three weeks. They will not announce it. I am telling you because I am not done with this sea, and your dying would bore me. Watch your northern approaches." No signature. You do not need one.',
+    },
+    repeatable: false,
+    resourceChanges: { intelligence: 12 },
+  },
+
+  // =========================================================
+  // WARDENSEA AMBIENT PRESENCE -- fires when bounty > 1M
+  // The player should feel watched before they feel hunted.
+  // Threshold: minBounty 1,000,000. Repeatable: false each.
+  // =========================================================
+
+  {
+    id: 'wardensea_presence_informant',
+    weight: 3,
+    minBounty: 1000000,
+    repeatable: false,
+    notification: {
+      type: 'wardensea',
+      title: 'WARDENSEA -- EYES IN THE MARKET',
+      message: 'A dockworker you have not seen before keeps turning up in the same places. Near your ship in the morning. At the edge of the market when your crew is resupplying. He is not subtle. He is not trying to be. The Wardensea does not always send soldiers first. Sometimes they send people to count.',
+    },
+  },
+
+  {
+    id: 'wardensea_presence_horizon_ship',
+    weight: 3,
+    minBounty: 1000000,
+    repeatable: false,
+    notification: {
+      type: 'wardensea',
+      title: 'WARDENSEA -- VESSEL ON THE HORIZON',
+      message: 'Suulen flags a ship at the edge of visual range. Single mast, no flag, sitting with the current instead of moving with it. A patrol vessel at rest is not a patrol vessel. It is a vessel watching something. It has been there since before dawn. By midday it is gone. You have not stopped being watched. They just finished the count.',
+    },
+  },
+
+  {
+    id: 'wardensea_presence_local_warning',
+    weight: 3,
+    minBounty: 1000000,
+    repeatable: false,
+    notification: {
+      type: 'wardensea',
+      title: 'WARDENSEA -- A WARNING FROM THE PORT',
+      message: 'Hella from the fish market sends word through a dockhand. Brief: "Three Wardensea officers ate here this morning. They asked about you. Not by name -- by description. I told them I didn\'t know anyone matching it. They wrote something down and left." She does not add anything else. She does not need to. The Wardensea is asking questions. They already know the answers.',
+    },
+    requiredFlags: { tavven_conquered: true },
+  },
+
+  {
+    id: 'wardensea_presence_register_update',
+    weight: 2,
+    minBounty: 2000000,
+    repeatable: false,
+    notification: {
+      type: 'wardensea',
+      title: 'WARDENSEA -- PERSON OF INTEREST: ELEVATED',
+      message: 'Kovesse intercepts a routing message on Wardensea administrative frequencies. Classification update: KARYUDON, renegade authority, Northern Arc. Status changed from MONITOR to PRIORITY INTERCEPT. That means dedicated personnel. Assigned watchers. A file that does not get closed. The Wardensea has been patient. They are deciding to stop being patient.',
+    },
+  },
+
+  {
+    id: 'wardensea_presence_crew_report',
+    weight: 3,
+    minBounty: 1000000,
+    repeatable: false,
+    notification: {
+      type: 'crew',
+      title: 'VORRETH DAAZ -- Wardensea Movement',
+      message: '"Captain. A fast cutter passed through the outer channel this morning at a speed inconsistent with routine patrol. I recognize the configuration: that is a reconnaissance vessel. It did not stop. It did not challenge us. It recorded what it saw and it left." He pauses. "They have logged us. A formal response takes four to six weeks to organize. You have time. Not much of it, but some."',
+    },
+  },
 ];
 
 // --- Event Reward Scaling ---
@@ -1563,6 +2020,7 @@ interface EventCheckInput {
   gamePhase: GamePhase;
   flags: GameFlags;
   firedEventIds: string[];
+  bounty?: number;
 }
 
 /**
@@ -1571,7 +2029,7 @@ interface EventCheckInput {
  * Base chance: 40% per day that SOMETHING happens.
  */
 export function rollRandomEvent(input: EventCheckInput): RandomEvent | null {
-  const { dayCount, gamePhase, flags, firedEventIds } = input;
+  const { dayCount, gamePhase, flags, firedEventIds, bounty } = input;
   const firedSet = new Set(firedEventIds);
 
   // 40% base chance of an event firing
@@ -1587,6 +2045,9 @@ export function rollRandomEvent(input: EventCheckInput): RandomEvent | null {
 
     // Day check
     if (event.minDay && dayCount < event.minDay) return false;
+
+    // Bounty check (for threat-scaled events)
+    if (event.minBounty !== undefined && (bounty ?? 0) < event.minBounty) return false;
 
     // Flag check
     if (event.requiredFlags) {

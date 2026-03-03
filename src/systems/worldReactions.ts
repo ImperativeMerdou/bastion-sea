@@ -708,6 +708,69 @@ export const worldReactions: WorldReaction[] = [
     onceOnly: true,
   },
 
+  // =========================================================
+  // ESCAPE STYLE REACTIONS - prologue choice payoffs
+  // These fire in Act 1 to prove the prologue escape decision mattered.
+  // escape_style: 'direct' | 'patient' | 'liberator'
+  // =========================================================
+
+  {
+    id: 'escape_direct_wardensea_recognition',
+    label: 'Wardensea - prisoner who escaped violently, specifically flagged',
+    trigger: {
+      phase: 'act1',
+      minDay: 5,
+      maxDay: 20,
+      requiredFlags: { escape_style: 'direct', tavven_conquered: true },
+    },
+    delay: 0,
+    notification: {
+      type: 'wardensea',
+      title: 'WARDENSEA ALERT - Escaped Prisoner Linked to Tavven Seizure',
+      message:
+        'Cross-referencing the Tavven Shoal seizure with the Kolmari transport incident seven days prior: a prisoner listed as Transfer C-14 -- Oni male, exceptional build, Iron Dominion confirmed -- was not recovered. The violence at both sites matches one operative. This individual should be considered a priority identification target.',
+    },
+    onceOnly: true,
+  },
+
+  {
+    id: 'escape_patient_delvessa_observation',
+    label: 'Delvessa - notes the restraint on the prison ship',
+    trigger: {
+      phase: 'act1',
+      minDay: 6,
+      maxDay: 25,
+      requiredFlags: { escape_style: 'patient', delvessa_recruited: true },
+    },
+    delay: 0,
+    notification: {
+      type: 'crew',
+      title: 'DELVESSA GHAL -- On Your Prison Ship Escape',
+      message:
+        '"I looked up your transport incident. You had three windows to move before they locked the lower hold. You waited for the fourth one, when two other groups had already burned their own exits fighting each other. My navigator\'s instinct said that was a mistake when I read it. Now I\'m not sure. The Kolmari have a word for that: korvaas. Roughly: waiting for the current that is already moving."',
+    },
+    onceOnly: true,
+  },
+
+  {
+    id: 'escape_liberator_contact',
+    label: 'Freed prisoner contacts Karyudon with Wardensea patrol intel',
+    trigger: {
+      phase: 'act1',
+      minDay: 8,
+      maxDay: 30,
+      requiredFlags: { escape_style: 'liberator', tavven_conquered: true },
+    },
+    delay: 0,
+    notification: {
+      type: 'story',
+      title: 'ANONYMOUS MESSAGE -- Debt Repaid: Prison Ship',
+      message:
+        'A message arrives through a relay address -- no sender ID, no location marker. "You opened the hold on the transport. I didn\'t ask you to, and I was angry about it until I wasn\'t. Enclosed is a Wardensea patrol schedule for the Northern Arc corridors. Valid for twelve days. I got it from someone who owed me. Now I don\'t owe you. We\'re clear." The schedule is attached. Current patrol gap: three days. Starting tomorrow.',
+    },
+    onceOnly: true,
+  },
+
   {
     id: 'act3_grimoire_final',
     label: 'Grimoire - the world holds its breath',

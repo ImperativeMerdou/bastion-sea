@@ -3,7 +3,11 @@
     "allow": [
       "Bash(ls:*)",
       "Bash(grep:*)",
-      "Bash(npx react-scripts build:*)"
+      "Bash(npx react-scripts build:*)",
+      "Bash(npm run build:*)",
+      "Bash(npx tsc:*)",
+      "Bash(wc -l /c/Users/User/Desktop/bastion-sea-main/src/data/story/*.ts)",
+      "Bash(xargs wc -l)"
     ]
   }
 }

@@ -176,7 +176,7 @@ export interface StoryChoice {
 }
 
 export interface StoryEffect {
-  type: 'bounty' | 'reputation' | 'infamy' | 'loyalty' | 'resource' | 'flag' | 'flag_increment' | 'unlock' | 'scene' | 'recruit' | 'notification' | 'phase' | 'panel' | 'conquer' | 'combat' | 'dominion' | 'crew_identity';
+  type: 'bounty' | 'reputation' | 'infamy' | 'loyalty' | 'resource' | 'flag' | 'flag_increment' | 'unlock' | 'scene' | 'recruit' | 'depart_crew' | 'notification' | 'phase' | 'panel' | 'conquer' | 'combat' | 'dominion' | 'crew_identity';
   target?: string;
   value: number | string | boolean;
   notification?: { type: GameNotification['type']; title: string; message: string };

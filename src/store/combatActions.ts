@@ -68,6 +68,7 @@ export function createCombatActions(
 
       set({
         combatState,
+        combatContext: encounter.context ?? null,
         activePanel: 'combat',
       });
     },
@@ -301,7 +302,7 @@ export function createCombatActions(
 
       // If combat was triggered mid-travel, complete the voyage
       if (hadTravelState) {
-        set({ combatState: null, travelState: null });
+        set({ combatState: null, combatContext: null, travelState: null });
         const tState = state.travelState;
         if (tState) {
           const destId = tState.toIsland;
@@ -334,6 +335,7 @@ export function createCombatActions(
             const nextScene = sceneRegistry[currentScene.nextSceneId];
             set({
               combatState: null,
+              combatContext: null,
               activePanel: 'story',
               currentScene: { ...nextScene, currentBeat: 0 },
               isTyping: true,
@@ -342,6 +344,7 @@ export function createCombatActions(
           } else {
             set({
               combatState: null,
+              combatContext: null,
               activePanel: 'map',
               currentScene: null,
               isTyping: false,
@@ -352,6 +355,7 @@ export function createCombatActions(
           // Advance to the next beat in a single atomic update
           set({
             combatState: null,
+            combatContext: null,
             activePanel: 'story',
             currentScene: { ...currentScene, currentBeat: nextBeat },
             isTyping: true,
@@ -359,7 +363,7 @@ export function createCombatActions(
         }
       } else {
         // No active story scene - return to map (not 'story', which would show blank panel)
-        set({ combatState: null, activePanel: 'map' });
+        set({ combatState: null, combatContext: null, activePanel: 'map' });
       }
 
       // Auto-save after combat resolves

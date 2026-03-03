@@ -69,6 +69,7 @@ import {
 import {
   act3BeginScene, act3VasshenScene, act3ConquerorGambitScene,
   act3IroncladScene, act3FinalCouncilScene, act3EndingScene,
+  act3ReckoningScene,
 } from '../data/story/act3_main';
 import { crewEventRegistry } from '../data/story/crew_events';
 import { crewIdentityScene } from '../data/story/crew_identity';
@@ -82,6 +83,18 @@ import {
   primeKhossScene, primeKhossNegotiateScene, primeKhossFightScene,
 } from '../data/story/prime_khoss';
 import { epilogueScene } from '../data/story/epilogue';
+import {
+  delvessaDepartureScene, dragghenDepartureScene, suulenDepartureScene,
+} from '../data/story/crew_departures';
+import {
+  delvessaIntro01, delvessaIntro02,
+  dragghenIntro01, dragghenIntro02,
+  suulenIntro01, suulenIntro02,
+} from '../data/story/crew_intro_scenes';
+import {
+  keldrissResidue, copperveinResidue, mossbreakResidue, durrekResidue,
+  anvilCayResidue, mirrorwaterResidue, windrowResidue, ghostlightResidue,
+} from '../data/story/territory_residue';
 // Boss encounters registered via allCombatEncounters
 // import { kirinEncounter, primeKhossEncounter } from '../data/combat/boss_encounters';
 import { getReadyReactions } from '../systems/worldReactions';
@@ -373,10 +386,31 @@ const sceneRegistry: Record<string, StoryScene> = {
   'act3_ironclad': act3IroncladScene,
   'act3_final_council': act3FinalCouncilScene,
   'act3_ending': act3EndingScene,
+  'act3_reckoning': act3ReckoningScene,
   // Dragon Fruit transformation
   'dragon_fruit_activation': dragonFruitActivationScene,
   // Post-credits epilogue
   'epilogue_view_from_below': epilogueScene,
+  // Crew departure scenes (triggered by loyalty floor; not in Management event registry)
+  'crew_delvessa_depart': delvessaDepartureScene,
+  'crew_dragghen_depart': dragghenDepartureScene,
+  'crew_suulen_depart': suulenDepartureScene,
+  // Crew intro interrupt scenes (auto-fire, Act 1, establish character voice)
+  'crew_delvessa_intro_01': delvessaIntro01,
+  'crew_delvessa_intro_02': delvessaIntro02,
+  'crew_dragghen_intro_01': dragghenIntro01,
+  'crew_dragghen_intro_02': dragghenIntro02,
+  'crew_suulen_intro_01': suulenIntro01,
+  'crew_suulen_intro_02': suulenIntro02,
+  // Territory residue scenes (auto-fire after each conquest, world reaction)
+  'territory_residue_keldriss': keldrissResidue,
+  'territory_residue_coppervein': copperveinResidue,
+  'territory_residue_mossbreak': mossbreakResidue,
+  'territory_residue_durrek': durrekResidue,
+  'territory_residue_anvil_cay': anvilCayResidue,
+  'territory_residue_mirrorwater': mirrorwaterResidue,
+  'territory_residue_windrow': windrowResidue,
+  'territory_residue_ghostlight': ghostlightResidue,
 };
 
 // Auto-register crew event scenes so save/load works during conversations
@@ -418,6 +452,7 @@ export interface GameState {
 
   // --- Combat ---
   combatState: CombatState | null;
+  combatContext: { reason: string; territory?: string } | null;
 
   // --- Territory ---
   territoryStates: Record<string, TerritoryState>;
@@ -600,6 +635,7 @@ export const useGameStore = create<GameState>((set, get) => ({
   typingSpeedPreset: 'normal' as const,
 
   combatState: null,
+  combatContext: null,
 
   territoryStates: {},
 
@@ -659,6 +695,7 @@ export const useGameStore = create<GameState>((set, get) => ({
       typingSpeed: 18,
       typingSpeedPreset: 'normal' as const,
       combatState: null,
+      combatContext: null,
       territoryStates: {},
       travelState: null,
       firedTravelEventIds: [],
@@ -790,6 +827,14 @@ export const useGameStore = create<GameState>((set, get) => ({
           }
         }
 
+        // Act 3 reckoning: mid-Act 3 interrupt, day 50+, 5+ territories
+        if (ts.gamePhase === 'act3' && ts.flags['act3_begun'] && !ts.flags['act3_reckoning_seen']) {
+          const reckoningCount = ts.islands.filter(i => i.status === 'controlled').length;
+          if (ts.dayCount >= 50 && reckoningCount >= 5) {
+            fireScene('act3_reckoning');
+          }
+        }
+
         // Kirin arc: 6+ islands OR day 40+
         if (!ts.flags['kirin_arrived']) {
           const controlledCount = ts.islands.filter(i => i.status === 'controlled').length;
@@ -814,6 +859,77 @@ export const useGameStore = create<GameState>((set, get) => ({
           if (controlledCount >= TIME.PRIME_MIN_ISLANDS && ts.dayCount >= TIME.PRIME_MIN_DAY) {
             fireScene('prime_khoss_arrival');
           }
+        }
+
+        // Crew departure warning: mutinous crew get a departure scene before silent desertion
+        const DEPARTURE_SCENES: Record<string, string> = {
+          delvessa: 'crew_delvessa_depart',
+          dragghen: 'crew_dragghen_depart',
+          suulen: 'crew_suulen_depart',
+        };
+        for (const member of ts.crew) {
+          if (!member.recruited || !member.alive || member.mood !== 'mutinous') continue;
+          const sceneId = DEPARTURE_SCENES[member.id];
+          if (!sceneId) continue;
+          if (ts.flags[`crew_${member.id}_departure_warned`]) continue;
+          if (ts.flags[`crew_${member.id}_departure_averted`]) continue;
+          if (ts.flags[`crew_${member.id}_departed`]) continue;
+          // Fire the departure scene and set the warned flag so it doesn't re-trigger
+          fireScene(sceneId, () => {
+            get().setFlag(`crew_${member.id}_departure_warned`, true);
+          });
+          break; // One departure scene at a time
+        }
+
+        // ==========================================
+        // CREW INTRO INTERRUPT SCENES (Act 1 only)
+        // Establish crew as people early; staggered by days after Tavven conquest.
+        // ==========================================
+        if (ts.gamePhase === 'act1' && ts.flags['tavven_conquered']) {
+          const conquestDay = typeof ts.flags['tavven_conquered_day'] === 'number' ? ts.flags['tavven_conquered_day'] : 0;
+
+          // Delvessa intro 01: 2+ days after Tavven
+          if (ts.dayCount >= conquestDay + 2 && !ts.flags['delvessa_intro_01_seen']) {
+            fireScene('crew_delvessa_intro_01');
+          // Delvessa intro 02: 7+ days after Tavven, after intro 01
+          } else if (ts.dayCount >= conquestDay + 7 && ts.flags['delvessa_intro_01_seen'] && !ts.flags['delvessa_intro_02_seen']) {
+            fireScene('crew_delvessa_intro_02');
+          // Dragghen intro 01: 4+ days after Tavven
+          } else if (ts.dayCount >= conquestDay + 4 && !ts.flags['dragghen_intro_01_seen']) {
+            fireScene('crew_dragghen_intro_01');
+          // Dragghen intro 02: 9+ days after Tavven, after intro 01
+          } else if (ts.dayCount >= conquestDay + 9 && ts.flags['dragghen_intro_01_seen'] && !ts.flags['dragghen_intro_02_seen']) {
+            fireScene('crew_dragghen_intro_02');
+          // Suulen intro 01: 6+ days after Tavven
+          } else if (ts.dayCount >= conquestDay + 6 && !ts.flags['suulen_intro_01_seen']) {
+            fireScene('crew_suulen_intro_01');
+          // Suulen intro 02: 12+ days after Tavven, after intro 01
+          } else if (ts.dayCount >= conquestDay + 12 && ts.flags['suulen_intro_01_seen'] && !ts.flags['suulen_intro_02_seen']) {
+            fireScene('crew_suulen_intro_02');
+          }
+        }
+
+        // ==========================================
+        // TERRITORY RESIDUE SCENES
+        // Fire the day after each island conquest.
+        // One at a time -- eval in priority order.
+        // ==========================================
+        if (ts.flags['keldriss_conquered'] && !ts.flags['keldriss_residue_seen']) {
+          fireScene('territory_residue_keldriss');
+        } else if (ts.flags['coppervein_conquered'] && !ts.flags['coppervein_residue_seen']) {
+          fireScene('territory_residue_coppervein');
+        } else if (ts.flags['mossbreak_conquered'] && !ts.flags['mossbreak_residue_seen']) {
+          fireScene('territory_residue_mossbreak');
+        } else if (ts.flags['durrek_conquered'] && !ts.flags['durrek_residue_seen']) {
+          fireScene('territory_residue_durrek');
+        } else if (ts.flags['anvil_cay_conquered'] && !ts.flags['anvil_cay_residue_seen']) {
+          fireScene('territory_residue_anvil_cay');
+        } else if (ts.flags['mirrorwater_conquered'] && !ts.flags['mirrorwater_residue_seen']) {
+          fireScene('territory_residue_mirrorwater');
+        } else if (ts.flags['windrow_conquered'] && !ts.flags['windrow_residue_seen']) {
+          fireScene('territory_residue_windrow');
+        } else if (ts.flags['ghostlight_reef_conquered'] && !ts.flags['ghostlight_residue_seen']) {
+          fireScene('territory_residue_ghostlight');
         }
       }
     };
@@ -1030,9 +1146,11 @@ export const useGameStore = create<GameState>((set, get) => ({
         }
       });
 
-      // Crew Mood Consequences: Mutinous crew have a daily chance to desert
+      // Crew Mood Consequences: Mutinous crew have a daily chance to desert.
+      // Skip crew with a departure scene pending -- the scene handles their exit.
       const currentCrew = get().crew;
       currentCrew.filter((m) => m.recruited && m.alive && m.mood === 'mutinous').forEach((m) => {
+        if (get().flags[`crew_${m.id}_departure_warned`]) return;
         if (Math.random() < CREW.DESERTION_CHANCE) {
           get().updateCrewMember(m.id, { recruited: false, alive: true, assignment: 'unassigned' });
           rpt.push({
@@ -1331,7 +1449,7 @@ export const useGameStore = create<GameState>((set, get) => ({
 
     /** Phase 6: Random events -- roll, apply, track. */
     const processRandomEvents = (rpt: DailyReportEntry[]) => {
-      const event = rollRandomEvent({ dayCount: newDay, gamePhase: get().gamePhase, flags: get().flags, firedEventIds: get().firedEventIds });
+      const event = rollRandomEvent({ dayCount: newDay, gamePhase: get().gamePhase, flags: get().flags, firedEventIds: get().firedEventIds, bounty: get().mc.bounty });
       if (!event) return;
 
       if (event.choices && event.choices.length > 0) {
@@ -2321,6 +2439,11 @@ export const useGameStore = create<GameState>((set, get) => ({
           break;
         case 'recruit':
           if (effect.target) state.recruitMember(effect.target);
+          break;
+        case 'depart_crew':
+          if (effect.target) {
+            get().updateCrewMember(effect.target, { recruited: false, assignment: 'unassigned' });
+          }
           break;
         case 'notification':
           if (effect.notification) {

@@ -119,13 +119,25 @@ export function processThreatDay(
   // Calculate the "natural" threat level from bounty, territory, and infamy
   const naturalLevel = calculateThreatLevel(bounty, territoryCount, infamy);
 
-  // Daily decay always applies: the Wardensea can't maintain peak aggression forever.
+  // Alarm threshold: once the Wardensea is truly alarmed, passive time alone won't fix it.
+  // Above ALARM_THRESHOLD, decay stops entirely. Player must actively de-escalate.
+  const isAlarmed = currentState.level >= THREAT.ALARM_THRESHOLD;
+
   // Equilibrium = natural level minus daily decay (the steady-state threat).
   // Current level trends toward equilibrium by DAILY_DECAY per day.
   const equilibrium = Math.max(0, naturalLevel - THREAT.DAILY_DECAY);
   let level: number;
-  if (currentState.level > equilibrium) {
-    // Above equilibrium: decay toward it by DAILY_DECAY per day
+  if (isAlarmed) {
+    // Above alarm threshold: no passive decay. Wardensea doesn't stand down without a reason.
+    // Threat still drifts upward if player's natural level exceeds current level.
+    if (currentState.level < naturalLevel) {
+      const gap = naturalLevel - currentState.level;
+      level = Math.round(currentState.level + Math.max(1, gap * 0.3));
+    } else {
+      level = currentState.level; // Holds steady -- decay is locked
+    }
+  } else if (currentState.level > equilibrium) {
+    // Below alarm threshold, above equilibrium: decay toward it by DAILY_DECAY per day
     level = Math.max(equilibrium, currentState.level - THREAT.DAILY_DECAY);
   } else if (currentState.level < equilibrium) {
     // Player suppressed threat below equilibrium (counter-espionage): drift back up slowly

@@ -1242,6 +1242,7 @@ export function buildEnemyCombatant(template: EnemyTemplate, index: number): Com
     statusEffects: [],
     isPlayer: false,
     isAlive: true,
+    traits: template.traits ? [...template.traits] : undefined,
   };
 }
 
@@ -1427,6 +1428,11 @@ export function calculateDamage(
     baseDamage += Math.floor(attacker.dominion.sight * COMBAT.DOMINION_DAMAGE_SCALING);
   } else if (action.damageType === 'resonance') {
     baseDamage += COMBAT.RESONANCE_FLAT_BONUS;
+  }
+
+  // Iron Resistance: some enemies absorb Iron-type attacks (forces ability variety)
+  if (action.damageType === 'dominion_iron' && target.traits?.includes('iron_resistant')) {
+    baseDamage = Math.floor(baseDamage * 0.5);
   }
 
   // Apply attack buffs (capped to prevent ridiculous stacking)
@@ -1712,6 +1718,11 @@ export function executePlayerAction(
         // Equipment special effects: Ancient Compass (round 1 bonus damage)
         if (eqFx.includes('has_ancient_compass') && state.round === 1) {
           damage += 10;
+        }
+
+        // Surface iron resistance to the combat log
+        if (action.damageType === 'dominion_iron' && target.traits?.includes('iron_resistant')) {
+          effectNames.push('Iron Absorbed');
         }
 
         target.hp = Math.max(0, target.hp - damage);

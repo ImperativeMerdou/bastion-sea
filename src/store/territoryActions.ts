@@ -324,17 +324,23 @@ export function createTerritoryActions(
           ),
         }));
 
-        // Remove trade routes involving the lost island
+        // Remove trade routes involving the lost island and count how many collapsed
+        const collapsedRoutes = get().tradeRoutes.filter(
+          r => r.fromIsland === islandId || r.toIsland === islandId
+        );
         set((s) => ({
           tradeRoutes: s.tradeRoutes.filter(
             r => r.fromIsland !== islandId && r.toIsland !== islandId
           ),
         }));
 
+        const routeNote = collapsedRoutes.length > 0
+          ? ` ${collapsedRoutes.length} trade route${collapsedRoutes.length > 1 ? 's' : ''} collapsed with it.`
+          : '';
         get().addNotification({
           type: 'wardensea',
           title: `REBELLION - ${islandName.toUpperCase()} LOST`,
-          message: `The people of ${islandName} have risen against your rule. Your garrison was overrun. The island is no longer under your control.`,
+          message: `The people of ${islandName} have risen against your rule. Your garrison was overrun. The island is no longer under your control.${routeNote}`,
         });
 
         // Bounty increase - the world notices when your empire cracks

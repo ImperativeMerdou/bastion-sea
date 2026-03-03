@@ -141,6 +141,32 @@ export const tavvenArrivalScene: StoryScene = {
       ],
     },
     {
+      id: 'arrival_dock_info',
+      paragraphs: [
+        'A dockworker near the slip catches your eye. He\'s been watching since you came up from the sandbar. Now he drifts toward you, keeping one shoulder to the crowd.',
+        '"You look like someone new," he says. "New people pay for what they don\'t know yet. Harbor Board schedules. Patrol timing. Who owns what debt around here." He quotes a price with his fingers. Five sovereigns.',
+      ],
+      choices: [
+        {
+          id: 'buy_dock_info',
+          text: 'Pay him. [5 Sovereigns]',
+          consequence: 'Information is the first resource. You already understand that.',
+          available: true,
+          effects: [
+            { type: 'resource', target: 'sovereigns', value: -5 },
+            { type: 'resource', target: 'intelligence', value: 4 },
+          ],
+        },
+        {
+          id: 'skip_dock_info',
+          text: 'Wave him off. You\'ll find it yourself.',
+          consequence: 'You\'ve navigated worse without a map.',
+          available: true,
+          effects: [],
+        },
+      ],
+    },
+    {
       id: 'arrival_07',
       paragraphs: [
         'You finish the meal. Your posture changes: back straightens, chin lifts, the prison hunch dropping away one vertebra at a time. The storm tea sits in your gut like a coal.',

@@ -45,12 +45,15 @@ export const ECONOMY = {
   TRAINER_XP_BONUS: 1,
   // Navigator travel day reduction
   NAVIGATOR_TRAVEL_REDUCTION: 1,
-  // Administration cost per controlled island per day (sovereigns) (reduced: empire should grow, not bankrupt)
-  ADMIN_COST_PER_ISLAND: 3,
+  // Administration cost per controlled island per day (sovereigns)
+  ADMIN_COST_PER_ISLAND: 5,
   // Fleet maintenance cost per active trade route per day (sovereigns)
-  FLEET_MAINT_PER_ROUTE: 3,
+  // Increased from 3: running 8 routes requires more crew and logistics overhead
+  FLEET_MAINT_PER_ROUTE: 5,
   // Upgrade maintenance: fraction of build cost charged per 10 days (sovereigns)
-  UPGRADE_MAINT_RATE: 0.02,
+  // Increased from 0.02: owning revenue-generating infrastructure has a real cost.
+  // A 300 sov harbor upgrade now costs 1.8 sov/day (was 0.6) -- still profitable but not free money.
+  UPGRADE_MAINT_RATE: 0.06,
 } as const;
 
 // --- TERRITORY ---
@@ -271,12 +274,17 @@ export const THREAT = {
   BOUNTY_FACTOR_DIVISOR: 10_000_000,
   BOUNTY_FACTOR_MULTIPLIER: 15,
   BOUNTY_FACTOR_CAP: 20,
-  // Territory factor: threat per controlled island (reduced: 7 islands = 21, not 35)
-  TERRITORY_THREAT_PER_ISLAND: 3,
+  // Territory factor: threat per controlled island
+  // Each island you hold generates permanent Wardensea attention. 4 islands = 16 territory heat.
+  TERRITORY_THREAT_PER_ISLAND: 4,
   // Infamy factor
   INFAMY_THREAT_MULTIPLIER: 0.4,
-  // Threat decay per day (faster de-escalation: Wardensea cools down between events)
-  DAILY_DECAY: 5,
+  // Threat decay per day. Reduced from 5: spikes linger longer, Wardensea has institutional memory.
+  DAILY_DECAY: 2,
+  // Alarm threshold: at or above this level, passive decay stops entirely.
+  // Player must take active de-escalation (counter-espionage, diplomatic events) to reduce threat.
+  // This creates the ratchet: once the Wardensea is truly alarmed, ignoring them doesn't fix it.
+  ALARM_THRESHOLD: 65,
   // Alert thresholds
   ALERT_PATROL: 20,
   ALERT_HEIGHTENED: 40,

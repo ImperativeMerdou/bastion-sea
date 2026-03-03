@@ -96,6 +96,7 @@ export interface Combatant {
   isAlive: boolean;
   staminaRegen?: number;              // Passive stamina per round (default 1, dragon fruit adds more)
   stunCount?: number;                  // Times stunned this combat (for diminishing returns)
+  traits?: string[];                  // Special combat traits e.g. 'iron_resistant'
 }
 
 // --- Enemy Types ---
@@ -139,6 +140,8 @@ export interface EnemyTemplate {
   flavorDefeat: string;              // Narrative text when defeated
   // Boss fight phases (optional, for named enemies)
   bossPhases?: BossPhase[];
+  // Special traits that modify how this enemy takes damage
+  traits?: string[];                  // e.g. ['iron_resistant']
 }
 
 export type EnemyAIPattern =
@@ -172,6 +175,11 @@ export interface CombatEncounter {
   onDefeatEffects?: CombatEffect[];
   // Skip difficulty scaling for tutorial/scripted fights
   noScaling?: boolean;
+  // Optional context shown as a header during combat
+  context?: {
+    reason: string;      // e.g. "Wardensea Intercept", "Defending Mirren's Landing"
+    territory?: string;  // Island name, if this fight is territory-linked
+  };
 }
 
 export interface CombatReward {

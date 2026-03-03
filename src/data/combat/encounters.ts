@@ -256,6 +256,7 @@ const wardenseaOfficer: EnemyTemplate = {
   aiPattern: 'tactical',
   flavorIntro: 'This one carries rank. Silver pin on the collar. Iron behind the eyes.',
   flavorDefeat: '"This... isn\'t..." The officer goes down. The silver pin rolls across the deck.',
+  traits: ['iron_resistant'],
 };
 
 const dockThug: EnemyTemplate = {
@@ -425,6 +426,7 @@ export const wardenseaPatrolFight: CombatEncounter = {
       message: 'Wardensea Second Division has lost contact with Patrol Unit 7 in the Tavven Shoal area. Reinforcement requests have been filed. The Oni fugitive is confirmed combat-capable.',
     }},
   ],
+  context: { reason: 'Wardensea Intercept' },
 };
 
 // ==========================================
@@ -1088,6 +1090,7 @@ const garrisonCommander: EnemyTemplate = {
   aiPattern: 'tactical',
   flavorIntro: 'Full dress uniform under the armor. Medals. Service ribbons. The Wardensea cross on the chest. This isn\'t a soldier. This is an institution wearing a face. They build statues of this, or gallows. Depends on who\'s winning.',
   flavorDefeat: 'The commander drives their sword into the ground and kneels. Not in surrender, but in acknowledgment. "You fought well, pirate." They spit the last word like it\'s still an insult. Maybe it is.',
+  traits: ['iron_resistant'],
 };
 
 // ==========================================
@@ -1613,6 +1616,7 @@ export const wardenseaSeaAmbush: CombatEncounter = {
       message: 'Interceptor WSS Resolve is unresponsive. Last known position: Bastion Sea central corridor. Crew status unknown. The fugitive Karyudon is confirmed in the area.',
     }},
   ],
+  context: { reason: 'Wardensea Interception -- Open Water' },
 };
 
 // ==========================================
@@ -1771,6 +1775,7 @@ const bastionLieutenant: EnemyTemplate = {
   aiPattern: 'tactical',
   flavorIntro: 'Fleet Lieutenant Gharen. Gold-trimmed armor. Vassago\'s personal insignia on his pauldron. The Iron radiates from him like heat from a forge. This is Conqueror-grade Dominion, and he wears it like a second skin. "You\'re the Oni from the broadcasts," he says. "My Lord will want to hear about this. Personally."',
   flavorDefeat: 'Gharen staggers. Blood on the gold trim. The Iron flickers and dies. But he\'s smiling, the cold smile of a man who knows something you don\'t. "Well fought," he says. "He\'ll come for you now. And he won\'t send a lieutenant."',
+  traits: ['iron_resistant'],
 };
 
 // ==========================================
@@ -2406,6 +2411,7 @@ export const wardenseaHuntingParty: CombatEncounter = {
       message: 'Captain Vorreth\'s Third Patrol hunting party has been neutralized by fugitive Karyudon. Three vessels damaged. Multiple casualties. Request immediate escalation to Spiral Division. This is no longer a bounty hunt. This is a war.',
     }},
   ],
+  context: { reason: 'Wardensea Priority Hunt' },
 };
 
 /**
@@ -2447,6 +2453,7 @@ export const wardenseaFirstStrike: CombatEncounter = {
     { type: 'bounty', value: 15000000, label: '+15M Bounty' },
   ],
   defeatConsequence: 'retreat',
+  context: { reason: 'Wardensea Reconnaissance Force' },
   availableCrew: ['dragghen', 'vorreth', 'tessek', 'orren', 'suulen', 'delvessa', 'kovesse'],
   onVictoryEffects: [
     { type: 'flag', target: 'first_strike_survived', value: true },
@@ -2609,6 +2616,7 @@ export const wardenseaTemplarStrike: CombatEncounter = {
     { type: 'materials', value: 8, label: '+8 Materials (Iron-forged equipment)' },
   ],
   defeatConsequence: 'retreat',
+  context: { reason: 'Wardensea Dominion Corps' },
   availableCrew: ['dragghen', 'vorreth', 'tessek', 'orren', 'suulen', 'delvessa', 'kovesse'],
   onVictoryEffects: [
     { type: 'flag', target: 'templar_strike_defeated', value: true },
@@ -2939,6 +2947,7 @@ export const kolmariIroncladAssault: CombatEncounter = {
     { type: 'bounty', value: 15000000, label: '+15M Bounty' },
   ],
   defeatConsequence: 'retreat',
+  context: { reason: 'Kolmari Confederation Strike' },
   availableCrew: ['dragghen', 'vorreth', 'tessek', 'orren', 'suulen', 'delvessa', 'kovesse'],
   onVictoryEffects: [
     { type: 'flag', target: 'ironclad_assault_survived', value: true },

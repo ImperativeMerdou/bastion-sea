@@ -193,7 +193,6 @@ function animReducer(state: AnimationState, action: AnimAction): AnimationState 
 
 export const CombatPanel: React.FC = () => {
   const combatState = useGameStore(s => s.combatState);
-  const combatContext = useGameStore(s => s.combatContext);
   const updateCombatState = useGameStore(s => s.updateCombatState);
   const endCombat = useGameStore(s => s.endCombat);
   const startCombatEncounter = useGameStore(s => s.startCombatEncounter);
@@ -318,12 +317,11 @@ export const CombatPanel: React.FC = () => {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [state?.player.hp]);
 
-  // Reset shonen refs and local UI state when combat changes (encounter switch or retry)
+  // Reset shonen refs when combat changes
   useEffect(() => {
     hasShownVs.current = false;
     hasShownFirstBlood.current = false;
     lastHpRef.current = null;
-    setBossPhaseIdx(0);
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [state?.encounter.id]);
 
@@ -450,17 +448,11 @@ export const CombatPanel: React.FC = () => {
     // SFX by animation type
     if (animation === 'slash') audioManager.playSfx('combat_sword');
     if (animation === 'heavy_smash') audioManager.playSfx('combat_heavy');
-    if (animation === 'iron_pulse') audioManager.playSfx('combat_explosion');
-    if (animation === 'thunder_strike') audioManager.playSfx('combat_explosion');
+    if (animation === 'iron_pulse') audioManager.playSfx('combat_hit');
+    if (animation === 'thunder_strike') audioManager.playSfx('combat_heavy');
     if (animation === 'crew_assist') audioManager.playSfx('combat_crew_assist');
     if (animation === 'counter') audioManager.playSfx('combat_sword');
     if (animation === 'screen_shake') audioManager.playSfx('combat_hit');
-    if (animation === 'king_pressure') audioManager.playSfx('combat_explosion');
-
-    // Layer crunch on critical hits for extra impact
-    if (isCritical && damage && damage > 0) {
-      audioManager.playSfx('combat_crunch');
-    }
 
     // Slash trail for physical strikes
     if (animation === 'slash' || animation === 'heavy_smash') {
@@ -737,7 +729,7 @@ export const CombatPanel: React.FC = () => {
       if (bossPhaseState) {
         // Boss phase triggered -- show narration, then continue to enemy turns
         updateCombatState(bossPhaseState);
-        audioManager.playSfx('combat_cinematic_boom');
+        audioManager.playSfx('combat_heavy');
         return;
       }
 
@@ -811,22 +803,15 @@ export const CombatPanel: React.FC = () => {
       const bossPhaseState = checkBossPhases(newState);
       if (bossPhaseState) {
         updateCombatState(bossPhaseState);
-        audioManager.playSfx('combat_cinematic_boom');
+        audioManager.playSfx('combat_heavy');
         return;
       }
 
       const endPhase = checkCombatEnd(newState);
       if (endPhase) {
-        if (endPhase === 'wave_transition') {
-          const waveState = spawnNextWave(newState);
-          animDispatch({ type: 'SET', field: 'showRoundBanner', value: true });
-          safeTimeout(() => animDispatch({ type: 'SET', field: 'showRoundBanner', value: false }), 1500);
-          advanceCombat(waveState);
-        } else {
-          if (endPhase === 'victory') audioManager.playSfx('combat_victory');
-          if (endPhase === 'defeat') audioManager.playSfx('combat_defeat');
-          updateCombatState({ ...newState, phase: endPhase, animating: false });
-        }
+        if (endPhase === 'victory') audioManager.playSfx('combat_victory');
+        if (endPhase === 'defeat') audioManager.playSfx('combat_defeat');
+        updateCombatState({ ...newState, phase: endPhase, animating: false });
         return;
       }
       advanceCombat(newState);
@@ -873,21 +858,14 @@ export const CombatPanel: React.FC = () => {
       const bossPhaseState = checkBossPhases(newState);
       if (bossPhaseState) {
         updateCombatState(bossPhaseState);
-        audioManager.playSfx('combat_cinematic_boom');
+        audioManager.playSfx('combat_heavy');
         return;
       }
       const endPhase = checkCombatEnd(newState);
       if (endPhase) {
-        if (endPhase === 'wave_transition') {
-          const waveState = spawnNextWave(newState);
-          animDispatch({ type: 'SET', field: 'showRoundBanner', value: true });
-          safeTimeout(() => animDispatch({ type: 'SET', field: 'showRoundBanner', value: false }), 1500);
-          advanceCombat(waveState);
-        } else {
-          if (endPhase === 'victory') audioManager.playSfx('combat_victory');
-          if (endPhase === 'defeat') audioManager.playSfx('combat_defeat');
-          updateCombatState({ ...newState, phase: endPhase, animating: false });
-        }
+        if (endPhase === 'victory') audioManager.playSfx('combat_victory');
+        if (endPhase === 'defeat') audioManager.playSfx('combat_defeat');
+        updateCombatState({ ...newState, phase: endPhase, animating: false });
         return;
       }
       advanceCombat(newState);
@@ -1108,7 +1086,7 @@ export const CombatPanel: React.FC = () => {
 
     // Target defense
     let def = target.defense;
-    const exposeReduction = Math.min(COMBAT.EXPOSE_CAP, target.statusEffects.filter(e => e.type === 'expose').reduce((s, e) => s + e.value, 0));
+    const exposeReduction = Math.min(30, target.statusEffects.filter(e => e.type === 'expose').reduce((s, e) => s + e.value, 0));
     def = Math.max(0, def - exposeReduction);
     const defBuffs = Math.min(COMBAT.DEFENSE_BUFF_CAP, target.statusEffects.filter(e => e.type === 'buff_defense').reduce((s, e) => s + e.value, 0));
     def += defBuffs;
@@ -1122,8 +1100,8 @@ export const CombatPanel: React.FC = () => {
   const getHpColor = (hp: number, maxHp: number): string => {
     if (maxHp <= 0) return 'bg-red-500';
     const pct = hp / maxHp;
-    if (pct > 0.5) return 'bg-green-500';
-    if (pct > 0.25) return 'bg-yellow-500';
+    if (pct > 0.6) return 'bg-green-500';
+    if (pct > 0.3) return 'bg-yellow-500';
     return 'bg-red-500';
   };
 
@@ -1174,7 +1152,7 @@ export const CombatPanel: React.FC = () => {
             {/* Shonen victory energy particles */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
               {[...Array(8)].map((_, i) => (
-                <div key={`victory_particle_${i}`} className="absolute w-1 h-1 bg-amber-400/40 rounded-full energy-particle"
+                <div key={i} className="absolute w-1 h-1 bg-amber-400/40 rounded-full energy-particle"
                   style={{
                     left: `${15 + i * 10}%`,
                     bottom: '10%',
@@ -1220,7 +1198,7 @@ export const CombatPanel: React.FC = () => {
           {/* Narrative text */}
           <div className="flex-1 overflow-y-auto px-8 py-6 space-y-4">
             {paragraphs.slice(0, narrativeIndex + 1).map((para, i) => (
-              <p key={`narrative_${i}`} className="text-ocean-100 text-lg leading-relaxed font-narration font-medium story-line story-text-shadow"
+              <p key={i} className="text-ocean-100 text-lg leading-relaxed font-narration font-medium story-line story-text-shadow"
                  style={{ animationDelay: `${i * 50}ms` }}>
                 {para}
               </p>
@@ -1258,7 +1236,7 @@ export const CombatPanel: React.FC = () => {
                     </div>
                     <div className="text-center">
                       <span className="text-ocean-500 uppercase tracking-wider block">HP Left</span>
-                      <span className={`font-bold text-lg ${(state.player.maxHp > 0 ? state.player.hp / state.player.maxHp : 0) > 0.5 ? 'text-green-400' : (state.player.maxHp > 0 ? state.player.hp / state.player.maxHp : 0) > 0.2 ? 'text-amber-400' : 'text-crimson-400'}`}>
+                      <span className={`font-bold text-lg ${state.player.hp / state.player.maxHp > 0.5 ? 'text-green-400' : state.player.hp / state.player.maxHp > 0.2 ? 'text-amber-400' : 'text-crimson-400'}`}>
                         {Math.floor(state.player.hp)}
                       </span>
                     </div>
@@ -1292,7 +1270,6 @@ export const CombatPanel: React.FC = () => {
                       startCombatEncounter(state.encounter);
                     }}
                     className="px-6 py-3 bg-crimson-600 hover:bg-crimson-500 text-white font-display font-bold tracking-wider rounded border border-crimson-400/30 transition-colors"
-                    aria-label="Retry this fight"
                   >
                     RETRY FIGHT
                   </button>
@@ -1302,7 +1279,6 @@ export const CombatPanel: React.FC = () => {
                       endCombat('defeat');
                     }}
                     className="px-6 py-3 bg-ocean-700 hover:bg-ocean-600 text-ocean-200 font-display tracking-wider rounded border border-ocean-500/30 transition-colors"
-                    aria-label="Accept defeat and continue"
                   >
                     ACCEPT DEFEAT
                   </button>
@@ -1427,21 +1403,6 @@ export const CombatPanel: React.FC = () => {
     }`}>
       {/* Texture overlay + panel frame */}
       <TextureOverlay variant="combat" />
-
-      {/* Combat context header — shows why this fight is happening */}
-      {combatContext && (
-        <div className="absolute top-0 left-0 right-0 z-20 flex items-center justify-center pointer-events-none pt-2">
-          <div className="bg-black/60 border border-ocean-600/40 rounded px-4 py-1 flex items-center gap-3">
-            <span className="text-ocean-400 font-display tracking-widest text-xs uppercase">{combatContext.reason}</span>
-            {combatContext.territory && (
-              <>
-                <span className="text-ocean-600 text-xs">—</span>
-                <span className="text-gold-400 font-display tracking-wider text-xs uppercase">{combatContext.territory}</span>
-              </>
-            )}
-          </div>
-        </div>
-      )}
 
       {/* Combat background image — visible and atmospheric */}
       {(() => {
@@ -1889,9 +1850,9 @@ export const CombatPanel: React.FC = () => {
             ROUND {state.round}
           </span>
           <span className={`text-xs font-bold tracking-wider ${
-            state.phase === 'player_turn' && !state.animating ? 'text-amber-400' : 'text-red-400'
+            state.phase === 'player_turn' ? 'text-amber-400' : 'text-red-400'
           }`}>
-            {state.phase === 'player_turn' && !state.animating ? '▶ YOUR TURN' : '◀ ENEMY TURN'}
+            {state.phase === 'player_turn' ? '▶ YOUR TURN' : '◀ ENEMY TURN'}
           </span>
 
           {/* Turn Order Tracker */}
@@ -1901,8 +1862,7 @@ export const CombatPanel: React.FC = () => {
               const combatant = isPlayer ? state.player : state.enemies.find(e => e.id === id);
               const isAlive = combatant?.isAlive ?? false;
               const isCurrent = idx === state.currentTurnIndex;
-              // Only dim acted dots when a valid turn is in progress (not during -1 reset)
-              const hasActed = state.currentTurnIndex >= 0 && idx < state.currentTurnIndex;
+              const hasActed = idx < state.currentTurnIndex || state.currentTurnIndex === -1;
               return (
                 <div
                   key={id}
@@ -1984,10 +1944,10 @@ export const CombatPanel: React.FC = () => {
           const hpPercent = enemy.maxHp > 0 ? (enemy.hp / enemy.maxHp) * 100 : 0;
 
           return (
-            <div key={enemy.id} className="flex flex-col items-center gap-1.5" style={{ width: 'clamp(100px, 30vw, 140px)' }}>
+            <div key={enemy.id} className="flex flex-col items-center gap-1.5" style={{ width: '140px' }}>
               {/* Portrait container — simple CSS border, no frame overlay */}
               <div
-                style={{ width: 'clamp(110px, 35vw, 164px)', height: 'clamp(134px, 42vw, 200px)', position: 'relative' }}
+                style={{ width: '90px', height: '110px', position: 'relative' }}
                 className={`cursor-pointer transition-all duration-200
                   ${selectedTarget === enemy.id ? 'scale-110' : ''}
                   ${isHurt ? 'animate-enemy-hurt' : ''}
@@ -2002,18 +1962,18 @@ export const CombatPanel: React.FC = () => {
                   <img
                     src={enemy.portrait}
                     alt={enemy.name}
-                    style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', borderRadius: '4px', border: '3px solid #8B0000', boxShadow: '0 0 10px rgba(139,0,0,0.3), inset 0 0 20px rgba(0,0,0,0.3)' }}
+                    style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', borderRadius: '4px', border: '3px solid #D4A574', boxShadow: '0 0 10px rgba(212,165,116,0.3), inset 0 0 20px rgba(0,0,0,0.3)' }}
                     onError={() => setFailedPortraits(prev => new Set(prev).add(enemy.id))}
                   />
                 ) : !failedPortraits.has(enemy.id) && getImagePath('generic_pirate.webp') ? (
                   <img
                     src={getImagePath('generic_pirate.webp')!}
                     alt={enemy.name}
-                    style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', borderRadius: '4px', border: '3px solid #8B0000', boxShadow: '0 0 10px rgba(139,0,0,0.3), inset 0 0 20px rgba(0,0,0,0.3)' }}
+                    style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', borderRadius: '4px', border: '3px solid #D4A574', boxShadow: '0 0 10px rgba(212,165,116,0.3), inset 0 0 20px rgba(0,0,0,0.3)' }}
                     onError={() => setFailedPortraits(prev => new Set(prev).add(enemy.id))}
                   />
                 ) : (
-                  <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '4px', border: '3px solid #8B0000', boxShadow: '0 0 10px rgba(139,0,0,0.3)' }} className="bg-gradient-to-b from-ocean-600 to-ocean-800">
+                  <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '4px', border: '3px solid #D4A574', boxShadow: '0 0 10px rgba(212,165,116,0.3)' }} className="bg-gradient-to-b from-ocean-600 to-ocean-800">
                     <span className="text-3xl">&#9876;</span>
                   </div>
                 )}
@@ -2052,12 +2012,6 @@ export const CombatPanel: React.FC = () => {
                       <GameIcon iconKey={e.type} fallback={e.icon} className="w-4 h-4" />
                     </span>
                   ))}
-                  {/* Expose cap indicator */}
-                  {enemy.statusEffects.filter(e => e.type === 'expose').reduce((s, e) => s + e.value, 0) >= COMBAT.EXPOSE_CAP && (
-                    <span className="text-xs bg-amber-900/60 px-1.5 py-0.5 rounded border border-amber-500/40 text-amber-400 font-bold" title={`Expose capped at -${COMBAT.EXPOSE_CAP} DEF`}>
-                      EXPOSED MAX
-                    </span>
-                  )}
                 </div>
               )}
 
@@ -2194,7 +2148,7 @@ export const CombatPanel: React.FC = () => {
         {/* Player HUD Bar — compact */}
         <div className="px-4 py-2.5 bg-ocean-800/95 border-y border-ocean-600/60 flex items-center gap-4 shrink-0">
           {/* Player portrait — simple CSS border, no frame overlay */}
-          <div style={{ width: '146px', height: '182px', flexShrink: 0, position: 'relative' }}>
+          <div style={{ width: '56px', height: '56px', flexShrink: 0, position: 'relative' }}>
             {/* Charge glow effect */}
             {anim.showChargeGlow && (
               <div
@@ -2244,7 +2198,7 @@ export const CombatPanel: React.FC = () => {
                          e.type === 'weaken' ? `Attack -${e.value}` :
                          e.type === 'stun' ? 'Cannot act' :
                          e.type === 'bleed' ? `${e.value} dmg/turn` :
-                         e.type === 'expose' ? `Defense -${e.value}${state.player.statusEffects.filter(se => se.type === 'expose').reduce((s, se) => s + se.value, 0) >= COMBAT.EXPOSE_CAP ? ' (CAPPED)' : ''}` :
+                         e.type === 'expose' ? `Defense -${e.value}` :
                          e.type === 'shield' ? `Absorbs ${e.value} dmg` :
                          e.type === 'heal' ? `+${e.value} stamina/turn` :
                          e.type === 'intimidate' ? `Accuracy -${e.value}%` :
@@ -2262,14 +2216,14 @@ export const CombatPanel: React.FC = () => {
             {/* HP + SP side by side */}
             <div className="flex items-center gap-3">
               <div className="flex items-center gap-1.5 flex-1">
-                <span className={`text-xs font-semibold w-5 ${(state.player.maxHp > 0 ? state.player.hp / state.player.maxHp : 0) < 0.25 ? 'text-red-400 animate-pulse' : 'text-red-400'}`}>HP</span>
+                <span className={`text-xs font-semibold w-5 ${state.player.hp / state.player.maxHp < 0.25 ? 'text-red-400 animate-pulse' : 'text-red-400'}`}>HP</span>
                 <div className="flex-1 h-[10px] bg-ocean-700 rounded overflow-hidden border border-ocean-600/40 shadow-inner">
                   <div
                     className={`h-full rounded hp-bar-damage transition-all duration-500 ${getHpColor(state.player.hp, state.player.maxHp)}`}
-                    style={{ width: `${state.player.maxHp > 0 ? (state.player.hp / state.player.maxHp) * 100 : 0}%` }}
+                    style={{ width: `${(state.player.hp / state.player.maxHp) * 100}%` }}
                   />
                 </div>
-                <span className={`text-xs font-mono font-medium w-16 text-right ${(state.player.maxHp > 0 ? state.player.hp / state.player.maxHp : 0) < 0.25 ? 'text-red-400' : 'text-ocean-300'}`}>
+                <span className={`text-xs font-mono font-medium w-16 text-right ${state.player.hp / state.player.maxHp < 0.25 ? 'text-red-400' : 'text-ocean-300'}`}>
                   {Math.floor(state.player.hp)}/{Math.floor(state.player.maxHp)}
                 </span>
               </div>
@@ -2278,7 +2232,7 @@ export const CombatPanel: React.FC = () => {
                 <div className="flex-1 h-[10px] bg-ocean-700 rounded overflow-hidden border border-ocean-600/40 shadow-inner">
                   <div
                     className="h-full rounded bg-blue-400 stamina-bar-fill transition-all duration-500"
-                    style={{ width: `${state.player.maxStamina > 0 ? (state.player.stamina / state.player.maxStamina) * 100 : 0}%` }}
+                    style={{ width: `${(state.player.stamina / state.player.maxStamina) * 100}%` }}
                   />
                 </div>
                 <span className={`text-xs font-mono font-medium w-16 text-right ${state.player.stamina < 10 ? 'text-blue-300' : 'text-ocean-300'}`}>

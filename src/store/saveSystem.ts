@@ -3,11 +3,45 @@
 // =============================================
 // Extracted save/load actions from gameStore.ts
 // =============================================
+//
+// VERSIONING:
+//   Bump SAVE_VERSION when adding/removing persisted fields.
+//   Add a migration block in migrateSaveData() for each version bump.
+//   Old saves load through the migration chain and get defaults for new fields.
+//   Future versions (from newer code) are rejected outright.
+// =============================================
 
 import type { StoryScene } from '../types/game';
 import { DEFAULT_THREAT_STATE } from '../systems/threat';
 import { DEFAULT_SHIP } from '../systems/shipUpgrades';
 import type { GameState } from './gameStore';
+
+/** Current save schema version. Increment when persisted fields change. */
+export const SAVE_VERSION = 3;
+
+/**
+ * Migrate save data from older schema versions to current.
+ * Each block handles one version step: vN → v(N+1).
+ * Returns the data object updated to SAVE_VERSION.
+ */
+function migrateSaveData(data: any): any {
+  let d = { ...data };
+  const fromVersion = typeof d.version === 'number' ? d.version : 1;
+
+  // v1 → v2: playerProfile, crewIdentity, tradeRoutes, equipment, ship, typingSpeedPreset
+  // The loadGame defensive defaults already handle these fields, so no explicit transform needed.
+  // Just mark as migrated.
+
+  // v2 → v3: No new fields in this release. Version bump establishes migration infrastructure.
+  // Add new field migrations here in future: d.newField = d.newField ?? defaultValue;
+
+  if (fromVersion < 3) {
+    // Nothing to transform for v2→v3 in this release.
+    d.version = 3;
+  }
+
+  return d;
+}
 
 export function createSaveActions(
   set: (partial: Partial<GameState> | ((s: GameState) => Partial<GameState>)) => void,
@@ -20,7 +54,7 @@ export function createSaveActions(
       try {
         const state = get();
         const saveData = {
-          version: 2,
+          version: SAVE_VERSION,
           timestamp: Date.now(),
           // Core state
           gamePhase: state.gamePhase,
@@ -94,8 +128,19 @@ export function createSaveActions(
         const raw = localStorage.getItem(key);
         if (!raw) return false;
 
-        const data = JSON.parse(raw);
-        if (!data.version) return false;
+        const rawData = JSON.parse(raw);
+
+        // Reject saves with no version field at all (pre-versioning era)
+        if (!rawData.version || typeof rawData.version !== 'number') return false;
+
+        // Reject saves from a newer version of the game than we know how to read
+        if (rawData.version > SAVE_VERSION) {
+          console.warn(`[Save System] Save version ${rawData.version} is newer than supported version ${SAVE_VERSION}. Cannot load.`);
+          return false;
+        }
+
+        // Migrate save data from older schema versions to current
+        const data = migrateSaveData(rawData);
 
         // Validation: reject corrupted save data
         if (!data.mc || typeof data.mc !== 'object') return false;
@@ -107,12 +152,17 @@ export function createSaveActions(
         if (data.ship && typeof data.ship !== 'object') return false;
         if (data.notifications && !Array.isArray(data.notifications)) return false;
 
-        // Restore scene from registry if player was in a scene
+        // Restore scene from registry if player was in a scene.
+        // If the scene ID is not found (renamed or removed), log a warning and continue loading
+        // with no active scene rather than failing the entire load.
         let currentScene: StoryScene | null = null;
         if (data.currentSceneId) {
           const scene = sceneRegistry[data.currentSceneId];
           if (scene) {
             currentScene = { ...scene, currentBeat: data.currentBeat || 0 };
+          } else {
+            console.warn(`[Save System] Scene "${data.currentSceneId}" not found in registry. Clearing scene state and continuing load.`);
+            // currentScene stays null -- player resumes with story panel cleared rather than broken
           }
         }
 

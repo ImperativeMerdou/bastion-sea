@@ -213,18 +213,44 @@ export const TopBar: React.FC<TopBarProps> = ({ onPauseOpen }) => {
               </span>
             </div>
           )}
-          {/* Crew count */}
+          {/* Crew count + individual mood indicators */}
           {(() => {
             const recruited = (crew || []).filter((m) => m.recruited && m.alive);
             const unhappy = recruited.filter((m) => m.mood === 'disgruntled' || m.mood === 'mutinous');
             return (
-              <div title={`${recruited.length} crew members active${unhappy.length > 0 ? `, ${unhappy.length} unhappy` : ''}`}>
-                <span className="font-display font-semibold tracking-wider" style={{ fontSize: '17px', color: '#C4B8A8' }}>CREW</span>{' '}
-                <span className={`font-bold ${unhappy.length > 0 ? 'text-amber-400' : ''}`} style={{ fontSize: '17px', color: unhappy.length > 0 ? undefined : '#F0E8DC' }}>
-                  {recruited.length}
-                </span>
-                {unhappy.length > 0 && (
-                  <span className="text-crimson-400 text-xs ml-1 animate-pulse">&#9888;</span>
+              <div className="flex items-center gap-2">
+                <div title={`${recruited.length} crew members active${unhappy.length > 0 ? `, ${unhappy.length} unhappy` : ''}`}>
+                  <span className="font-display font-semibold tracking-wider" style={{ fontSize: '17px', color: '#C4B8A8' }}>CREW</span>{' '}
+                  <span className={`font-bold ${unhappy.length > 0 ? 'text-amber-400' : ''}`} style={{ fontSize: '17px', color: unhappy.length > 0 ? undefined : '#F0E8DC' }}>
+                    {recruited.length}
+                  </span>
+                  {unhappy.length > 0 && (
+                    <span className="text-crimson-400 text-xs ml-1 animate-pulse">&#9888;</span>
+                  )}
+                </div>
+                {recruited.length > 0 && (
+                  <div className="flex items-center gap-1" aria-label="Crew mood indicators">
+                    {recruited.map((m) => {
+                      const isMutinous = m.mood === 'mutinous';
+                      const isDisgruntled = m.mood === 'disgruntled';
+                      const dotColor = isMutinous
+                        ? 'bg-crimson-500'
+                        : isDisgruntled
+                          ? 'bg-amber-400'
+                          : 'bg-green-500';
+                      const dotPulse = isMutinous ? 'animate-pulse' : '';
+                      const moodLabel = isMutinous ? 'mutinous' : isDisgruntled ? 'disgruntled' : 'content';
+                      const memberName = (m as any).name || m.id;
+                      return (
+                        <span
+                          key={m.id}
+                          className={`inline-block w-2 h-2 rounded-full ${dotColor} ${dotPulse}`}
+                          title={`${memberName}: ${moodLabel}`}
+                          aria-label={`${memberName} is ${moodLabel}`}
+                        />
+                      );
+                    })}
+                  </div>
                 )}
               </div>
             );

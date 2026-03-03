@@ -1118,3 +1118,69 @@ export const act3EndingScene: StoryScene = {
   ],
   currentBeat: 0,
 };
+
+// =============================================
+// SCENE 7: THE OTHER FEED
+// =============================================
+// Mid-Act 3 interrupt. Fires at day 50+ with
+// 5+ territories. No choices. Pure reckoning.
+// The gap between the idea of Karyudon and the
+// reality of what it means to live under him.
+// =============================================
+
+export const act3ReckoningScene: StoryScene = {
+  id: 'act3_reckoning',
+  title: 'The Other Feed',
+  currentBeat: 0,
+  characters: ['karyudon', 'kovesse', 'delvessa'],
+  beats: [
+    {
+      id: 'a3_reck_01',
+      speaker: 'kovesse',
+      speakerName: 'Kovesse Grenn',
+      paragraphs: [
+        'Kovesse finds you at fourth watch. The signal room is dark except for the Grimoire array, twelve channels running amber across her face. She looks tired in a way she usually hides under velocity.',
+        '"I need to show you something."',
+        'She hands you the tablet. Not the feeds she publishes. The other ones. The ones she monitors but does not share.',
+      ],
+    },
+    {
+      id: 'a3_reck_02',
+      paragraphs: [
+        'The messages are not addressed to you. Community channels, local boards, the undercurrent of Grimoire traffic that hums beneath the broadcast layer. Dock workers on Keldriss writing to dock workers on Durrek. Fishing families comparing notes. A woman in Mossbreak asking if anyone has word on permit procedures for the new authority -- whether the old licenses are still valid, who to pay, what the rules are now.',
+        '"They are not angry," Kovesse says. She is watching you read. "Mostly. Some are. But most of them are just uncertain. They traded one set of rules for ours and nobody explained what ours are yet."',
+        'She takes the tablet back. Closes two of the channels.',
+        '"Forty-three percent favorable is still the headline number. But that number is people who support the idea of Karyudon. These are people who have to live under Karyudon." She pauses. "There is a gap."',
+      ],
+    },
+    {
+      id: 'a3_reck_03',
+      speaker: 'delvessa',
+      speakerName: 'Delvessa Ghal',
+      paragraphs: [
+        'Delvessa has been standing in the doorway. You did not know she was there.',
+        '"The Wardensea had administration. Bureaucracy, corruption, incompetence -- but it was there. Forms. Processes. People knew what to do with a form."',
+        'She comes in. Looks at the tablet.',
+        '"We have a flag and a name and no apparatus. A woman on Keldriss wants to know if her fishing license transfers. What does she do? Who does she ask? What are the rules?" She pauses. "What are the rules, Karyudon?"',
+      ],
+    },
+    {
+      id: 'a3_reck_04',
+      paragraphs: [
+        'The amber light from the array. Twelve channels. The quiet traffic of people who are not at war with you, who are simply trying to understand what their lives look like now that you have rearranged them.',
+        'Kovesse pulls up a single message. A fishing captain on Windrow who spent three days writing three sentences, crossing out, rewriting. The final version: To whoever is in charge now. My crew needs to know if we can still work the north channel. We are not political. We just fish.',
+        '"He sent it to every Grimoire address he could find," Kovesse says. "Including ours. It arrived four days ago." She sets the tablet down. "I have not answered it."',
+        'She looks at you.',
+        '"You should."',
+      ],
+    },
+  ],
+  onComplete: [
+    { type: 'flag', target: 'act3_reckoning_seen', value: true },
+    { type: 'notification', value: true, notification: {
+      type: 'story',
+      title: 'THE OTHER FEED',
+      message: 'Forty-three percent favorable. The gap between people who support the idea and people who live under the reality.',
+    }},
+  ],
+};
