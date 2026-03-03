@@ -358,22 +358,42 @@ export const CrewTab: React.FC = () => {
 
             return (
               <div className="mt-4 space-y-3">
-                {/* Bond depth dots */}
-                <div className="flex items-center gap-2 pt-2 border-t border-ocean-700/30">
-                  <span className="text-ocean-600 text-[10px] font-bold tracking-[0.12em] uppercase">Bond</span>
-                  <div className="flex items-center gap-1.5">
-                    {completionFlags.map((_, i) => (
+                {/* Bond depth dots + Trust level */}
+                <div className="flex items-center justify-between pt-2 border-t border-ocean-700/30">
+                  {/* Bond dots (left) */}
+                  <div className="flex items-center gap-2">
+                    <span className="text-ocean-600 text-[10px] font-bold tracking-[0.12em] uppercase">Bond</span>
+                    <div className="flex items-center gap-1.5">
+                      {completionFlags.map((_, i) => (
+                        <div
+                          key={i}
+                          className={`w-2 h-2 rounded-full border transition-all ${
+                            i < completedCount
+                              ? 'bg-amber-500/70 border-amber-400/60'
+                              : i === completedCount
+                                ? 'bg-transparent border-ocean-400/80'
+                                : 'bg-transparent border-ocean-700/60'
+                          }`}
+                        />
+                      ))}
+                    </div>
+                  </div>
+                  {/* Trust level (right) -- visible on same screen as locked state */}
+                  <div className="flex items-center gap-2">
+                    <span className="text-ocean-600 text-[10px] font-bold tracking-[0.12em] uppercase">Trust</span>
+                    <div className="w-20 h-1.5 bg-ocean-800 rounded-full overflow-hidden">
                       <div
-                        key={i}
-                        className={`w-2 h-2 rounded-full border transition-all ${
-                          i < completedCount
-                            ? 'bg-amber-500/70 border-amber-400/60'
-                            : i === completedCount
-                              ? 'bg-transparent border-ocean-400/80'
-                              : 'bg-transparent border-ocean-700/60'
+                        className={`h-full rounded-full transition-all ${
+                          selectedMember.loyalty > 70 ? 'bg-green-500/70' :
+                          selectedMember.loyalty > 40 ? 'bg-amber-500/70' :
+                          'bg-crimson-500/70'
                         }`}
+                        style={{ width: `${selectedMember.loyalty}%` }}
                       />
-                    ))}
+                    </div>
+                    <span className={`text-[10px] font-bold uppercase ${moodColors[selectedMember.mood]}`}>
+                      {selectedMember.mood}
+                    </span>
                   </div>
                 </div>
 
