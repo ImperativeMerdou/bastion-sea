@@ -68,8 +68,14 @@ export const NotificationToast: React.FC = () => {
         return [...unique, ...prev].slice(0, 5);
       });
 
-      // Play notification sound for new toasts
-      if (newToasts.length > 0) {
+      // Play notification sound only for urgent/player-relevant alerts.
+      // 'grimoire' = world feed broadcasts (too frequent, distracting).
+      // 'story'    = narrative completion notes (wrong tone for a horn).
+      // 'bounty', 'wardensea', 'crew', 'conqueror' = player-facing threats/events.
+      const urgentToasts = newToasts.filter(
+        (t) => t.type !== 'grimoire' && t.type !== 'story'
+      );
+      if (urgentToasts.length > 0) {
         audioManager.playSfx('notification');
       }
     }

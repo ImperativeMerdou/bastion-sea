@@ -21,16 +21,48 @@ export function useAudioManager() {
   const travelState = useGameStore((s) => s.travelState);
   const currentIsland = useGameStore((s) => s.currentIsland);
 
+  // Load saved audio settings on first mount — before any audio plays.
+  // CRITICAL: useAudioControls() lives inside PauseMenu which only mounts when
+  // the pause menu is opened. Without this, settings from localStorage are never
+  // applied during normal gameplay (broken volume bug).
+  const settingsLoaded = useRef(false);
   useEffect(() => {
-    // --- Music: select and play the right track ---
-    const musicTrack = getMusicTrackForContext({
-      activePanel,
-      sceneId: currentScene?.id || null,
-      gameStarted,
-      inCombat: !!combatState,
-      inTravel: !!travelState,
-    });
-    musicManager.play(musicTrack);
+    if (settingsLoaded.current) return;
+    settingsLoaded.current = true;
+    const saved = loadAudioSettings();
+    audioManager.masterVolume = saved.masterVolume;
+    audioManager.sfxVolume = saved.sfxVolume;
+    ambienceManager.masterVolume = saved.masterVolume;
+    ambienceManager.volume = saved.ambienceVolume;
+    musicManager.masterVolume = saved.masterVolume;
+    musicManager.volume = saved.stingerVolume;
+    stingerManager.masterVolume = saved.masterVolume;
+    stingerManager.volume = saved.stingerVolume;
+    if (saved.muted) {
+      audioManager.setMuted(true);
+      ambienceManager.muted = true;
+      musicManager.muted = true;
+      stingerManager.muted = true;
+    }
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+
+  // Debounce ref: prevents rapid state changes (game start, scene fire) from
+  // triggering multiple crossfades in quick succession and sounding like overlap.
+  const musicDebounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  useEffect(() => {
+    // --- Music: debounced to prevent startup overlap from batched state changes ---
+    if (musicDebounceRef.current) clearTimeout(musicDebounceRef.current);
+    musicDebounceRef.current = setTimeout(() => {
+      const musicTrack = getMusicTrackForContext({
+        activePanel,
+        sceneId: currentScene?.id || null,
+        gameStarted,
+        inCombat: !!combatState,
+        inTravel: !!travelState,
+      });
+      musicManager.play(musicTrack);
+    }, 120);
 
     // --- Ambience: procedural soundscapes (reduced when music is active) ---
     const isBossFight = combatState && combatState.encounter
@@ -48,7 +80,11 @@ export function useAudioManager() {
     });
 
     ambienceManager.play(ambienceType);
-  }, [activePanel, currentScene, gameStarted, combatState, travelState, currentIsland]);
+
+    return () => {
+      if (musicDebounceRef.current) clearTimeout(musicDebounceRef.current);
+    };
+  }, [activePanel, currentScene, gameStarted, combatState, travelState, currentIsland]); // eslint-disable-line react-hooks/exhaustive-deps
 
   // Cleanup on unmount
   useEffect(() => {

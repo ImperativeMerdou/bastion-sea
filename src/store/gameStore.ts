@@ -95,6 +95,7 @@ import {
   keldrissResidue, copperveinResidue, mossbreakResidue, durrekResidue,
   anvilCayResidue, mirrorwaterResidue, windrowResidue, ghostlightResidue,
 } from '../data/story/territory_residue';
+import { territoryLossReactionScene } from '../data/story/territory_loss_reaction';
 // Boss encounters registered via allCombatEncounters
 // import { kirinEncounter, primeKhossEncounter } from '../data/combat/boss_encounters';
 import { getReadyReactions } from '../systems/worldReactions';
@@ -402,6 +403,8 @@ const sceneRegistry: Record<string, StoryScene> = {
   'crew_dragghen_intro_02': dragghenIntro02,
   'crew_suulen_intro_01': suulenIntro01,
   'crew_suulen_intro_02': suulenIntro02,
+  // Territory loss reaction (fires once on first rebellion -- crew weighs in)
+  'territory_loss_reaction': territoryLossReactionScene,
   // Territory residue scenes (auto-fire after each conquest, world reaction)
   'territory_residue_keldriss': keldrissResidue,
   'territory_residue_coppervein': copperveinResidue,
@@ -658,7 +661,10 @@ export const useGameStore = create<GameState>((set, get) => ({
   // --- Panel ---
   setActivePanel: (panel) => {
     const scene = get().currentScene;
-    if (scene?.lockNavigation && panel !== 'story') return;
+    // Lock navigation to story panel during ANY active scene.
+    // Previously this required lockNavigation: true — but optional opt-in
+    // meant keyboard/click bypasses were possible. Now any currentScene locks it.
+    if (scene && panel !== 'story') return;
     set({ activePanel: panel });
   },
 
@@ -835,10 +841,10 @@ export const useGameStore = create<GameState>((set, get) => ({
           }
         }
 
-        // Kirin arc: 6+ islands OR day 40+
+        // Kirin arc: 6+ islands controlled (conquest-gated -- no time fallback)
         if (!ts.flags['kirin_arrived']) {
           const controlledCount = ts.islands.filter(i => i.status === 'controlled').length;
-          if (controlledCount >= TIME.KIRIN_MIN_ISLANDS || ts.dayCount >= TIME.KIRIN_MIN_DAY) {
+          if (controlledCount >= TIME.KIRIN_MIN_ISLANDS) {
             fireScene('kirin_arrival', () => {
               get().setFlag('kirin_arrival_day', get().dayCount);
             });
@@ -891,22 +897,33 @@ export const useGameStore = create<GameState>((set, get) => ({
           // Delvessa intro 01: 2+ days after Tavven
           if (ts.dayCount >= conquestDay + 2 && !ts.flags['delvessa_intro_01_seen']) {
             fireScene('crew_delvessa_intro_01');
-          // Delvessa intro 02: 7+ days after Tavven, after intro 01
-          } else if (ts.dayCount >= conquestDay + 7 && ts.flags['delvessa_intro_01_seen'] && !ts.flags['delvessa_intro_02_seen']) {
+          // Delvessa intro 02: 7+ days after Tavven, after intro 01, requires expansion beyond Tavven
+          } else if (ts.dayCount >= conquestDay + 7 && ts.flags['delvessa_intro_01_seen'] && !ts.flags['delvessa_intro_02_seen']
+            && ts.islands.filter(i => i.status === 'controlled' && i.id !== 'tavven').length >= 1) {
             fireScene('crew_delvessa_intro_02');
           // Dragghen intro 01: 4+ days after Tavven
           } else if (ts.dayCount >= conquestDay + 4 && !ts.flags['dragghen_intro_01_seen']) {
             fireScene('crew_dragghen_intro_01');
-          // Dragghen intro 02: 9+ days after Tavven, after intro 01
-          } else if (ts.dayCount >= conquestDay + 9 && ts.flags['dragghen_intro_01_seen'] && !ts.flags['dragghen_intro_02_seen']) {
+          // Dragghen intro 02: 9+ days after Tavven, after intro 01, requires at least one ship upgrade
+          } else if (ts.dayCount >= conquestDay + 9 && ts.flags['dragghen_intro_01_seen'] && !ts.flags['dragghen_intro_02_seen']
+            && ts.ship.upgrades.length >= 1) {
             fireScene('crew_dragghen_intro_02');
           // Suulen intro 01: 6+ days after Tavven
           } else if (ts.dayCount >= conquestDay + 6 && !ts.flags['suulen_intro_01_seen']) {
             fireScene('crew_suulen_intro_01');
-          // Suulen intro 02: 12+ days after Tavven, after intro 01
-          } else if (ts.dayCount >= conquestDay + 12 && ts.flags['suulen_intro_01_seen'] && !ts.flags['suulen_intro_02_seen']) {
+          // Suulen intro 02: 12+ days after Tavven, after intro 01, requires Wardensea threat present
+          } else if (ts.dayCount >= conquestDay + 12 && ts.flags['suulen_intro_01_seen'] && !ts.flags['suulen_intro_02_seen']
+            && ts.threatState.level >= 30) {
             fireScene('crew_suulen_intro_02');
           }
+        }
+
+        // ==========================================
+        // TERRITORY LOSS REACTION SCENE
+        // Fires once on the day after first territory rebellion.
+        // ==========================================
+        if (ts.flags['territory_lost_at_least_once'] && !ts.flags['territory_loss_reaction_seen']) {
+          fireScene('territory_loss_reaction');
         }
 
         // ==========================================

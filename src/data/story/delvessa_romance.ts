@@ -403,7 +403,7 @@ export const delvessaRomance02: StoryScene = {
       speaker: 'delvessa',
       speakerName: 'Delvessa Ghal',
       paragraphs: [
-        '"Whether they generated enough tax revenue to justify the cost of governance." Her voice was flat. Arbiter flat. The voice she used when she was reciting facts so she didn\'t have to feel them. "They didn\'t. The quota was two hundred percent of what sixty-three fishing families could produce in three seasons. It was designed to fail. The land had been earmarked for a Kolmari naval installation. The review was a formality. My report was supposed to confirm what they\'d already decided."',
+        '"Whether they generated enough tax revenue to justify the cost of governance." Her voice was flat. Clipped. The way numbers sound when you\'re trying to divorce them from blood. "They didn\'t. The quota was two hundred percent of what sixty-three fishing families could produce in three seasons. It was designed to fail. The land had been earmarked for a Kolmari naval installation. The review was a formality. My report was supposed to confirm what they\'d already decided."',
         'Her fingers were pressing grooves into the wet wood of the rail.',
         '"I filed a favorable review. Certified them as productive. Falsified the revenue projections to meet threshold." She turned to look at him. "It bought them three years. The Kolmari found out in eighteen months. They sent someone else. Someone who didn\'t falsify anything."',
       ],
@@ -682,7 +682,7 @@ export const delvessaRomance03: StoryScene = {
       speaker: 'delvessa',
       speakerName: 'Delvessa Ghal',
       paragraphs: [
-        'She turned to face him fully. Her knees touched his thigh. She didn\'t move them. The lamplight from below caught her face at an angle that made the scar under her ear glow silver. Her eyes were dark and clear, terrified in a way she would never, ever admit to.',
+        'She turned to face him fully. Her knees touched his thigh. She didn\'t move them. The lamplight from below caught her face at an angle that made the scar under her ear glow silver. Her eyes were dark and clear. Her hand pressed flat against her knee. She didn\'t look away.',
         '"I have one question."',
       ],
     },
@@ -750,7 +750,7 @@ export const delvessaRomance03: StoryScene = {
       requireFlag: 'delvessa_answer_direct',
       paragraphs: [
         'He didn\'t hesitate. Karyudon had never hesitated about anything in his life and he wasn\'t going to start now, not with her, not with this.',
-        'The Forged Sight blazed. He could almost see it working, scanning his face the way she scanned intelligence reports. Checking for the seams. Finding none.',
+        'The Forged Sight blazed behind her eyes. She was reading him. He held still for it.',
         'Her hand came up to her collarbone and pressed flat, fingers spread. She looked away. Looked back. Her mouth opened and closed without producing anything useful.',
       ],
     },
@@ -760,7 +760,7 @@ export const delvessaRomance03: StoryScene = {
       requireFlag: 'delvessa_answer_freedom',
       paragraphs: [
         'He let the silence sit. Didn\'t reach for her. Didn\'t close the distance. Gave her the one thing nobody in her life had ever given her: room.',
-        'The Forged Sight blazed. He could almost see it working, scanning his face the way she scanned intelligence reports. Checking for the catch. Finding none.',
+        'The Forged Sight blazed behind her eyes. She was reading him. He didn\'t move.',
         'Her hand came up to her collarbone and pressed flat, fingers spread. Her eyes went wider for a fraction of a second, then narrowed. Not relief. Closer to vertigo. The look of a woman who\'d braced for a cage and found an open door instead.',
       ],
     },

@@ -349,6 +349,10 @@ export function createTerritoryActions(
         // Track rebellion for grimoire broadcasts and world reactions
         get().setFlag('territory_recently_lost', true);
         get().setFlag('last_rebellion_island', islandName);
+        // One-time flag: enables the crew reaction scene (fires once ever, not per-rebellion)
+        if (!get().flags['territory_lost_at_least_once']) {
+          get().setFlag('territory_lost_at_least_once', true);
+        }
       });
 
       // Warn about reduced income from low-morale territories (rate-limited to once per 5 days per island)

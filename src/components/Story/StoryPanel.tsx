@@ -169,6 +169,8 @@ export const StoryPanel: React.FC = () => {
   const [currentCharIndex, setCurrentCharIndex] = useState(0);
   const [showChoices, setShowChoices] = useState(false);
   const [allLinesComplete, setAllLinesComplete] = useState(false);
+  // Confirmation state: combat/scene choices require explicit confirm before executing
+  const [pendingConfirmChoiceId, setPendingConfirmChoiceId] = useState<string | null>(null);
   const [bgImage, setBgImage] = useState<string | null>(null);
   const [prevBgImage, setPrevBgImage] = useState<string | null>(null);
   const [bgTransition, setBgTransition] = useState(false);
@@ -378,10 +380,29 @@ export const StoryPanel: React.FC = () => {
   }, [beat, isTyping, allLinesComplete, currentLineIndex, advanceBeat, setTyping]);
 
   const handleChoice = useCallback((choiceId: string) => {
+    const choice = beat?.choices?.find((c) => c.id === choiceId);
+    if (!choice) return;
+    // Combat and scene-jump choices are consequential: require explicit confirmation.
+    // Flag-only choices (loyalty, minor stat changes) execute immediately.
+    const needsConfirm = choice.effects.some(
+      (e: { type: string }) => e.type === 'combat' || e.type === 'scene'
+    );
+    if (needsConfirm) {
+      setPendingConfirmChoiceId(choiceId);
+      return;
+    }
     audioManager.playSfx('choice_select');
     setShowChoices(false);
     makeChoice(choiceId);
-  }, [makeChoice]);
+  }, [beat, makeChoice]);
+
+  const confirmChoice = useCallback(() => {
+    if (!pendingConfirmChoiceId) return;
+    audioManager.playSfx('choice_select');
+    setShowChoices(false);
+    makeChoice(pendingConfirmChoiceId);
+    setPendingConfirmChoiceId(null);
+  }, [pendingConfirmChoiceId, makeChoice]);
 
   // Keyboard navigation
   useEffect(() => {
@@ -390,7 +411,24 @@ export const StoryPanel: React.FC = () => {
       const dialogOpen = document.querySelector('[role="dialog"]');
       if (dialogOpen) return;
 
+      // Escape dismisses the choice confirmation overlay
+      if (e.code === 'Escape' && pendingConfirmChoiceId) {
+        e.preventDefault();
+        setPendingConfirmChoiceId(null);
+        return;
+      }
+
+      // Enter confirms a pending choice
+      if (e.code === 'Enter' && pendingConfirmChoiceId) {
+        e.preventDefault();
+        confirmChoice();
+        return;
+      }
+
       if (!beat) return;
+
+      // Don't advance the beat while confirmation is waiting for input
+      if (pendingConfirmChoiceId) return;
 
       if (e.code === 'Space' || e.code === 'Enter') {
         e.preventDefault();
@@ -417,7 +455,7 @@ export const StoryPanel: React.FC = () => {
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [beat, handleClick, handleChoice, showChoices]);
+  }, [beat, handleClick, handleChoice, showChoices, pendingConfirmChoiceId, confirmChoice]);
 
   // === EMPTY STATE: auto-advance if scene exists but beat is missing ===
   useEffect(() => {
@@ -929,6 +967,72 @@ export const StoryPanel: React.FC = () => {
           </div>
         </div>
       </div>
+
+      {/* === CHOICE CONFIRMATION OVERLAY — for combat/scene-jump consequences === */}
+      {pendingConfirmChoiceId && beat?.choices && (() => {
+        const pendingChoice = beat.choices.find(c => c.id === pendingConfirmChoiceId);
+        if (!pendingChoice) return null;
+        const isCombat = pendingChoice.effects.some((e: { type: string }) => e.type === 'combat');
+        return (
+          <div
+            className="absolute inset-0 z-40 flex items-center justify-center animate-fade-in"
+            style={{ background: 'rgba(5, 8, 18, 0.88)', backdropFilter: 'blur(4px)' }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div
+              className="max-w-md w-full mx-4 rounded-lg p-7 shadow-2xl shadow-black/80"
+              style={{
+                background: 'rgba(12, 18, 36, 0.98)',
+                border: '1px solid rgba(196, 148, 58, 0.35)',
+                borderTop: '2px solid rgba(196, 148, 58, 0.7)',
+              }}
+            >
+              <p className="text-ocean-400 font-display text-xs tracking-[0.2em] uppercase mb-1">
+                {isCombat ? 'This choice begins combat' : 'This choice cannot be undone'}
+              </p>
+              <p className="text-ocean-100 font-narration font-semibold text-lg leading-snug mb-6">
+                {pendingChoice.text}
+              </p>
+              {pendingChoice.consequence && (
+                <p className="text-ocean-400 font-narration text-sm italic mb-5 leading-relaxed">
+                  {pendingChoice.consequence}
+                </p>
+              )}
+              <div className="flex gap-3">
+                <button
+                  onClick={confirmChoice}
+                  className="flex-1 rounded py-3 font-display font-bold text-sm tracking-[0.12em] uppercase transition-all"
+                  style={{
+                    background: 'rgba(196, 148, 58, 0.15)',
+                    border: '1px solid rgba(196, 148, 58, 0.5)',
+                    color: '#D4A574',
+                  }}
+                  onMouseEnter={(e) => { e.currentTarget.style.background = 'rgba(196, 148, 58, 0.25)'; }}
+                  onMouseLeave={(e) => { e.currentTarget.style.background = 'rgba(196, 148, 58, 0.15)'; }}
+                >
+                  Confirm
+                </button>
+                <button
+                  onClick={() => setPendingConfirmChoiceId(null)}
+                  className="flex-1 rounded py-3 font-display font-bold text-sm tracking-[0.12em] uppercase transition-all"
+                  style={{
+                    background: 'rgba(30, 40, 65, 0.8)',
+                    border: '1px solid rgba(100, 130, 180, 0.25)',
+                    color: '#7A9FC0',
+                  }}
+                  onMouseEnter={(e) => { e.currentTarget.style.background = 'rgba(40, 55, 90, 0.8)'; }}
+                  onMouseLeave={(e) => { e.currentTarget.style.background = 'rgba(30, 40, 65, 0.8)'; }}
+                >
+                  Go Back
+                </button>
+              </div>
+              <p className="text-ocean-700 text-xs text-center mt-4 tracking-wider">
+                ENTER to confirm &nbsp;·&nbsp; ESC to go back
+              </p>
+            </div>
+          </div>
+        );
+      })()}
 
       {/* Story History Overlay */}
       {showHistory && currentScene.currentBeat > 0 && (

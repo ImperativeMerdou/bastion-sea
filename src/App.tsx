@@ -50,6 +50,7 @@ const App: React.FC = () => {
       // Don't handle shortcuts when modals are open (they have their own keyboard handlers)
       const st = useGameStore.getState();
       const modalOpen = !!(st.pendingDailyReport?.length || st.dayPlannerOpen || st.pendingDayEvent || st.pendingRandomEvent);
+      const storyLocked = !!st.currentScene;
       // Escape toggles pause (but not when modals are handling their own Escape)
       if (e.code === 'Escape' && activePanelRef.current !== 'combat' && !modalOpen) {
         e.preventDefault();
@@ -62,8 +63,8 @@ const App: React.FC = () => {
         setShowKeyboardHelp((prev) => !prev);
         return;
       }
-      // Don't switch panels during combat, modals, or when pause is open
-      if (activePanelRef.current === 'combat' || modalOpen) return;
+      // Don't switch panels during combat, modals, or active story scenes
+      if (activePanelRef.current === 'combat' || modalOpen || storyLocked) return;
       // Panel shortcuts: 1=Story, 2=Map, 3=Crew
       if (e.key === '1') { setActivePanel('story'); return; }
       if (e.key === '2') { setActivePanel('map'); return; }

@@ -156,7 +156,7 @@ export const delvessaRecruitmentScene: StoryScene = {
       speakerName: 'Delvessa Ghal',
       paragraphs: [
         'She turns back to you. The ledger is still under her arm. You\'re starting to understand that the ledger is as much a part of her as your horns are a part of you.',
-        '"I\'ve been watching you since you waded ashore. You have no resources, no contacts, no intelligence network, and no plan beyond the next meal. You have Forged Iron, a stolen God Fruit that every faction in the Bastion Sea will be looking for within the week, a shipwright who can build but can\'t strategize, and a broadcaster who\'s already made you visible to everyone."',
+        '"I\'ve been watching you since you waded ashore. No money. No contacts. No plan past tomorrow\'s meal. You have Forged Iron you don\'t fully understand yet. You have a stolen God Fruit that every faction in this sea will be hunting within the week. And you have a shipwright who builds things and a girl with three Grimoires who already told everyone your name."',
       ],
     },
     {
@@ -237,7 +237,7 @@ export const delvessaRecruitmentScene: StoryScene = {
       speaker: 'delvessa',
       speakerName: 'Delvessa Ghal',
       paragraphs: [
-        'Whatever you said, she doesn\'t flinch. She processes it the way she processes everything: data in, analysis out, emotional response filed for later review.',
+        'Whatever you said, she doesn\'t flinch. A pause. One breath. Then she\'s already past it.',
         '"Then you\'ll need better intelligence than what you have, which is nothing. You\'ll need a financial strategy, a reputation plan, and someone who can read a Kolmari contract without needing it explained."',
         'She tucks the ledger back under her arm.',
         '"I can be that. But I don\'t work for free and I don\'t work blind. If I\'m in, I\'m in the room where the decisions happen. Not taking notes outside."',
