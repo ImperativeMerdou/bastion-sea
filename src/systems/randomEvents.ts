@@ -72,12 +72,19 @@ export interface RandomEvent {
 
 export const randomEvents: RandomEvent[] = [
   // ============================================
-  // EARLY GAME - Before & During Tavven Conquest
+  // ACT 1 AMBIENT — Phase-agnostic flavor, fires post-prologue
+  // Formerly prologue-phase (unreachable: player can't advance days
+  // during VN chain). Retagged or removed accordingly.
+  // danzai_restless: Delvessa + sword lore, works any phase post-conquest
+  // early_weather_calm: Vorreth ambient flavor, works any phase
+  // early_dock_rumors / early_suulen_scouting / early_dragghen_inspection:
+  //   removed -- content is pre-conquest specific (wrong context post-Tavven)
   // ============================================
   {
     id: 'danzai_restless',
     weight: 3,
-    phase: 'prologue',
+    phase: 'act1',
+    requiredFlags: { prologue_complete: true },
     notification: {
       type: 'crew',
       title: 'THE DANZAI - Resonance',
@@ -86,43 +93,9 @@ export const randomEvents: RandomEvent[] = [
     repeatable: false,
   },
   {
-    id: 'early_dock_rumors',
-    weight: 4,
-    phase: 'prologue',
-    notification: {
-      type: 'story',
-      title: 'DOCK TALK',
-      message: 'The fishermen at the nearest pier don\'t know who you are yet. You hear fragments: Wardensea patrols thinning in the north. A merchant guild raising tariffs at Sorrens Flat. Someone saw a Conqueror flag near Ghostlight. The Bastion Sea talks. You just have to listen.',
-    },
-    repeatable: true,
-  },
-  {
-    id: 'early_suulen_scouting',
-    weight: 3,
-    phase: 'prologue',
-    notification: {
-      type: 'crew',
-      title: 'SUULEN VASSERE - Reconnaissance',
-      message: '"I went ahead. Mapped three approach channels to the shoal, rated by depth and patrol coverage. The eastern route is blind. No Wardensea sightlines for half a nautical mile. That\'s our way in." She hands you the chart without looking up.',
-    },
-    resourceChanges: { intelligence: 2 },
-    repeatable: false,
-  },
-  {
-    id: 'early_dragghen_inspection',
-    weight: 3,
-    phase: 'prologue',
-    notification: {
-      type: 'crew',
-      title: 'DRAGGHEN KOLVE - Ready',
-      message: 'Dragghen is on his hands and knees by the hull, running his palm along every seam. He raps his knuckles against a rivet and listens. "Combat readiness. Three out of ten." He stands, all six-foot-eight of him. "Four, once I reinforce the forward plates. Five if you give me until morning." He is already reaching for Bulkhead.',
-    },
-    repeatable: false,
-  },
-  {
     id: 'early_weather_calm',
     weight: 4,
-    phase: 'prologue',
+    phase: 'act1',
     notification: {
       type: 'story',
       title: 'CLEAR SKIES',
@@ -145,7 +118,7 @@ export const randomEvents: RandomEvent[] = [
     notification: {
       type: 'wardensea',
       title: 'TRANSFER MANIFEST — NORTHERN ARC',
-      message: 'A Wardensea prisoner transport logged through Sorrens Flat three days ago. Manifest lists twelve Oni-class detainees. No names. Suulen found the entry in a routing archive and left it on your chart table without comment. The twins are eighteen. You don\'t know what Wardensea holding looks like from the inside. You know exactly what it looks like from the inside.',
+      message: 'Suulen left it on your chart table. No comment. Wardensea routing archive -- a prisoner transport through Sorrens Flat, three days ago. Twelve Oni-class detainees. No names. The twins are eighteen. You know exactly what Wardensea holding looks like from the inside.',
     },
     repeatable: false,
   },

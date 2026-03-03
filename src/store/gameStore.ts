@@ -904,9 +904,8 @@ export const useGameStore = create<GameState>((set, get) => ({
           // Dragghen intro 01: 4+ days after Tavven
           } else if (ts.dayCount >= conquestDay + 4 && !ts.flags['dragghen_intro_01_seen']) {
             fireScene('crew_dragghen_intro_01');
-          // Dragghen intro 02: 9+ days after Tavven, after intro 01, requires at least one ship upgrade
-          } else if (ts.dayCount >= conquestDay + 9 && ts.flags['dragghen_intro_01_seen'] && !ts.flags['dragghen_intro_02_seen']
-            && ts.ship.upgrades.length >= 1) {
+          // Dragghen intro 02: 9+ days after Tavven, after intro 01
+          } else if (ts.dayCount >= conquestDay + 9 && ts.flags['dragghen_intro_01_seen'] && !ts.flags['dragghen_intro_02_seen']) {
             fireScene('crew_dragghen_intro_02');
           // Suulen intro 01: 6+ days after Tavven
           } else if (ts.dayCount >= conquestDay + 6 && !ts.flags['suulen_intro_01_seen']) {
